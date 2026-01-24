@@ -1,0 +1,131 @@
+服务：
+	1、currentMonitor（修改）
+	2、datacollection（修改）
+	3、distribute-service（新增）
+	4、binterface-service-client（修改）
+
+	client（下发请求和接口fsu响应？？   -- webservice   -- kafka 可以看到）
+			server-server
+			data
+			distribute
+
+		走以前逻辑，要修改current的nacos配置，然后还要重启
+			包：10.1.6.34:18080/cicd-public-60/currentmonitor-service:1.0.2.0_32_20251128015006
+
+
+	发的截图
+		是current的采集结果
+
+
+数据
+	接入设备50台   		每台机器每个测点10个通道号
+	接入设备100台
+	接入设备150台
+	接入设备200台
+	接入设备300台
+	接入设备500台
+	接入设备700台
+	接入设备1000台
+
+
+
+
+	kafka -topic:
+		spider_binterface_collectThresholdRequest
+		spider_binterface_fsuRegister					(value -- fsuid -- t_cfg_fsu -- device_id)
+		spider_binterface_getPointDataRequest
+		spider_binterface_collectThresholdRequestResponse
+
+		spider_binterface_getThresholdRequest
+		spider_binterface_getThresholdRequestResponse
+
+
+		spider_binterface_handlePointDataResponse		（返回的数据好像）
+
+		spider_binterface_hisDataCollectRequest_distribute
+
+
+		spider_configManagement_fsuChanged
+
+
+		# 定时任务的设备
+		spider_binterface_timerTask
+
+
+		spider_hisdata_collect_result_binterface
+
+
+
+
+
+
+
+
+	config当时有问题（直接拉到服务器，把cicd的下掉）
+		10.1.6.34:8080/cicd-public-60/configmanagement-service:1.0.1.0_111_20251127071850
+
+
+	current（extra  -- 忘记哪个服务里面有对应这个了）
+
+
+
+
+	current下发
+		client会处理下发
+			分配dist
+				然后到fsu
+					fsu会回响回去
+
+
+
+	报文：
+		GET_DATA_ACK
+
+
+
+
+
+
+
+
+	如果部署需要确保
+		端口互通，有开同白名单
+		fsu是否注册上线
+		B接口（server-server）重启后，是否更新模拟器ip和port
+		其他也要补充下
+
+			config
+			三个服务
+			kafka
+			redis
+				这些可能随时会有问题（一般连不上就重新部署，或是拉到服务器，把cicd的下掉）
+
+
+
+
+
+
+
+
+【逻辑梳理】
+	1、首先就是先实现大量设备测点下发，不影响实时监控
+	2、大量设备下发后但是没有得到响应，一致重算情况，知道最后都失败，直接剔除（可能时fsu下线，或是在fsu设置延时）
+		（比如第一个fsu模拟器，返回的都加上n秒的）
+		（比如第二个fsu模拟器，返回的都加上x秒的）
+		（多个fsu，每个机房接不同的fsu）
+
+	3、当队列满多少设备时，需要剔除标识
+
+	4、当上面的都没问题时，就进行并发测试
+
+
+
+
+	数据：
+		先启6个fsu（同个机房下）
+			每个fsu 200个设备
+
+
+
+【相关逻辑】
+	点击链接查看和 Kimi 的对话 https://www.kimi.com/share/19af7251-a5c2-810d-8000-0000f2486400

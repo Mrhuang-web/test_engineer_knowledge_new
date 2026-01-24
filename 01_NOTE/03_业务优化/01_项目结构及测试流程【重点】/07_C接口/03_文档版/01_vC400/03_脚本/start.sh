@@ -1,0 +1,1 @@
+nohup python  $PWD/sim_lsc_v400.py  > nohup.out &

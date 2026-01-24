@@ -1,0 +1,79 @@
+# server:
+#   port: 13554
+# schedule.sync_point_his_data_2es.enableOnlineCheck: true
+schedule:
+  cron:
+    sync_point_his_data_2es: 0 0/1 * * * ?
+    sync_alarm_his_data: 0 0 1 * * ?
+  fixRate:
+    check_fsu_status: 600000
+    sync_fsu_time: 600000
+    check_service_cluster_status: 60000
+    service_heartbeat: 60000
+
+service:
+  cluster:
+    id: "00001006000000000013"
+
+# fsuTimer.statusCheck.enableRegisterCheck: false
+
+fsu.status.upd.interval: 60
+service.offline.period_sec: 180
+service.survival.alarm.rate: 0.6
+service.survival.alarm.value: 3
+
+# fsu.alarm.enableAsync: false
+
+kafka.topic.binterface_getPointDataRequest: spider_binterface_getPointDataRequest
+kafka.topic.binterface_setPointDataRequest: spider_binterface_setPointDataRequest
+kafka.topic.binterface_getThresholdRequest: spider_binterface_getThresholdRequest
+kafka.topic.binterface_setThresholdRequest: spider_binterface_setThresholdRequest
+kafka.topic.binterface_setDevConfigRequest: spider_binterface_setDevConfigRequest
+kafka.topic.configManagement_fsuChanged: spider_configManagement_fsuChanged
+kafka.topic.binterface_timerTask: spider_binterface_timerTask
+
+
+pointHisData.specialTask.fsuId: "00001006000000003876,00001006000000015344,00001006000000029635,00108006000000028729"
+
+fsu.newVersion.checkHead: false
+
+# pointHisData.download.path: D:\tmp\ftp\proxyTest\binterface\
+
+pointHisData.fileCharset: mixed
+pointHisData.enableSimPleCheckHeadName: true
+
+webservice.connectTimeout: 3000
+webservice.readTimeout: 3000
+# webservice.method: SOAPClient
+# webservice.connectionClose: false
+
+logging:
+  level:
+   com.aspire.gemc.binterface: debug
+  
+
+# mybatis:
+#   configuration:
+#     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+binter.log.enable: true
+fsuTimer.statusCheck.enableRebootFsu: true
+# fsuTimer.statusCheck.enableRegisterCheck: true
+
+fsu.enableDeviceMerge: true
+
+# 合并设备请求
+request.merge.interval: 5
+
+# 是否允许任务超时
+getPointData.enableTimeout: true
+
+# 测试用，本不需要配置
+currentMonitor.val.cacheMin: 60
+
+
+# 现网默认开启，测试环境关闭，减小fsu压力
+schedule.check_fsu_status.enable: false
+schedule.sync_point_his_data_2es.enable: false
+schedule.sync_point_his_data_2es.enableOnlineCheck: false

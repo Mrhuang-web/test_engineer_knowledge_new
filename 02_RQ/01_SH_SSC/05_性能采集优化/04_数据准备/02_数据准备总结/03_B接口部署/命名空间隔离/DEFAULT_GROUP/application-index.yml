@@ -1,0 +1,30 @@
+server:
+  port: 20250
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+# spring:
+#   cloud.nacos.discovery:
+#     ip: 10.12.7.156
+#     port: 30811
+
+# mybatis:
+#   mapperLocations: classpath*:sqlmap/*.xml
+#  type-aliases-package:
+#    org.springboot.sample.entity
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    map-underscore-to-camel-case: true
+mybatis:
+  mapper-locations: classpath*:sqlmap/*.xml   
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+unifiedPortal:
+  function:
+    lastlySize: 4 #最近功能显示的条数
+    collectionSize: 8 #收藏功能显示的条数
+
+version: v1

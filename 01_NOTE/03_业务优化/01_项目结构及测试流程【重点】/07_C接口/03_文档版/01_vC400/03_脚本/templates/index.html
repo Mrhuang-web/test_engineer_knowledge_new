@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+  <form action="/send"  method="POST">
+    <h1>发送告警:</h1>
+    测点ID:<input type="text" name="ID", value="{{ID}}"/><br>
+    LSCID:<input type="text" name="LSCID", value="{{LSCID}}"/><br>
+    NMAlarmID:<input type="text" name="NMAlarmID", value="{{NMAlarmID}}"/><br>
+    Status(1~4:告警级别):<input type="text" name="Status", value="{{Status}}"/><br>
+    Description:<textarea type="text" name="Description" rows="1" cols="120">{{Description}}</textarea><br>
+    <input type="submit" value="发送告警" />
+  </form>
+
+{% end %}

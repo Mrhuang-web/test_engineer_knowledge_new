@@ -1,0 +1,74 @@
+server:
+  port: 28051
+
+mybatis:
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+
+harbor:
+  url: http://10.1.4.9:1121
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        ip: 10.1.5.139
+        port: 58188
+
+# Pulsar 配置
+pulsar:
+  # Pulsar 客户端配置
+  client:
+    service-url: "pulsar://10.1.5.113:6650"  # Pulsar服务器地址调整
+    connection-timeout: 30000  # 连接超时时间（毫秒）
+    operation-timeout: 30000   # 操作超时时间（毫秒）
+    enable-tls: false          # 是否启用TLS
+  
+  # 生产者配置
+  producer:
+    max-pool-size: 1000        # 生产者连接池最大数量
+    batching-enabled: true     # 启用批处理
+    batching-max-messages: 1000  # 批处理最大消息数
+    batching-max-publish-delay: 10ms  # 批处理最大发布延迟
+    send-timeout: 30s          # 发送超时时间
+  
+
+  # 消费者配置
+  consumers:
+    configs:
+      adi:
+        partitionedTopic: "persistent://data/adi/{fsuID}"
+        subscription: "adi-subscription"
+        subscriptionType: Shared
+      
+      alarm:
+        partitionedTopic: "persistent://alarm/default/{fsuID}"
+        subscription: "alarm-subscription"
+        subscriptionType: Shared
+      
+      internal-notify:
+        partitionedTopic: "persistent://notify/internal/{fsuID}"
+        subscription: "internal-notify-subscription"
+        subscriptionType: Shared
+      
+      external-notify:
+        partitionedTopic: "persistent://notify/external/{fsuID}"
+        subscription: "external-notify-subscription"
+        subscriptionType: Shared
+
+  # 配置多个Pulsar集群，可以这样配置
+  # clusters:
+  #   - name: "cluster1"
+  #     service-url: "pulsar://10.1.5.113:6650"
+  #   - name: "cluster2" 
+  #     service-url: "pulsar://10.1.5.114:6650"
+
+# 日志配置
+logging:
+  level:
+    com.aspire.spider.harbormanage.server.Consumer: DEBUG
+    org.apache.pulsar: WARN
+    com.aspire.spider.harbormanage.server.Producer: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

@@ -1,0 +1,37 @@
+
+#spring.cloud.nacos.discovery.ip: 10.12.7.159
+#spring.cloud.nacos.discovery.port: 31842
+server:
+  port: 28096
+#碳排放后台计算的起止时间
+greenenergy.execute.time: 2024-05
+commonEnergyConfig: #能耗配置
+  ontime: "0 45 16 * * ?"  #定时任务执行时间
+  #配置能耗计算几天，为0的时候采集今天零点数据，入库 耗电量
+  inspectMeteTime: 3
+  province: 01-
+  nodeNo: ${ENV_NODE_NO:0}      #节点标识，用于多个节点部署时，通过环境变量控制
+  provinceNode1: 01-23,01-24
+  provinceNode2: 01-01,01-02
+  energySwitch: false
+  dataAcquisitionMethod: 1
+  calType: 1  #1，能耗计算使用的 2.AviatorEvaluator
+
+#中间库历史数据表的value需要转为double来下的lscId前两位
+cinterface.signalH.doubleValue: "42,50,34,47,52,54,81"
+
+#能耗计算数据源，es或mpp
+commonEnergyConfig.readModel: es
+
+energyAutoDevieMeteSchedule.ontime: 0 0 1 1,15,25 * ?  #每个月1号和15号创建下个月的电量详情表
+commonEnergyConfig.systemOntime: 0 0 2 * * ?  #能耗系统计算时间每天2点开始
+
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

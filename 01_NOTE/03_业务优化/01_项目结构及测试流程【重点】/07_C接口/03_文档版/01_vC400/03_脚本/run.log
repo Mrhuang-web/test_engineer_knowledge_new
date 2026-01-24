@@ -1,0 +1,835 @@
+ [2024-05-22 11:11:16,655][INFO] room_obj_list:[<models400.MRoom object at 0x00000000057AEEB0>, <models400.MRoom object at 0x00000000057AEE50>]
+[2024-05-22 11:11:21,520][INFO] signalid:001001
+[2024-05-22 11:11:21,521][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:12:21,282][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:13:31,680][INFO] signalid:001001
+[2024-05-22 11:13:31,681][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:17:15,069][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:17:24,965][INFO] room_obj_list:[<models400.MRoom object at 0x00000000056FF730>, <models400.MRoom object at 0x00000000056FFA90>]
+[2024-05-22 11:18:09,953][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:18:32,924][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:18:37,653][INFO] signalid:001001
+[2024-05-22 11:18:37,654][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:18:40,011][INFO] signalid:001001
+[2024-05-22 11:18:40,012][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:18:41,292][INFO] signalid:001001
+[2024-05-22 11:18:41,293][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:18:43,367][INFO] signalid:001001
+[2024-05-22 11:18:43,368][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:18:48,397][INFO] signalid:001001
+[2024-05-22 11:18:48,398][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:18:55,557][INFO] signalid:001001
+[2024-05-22 11:18:55,558][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:19:08,306][INFO] signalid:001008
+[2024-05-22 11:19:08,307][INFO] signal:('1', '2005', '42406', 4, '001008', '1', 'B相电流过大告警', 3, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001008')
+[2024-05-22 11:27:30,745][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:29:30,969][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:30:14,831][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:32:40,033][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:32:40,033][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:32:42,969][INFO] signalid:001001
+[2024-05-22 11:32:42,969][INFO] signalid:001001
+[2024-05-22 11:32:42,971][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:32:42,971][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:32:52,601][INFO] signalid:001001
+[2024-05-22 11:32:52,601][INFO] signalid:001001
+[2024-05-22 11:32:52,602][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:32:52,602][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:33:09,134][INFO] signalid:001001
+[2024-05-22 11:33:09,134][INFO] signalid:001001
+[2024-05-22 11:33:09,136][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:33:09,136][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:33:21,820][INFO] signalid:001001
+[2024-05-22 11:33:21,820][INFO] signalid:001001
+[2024-05-22 11:33:21,821][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:33:21,821][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:34:14,517][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:34:14,517][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:34:23,700][INFO] room_obj_list:[<models400.MRoom object at 0x00000000057487F0>, <models400.MRoom object at 0x0000000005748790>]
+[2024-05-22 11:34:23,700][INFO] room_obj_list:[<models400.MRoom object at 0x00000000057487F0>, <models400.MRoom object at 0x0000000005748790>]
+[2024-05-22 11:34:27,700][INFO] signalid:001001
+[2024-05-22 11:34:27,700][INFO] signalid:001001
+[2024-05-22 11:34:27,702][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:34:27,702][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:36:16,409][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:16,409][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:30,292][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:30,292][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:34,753][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:34,753][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:36:38,592][INFO] signalid:001001
+[2024-05-22 11:36:38,592][INFO] signalid:001001
+[2024-05-22 11:36:38,593][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:36:38,593][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:37:11,270][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:37:11,270][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:37:13,595][INFO] signalid:001001
+[2024-05-22 11:37:13,595][INFO] signalid:001001
+[2024-05-22 11:37:13,597][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:37:13,597][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:38:14,199][INFO] signalid:001001
+[2024-05-22 11:38:14,199][INFO] signalid:001001
+[2024-05-22 11:38:14,200][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:38:14,200][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:21,268][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:39:21,268][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 11:39:21,826][INFO] signalid:001001
+[2024-05-22 11:39:21,826][INFO] signalid:001001
+[2024-05-22 11:39:21,828][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:21,828][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:23,969][INFO] signalid:001001
+[2024-05-22 11:39:23,969][INFO] signalid:001001
+[2024-05-22 11:39:23,971][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:23,971][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:25,861][INFO] signalid:001001
+[2024-05-22 11:39:25,861][INFO] signalid:001001
+[2024-05-22 11:39:25,863][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:25,863][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:27,415][INFO] signalid:001001
+[2024-05-22 11:39:27,415][INFO] signalid:001001
+[2024-05-22 11:39:27,417][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 11:39:27,417][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:23:28,458][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:23:28,458][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:23:30,064][INFO] room_obj_list:[<models400.MRoom object at 0x00000000056E2790>, <models400.MRoom object at 0x00000000056E2730>]
+[2024-05-22 12:23:30,064][INFO] room_obj_list:[<models400.MRoom object at 0x00000000056E2790>, <models400.MRoom object at 0x00000000056E2730>]
+[2024-05-22 12:23:35,239][INFO] signalid:001001
+[2024-05-22 12:23:35,239][INFO] signalid:001001
+[2024-05-22 12:23:35,242][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:23:35,242][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:23:37,112][INFO] signalid:001001
+[2024-05-22 12:23:37,112][INFO] signalid:001001
+[2024-05-22 12:23:37,113][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:23:37,113][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:30:37,447][INFO] signalid:001001
+[2024-05-22 12:30:37,447][INFO] signalid:001001
+[2024-05-22 12:30:37,451][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:30:37,451][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:30:47,808][INFO] signalid:001009
+[2024-05-22 12:30:47,808][INFO] signalid:001009
+[2024-05-22 12:30:47,811][INFO] signal:('1', '2005', '42406', 4, '001009', '1', 'C相电流过大告警', 3, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001009')
+[2024-05-22 12:30:47,811][INFO] signal:('1', '2005', '42406', 4, '001009', '1', 'C相电流过大告警', 3, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001009')
+[2024-05-22 12:35:22,753][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:35:22,753][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:36:03,926][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:36:03,926][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:36:14,034][INFO] signalid:001005
+[2024-05-22 12:36:14,034][INFO] signalid:001005
+[2024-05-22 12:36:14,037][INFO] signal:('1', '2005', '42406', 4, '001005', '1', 'CA线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001005')
+[2024-05-22 12:36:14,037][INFO] signal:('1', '2005', '42406', 4, '001005', '1', 'CA线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001005')
+[2024-05-22 12:37:59,183][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:37:59,183][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:38:50,401][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:38:50,401][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:41:04,098][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:41:04,098][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:41:49,277][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:41:49,277][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:43:16,001][INFO] room_obj_list:[<models400.MRoom object at 0x00000000008D9E20>, <models400.MRoom object at 0x00000000008D9DC0>]
+[2024-05-22 12:43:16,001][INFO] room_obj_list:[<models400.MRoom object at 0x00000000008D9E20>, <models400.MRoom object at 0x00000000008D9DC0>]
+[2024-05-22 12:43:22,416][INFO] signalid:001001
+[2024-05-22 12:43:22,416][INFO] signalid:001001
+[2024-05-22 12:43:22,419][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:43:22,419][INFO] signal:('1', '2005', '42406', 4, '001001', '1', 'AB线电压过高告警', 4, 1.0, 1.0, 1.0, 1.0, None, 'A', '601-001-1-001001')
+[2024-05-22 12:44:39,443][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:44:39,443][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:44:43,628][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:44:43,628][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:45:17,965][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:45:17,965][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:46:03,697][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:46:03,697][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:46:12,863][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:46:12,863][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:47:25,586][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:47:25,586][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 12:48:15,472][INFO] room_obj_list:[<models400.MRoom object at 0x0000000005758D00>, <models400.MRoom object at 0x0000000005758CA0>]
+[2024-05-22 12:48:15,472][INFO] room_obj_list:[<models400.MRoom object at 0x0000000005758D00>, <models400.MRoom object at 0x0000000005758CA0>]
+[2024-05-22 13:35:55,795][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 13:35:55,795][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 13:44:58,014][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 13:44:58,014][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 13:45:55,066][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:45:55,066][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:45:55,067][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:45:55,067][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:45:55,067][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:45:55,067][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:45:55,068][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 13:45:55,068][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 13:49:00,602][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:49:00,602][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:49:00,603][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:49:00,603][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:49:00,604][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:49:00,604][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:49:00,604][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 13:49:00,604][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 13:49:34,810][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:49:34,810][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 13:49:34,811][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:49:34,811][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 13:49:34,812][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:49:34,812][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 13:49:34,812][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 13:49:34,812][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 16:50:52,873][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 16:50:52,873][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 16:57:40,100][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 16:57:40,100][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 16:57:46,009][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 16:57:46,009][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 17:05:30,752][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 17:05:30,752][INFO] room_obj_list:[<models400.MRoom object at 0x00000000006F2550>, <models400.MRoom object at 0x00000000006F24F0>]
+[2024-05-22 17:05:46,424][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:05:46,424][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:05:46,424][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:05:46,424][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:05:46,425][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:05:46,425][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:05:46,425][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:05:46,425][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:05:46,426][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:05:46,426][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:19:24,034][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:24,034][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:33,164][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:33,164][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:49,828][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:49,828][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:53,215][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:19:53,215][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:52:48,943][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:52:48,943][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:52:48,944][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:52:48,944][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:52:48,944][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:52:48,944][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:52:48,945][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:52:48,945][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:52:48,945][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:52:48,945][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:53:16,242][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:53:16,242][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 17:53:16,242][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:53:16,242][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 17:53:16,243][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:53:16,243][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_POINT]
+[2024-05-22 17:53:16,243][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:53:16,243][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 17:53:16,244][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:53:16,244][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 17:56:47,364][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:56:47,364][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:57:48,022][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:57:48,022][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:58:27,167][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:58:27,167][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:58:59,801][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 17:58:59,801][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:00:25,021][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:00:25,021][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:00:49,272][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:00:49,272][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:01:41,947][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:01:41,947][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:05,115][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:05,115][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:13,751][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:13,751][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:34,908][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:34,908][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:59,768][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:02:59,768][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:03:39,919][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:03:39,919][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:08:34,062][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:08:34,062][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:13:29,724][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:13:29,724][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:32:30,974][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:32:30,974][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:36:51,706][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:36:51,706][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:39:15,236][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 18:39:15,236][INFO] [orginal header]
+5a-6b-7c-7e-4b-00-00-00-69-1e-06-00-91-01-00-00
+[2024-05-22 18:39:15,236][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 18:39:15,236][INFO] [orginal header]
+<class 'bytes'>
+[2024-05-22 18:39:15,237][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_DYN_ACCESS_MODE]
+[2024-05-22 18:39:15,237][DEBUG] [unpack header]
+	self.Header:0x7e7c6b5a
+	self.Length:75
+	self.SerialsNo:401001
+	self.PK_Type:401 -- [SET_DYN_ACCESS_MODE]
+[2024-05-22 18:39:15,237][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 18:39:15,237][INFO] [original body]
+01-00-00-00-01-00-00-00-02-00-00-00-0a-00-00-00-01-00-00-00-00-10-08-00-00-00
+[2024-05-22 18:39:15,238][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 18:39:15,238][ERROR] 未实现的接口，self.PK_Type=401, 连接关闭！ 
+[2024-05-22 18:44:48,861][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:44:48,861][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:46:02,490][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:46:02,490][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:51:30,627][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:51:30,627][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:51:58,283][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:51:58,283][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:52:23,066][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:52:23,066][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:54:18,701][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:54:18,701][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:54:40,444][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:54:40,444][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:56:40,198][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:56:40,198][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:13,339][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:13,339][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:54,491][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:54,491][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:56,641][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:57:56,641][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:25,287][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:25,287][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:38,928][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:38,928][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:56,073][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 18:59:56,073][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:23,221][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:23,221][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:35,885][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:35,885][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:51,524][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:00:51,524][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:46,173][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:46,173][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:52,486][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:52,486][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:58,130][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:01:58,130][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:03:48,806][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:03:48,806][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:04:05,974][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:04:05,974][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:13:43,672][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:13:43,672][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:14:12,349][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:14:12,349][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:32:22,740][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:32:22,740][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:32:42,535][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:32:42,535][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:36:05,676][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:36:05,676][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:37:20,326][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:37:20,326][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:37:24,541][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:37:24,541][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:38:00,674][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:38:00,674][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:45:10,414][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:45:10,414][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:56:47,098][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:56:47,098][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:57:04,788][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:57:04,788][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:58:28,987][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 19:58:28,987][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:00:24,857][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:00:24,857][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:00:55,040][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:00:55,040][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:01:27,710][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:01:27,710][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:01:42,365][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:01:42,365][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:02:05,072][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:02:05,072][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:06:10,422][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-22 20:06:10,422][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:10,722][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:10,722][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:43,404][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:43,404][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:48,683][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:19:48,683][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:22:11,320][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:22:11,320][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:22:16,052][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:22:16,052][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:23:44,774][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:23:44,774][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:12,431][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:12,431][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:15,041][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:15,041][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:19,678][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082
+[2024-05-23 09:24:19,678][INFO] 
+Socket Interface Listening on Port : 8099
+HTTP Server Listening on Port: 8082

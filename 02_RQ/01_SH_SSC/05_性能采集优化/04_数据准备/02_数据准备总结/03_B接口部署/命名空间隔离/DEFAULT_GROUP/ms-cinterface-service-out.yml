@@ -1,0 +1,66 @@
+server:
+  port: 8281
+  #port: 13571
+
+analysis:
+  path: /root
+  taskCron: 0 0 18 * * *
+  saveModifyTaskCron: 0 0 15 * * *
+
+app:
+  tempPath: /root
+  runMode: server
+  client: #接入端配置
+    #oneLinkFlag: true
+    id: 12001       #上级SC的SCID
+    device_choose_off: true   #开启多线程同步设备
+    MAX_DEVICE_SIZE: 351      #每个线程同步的设备个数
+    province_name: "云南"
+    lscIdConfig:
+      - "{\"lscId\":\"12001\",\"dbtype\":\"6\",\"connLscId\":\"12001\",\"version\":\"400\",\"isEnableTerminalId\":\"1\",\"TOP_UP_PRECINCTID\":\"01-02\",\"area_site_sign\":\"true\",\"hasDataEx\":\"false\"}"
+    dbInitlscId: 12001
+    autoCreateIndexProvinceId: 01-01
+    modifySyncCron: #4.0增量更新定时任务
+    alarmSyncCron: 0 0/1 * * * *  #告警同步0/60 * * * * *
+    alarmCleanCron: 0 0 3 1/1 * *  #告警表清理
+    signalSyncCron: 0/10 * * * * *  #性能数据同步0 0 0/1 * * *
+    #signalSyncCron: 0 0/40 * * * *  #性能数据同步0 0 0/1 * * *
+    dbTestCron: 0 0/1 * * * *  #数据库连接检测
+    confSyncCron: 0 0 3 1/1 * *  #3.5配置数据同步
+    upAlarmListMaxSize: 200     #每次发送给kafka的告警数量最大值
+    startupDelayMin: 60 #线程启动延迟时间（分钟）
+    alarmCleanHour: -48 #清除指定天数前的告警
+    signalHCleanHour: -48 #清除指定天数前的性能历史数据
+    signalHCleanCron: 0 0 2 1/1 * * #性能数据清理任务执行时间
+    hasSiteMapping: true
+  server: #接出端配置
+    ratioFlag: true
+    clientId: 12001 #上级SC的SCID
+    rightLevel : 2  #上级SC的权限
+    isEnableTerminalId: false #是否启用terminalID参数，客户端也要同步开启
+    version: 400 #服务端版本号
+    # WRITE_TOP_PRECINCT: "01-32"   #" #将配置管理该区域下的所有信息写入中间库，没有则是"01"
+    # syncHisProvince: 01-32 #同步的省份id
+    WRITE_TOP_PRECINCT: "01-01" #将配置管理该区域下的所有信息写入中间库，没有则是"01"
+    syncHisProvince: 01-01 #同步的省份id
+    alarmSeqType: cinterface-tcpout
+    mock: true
+    incrWriteTaskCron: 0 * 0/1 * * *
+    fullWriteTaskCron: 0 0/1 * * * *
+    syncHisCron: 0 0/1 * * * *
+    enableSynDesc: true
+    newtcp:
+      enableAlarm: true
+
+alert_mete_code: 001018,004001,005001,005021,005035,006023,006020,007002,008011,008023,008032,008043,014004,014005,017010,068008,087010,087012,087020,087021,087040,088001,088002,088003,092008,092010
+
+
+#每个服务配置对应实时数据的KAFKA主题
+#spider_cinterface_getPointDataRequest{省份标识}
+kafka.topic.cinterface_getPointDataRequest: spider_cinterface_getPointDataRequest12
+kafka.topic.cinterface_updDeviceModel: spider_cinterface_updateDeviceModel121
+
+
+logging:
+  root:
+    level: debug

@@ -1,0 +1,107 @@
+业务说明：
+	1、在视图监控中配置关系
+	2、同步执行后（就是把综资的市电配置，同步到site表中的，oil级别里面），就会根据页面配置的关系回显综资的市电配置到监控视图上
+	3、其他地方则取站点表中的，动环的配置
+
+	4、t_zz_power_specialty 中 某个为0才是动环属性里面有的
+
+
+1、验证同步
+2、验证视图展示的是综资
+3、其他地方展示的是动环
+
+
+	SELECT * from t_zz_power_specialty LIMIT 10
+	SELECT * from t_zz_site_property LIMIT 10
+	SELECT * from t_cfg_site LIMIT 10
+	SELECT * from  zz_power_dict_mapping
+	SELECT * from t_cfg_dict WHERE col
+	SELECT * from t_scheduled_task
+	
+
+
+
+
+
+
+
+业务说明：
+	注意：
+		映射关系一定要存在，不然映射不起来（比如动环是1，那么就要有1的映射，同时综资的也要存在）
+	1、在视图监控中配置关系
+	2、同步执行后（就是把综资的市电配置，同步到site表中的，oil级别里面），就会根据页面配置的关系回显综资的市电配置到监控视图上
+		补充逻辑：
+			这里会先通过site的站点名字，匹配t_zz_power_specialty的zh_label,拿到rescode
+			拿到rescode后，会到t_zz_site_property 找到对应的mains_configuration_level -- (综资的都是中文的  -- 然后的规则会匹配到)、
+			匹配到之后，会把这里的mains_configuration_level，更新到site表中的zz_es_oil_machine_level上
+			site的property，修改为1
+		补充逻辑2：
+			所有的数据都共用一份zz_power_dict_mapping表
+				用于映射关系
+			
+	3、其他地方则取站点表中的，动环的配置
+	4、t_zz_power_specialty 中 某个为0来着才是动环属性里面有的     
+	
+	5、回显是config/zzMappingPower/get接口返回的，因此没有返回打开编辑后，就不会展示综资的市电配置信息
+	                               
+其余：                                                         
+	1、验证同步
+	2、验证视图展示的是综资
+	3、其他地方展示的是动环
+		其他地方：
+			运行分析-市电停电配置（通信枢纽楼或数据中心类型才有）
+				进入到区级别（展示的是动环的）
+	SELECT * from t_zz_power_specialty LIMIT 10;
+	SELECT * from t_zz_site_property LIMIT 10;
+	SELECT * from t_cfg_site LIMIT 10;
+	SELECT * from  zz_power_dict_mapping;
+	SELECT * from t_cfg_dict WHERE col_name = 'es_oil_machine_level';
+	SELECT * from t_scheduled_task;
+	
+
+
+
+需要重新梳理：
+	疑问：为什么zz的没有自动入库进去
+	1、SELECT * from  zz_power_dict_mapping;   （全部数据共用这份配置表）
+		这个表就是提供用来映射，还有查询时匹配？？
+	2、找到动环的数据
+	3、找到综资的数据
+	4、综资映射到动环？？
+
+	
+	
+	
+	动环相关位置：
+		1、运行分析-市电停电分析
+			市电停电统计表
+			高压系统停电分析（停电类型这些）
+			线路停电分析
+		2、资源资产-系统维护
+			点击对应站点 -- 高压直流、市电直供（备份方式是动环的）
+			
+		
+
+
+重点：
+	目前没有同步过来
+
+	引射表，只是为了提供查看？？
+
+
+
+
+
+
+
+产品对细节：
+	运行分析-市电停电配置：必须是展示动环的（需要参与计算）
+	监控必须是综资（监控这块都是综资的）
+	其他地方也统一变为动环
+	容量管理-容量概览-机楼
+		通过点击地图，旁边有楼栋等信息弹窗，再点击就能跳转过去
+		
+		
+	
+	
+	会根据定时任务跑完之后同步的

@@ -1,0 +1,93 @@
+server:
+  port: 13557 #9003
+
+powerfactor:
+  index: "dws_power_harmonic"
+  precinctid: "01-32"
+  scalarvalue: "0.9"
+  scrollsize: 10000
+
+ftp:
+  host: 10.1.5.143 
+  host62: 10.1.5.143 
+  password62: "Dhuan_Dev!23#"
+  port: 21
+  username: vsftpd
+  password: "Dhuan_Dev!23#"
+###Mybatis分页插件
+pagehelper:
+  helperdialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+# precinctKind precinctKind 这个字段调用彭锋接口 蓄电池需要添加为5
+# 3	    device_type	变压器
+# 5	    device_type	发电机组
+# 6	    device_type	开关电源
+# 7	    device_type	铅酸电池
+# 8	    device_type	UPS设备
+# 11    device_type	机房专用空调
+# 15	device_type	普通空调
+# 68	device_type	锂电池
+# 87	device_type	高压直流电源
+#01-33 浙江 3变压器 6开关电源  8ups 87高压直流
+#01-16 江苏                   8ups
+#01-33 北京 3变压器 6开关电源  8ups 87高压直流
+ConfigFormJson:
+  provinceCfg:
+    - "{\"precinctId\":\"01-04\",\"deviceType\":\"3,5,6,7,8,11,15,68,87\"}"
+capacity:
+  transformerSystemLoad: "003310"
+  litCurrent: "068302"
+  litTime: "068318"
+  LeadCurrent: "007308"
+  LeadTime: "007309"
+  workCurrent: "011303"
+  prowerloadCurrent: "006309"
+  hvdcloadCurrent: "087309"
+  upsIa: "008318"
+  upsIb: "008319"
+  upsIc: "008320"
+  upspa: "008338"
+  upspb: "008339"
+  upspc: "008340"
+  altePa: "005316"
+  altePb: "005317"
+  altePc: "005318"
+  alteQa: "005319"
+  alteQb: "005320"
+  alteQc: "005321"
+  alteIa: "005313"
+  alteIb: "005314"
+  alteIc: "005315"
+  alteUa: "005310"
+  alteUb: "005311"
+  alteUc: "005312"
+  upscos: "008322"
+  day: -4
+  value: "0 15 14 * * ?"
+
+check:
+  path: D:/
+  precinctId: "01-04,01-01-25"
+  value: "0 42 09 * * ?"
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+service:
+  statement_statistics:
+    cron: "0 46 11 * * ?"
+
+#关于IT运维首页的配置
+itShowConfig:
+  huchiId: 01-01  #呼池的站点id
+  hachiId: 01-02  #哈池的站点id
+  nanjiId: 01-03  #南基的站点id
+  beigangId: 01-04 #北方信息港的站点id
+
+#此处填写变压器容量预警方案中文名称
+transformerCapacityProgrammeName: "变压器系列【1+1冗余】"
+provinceCode: "01-01"

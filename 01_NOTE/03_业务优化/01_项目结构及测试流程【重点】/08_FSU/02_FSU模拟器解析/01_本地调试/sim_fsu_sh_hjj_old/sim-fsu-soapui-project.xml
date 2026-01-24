@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6fba0cff-b3ee-4916-8edd-788dbd7ea586" activeEnvironment="Default" name="sim_fsu" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="21ec2f46-b222-44aa-ac47-ba9812ce67dc" wsaVersion="NONE" name="FSUServiceSoapBinding" type="wsdl" bindingName="{http://FSUService.chinamobile.com}FSUServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/wsdl"><con:part><con:url>http://localhost:8080/wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://FSUService.chinamobile.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://FSUService.chinamobile.com" xmlns:intf="http://FSUService.chinamobile.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:message name="invokeRequest">
+    <wsdl:part name="xmlData" type="soapenc:string"/>
+  </wsdl:message>
+  <wsdl:message name="invokeResponse">
+    <wsdl:part name="invokeReturn" type="soapenc:string"/>
+  </wsdl:message>
+  <wsdl:portType name="FSUService">
+    <wsdl:operation name="invoke" parameterOrder="xmlData">
+      <wsdl:input message="impl:invokeRequest" name="invokeRequest"/>
+      <wsdl:output message="impl:invokeResponse" name="invokeResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FSUServiceSoapBinding" type="impl:FSUService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="invoke">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="invokeRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://FSUService.chinamobile.com" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="invokeResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://FSUService.chinamobile.com" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FSUServiceService">
+    <wsdl:port binding="impl:FSUServiceSoapBinding" name="FSUService">
+      <wsdlsoap:address location="http://127.0.0.1:8080/services/FSUService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8080/services/FSUService</con:endpoint></con:endpoints><con:operation id="0e144c13-3618-4fd0-a7a7-c81de8dca011" isOneWay="false" action="" name="invoke" bindingOperationName="invoke" type="Request-Response" outputName="invokeResponse" inputName="invokeRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f37a92bb-c5d2-4798-b347-74ef5692c4b6" name="GET_DATA"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/services/FSUService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<ns1:invoke soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://FSUService.chinamobile.com">
+<xmlData xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<![CDATA[
+<Request>
+<PK_Type>
+	<Name>GET_DATA</Name>
+</PK_Type>
+<Info>
+    <FSUID>100000000000008</FSUID>
+</Info>
+</Request>]]]]>><![CDATA[
+</xmlData>
+</ns1:invoke>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FSUService.chinamobile.com/FSUService/invokeRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ccb37934-4c15-48aa-bb35-088dd57dc3e2" name="1.GET_THRESHOLD（指定device和signal)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/services/FSUService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<ns1:invoke soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://FSUService.chinamobile.com">
+<xmlData xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<![CDATA[
+<Request>
+<PK_Type>
+	<Name>GET_THRESHOLD</Name>
+</PK_Type>
+<Info>
+    <FSUID>100000000000008</FSUID>
+        <DeviceList>
+        <Device ID="100100000000092">
+            <ID>092001</ID>
+            <ID>092002</ID>
+        </Device>
+    </DeviceList>
+
+</Info>
+</Request>]]]]>><![CDATA[
+</xmlData>
+</ns1:invoke>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FSUService.chinamobile.com/FSUService/invokeRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f5a24750-58ea-4f51-bbc4-e393596f09fc" name="2.GET_THRESHOLD(只指定device)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/services/FSUService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<ns1:invoke soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://FSUService.chinamobile.com">
+<xmlData xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<![CDATA[
+<Request>
+<PK_Type>
+	<Name>GET_THRESHOLD</Name>
+</PK_Type>
+<Info>
+    <FSUID>100000000000008</FSUID>
+        <DeviceList>
+        <Device ID="100100000000092">
+
+        </Device>
+    </DeviceList>
+
+</Info>
+</Request>]]]]>><![CDATA[
+</xmlData>
+</ns1:invoke>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FSUService.chinamobile.com/FSUService/invokeRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1fe7fff8-77d2-43ae-8d15-81eec1778a41" name="3.GET_THRESHOLD(只有fsuid)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8080/services/FSUService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<soapenv:Body>
+<ns1:invoke soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://FSUService.chinamobile.com">
+<xmlData xsi:type="soapenc:string" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+<![CDATA[
+<Request>
+<PK_Type>
+	<Name>GET_THRESHOLD</Name>
+</PK_Type>
+<Info>
+    <FSUID>100000000000008</FSUID>
+        <DeviceList>
+        <Device/>
+        </DeviceList>
+
+</Info>
+</Request>]]]]>><![CDATA[
+</xmlData>
+</ns1:invoke>
+</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://FSUService.chinamobile.com/FSUService/invokeRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

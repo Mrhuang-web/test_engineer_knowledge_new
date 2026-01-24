@@ -1,0 +1,346 @@
+#通过mvn -Dprofile 可以启用不同环境的配置，默认default
+profile: default
+server:
+  port: 28000
+  tomcat:
+    connection-timeout: 10000
+    relaxed-path-chars: "[,]"
+    relaxed-query-chars: "[,]"
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+    web-application-type: reactive
+  codec:
+    max-in-memory-size: 100MB
+  profiles:
+    active:
+      - ${profile}
+  cache:
+    enabled: false #是否开启缓存
+    clean: false #此配置开启后，会清空spring.cache.redis.key-prefix（默认webbas-cache）配置前缀的所有缓存
+  session:
+    id:
+      transferType: unSecurityCookie
+  data:
+    redis:
+      password: 4rQJwA!KlGtzgqbA
+      host: 10.1.203.120
+      port: 6386
+      # cluster:
+      #   nodes:
+      #     - 10.1.203.121:7001
+      #     - 10.1.203.121:7002
+      #     # - 10.1.5.112:7003
+      #     # - 10.1.5.112:7004
+      #     - 10.1.5.113:7005
+      #     - 10.1.5.113:7006
+        # max-redirects: 3
+      lettuce.pool:
+        max-idle: 500  # 连接池中的最大空闲连接，默认值也是8。
+        min-idle: 50  #连接池中的最小空闲连接，默认值也是0。
+        max-active: 2000  # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+        max-wait: 1000  # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+
+#统一鉴权，安全拦截配置
+aspire:
+  webbas:
+    #    access.cache.on: false  #是否启用缓存,默认true，已弃用
+    version: v1  #webbas 管理服务ID
+    #    component:
+    #      path: support #组件服务的url配置
+    #      serviceName: webbas32-support-v1
+    auth-manager:
+      path: partner #与管理服务配置的URL一致,默认partner
+      serviceName: webbas-service #
+    #    security.path: auth #登录模块url配置项，默认webbas
+    #    session-user.from: security #session用户获取方式，可配置header,security或者不配置
+    security:
+      # path: auth
+      # permitAll:
+      #   - /**
+      #      path: auth
+      ignoring: #忽略鉴权，绕过security,主要用于静态资源
+        #- reg:^/web/partner/((?!\.ajax$).)*$
+        - /error
+        - "/content/**"
+        - /xxl-static/**
+        - /xxl/api
+        - "/skywalking-ui/**"
+        #- /skywalking/graphql
+        - /sentinel/sentinel_static/**
+        - /sentinel/admin/auth/**
+        - /grayClient/**
+        # auth-server
+        - /.well-known/openid-configuration
+        - /oauth2/authorize**
+        - /oauth2/token
+        - /oauth2/jwks
+        - /static/js/get-auth-url.js
+      permitAll: #可以不用鉴权就访问
+        - /web/partner/${aspire.webbas.version}/user/findPwdSmsCode
+        - /web/partner/${aspire.webbas.version}/user/modifyLostedPwd
+        - /web/partner/${aspire.webbas.version}/user/validateSmsCode
+        - /web/partner/${aspire.webbas.version}/user/modifyPwd
+        - /web/auth/${aspire.webbas.version}/login/verify
+        - /web/auth/${aspire.webbas.version}/login/logout
+        - /web/auth/${aspire.webbas.version}/assist/dynamicPassword
+        - /web/auth/${aspire.webbas.version}/captcha/image
+        - /web/support/${aspire.webbas.version}/domainConfig/listAll
+        - /web/support/${aspire.webbas.version}/platformConfig/getUIAppInfo
+        - /web/partner/${aspire.webbas.version}/attachment/downloadFile
+        - /web/partner/${aspire.webbas.version}/attachment/add
+        - /web/auth/v1/hideLogin
+        - /web/auth/${aspire.webbas.version}/sso/verify #单点登录校验地址
+        - /version
+        - /web/auth/v1/login/getUserRight
+        - /web/auth/v1/login/simAuth
+        - /web/auth/v1/sim/callback
+        # - /v1/provinceConfig/get
+        - /web/support/v1/dict/listAll
+        - /web/support/v1/division/listDivisionTree
+        - /v1/login/sso  #动环侧封装单点登录地址
+        - /v1/userCenter/toggleToken #用户中心密码登录
+        - /v1/login/loginByPass   #外部系统账号密码登录,各动环省份系统自己实现
+        - /v1/login/sso          #外部系统token登录,各动环省份系统自己实现
+        #webbas 升级3650p2 支持过期提醒增加配置
+        - /web/v1/user/findMobileByUserName
+        - /web/v1/user/sendSmsByMobile
+        - /web/v1/user/validSmsCode
+        - /web/v1/user/modifyPasswordByUserName
+      loginProcessingUrl:  /web/auth/${aspire.webbas.version}/login/verify #登录校验路径
+      logoutUrl: /web/auth/${aspire.webbas.version}/login/logout #spring-security登出路径
+      ignoringDomain: suppler,partner,support  #鉴权例外域，可以配多个，逗号隔开
+      logoutRedirectWithHost: false   #配置为true时，logoutRedirectUrl不需要配置http:ip:port，只需要配置相对的路径以/开头
+      logoutRedirectUrl: http://10.1.203.121:8380/spider/web/   #此参数可不配置，不配置使用默认登出重定向地址：/micrologin/#/login
+
+    # 灰度配置
+    gray:
+      ui: #页面灰度配置
+        enable: false    #是否开启
+        version: v1  #灰度版本
+        defaultVersion: ""  #灰度开关关闭，或没哟对应灰度版本时使用默认版本
+        strategy: user    #灰度策略 user 基于用户的灰度，目前仅支持用户灰度
+        condition: webbas  #灰度条件，当是用户策略时，是用户登陆名，使用英文逗号隔开
+      service: #服务灰度配置
+        enable: false #是否开启
+        version: v2 #灰度版本
+        defaultVersion: v1 #灰度开关关闭，或没哟对应灰度版本时使用默认版本
+        strategy: user #灰度策略 user 基于用户的灰度 目前仅支持用户灰度
+        condition: webbas  #灰度条件，当是用户策略时，是用户登陆名，使用英文逗号隔开
+
+    component:
+      repeatrequest:
+        enabled: true # 默认是false，如需使用防重复提交需设置为true
+        checkRepeatUrls:
+          # 不配置读取parameters的场景
+          - url: /web/partner/v1/user/updateCurrent
+            lockTime: 10
+          # 第二个防重复提交拦截的url配置
+          - url: /web/partner/v1/user/updateCurrent
+            lockTime: 10
+            parameters:
+              - $.id
+              - $.userName
+              #- $.userName[1] #若userName不是数组，会报错
+              - $.divisions[0]
+              - $.noPar2 #可以不存在改json节点
+              #- $.noPar[0]  #若noPar不存在将报错
+          # - url: /web/partner/v1/user/checkMobile
+          #   lockTime: 10
+spring.session:
+  store-type: redis
+  #redis:
+  # flush-mode: on-save
+
+spring.session.redis.namespace: webbas-dev-jdk17-dsf-sc #session缓存空间
+spring.session.timeout: 60m
+spring.cache.enabled: false
+spring.cache.redis.key-prefix: webbas-dev-jdk17-dsf-cache-sc #接口缓存空间
+aspire.webbas.redis.serializer: jackson   #支持[jdk, jackson]
+
+aspire.webbas.loginControl.enable: true #是否控制用户登陆session，默认为false
+aspire.webbas.loginControl.preventsLogin: true #达到最大登陆session，是否禁止再登陆，true：禁止再登陆 false：最后登陆成功，最早登陆失效
+aspire.webbas.loginControl.maximumSessions: 10 #最大登陆session数量
+
+
+spring.cloud:
+    loadbalancer:
+      ribbon:
+        enabled: true
+      cache:
+        enabled: true
+    gateway:
+      enabled: true
+      httpclient:
+        pool:
+          maxIdleTime: 200
+        # connect-timeout: 15000
+        # response-timeout: 20s
+      routes:
+        - id: zypt-service
+          predicates:
+            - Path=/web/zypt/**
+#            - ReadBody=T(String), @testPredicate
+          filters:
+#            - name: LogRequestBodyGatewayFilterFactory
+            - StripPrefix=0
+          uri: lb://zypt-service
+        - id: user-create
+          predicates:
+            - Path=/web/partner/v1/userOrganization/insert
+          filters:
+            - SetPath=/v1/user/insert    
+          uri: lb://composite-service-gdsc
+        - id: webbas-web-auth
+          predicates:
+            - Path=/web/**
+#            - ReadBody=T(String), @testPredicate
+          filters:
+#            - name: LogRequestBodyGatewayFilterFactory
+            - StripPrefix=0
+          uri: lb://webbas-service
+        - id: binterface
+          predicates:
+            - Path=/v1/binterfaceTest/**
+          filters:
+            - AuthenticationFilter
+          uri: lb://binterface-service       
+        - id: composite-service-gdsc
+          predicates:
+            - Path=/v1/**
+          filters:
+            - AuthenticationFilter
+          uri: lb://composite-service-gdsc
+
+
+
+
+#安全拦截组件，配置非法字符和鉴权例外白名单
+
+aspire.webbas.component.safeguarding:
+  illegalityParam:  </script,',<script,script[\s],<img,%27,and[\s],select[\s],insert[\s],exec[\s],update[\s],drop[\s],truncate[\s],declare[\s],count[\(],decode[\s],%
+  whiteList:  #白名单，List集合
+  - /xxl-static/**
+  - /xxl/**
+  - /v1/bulletin/saveSendNotice
+  - /v1/scada/saveScadaCanvas/**
+  - /v1/alerts/createColumnInfo**
+  - /v1/scada/addDeviceScadaCanvasModel**
+  - /v1/hiddenDanger/faultRule/**  
+  - /v1/currentmonitor/**
+  - /v1/energyCabinetColumn/**
+  encryptConfig: #前后端加密传输，默认不开启
+    enabled: false   #默认false不开启
+    whiteList: #免加密白名单
+  crsfConfig:
+    open: false  #是否开启crsf验证，默认false
+    checkToken: true # 是否开启验证token，默认false
+    checkReferer: false # 是否检查http_referer，默认false
+    checkHost: false #是否检查http host ，默认false
+    permitNullReferer: false #是否允许空referer 默认false
+    checkAllRequest: false # 是否检查所有请求，默认false，设置为true,checkUrlList无效。
+    tokenTimeOutMinute: 40 # token有效时间，单位分钟
+    tokenCreateCount: 15 # 每次请求返回多少个有效token
+    refererWhiteList:  #list集合，referer白名单
+      #- http://localhost:8080/
+      - http://127.0.0.1:8089/
+    hostWhiteList: # host白名单
+    checkUrlList:   #需要crsf检查的列表，checkAllRequest=true时无效
+    excludeUrlList:  #拦截例外，当开启全部请求拦截时，此项生效 ,支持url ant匹配
+    #- /web/support/v1/division/listDivisionTree
+
+aspire.webbas.component.safeguarding.eaaConfig:
+  secretKey: 15a10fc2e083446b #加密密钥
+  enable: true #是否开启eaa防护
+  signItems: # 需要签名的url及参数配置
+    - url: /web/partner/v1/user/list
+      param: [ "$.data[*].id" ]
+  verifyItems: # 需要验证签名的url及参数配置
+    - url: /web/partner/v1/user/getDesensitizationUserInfo
+      param: [ "id" ]
+    - url: /web/partner/v1/user/checkEditOrg
+      param: [ "$.id" ]
+    - url: /web/partner/v1/user/get
+      param: [ "id" ]
+    - url: /web/partner/v1/user/checkUserName
+      param: [ "userId" ]
+    # - url: /web/partner/v1/user/checkMobile
+      # param: [ "userId" ]
+    # - url: /web/partner/v1/user/checkEmail
+      # param: [ "userId" ]
+    - url: /web/partner/v1/user/update
+      param: [ "id" ]
+    - url: /web/partner/v1/user/listUserRoles
+      param: ["id"]
+    - url: /web/partner/v1/userBlacklist/listBlacklist
+      param: [ "userId" ]
+
+aspire.webbas.security.desensitization:
+  open: true #脱敏显示功能状态，true开启/false关闭
+  actions:
+    - url: /web/partner/v1/user/list
+      jsonPath: $.data[*].mobile
+      method: mobile-middle  #隐藏方法，支持通用配置common，以及特殊处理mobile-middle（隐藏手机号中间4位）、mobile-back（隐藏手机后8位）、email-front（隐藏邮箱@符号前内容）、
+      status: true  #是否启用
+    - url: /web/partner/v1/userOrganization/listPage
+      jsonPath: $.data[*].email
+      method: email-front  #隐藏方法，支持通用配置common，以及特殊处理mobile-middle（隐藏手机号中间4位）、mobile-back（隐藏手机后8位）、email-front（隐藏邮箱@符号前内容）、
+      status: true  #是否启用
+    - url: /web/partner/v1/userOrganization/listPage
+      jsonpath: $.data[*].mobile
+      method: mobile-middle
+      status: true
+    - url: /web/partner/v1/userOrganization/getDesensitizationUserInfo
+      jsonPath: $.data.email
+      method: email-front  #隐藏方法，支持通用配置common，以及特殊处理mobile-middle（隐藏手机号中间4位）、mobile-back（隐藏手机后8位）、email-front（隐藏邮箱@符号前内容）、
+      status: true  #是否启用
+    - url: /web/partner/v1/userOrganization/getDesensitizationUserInfo
+      jsonpath: $.data.mobile
+      method: mobile-middle
+      status: true
+    - url: /web/partner/v1/userOrganization/queryOrganizationUserList
+      jsonPath: $.data[*].email
+      method: email-front  #隐藏方法，支持通用配置common，以及特殊处理mobile-middle（隐藏手机号中间4位）、mobile-back（隐藏手机后8位）、email-front（隐藏邮箱@符号前内容）、
+      status: true  #是否启用
+    - url: /web/partner/v1/userOrganization/queryOrganizationUserList
+      jsonpath: $.data[*].mobile
+      method: mobile-middle
+      status: true
+    # - url: /v1/configManagement/workState/pageList
+    #   jsonpath: $.result[*].phone_number
+    #   method: mobile-middle
+    #   status: true
+    - url: /v1/alert/delayAlertRule/list
+      jsonpath: $.data[*].phone
+      method: mobile-middle
+      status: true
+    - url: /v1/alertFilter/config/pageList
+      jsonpath: $.data[*].mobile
+      method: mobile-middle
+      status: true
+    #webbas 升级3650p2 增加配置
+    - url: /web/v1/user/findMobileByUserName
+      jsonpath: $.data
+      method: mobile-middle
+      status: true
+    - url: /v1/configManagement/basicDateBuildingId
+      jsonpath: $.managerPhone
+      method: mobile-middle
+      status: true
+    - url: /v1/energySelfInspectionAcceptance/getSelfInspectionAcceptanceList
+      jsonpath: $.data[*].provinceConfirmInfo
+      method: mobile-back
+      status: true
+    - url: /v1/energySelfInspectionAcceptance/getSelfInspectionAcceptanceList
+      jsonpath: $.data[*].stationConfirmInfo
+      method: mobile-back
+      status: true
+    - url: /v1/configManagement/getPrecinctPageList
+      jsonpath: $.result[*].leaderPhone
+      method: mobile-middle
+      status: true
+    - url: /v1/configManagement/getDevicePageList
+      jsonpath: $.result[*].leaderPhone
+      method: mobile-middle
+      status: true

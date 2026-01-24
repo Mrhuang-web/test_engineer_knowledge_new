@@ -1,0 +1,61 @@
+server:
+  port: 13552
+
+##版本号
+version: /v1
+
+keycloak:
+  url: http://10.1.203.120:8180/auth
+  username: admin
+  password: GXu8kp0*4az3Eg8emLM7
+  realm: demo_realm
+
+taskCron: "0 0 1 * * ?" #密码超过3个月要求修改的定时任务的cron表达式
+
+spring: #配置mvc,resource用来处理请求404抛出NoHandlerFoundException异常
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: true #当出现404错误时,是否直接抛出异常
+  resources:
+    add-mappings: true #是否开启默认的资源处理
+
+management.security.enabled: false
+
+# 解决第一次请求报超时异常的方案：
+# hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+# 或者：
+hystrix.command.default.execution.timeout.enabled: false
+# 或者：
+#feign.hystrix.enabled: false ## 索性禁用feign的hystrix
+
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: debug
+    com.migu.tsg.microservice.atomicservice.composite.controller: debug #输出rbac-service日志
+  file: ./rbac.log ##日志文件,绝对路径或相对路径
+
+log:
+  hosts: 172.30.150.26:29200
+  userName: 123
+  password: 456
+  needAuth: true
+  maxTotalConnectionPerRoute: 1
+  maxTotalConnection: 10
+  multiThreaded: true
+  readTimeout: 200000
+    
+mybatis:
+  # mapperLocations:
+  #   - classpath*:sqlmap/*/*.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+# 跳过验证码 -  1. dev = 跳过验证码校验
+rbac:
+  codeProfileType: d

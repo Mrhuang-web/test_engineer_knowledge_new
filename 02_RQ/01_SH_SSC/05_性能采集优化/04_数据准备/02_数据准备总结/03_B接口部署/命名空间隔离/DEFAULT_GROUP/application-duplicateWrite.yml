@@ -1,0 +1,19 @@
+#双写历史数据和配置数据
+duplicate_write:
+  enable: false
+  precinct_id_prefix: 01-99  # 描述：空间节点转换字段
+  to_precinct_id_prefix: 01-01   #描述：data_source字段需要被替换的前缀
+  device_id_prefix: 999999    #描述：设备转换字段
+  space_name_suffix: (焕新)    #描述：转换名称
+  resource_code_prefix: 8888_   #描述：resource_code字段需要添加的前缀
+
+#是否通过kafka同步配置
+synModify.enableKafka: false
+
+#是否开启设备所属机房映射
+deviceRoomMapping.enable: true
+
+#是否将同名设备进行合并
+protocolConvert.deviceMerge: true
+
+roomMergerAll.enable: true

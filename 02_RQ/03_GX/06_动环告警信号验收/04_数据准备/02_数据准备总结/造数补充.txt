@@ -1,0 +1,41 @@
+# 前置配置：
+	# 市公司动力班长 							hjj 2
+	# 省级管理员								hjj 3
+	# 割接负责人     						hjj 4
+	# 市公司动力班长							hjj 5
+	# 维护负责人，工程负责人，厂商验负责人  	hjj 4，5，6
+	# 移动验收人员，厂商						hjj 7
+	# 梧州市
+# 补充
+	# 要考虑多一个栏多个验收人这种情况
+	# tab提示 - 待处理，已处理，我的发起，这里的变化也要校验
+	# 且tab页中，当前环节校验
+
+
+
+IP库申请
+	#描述1：新增表单取的是综资t_zz_space_resources，设备则是t_zz_power_device，并且需要是fsu类型的
+	#描述2：设备表中fsu的站点和机房要和t_zz_space_resources关联，这样才能选（目前已经修改了一条，下面这条）
+	#描述3：不同区域设备能关联上吗
+
+	# precinct_id:   01-07-12-04-76-01
+	# int_id         ROOM-cd86bd0e8d9342bba2f7950e47544d9c
+	# related_site   SITE-b424dcfb49064d7d8334a0118fe289ff
+	SELECT * FROM t_zz_space_resources where precinct_id is not null LIMIT 10
+	SELECT * FROM t_zz_space_resources where precinct_id is not NULL AND space_type = 102 LIMIT 10
+
+
+	# res_code     441100000000067835886082
+	# related_site 441000000000008079458722
+	# related_room 441000000000008004698902
+	SELECT * FROM t_zz_power_device WHERE device_subclass = 'FSU' LIMIT 1000
+
+
+
+动环测试申请-新增表单
+	#描述0： 造数技巧 -- 直接在已有的ip库中筛选出fsu类型的，然后直接在资源设备申请中添加即可（可能有些会造成400内部错误）
+	#描述1： 采集器就是fsu，需要在ip库中要有
+	#描述2： 这里的信息也是综资的数据
+	#描述3： 了解怎么配置来
+
+	#已有fsuip：梧州市  岑溪市  传输节点  梧州测试数据市岑城镇盛和家园业务 	梧州测试数据市岑城镇盛和家园业务综合机房

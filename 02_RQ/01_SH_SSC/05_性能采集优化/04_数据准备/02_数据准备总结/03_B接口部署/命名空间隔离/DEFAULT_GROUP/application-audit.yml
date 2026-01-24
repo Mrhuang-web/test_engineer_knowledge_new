@@ -1,0 +1,14 @@
+server:
+  port: 26166
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+
+# 陕西历史数据稽核
+fsuAudit:
+  cron: "0 41 16 * * ?"
+  dayN: 3
+  precinctIdSuffix: "01-01"
+
+version: v1

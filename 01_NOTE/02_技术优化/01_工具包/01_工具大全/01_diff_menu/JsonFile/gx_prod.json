@@ -1,0 +1,4318 @@
+{
+  "status": "200",
+  "data": {
+  "treeNodes": [
+    {
+      "id": "monitor",
+      "text": "综合监控",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "comprehensive_home",
+          "parentId": "monitor",
+          "text": "首页",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "unified_portal",
+              "parentId": "comprehensive_home",
+              "text": "个人工作台",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "visual_home",
+              "parentId": "comprehensive_home",
+              "text": "中屏首页",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "edit_pass",
+              "parentId": "comprehensive_home",
+              "text": "修改密码",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "3",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "monitor_video",
+          "parentId": "monitor",
+          "text": "图像",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "monitor_video_image_management",
+              "parentId": "monitor_video",
+              "text": "视频监控",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "monitor_actual",
+          "parentId": "monitor",
+          "text": "监控",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "monitor_actual_home",
+              "parentId": "monitor_actual",
+              "text": "监控视图",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "alarm_filter",
+          "parentId": "monitor",
+          "text": "告警",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alarm_filter_view",
+              "parentId": "alarm_filter",
+              "text": "告警视图",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "alarm_filter_view_xj",
+                  "parentId": "alarm_filter_view",
+                  "text": "消警",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alarm_filter_view_list",
+                  "parentId": "alarm_filter_view",
+                  "text": "告警视图列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "alarm_filter_view",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alarm_filter_view_gj",
+                  "parentId": "alarm_filter_view",
+                  "text": "告警确认",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "alarm_filter_config",
+              "parentId": "alarm_filter",
+              "text": "视图配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "config_picconf",
+          "parentId": "monitor",
+          "text": "拓扑",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "config_power_supply",
+              "parentId": "config_picconf",
+              "text": "供电拓扑",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "system_topo",
+              "parentId": "config_picconf",
+              "text": "网络拓扑",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_picconf_evaluation",
+              "parentId": "config_picconf",
+              "text": "拓扑评估",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "config_picconf_evaluation_config",
+                  "parentId": "config_picconf_evaluation",
+                  "text": "层级稽核规则配置",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "config_picconf_evaluation_list",
+                  "parentId": "config_picconf_evaluation",
+                  "text": "拓扑评估列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "alarm",
+      "text": "告警管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "alarm_config",
+          "parentId": "alarm",
+          "text": "告警管理",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alarm_config_shield",
+              "parentId": "alarm_config",
+              "text": "工程屏蔽",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "alarm_notice",
+          "parentId": "alarm",
+          "text": "通知",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alarm_notice_voice",
+              "parentId": "alarm_notice",
+              "text": "语音配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "alarm_notice_message",
+              "parentId": "alarm_notice",
+              "text": "短信配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "alarm_notice_email",
+              "parentId": "alarm_notice",
+              "text": "邮件配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": false,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "device",
+      "text": "运行分析",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "device_electric_supply",
+          "parentId": "device",
+          "text": "市电",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "city_power_cut_config",
+              "parentId": "device_electric_supply",
+              "text": "市电停电配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "city_power_cut_analysis",
+              "parentId": "device_electric_supply",
+              "text": "市电停电分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device_electricity",
+          "parentId": "device",
+          "text": "配电",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "device_electricity_three_phase",
+              "parentId": "device_electricity",
+              "text": "不平衡度分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device_cabinet",
+          "parentId": "device",
+          "text": "机柜",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "config_space_cabinet",
+              "parentId": "device_cabinet",
+              "text": "机柜管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "cabinet_cabinet_add",
+                  "parentId": "config_space_cabinet",
+                  "text": "新增机柜",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_add",
+                  "parentId": "config_space_cabinet",
+                  "text": "新增机柜列",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_edit",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-批量编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_edit",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-批量编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_config",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-配置机柜",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_delete",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_exprot",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-全部导出",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_import",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-导入",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_delete",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_exprot",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-全部导出",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_import",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-导入",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_import_log",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-导入日志",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_import_log",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-导入日志",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_cabinet_relationship",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜-配置用电关系",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_relationship",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-配置用电关系",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "cabinet_columns_exprot_template",
+                  "parentId": "config_space_cabinet",
+                  "text": "机柜列-导出模板",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_cabinet_report",
+              "parentId": "device_cabinet",
+              "text": "机柜报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_space_cabinet_view",
+              "parentId": "device_cabinet",
+              "text": "机柜视图",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "cabinet_view",
+              "parentId": "device_cabinet",
+              "text": "机柜可视化",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "maintain_deep_info",
+          "parentId": "device",
+          "text": "温度",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "maintain_deep_tem",
+              "parentId": "maintain_deep_info",
+              "text": "温度分析",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "maintain_deep_tem_wdcd_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "温度测点",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_wdcd_edit",
+                      "parentId": "maintain_deep_tem_wdcd_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_deep_tem_wdcd_import",
+                      "parentId": "maintain_deep_tem_wdcd_tab",
+                      "text": "导入",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_deep_tem_wdcd",
+                      "parentId": "maintain_deep_tem_wdcd_tab",
+                      "text": "温度测点列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_wdcd_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_deep_tem_wdmx_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "温度明细",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_wdmx_edit",
+                      "parentId": "maintain_deep_tem_wdmx_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_deep_tem_wdmx",
+                      "parentId": "maintain_deep_tem_wdmx_tab",
+                      "text": "温度明细列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_wdmx_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_deep_tem_jfdwbz_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "机房低温备注",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_jfdwbz_edit",
+                      "parentId": "maintain_deep_tem_jfdwbz_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_deep_tem_jfdwbz",
+                      "parentId": "maintain_deep_tem_jfdwbz_tab",
+                      "text": "机房低温备注列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_jfdwbz_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_deep_tem_jfgwbz_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "机房高温备注",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_jfgwbz_edit",
+                      "parentId": "maintain_deep_tem_jfgwbz_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_deep_tem_jfgwbz",
+                      "parentId": "maintain_deep_tem_jfgwbz_tab",
+                      "text": "机房高温备注列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_jfgwbz_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_deep_tem_jfwdfx_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "机房温度分析",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_jfwdfx",
+                      "parentId": "maintain_deep_tem_jfwdfx_tab",
+                      "text": "机房温度分析列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_jfwdfx_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_deep_tem_wdsjjh_tab",
+                  "parentId": "maintain_deep_tem",
+                  "text": "温度数据稽核",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_deep_tem_wdsjjh",
+                      "parentId": "maintain_deep_tem_wdsjjh_tab",
+                      "text": "温度数据稽核列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_deep_tem_wdsjjh_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device_static",
+          "parentId": "device",
+          "text": "数据",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "device_static_data_audit",
+              "parentId": "device_static",
+              "text": "有效性稽核",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "device_static_data_audit_tab",
+                  "parentId": "device_static_data_audit",
+                  "text": "稽核规则设置",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "device_static_data_batchedit",
+                      "parentId": "device_static_data_audit_tab",
+                      "text": "批量编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device_static_data_audit_list",
+                      "parentId": "device_static_data_audit_tab",
+                      "text": "有效性稽核列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device_static_data_audit_tab",
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device_static_data_delete",
+                      "parentId": "device_static_data_audit_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device_static_data_import",
+                      "parentId": "device_static_data_audit_tab",
+                      "text": "导入",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "device_static_data_audit_signalData_tab",
+                  "parentId": "device_static_data_audit",
+                  "text": "信号稽核详情表Tab",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "device_static_data_audit_signalData_list",
+                      "parentId": "device_static_data_audit_signalData_tab",
+                      "text": "信号稽核详情表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device_static_data_audit_signalData_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "device_static_data_equipmentStatistics_tab",
+                  "parentId": "device_static_data_audit",
+                  "text": "设备完整性统计表Tab",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "device_static_data_audit_equipmentStatistics_list",
+                      "parentId": "device_static_data_equipmentStatistics_tab",
+                      "text": "设备完整性统计表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device_static_data_equipmentStatistics_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "device_static_data_audit_cityStatistics_tab",
+                  "parentId": "device_static_data_audit",
+                  "text": "地市统计表Tab",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "device_static_data_audit_cityStatistics_list",
+                      "parentId": "device_static_data_audit_cityStatistics_tab",
+                      "text": "地市统计表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device_static_data_audit_cityStatistics_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "maintain_dict_report",
+              "parentId": "device_static",
+              "text": "字典表维护",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "maintain_dict_report_alarm_tab",
+                  "parentId": "maintain_dict_report",
+                  "text": "告警字典表",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_dict_report_alarm_add",
+                      "parentId": "maintain_dict_report_alarm_tab",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_alarm_import",
+                      "parentId": "maintain_dict_report_alarm_tab",
+                      "text": "导入",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_alarm_edit",
+                      "parentId": "maintain_dict_report_alarm_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_alarm_delete",
+                      "parentId": "maintain_dict_report_alarm_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_alarm",
+                      "parentId": "maintain_dict_report_alarm_tab",
+                      "text": "告警字典表列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_dict_report_alarm_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_dict_report_signal_tab",
+                  "parentId": "maintain_dict_report",
+                  "text": "信号字典表",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_dict_report_signal_add",
+                      "parentId": "maintain_dict_report_signal_tab",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_signal_import",
+                      "parentId": "maintain_dict_report_signal_tab",
+                      "text": "导入",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_signal_edit",
+                      "parentId": "maintain_dict_report_signal_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_signal_delete",
+                      "parentId": "maintain_dict_report_signal_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_dict_report_signal",
+                      "parentId": "maintain_dict_report_signal_tab",
+                      "text": "信号字典表列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_dict_report_signal_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "zz_device_match_report",
+              "parentId": "device_static",
+              "text": "动环设备与综资关联报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "report_report",
+          "parentId": "device",
+          "text": "报表",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alarm_report",
+              "parentId": "report_report",
+              "text": "告警报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "history_report",
+              "parentId": "report_report",
+              "text": "性能数据报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "resource_report",
+              "parentId": "report_report",
+              "text": "资源数据报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "report_report_out",
+              "parentId": "report_report",
+              "text": "自定义查询",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "device2",
+      "text": "设备管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "device_battery",
+          "parentId": "device2",
+          "text": "蓄电池",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "device_battery_data",
+              "parentId": "device_battery",
+              "text": "蓄电池分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device_fsu",
+          "parentId": "device2",
+          "text": "FSU",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "device_fsu_performance_monitoring",
+              "parentId": "device_fsu",
+              "text": "FSU分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device_ups",
+          "parentId": "device2",
+          "text": "UPS",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "ups_efficiency",
+              "parentId": "device_ups",
+              "text": "UPS效率",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "ups_efficiency_list",
+                  "parentId": "ups_efficiency",
+                  "text": "UPS效率列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "ups_efficiency",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "ups_efficiency_remark",
+                  "parentId": "ups_efficiency",
+                  "text": "备注",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "hidden_danger",
+          "parentId": "device2",
+          "text": "隐患",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "hidden_danger_rule_config",
+              "parentId": "hidden_danger",
+              "text": "隐患配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "hidden_danger_rule_config_list",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "隐患配置列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "hidden_danger_rule_config",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_rule_config_sx",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "是否生效",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_rule_config_ts",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "是否推送",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_rule_config_copy",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "复制",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_rule_config_edit",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_rule_config_delete",
+                  "parentId": "hidden_danger_rule_config",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "hidden_danger_data",
+              "parentId": "hidden_danger",
+              "text": "隐患统计",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "hidden_danger_data_timeTable_tab",
+                  "parentId": "hidden_danger_data",
+                  "text": "实时隐患",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "hidden_danger_data_timeTable_delete",
+                      "parentId": "hidden_danger_data_timeTable_tab",
+                      "text": "消除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "hidden_danger_data_timeTable",
+                      "parentId": "hidden_danger_data_timeTable_tab",
+                      "text": "实时隐患列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "hidden_danger_data_timeTable_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_data_historical_tab",
+                  "parentId": "hidden_danger_data",
+                  "text": "历史隐患",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "hidden_danger_data_historical",
+                      "parentId": "hidden_danger_data_historical_tab",
+                      "text": "历史隐患列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "hidden_danger_data_historical_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "hidden_danger_config",
+              "parentId": "hidden_danger",
+              "text": "故障配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "hidden_danger_config_sx",
+                  "parentId": "hidden_danger_config",
+                  "text": "是否生效",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_ts",
+                  "parentId": "hidden_danger_config",
+                  "text": "是否推送",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_add",
+                  "parentId": "hidden_danger_config",
+                  "text": "新增",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_copy",
+                  "parentId": "hidden_danger_config",
+                  "text": "复制",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_edit",
+                  "parentId": "hidden_danger_config",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_delete",
+                  "parentId": "hidden_danger_config",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_list",
+                  "parentId": "hidden_danger_config",
+                  "text": "故障配置列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "hidden_danger_config",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "hidden_danger_config_manage",
+              "parentId": "hidden_danger",
+              "text": "故障统计",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "hidden_danger_config_manage_timeTable_tab",
+                  "parentId": "hidden_danger_config_manage",
+                  "text": "实时隐患",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "hidden_danger_config_manage_timeTable_delete",
+                      "parentId": "hidden_danger_config_manage_timeTable_tab",
+                      "text": "消除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "hidden_danger_config_manage_timeTable",
+                      "parentId": "hidden_danger_config_manage_timeTable_tab",
+                      "text": "实时隐患列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "hidden_danger_config_manage_timeTable_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "hidden_danger_config_manage_historical_tab",
+                  "parentId": "hidden_danger_config_manage",
+                  "text": "历史隐患",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "hidden_danger_config_manage_historical",
+                      "parentId": "hidden_danger_config_manage_historical_tab",
+                      "text": "历史隐患列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "hidden_danger_config_manage_historical_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "maintain_inspect_manage",
+          "parentId": "device2",
+          "text": "巡检",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "maintain_inspect_rule",
+              "parentId": "maintain_inspect_manage",
+              "text": "巡检配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "maintain_inspect_rule_fsu",
+                  "parentId": "maintain_inspect_rule",
+                  "text": "FSU巡检",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_inspect_rule_fsu_add",
+                      "parentId": "maintain_inspect_rule_fsu",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_fsu_del",
+                      "parentId": "maintain_inspect_rule_fsu",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_fsu_edit",
+                      "parentId": "maintain_inspect_rule_fsu",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_fsu_list",
+                      "parentId": "maintain_inspect_rule_fsu",
+                      "text": "FSU巡检列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_inspect_rule_fsu",
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_fsu_start",
+                      "parentId": "maintain_inspect_rule_fsu",
+                      "text": "启用",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_inspect_rule_deviceStatus",
+                  "parentId": "maintain_inspect_rule",
+                  "text": "设备状态巡检",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_add",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_del",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_edit",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_list",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "设备状态巡检列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "maintain_inspect_rule_deviceStatus",
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_start",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "启用",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "maintain_inspect_rule_deviceStatus_detail",
+                      "parentId": "maintain_inspect_rule_deviceStatus",
+                      "text": "查看",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "maintain_inspect_result",
+              "parentId": "maintain_inspect_manage",
+              "text": "巡检统计",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "energy",
+      "text": "能耗管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "alarm_filter_view07",
+          "parentId": "energy",
+          "text": "能耗视图",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "energy_view_yeardata",
+              "parentId": "alarm_filter_view07",
+              "text": "能耗看板",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_station_view",
+              "parentId": "alarm_filter_view07",
+              "text": "机楼视图",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "energy_config",
+          "parentId": "energy",
+          "text": "能耗配置",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "energy_config_relate",
+              "parentId": "energy_config",
+              "text": "用电关系配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_self_inspection_acceptance",
+              "parentId": "energy_config",
+              "text": "能耗自查验收",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "acceptance_inspection_detail_tab",
+                  "parentId": "energy_self_inspection_acceptance",
+                  "text": "自查验收明细",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "acceptance_inspection_detail",
+                      "parentId": "acceptance_inspection_detail_tab",
+                      "text": "自查验收明细列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "acceptance_inspection_detail_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "acceptance_inspection_record_tab",
+                  "parentId": "energy_self_inspection_acceptance",
+                  "text": "能耗配置变更记录",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "acceptance_inspection_record",
+                      "parentId": "acceptance_inspection_record_tab",
+                      "text": "能耗配置变更记录列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "acceptance_inspection_record_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "acceptance_inspection_statistics_tab",
+                  "parentId": "energy_self_inspection_acceptance",
+                  "text": "自查验收统计",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "acceptance_inspection_statistics",
+                      "parentId": "acceptance_inspection_statistics_tab",
+                      "text": "自查验收统计列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "acceptance_inspection_statistics_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "energy_report",
+          "parentId": "energy",
+          "text": "能耗报表",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "energy_statistical_analysis",
+              "parentId": "energy_report",
+              "text": "能耗统计报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_report_site",
+              "parentId": "energy_report",
+              "text": "站点能耗报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_report_room",
+              "parentId": "energy_report",
+              "text": "机房能耗报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_report_month",
+              "parentId": "energy_report",
+              "text": "月度统计报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_report_device",
+              "parentId": "energy_report",
+              "text": "电表能耗报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_audit_report",
+              "parentId": "energy_report",
+              "text": "能耗数据稽核",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_audit_estimate",
+              "parentId": "energy_report",
+              "text": "能耗稽核估算",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "energy_audit_statistics_report",
+              "parentId": "energy_report",
+              "text": "能耗稽核报表",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "capacity",
+      "text": "容量管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "capacity_config",
+          "parentId": "capacity",
+          "text": "容量配置",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "capacity_view_scheme",
+              "parentId": "capacity_config",
+              "text": "容量方案配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "plan_del",
+                  "parentId": "capacity_view_scheme",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "plan_edit",
+                  "parentId": "capacity_view_scheme",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "alarm_filter_view08",
+          "parentId": "capacity",
+          "text": "容量视图",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "capacity_view_overview",
+              "parentId": "alarm_filter_view08",
+              "text": "容量概览",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "capacity_report",
+          "parentId": "capacity",
+          "text": "容量分析",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "capacity_report_transformer",
+              "parentId": "capacity_report",
+              "text": "变压器",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "capacity_report_switch",
+              "parentId": "capacity_report",
+              "text": "开关电源",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "capacity_report_ups",
+              "parentId": "capacity_report",
+              "text": "UPS",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "capacity_report_high_voltage",
+              "parentId": "capacity_report",
+              "text": "高压直流电源",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "capacity_report_warn",
+              "parentId": "capacity_report",
+              "text": "容量预警信息统计",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "relation": "",
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "capacity_expansion",
+          "parentId": "capacity",
+          "text": "容量评估",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "capacity_electric_estimate",
+              "parentId": "capacity_expansion",
+              "text": "用电评估",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "maintain",
+      "text": "运维管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "maintain_view",
+          "parentId": "maintain",
+          "text": "运维视图",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "bpmShow",
+              "parentId": "maintain_view",
+              "text": "流程概览",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "report_report09",
+          "parentId": "maintain",
+          "text": "月报",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "maintain_monthly_report",
+              "parentId": "report_report09",
+              "text": "动环月报填报",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "maintain_monthly_check",
+              "parentId": "report_report09",
+              "text": "动环月报核查",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "deep_analysis",
+          "parentId": "maintain",
+          "text": "深度分析",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "entrance_guard_analysis",
+              "parentId": "deep_analysis",
+              "text": "机房门常开分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "maintain_network_manage",
+          "parentId": "maintain",
+          "text": "IP",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "maintain_network_ipapply",
+              "parentId": "maintain_network_manage",
+              "text": "IP申请",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "maintain_network_ip",
+              "parentId": "maintain_network_manage",
+              "text": "IP库管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "maintain_network_ip_list",
+                  "parentId": "maintain_network_ip",
+                  "text": "IP库管理列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "maintain_network_ip",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_network_ip_import",
+                  "parentId": "maintain_network_ip",
+                  "text": "导入",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_network_ip_edit",
+                  "parentId": "maintain_network_ip",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "maintain_network_ip_delete",
+                  "parentId": "maintain_network_ip",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "network_acceptance_bpm",
+          "parentId": "maintain",
+          "text": "验收",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "network_acceptance_bpm_flow",
+              "parentId": "network_acceptance_bpm",
+              "text": "动环验收申请",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "network_acceptance_bpm_model",
+              "parentId": "network_acceptance_bpm",
+              "text": "验收模板管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "network_acceptance_bpm_model_add",
+                  "parentId": "network_acceptance_bpm_model",
+                  "text": "新增",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "network_acceptance_bpm_model_list",
+                  "parentId": "network_acceptance_bpm_model",
+                  "text": "验收模板管理列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "network_acceptance_bpm_model",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "network_acceptance_bpm_model_edit",
+                  "parentId": "network_acceptance_bpm_model",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "network_acceptance_bpm_model_delete",
+                  "parentId": "network_acceptance_bpm_model",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "alter_network_accept_bpm",
+          "parentId": "maintain",
+          "text": "测试",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alter_network_accept_bpm_signal",
+              "parentId": "alter_network_accept_bpm",
+              "text": "动环测试申请",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "alter_network_accept_bpm_model",
+              "parentId": "alter_network_accept_bpm",
+              "text": "测试模板管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "alter_network_accept_bpm_model_add",
+                  "parentId": "alter_network_accept_bpm_model",
+                  "text": "新增",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alter_network_accept_bpm_model_list",
+                  "parentId": "alter_network_accept_bpm_model",
+                  "text": "测试模板管理列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "alter_network_accept_bpm_model",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alter_network_accept_bpm_model_edit",
+                  "parentId": "alter_network_accept_bpm_model",
+                  "text": "编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alter_network_accept_bpm_model_delete",
+                  "parentId": "alter_network_accept_bpm_model",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "alter_network_accept_split",
+          "parentId": "maintain",
+          "text": "割接",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "alter_network_accept_bpm_management",
+              "parentId": "alter_network_accept_split",
+              "text": "动环割接申请",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "split-add-approve",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "发起割接申请",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "alter_network_accept_bpm_management_list",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "动环割接申请列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "alter_network_accept_bpm_management",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "add-join-web",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "新增入网",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "site-out-web",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "站点退网",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "edit-join-web",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "调整入网",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "device-out-web",
+                  "parentId": "alter_network_accept_bpm_management",
+                  "text": "设备退网",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "device2_agreement",
+          "parentId": "maintain",
+          "text": "协议库",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "device2_agreement_apporve",
+              "parentId": "device2_agreement",
+              "text": "协议入库申请",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "device2_agreement_info_package",
+              "parentId": "device2_agreement",
+              "text": "协议库管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "device2_agreement_info_package_list",
+                  "parentId": "device2_agreement_info_package",
+                  "text": "协议库管理列表",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "relation": "device2_agreement_info_package",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "device2_agreement_info_package_del",
+                  "parentId": "device2_agreement_info_package",
+                  "text": "删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "device2_agreement_info_package_change",
+                  "parentId": "device2_agreement_info_package",
+                  "text": "变更申请",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "bpm",
+      "text": "流程管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "alarm_filter_view011",
+          "parentId": "bpm",
+          "text": "视图",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "bpmWork",
+              "parentId": "alarm_filter_view011",
+              "text": "工作台",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "bpm_manage_home",
+              "parentId": "alarm_filter_view011",
+              "text": "流程配置",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": false,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "resource",
+      "text": "资源资产",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "resource_update",
+          "parentId": "resource",
+          "text": "更新改造",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "valid_overdue_device_detail",
+              "parentId": "resource_update",
+              "text": "超期服役统计",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "risk_grade_remould_report",
+              "parentId": "resource_update",
+              "text": "设备风险分析",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "risk_grade_remould_config",
+              "parentId": "resource_update",
+              "text": "风险策略配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "device2_riskLevel_deploy_alarm_tab",
+                  "parentId": "risk_grade_remould_config",
+                  "text": "告警风险等级",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "deploy_alarm_sx",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "生效",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_alarm_add",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_alarm_copy",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "复制",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_alarm_batchedit",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_alarm_delete",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device2_riskLevel_deploy_alarm",
+                      "parentId": "device2_riskLevel_deploy_alarm_tab",
+                      "text": "告警风险等级列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device2_riskLevel_deploy_alarm_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "device2_riskLevel_deploy_repair_tab",
+                  "parentId": "risk_grade_remould_config",
+                  "text": "维修风险等级",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "deploy_repair_sx",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "生效",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_repair_add",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_repair_copy",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "复制",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_repair_batchedit",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_repair_delete",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device2_riskLevel_deploy_repair",
+                      "parentId": "device2_riskLevel_deploy_repair_tab",
+                      "text": "维修风险等级列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device2_riskLevel_deploy_repair_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                },
+                {
+                  "id": "device2_riskLevel_deploy_overdue_tab",
+                  "parentId": "risk_grade_remould_config",
+                  "text": "超期服役风险等级",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "deploy_overdue_sx",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "生效",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_overdue_add",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "新增",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_overdue_copy",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "复制",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_overdue_batchedit",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "编辑",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "deploy_overdue_delete",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "删除",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "device2_riskLevel_deploy_overdue",
+                      "parentId": "device2_riskLevel_deploy_overdue_tab",
+                      "text": "超期服役风险等级列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": true,
+                      "relation": "device2_riskLevel_deploy_overdue_tab",
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": true,
+                  "type": "2",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "config_basic",
+          "parentId": "resource",
+          "text": "数据维护",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "config_basic_sys",
+              "parentId": "config_basic",
+              "text": "系统维护",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_basic_device",
+              "parentId": "config_basic",
+              "text": "设备维护",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_basic_batch_maintenance",
+              "parentId": "config_basic",
+              "text": "批量维护",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_basic_buildingmapping",
+              "parentId": "config_basic",
+              "text": "机楼映射",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_basic_buildingdevice",
+              "parentId": "config_basic",
+              "text": "机楼关键设备",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "config",
+      "text": "配置",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "config_space",
+          "parentId": "config",
+          "text": "空间与视图",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "config_space_conf",
+              "parentId": "config_space",
+              "text": "空间",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_space_view",
+              "parentId": "config_space",
+              "text": "视图",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "config_tool",
+          "parentId": "config",
+          "text": "工具",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "config_tool_sys",
+              "parentId": "config_tool",
+              "text": "导入平台信息",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_tool_area",
+              "parentId": "config_tool",
+              "text": "导入机楼信息",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_tool_picture",
+              "parentId": "config_tool",
+              "text": "导出拓扑",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_tool_alert",
+              "parentId": "config_tool",
+              "text": "告警稽核",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_tool_backfile",
+              "parentId": "config_tool",
+              "text": "数据备份",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "config_tool_mete",
+              "parentId": "config_tool",
+              "text": "信号标准化",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    },
+    {
+      "id": "system",
+      "text": "系统管理",
+      "expanded": false,
+      "leaf": false,
+      "canEdit": true,
+      "children": [
+        {
+          "id": "system_authority",
+          "parentId": "system",
+          "text": "权限管理",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "system_authority_data",
+              "parentId": "system_authority",
+              "text": "数据权限",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "wb_0201_01",
+          "parentId": "system",
+          "text": "用户角色管理",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "wb_100101",
+              "parentId": "wb_0201_01",
+              "text": "机构成员管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_100102",
+                  "parentId": "wb_100101",
+                  "text": "查询",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_100110",
+                      "parentId": "wb_100102",
+                      "text": "查询用户角色列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100113",
+                      "parentId": "wb_100102",
+                      "text": "获取用户机构列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100114",
+                      "parentId": "wb_100102",
+                      "text": "获取机构详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100115",
+                      "parentId": "wb_100102",
+                      "text": "查询机构部门树信息",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100116",
+                      "parentId": "wb_100102",
+                      "text": "获取部门详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100126",
+                      "parentId": "wb_100102",
+                      "text": "接收信息配置",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100127",
+                      "parentId": "wb_100102",
+                      "text": "获取接收信息配置详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_100130",
+                      "parentId": "wb_100102",
+                      "text": "查询用户详情(脱敏)",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100103",
+                  "parentId": "wb_100101",
+                  "text": "编辑成员",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_10010301",
+                      "parentId": "wb_100103",
+                      "text": "查询用户详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100105",
+                  "parentId": "wb_100101",
+                  "text": "删除成员",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100106",
+                  "parentId": "wb_100101",
+                  "text": "账号配置角色",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100108",
+                  "parentId": "wb_100101",
+                  "text": "启用/禁用用户",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_100104",
+                      "parentId": "wb_100108",
+                      "text": "禁用成员",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100118",
+                  "parentId": "wb_100101",
+                  "text": "重置密码",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100119",
+                  "parentId": "wb_100101",
+                  "text": "新增用户信息",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100122",
+                  "parentId": "wb_100101",
+                  "text": "导出用户信息",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100123",
+                  "parentId": "wb_100101",
+                  "text": "导出用户权限信息",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100124",
+                  "parentId": "wb_100101",
+                  "text": "解锁锁定用户",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100125",
+                  "parentId": "wb_100101",
+                  "text": "查询账号登录日志",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100128",
+                  "parentId": "wb_100101",
+                  "text": "检查用户邮箱是否被使用",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100129",
+                  "parentId": "wb_100101",
+                  "text": "检查手机号是否被使用",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100131",
+                  "parentId": "wb_100101",
+                  "text": "查询用户是否存在",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_100140",
+                  "parentId": "wb_100101",
+                  "text": "修改当前账户密码",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_100102",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "wb_070101",
+              "parentId": "wb_0201_01",
+              "text": "机构角色管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_070103",
+                  "parentId": "wb_070101",
+                  "text": "查询",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_070104",
+                  "parentId": "wb_070101",
+                  "text": "新增角色",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_070103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_070105",
+                  "parentId": "wb_070101",
+                  "text": "编辑角色",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_070103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_070106",
+                  "parentId": "wb_070101",
+                  "text": "删除角色",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_070103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_070107",
+                  "parentId": "wb_070101",
+                  "text": "角色分配权限",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_070109",
+                      "parentId": "wb_070107",
+                      "text": "角色权限列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_070103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_070108",
+                  "parentId": "wb_070101",
+                  "text": "导出",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_070103",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "wb_090101",
+              "parentId": "wb_0201_01",
+              "text": "本机构管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_090102",
+                  "parentId": "wb_090101",
+                  "text": "获取机构所属角色和用户信息",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_090108",
+                  "parentId": "wb_090101",
+                  "text": "账号配置角色",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_090102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_090117",
+                  "parentId": "wb_090101",
+                  "text": "新增部门",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_090102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_090118",
+                  "parentId": "wb_090101",
+                  "text": "编辑部门",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_090102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_090119",
+                  "parentId": "wb_090101",
+                  "text": "删除部门",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_090102",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_090120",
+                  "parentId": "wb_090101",
+                  "text": "新增成员",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_090102",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "process_role_confige",
+              "parentId": "wb_0201_01",
+              "text": "流程角色配置",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "roleAssignment_add",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色分配-新增账号",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleManagement_add",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色管理-新增",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleManagement_del",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色管理-删除",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleAssignment_edit",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色分配-编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleManagement_edit",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色管理-编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleAssignment_reset",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色分配-重置",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "roleManagement_batchEdit",
+                  "parentId": "process_role_confige",
+                  "text": "流程角色管理-批量编辑",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": true,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": true,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": true,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "wb_080101",
+          "parentId": "system",
+          "text": "资源管理",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "wb_080102",
+              "parentId": "wb_080101",
+              "text": "资源列表",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_080103",
+                  "parentId": "wb_080102",
+                  "text": "获取资源列表",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_080104",
+                      "parentId": "wb_080103",
+                      "text": "查询资源详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080105",
+                  "parentId": "wb_080102",
+                  "text": "添加资源",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_080110",
+                      "parentId": "wb_080105",
+                      "text": "添加数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_080103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080106",
+                  "parentId": "wb_080102",
+                  "text": "修改资源",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_080116",
+                      "parentId": "wb_080106",
+                      "text": "添加数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_080103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080107",
+                  "parentId": "wb_080102",
+                  "text": "删除资源",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_080103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080108",
+                  "parentId": "wb_080102",
+                  "text": "资源导出",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_080103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080109",
+                  "parentId": "wb_080102",
+                  "text": "更改资源状态",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_080103",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "wb_080111",
+              "parentId": "wb_080101",
+              "text": "资源历史列表",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_080112",
+                  "parentId": "wb_080111",
+                  "text": "获取资源历史列表",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_080113",
+                      "parentId": "wb_080112",
+                      "text": "获取资源列表",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_080114",
+                      "parentId": "wb_080112",
+                      "text": "资源管理历史详情",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "3",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_080115",
+                  "parentId": "wb_080111",
+                  "text": "历史导出",
+                  "expanded": false,
+                  "leaf": true,
+                  "canEdit": true,
+                  "checked": false,
+                  "relation": "wb_080112",
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        },
+        {
+          "id": "system_log",
+          "parentId": "system",
+          "text": "日志管理",
+          "expanded": false,
+          "leaf": false,
+          "canEdit": true,
+          "children": [
+            {
+              "id": "system_log_system",
+              "parentId": "system_log",
+              "text": "系统日志",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "wb_050101",
+              "parentId": "system_log",
+              "text": "日志管理",
+              "expanded": false,
+              "leaf": false,
+              "canEdit": true,
+              "children": [
+                {
+                  "id": "wb_050102",
+                  "parentId": "wb_050101",
+                  "text": "导出",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_050108",
+                      "parentId": "wb_050102",
+                      "text": "全量数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "6",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_050109",
+                      "parentId": "wb_050102",
+                      "text": "机构数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "6",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "relation": "wb_050103",
+                  "type": "3",
+                  "disabled": false
+                },
+                {
+                  "id": "wb_050103",
+                  "parentId": "wb_050101",
+                  "text": "查询",
+                  "expanded": false,
+                  "leaf": false,
+                  "canEdit": true,
+                  "children": [
+                    {
+                      "id": "wb_050106",
+                      "parentId": "wb_050103",
+                      "text": "机构数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "6",
+                      "disabled": false
+                    },
+                    {
+                      "id": "wb_050107",
+                      "parentId": "wb_050103",
+                      "text": "全量数据权限",
+                      "expanded": false,
+                      "leaf": true,
+                      "canEdit": true,
+                      "checked": false,
+                      "type": "6",
+                      "disabled": false
+                    }
+                  ],
+                  "checked": false,
+                  "type": "3",
+                  "disabled": false
+                }
+              ],
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "system_log_operation",
+              "parentId": "system_log",
+              "text": "操作日志",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            },
+            {
+              "id": "system_notice_manage",
+              "parentId": "system_log",
+              "text": "通知管理",
+              "expanded": false,
+              "leaf": true,
+              "canEdit": true,
+              "checked": false,
+              "type": "1",
+              "disabled": false
+            }
+          ],
+          "checked": false,
+          "type": "1",
+          "disabled": false
+        }
+      ],
+      "checked": true,
+      "type": "1",
+      "disabled": false
+    }
+  ],
+  "rightExtends": {}
+}
+}

@@ -1,0 +1,43 @@
+# 查看有三种设备类型的站点信息
+SELECT * FROM t_cfg_dict WHERE col_name = 'device_type';
+SELECT 
+	device.device_id,
+	device.device_name,
+	device.device_model,
+	device.precinct_id,
+	room.precinct_name,
+	site.precinct_name,
+	city.precinct_name,
+	province.precinct_name 
+	FROM t_cfg_device device
+	JOIN t_cfg_precinct room ON device.precinct_id = room.precinct_id AND CHAR_LENGTH(room.precinct_id) < 18
+	JOIN t_cfg_precinct site ON room.up_precinct_id = site.precinct_id
+	JOIN t_cfg_precinct county ON site.up_precinct_id = county.precinct_id 
+	JOIN t_cfg_precinct city ON county.up_precinct_id = city.precinct_id  
+	JOIN t_cfg_precinct province ON city.up_precinct_id = province.precinct_id  
+	WHERE 
+		device.device_type IN (92,1,2) LIMIT 1000;
+
+SELECT 
+	device.device_id,
+	device.device_name,
+	device.device_model,
+	device.precinct_id,
+	room.precinct_name,
+	building.precinct_name,
+	site.precinct_name,
+	city.precinct_name,
+	province.precinct_name 
+	FROM t_cfg_device device
+	JOIN t_cfg_precinct room ON device.precinct_id = room.precinct_id AND CHAR_LENGTH(room.precinct_id) > 18
+	JOIN t_cfg_precinct building ON room.up_precinct_id = building.precinct_id
+	JOIN t_cfg_precinct site ON building.up_precinct_id = site.precinct_id
+	JOIN t_cfg_precinct county ON site.up_precinct_id = county.precinct_id 
+	JOIN t_cfg_precinct city ON county.up_precinct_id = city.precinct_id  
+	JOIN t_cfg_precinct province ON city.up_precinct_id = province.precinct_id  
+	WHERE 
+		device.device_type IN (92,1,2) LIMIT 50;
+		
+SELECT * FROM t_cfg_precinct WHERE device_model = '00001008000000123668';		
+SELECT * FROM t_cfg_device WHERE device_model = '00001008000000123668';
+SELECT * FROM t_cfg_metemodel_detail WHERE model_id = '00001008000000123668';

@@ -1,0 +1,2 @@
+生成数据库表结构换成model
+sqlacodegen "mysql+pymysql://root:nZ0qJ8kA1aI9@10.1.203.38:3306/cinterdb_400"?charset=utf8>models400.py

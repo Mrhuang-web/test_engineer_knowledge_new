@@ -1,0 +1,41 @@
+1、oa密码修改
+	关联wifi
+	
+2、邮箱注册
+	需要用外网进行修改
+
+
+【IP映射】
+	使用前提：
+		需要先配置C:\Windows\System32\drivers\etc\hosts
+	
+		# 正式环境
+		10.1.203.130 cicd.devops.aspire.com
+		#10.1.203.127 jenkins-prod-master-01.aspirecn.com 
+		10.1.4.72 jenkins-prod-master-01.aspirecn.com 
+		10.1.203.128 jenkins-prod-master-02.aspirecn.com 
+		10.1.203.131 nexus3.cicd.aspirecn.com 
+		#10.1.203.131 sonar.cicd.aspirecn.com 
+		10.1.4.148 sonar.cicd.aspirecn.com 
+		10.1.6.54 prod-nexus3.cicd.aspirecn.com
+
+
+3、svn申请
+
+4、wiki申请
+
+5、卓效云
+
+6、研发云
+	项目权限申请【关乎需求，提bug等】
+	
+7、白名单开通
+	集团、上海网址等
+	fsu、c接口
+	nacos、数据库、cicd
+
+8、系统账号注册
+
+9、oa加班打车申请
+
+10、蓝湖授权

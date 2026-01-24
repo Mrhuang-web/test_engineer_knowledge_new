@@ -1,0 +1,211 @@
+# base 本地开发环境配置
+spring:
+  profiles:
+    title: "base"
+    description: "Hotent EIP X7"
+    version: "1.0.0-SNAPSHOT"
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: "UTF-8"
+    messages:
+      encoding: "UTF-8"
+  freemarker:
+    template-loader-path: classpath:/templates/ #模板加载路径 按需配置
+    charset: "UTF-8"
+
+# 配置打印SQL语句
+logging:
+  #  level:
+  #    com.hotent.i18n.persistence.dao: DEBUG
+  #    com.hotent.bpmModel.dao: DEBUG
+  #    com.hotent.Calendar.dao: DEBUG
+  #    com.hotent.runtime.dao: DEBUG
+  #    com.hotent.bpm.persistence.dao: DEBUG
+  #    com.hotent.sys.persistence.dao: DEBUG
+  #    com.hotent.portal.persistence.dao: DEBUG
+  #    com.hotent.uc.dao: DEBUG
+  #    com.hotent.uc.base: DEBUG
+  config: classpath:logback-spring.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,cert
+
+info:
+  app:
+    encoding: "UTF-8"
+    java:
+      source: "1.8.0_342"
+      target: "1.8.0_342"
+
+banner:
+  charset: UTF-8
+
+mybatis:
+  typeAliasesPackage: com.hotent.base.entity
+  mapperLocations: classpath*:mapper/*.xml,classpath*:mapper/aspire/*.xml
+  typeHandlersPackage: com.hotent.base.typehandle
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 3000000 # 单位秒
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+
+# machine
+system:
+  id:
+    datacenter: 1
+    machine: 1
+  #    machineName: eden
+  #    idBase: 1000
+  #    increaseBound: 10000
+  attachment:
+    type: folder
+    path: e:\attachment
+  bpm:
+    engineName: eip7
+  basic:
+    token: eyJBdXRob3JpemF0aW9uIjoiQmFzaWMgWVdSdGFXNDZNVEl6TkRVMiJ9
+
+# Redis settings
+jedis:
+  url: 10.1.4.50:7005
+  password: '4rQJwA!KlGtzgqbA'
+  port: 7005
+  #  测试环境使用 0， 开发环境使用1  默认可以填 0-15
+  databasesIndex: 1
+  #  sentinel1: 10.153.1.35:26379
+  #  sentinel2: 10.153.98.87:26379
+  #  sentinel3: 10.153.98.88:26379
+  #  masterName: mymaster
+
+# file settings
+file:
+  file.dir: /opt/aspire/cnms/x7pack20190109/application/portal/
+  office.home: C:\\Program Files (x86)\\OpenOffice 4
+  simText: txt,html,xml,java,properties,sql
+  media: mp3,mp4,flv,rmvb,wmv
+  converted.file.charset: utf-8
+
+# FTP settings
+FTP:
+  FTP.url: 10.1.4.113
+  FTP.username: vsftpd
+  FTP.password: wccQKPbCmx8@r*6p
+  FTP.port: 21
+  FTP.remotePath: /data/sftp/dianqu/adjust
+
+# Jms settings active aq
+jms:
+  username: admin
+  password: ASfag#134
+  ip: 10.1.4.50
+  port: 61616
+  queue:
+    name: admin
+  topic:
+    name: admin
+
+# 单点登录配置
+sso:
+  enable: true
+  mode: basic
+  cas:
+    url: http://www.hotent.org:7080/cas    #CAS服务地址
+  oauth:
+    url: http://10.153.1.35:8093  #oauth2服务地址
+    loginPath: /oauth/authorize
+    tokenPath: /oauth/token
+    checkPath: /oauth/check_token
+    clientId: eip7
+    secret: flossy
+auth:
+  serviceUrl: http://10.153.1.61:8080/cnms-auth-ws/services/AuthenticationService?wsdl
+#短信验证码登录
+sms:
+  auth:
+    serviceUrl: http://auth.cmpassport.com:6500/UmcWeb/s?func=CheckSMSCodeRequest
+    sendSmsCode: http://auth.cmpassport.com:6500/UmcWeb/s?func=SendSMSCodeRequest
+#sim登录
+sim:
+  app:
+    id: 135
+    secret: RMwavudgb2r4Ee9CO9cn9vQ5ojdkW3oqgnrXOYYB
+  send:
+    # sim快捷登录
+    url: https://10.1.108.31:9143/cmic-portal-auth/sim/simQuickAuth
+    functionId: simQuickAuth
+    # sim密码登录
+    sendUrl4pwd: https://10.1.108.31:9143/cmic-portal-auth/sim/signAuth
+    functionId4pwd: signauth
+
+# portal 登录
+portal:
+  auth:
+    userIp: 10.153.1.35
+    functionId: account_login
+    url: https://10.1.108.31:9143/cmic-portal-auth/login/account
+
+# 网管接口根路径
+osaurl:
+  baseUrl: http://10.153.1.61:8080/osa_web/
+  #  baseUrl: http://localhost:8080/osa_web/
+  newBaseUrl: http://10.1.203.100:2222
+  newBaseCompositeUrl: http://10.1.203.100:28129
+  verifyUrl: api_v1.0/bpmx/sync/cmdbDeviceAsset/verify
+  updateUrl: api_v1.0/bpmx/sync/cmdbDeviceAsset/save
+  deleteUrl: api_v1.0/bpmx/sync/cmdbDeviceAsset/checkOrDeleteCmdbDeviceAsset
+  storeInfoVerifyUrl: api_v1.0/bpmx/sync/cmdbStoreInformation/verify
+  storeInfoverifyAndSave: api_v1.0/bpmx/sync/cmdbStoreInformation/save
+  cmdbInfoDownUrl: api_v1.0/assetExportController/getCmdbImportTemplateAndCheckBPMData
+  cmdbInfoVerifyOrSaveUrl: api_v1.0/assetExportController/checkOrImportCmdbImpcortTemplateData
+  # 根据ip查找资产id
+  cmdbAdvancedSearchDeviceIdList: api_v1.0/bpmx/component/cmdbAdvancedSearchDeviceIdList
+  # 根据资产id查找资产
+  gridData_1: api_v1.0/bpmx/component/gridData_1
+  # 检验和上传资源池封堵流程文件
+  checkIpBlockUrl: api_v1.0/bpm/IpBlock/checkDisBlockFile
+  uploadIpBlockUrl: api_v1.0/bpm/IpBlock/uploadIpBlockFile
+  updateIpStatusUrl: api_v1.0/bpm/IpBlock/updateIpStatusToCmdb
+
+#tyrz validate
+tyrz:
+  auth:
+    url: http://10.1.108.31:9000/CMIC_SERVICE/service/cmicTokenService?wsdl
+    appId: 16
+    appSecret: b78f6d0f9321df1cce375bcf7d6e50fe813211f5
+
+#mqtt服务
+mqtt:
+  host: tcp://127.0.0.1:1883
+  #host: tcp://10.153.1.49:1883
+  pushTopic: /opt/zabbix/apis/sub
+  pushClientid: bpm_12580_push_${random.value}
+  subTopic: /opt/zabbix/apis/pub
+  subClientid: bpm_12580_subsribe_${random.value}
+
+# 小和玛地址
+chatBotUrl:
+  baseUrl: http://localhost:8180/osaProxy
+  #  baseUrl: http://10.153.1.81:8080/osaProxy/
+  endTimeOfDialTest: /webDialTestTask/updateActualOperateEndTime
+  createDialTest: /webDialTestTask/saveWorkOrderForBpm
+
+
+hecaiyun:
+  url:
+    baseUrl: http://10.1.58.30:8090/cloudstorage/
+    save: file/upload
+    selectedFile: third/selectedFile
+    getSelectedFile: third/getSelectedFile
+  app-id: '000002'
+  app-name: BPM
+  token: DFnPzv
+  app-key: jxXnGbDOz8

@@ -1,0 +1,20 @@
+# 服务端口号
+server.port: 8091
+#TCP模式：server为服务端，client为客户端
+switch.model: server
+# TCP服务端端口
+switch.server.port: 6060
+# 作为客户端，需要连接TCP服务端端口（服务端模式为空）
+# switch.remote.server.port: 29001
+# 作为客户端，需要连接TCP服务端ip（服务端模式为空）
+# switch.remote.server.ip: 10.1.4.49
+
+#默认开关状态，程序修改后失效
+switch.flag: y
+
+# 监听vip文件位置
+file.listener.filePath: /home
+
+logging:
+  level:
+    com.aspire.gemc.switchmanage: info

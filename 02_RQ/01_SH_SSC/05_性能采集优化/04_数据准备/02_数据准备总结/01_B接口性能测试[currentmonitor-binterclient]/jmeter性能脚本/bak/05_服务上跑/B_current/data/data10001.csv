@@ -1,0 +1,4 @@
+deviceName,deviceID,meteID,meteCode,meteKind,meteName,meteNo,deviceType,deviceTypeName,roomName,meteType,meteKindName
+"高压配电柜","00441006000000201315","6200100001301000001","001301",1,"线电压Uab",0,1,"高压配电","性能采集机房10_200快1",1,"遥测"
+
+

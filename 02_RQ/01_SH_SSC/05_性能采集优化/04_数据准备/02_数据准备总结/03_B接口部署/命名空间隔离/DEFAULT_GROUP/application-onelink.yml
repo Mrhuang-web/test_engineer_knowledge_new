@@ -1,0 +1,63 @@
+server:
+  port: 28081
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis:
+  typeAliasesPackage: com.aspire.onelink.**.domain
+  mapperLocations: classpath*:/mybatis/**/*Mapper.xml
+#  configLocation: classpath:/mybatis/mybatis-config.xml
+
+pagehelper:
+  reasonable: true
+  helper-dialect: mysql
+  # 支持通过 Mapper 接口参数来传递分页参数，默认值false，分页插件会从查询方法的参数值中，自动根据上面 params 配置的字段中取值，查找到合适的值时就会自动分页
+  support-methods-arguments: true
+  #如果 pageSize=0 就会查询出全部的结果（相当于没有执行分页查询）
+  page-size-zero: true
+  
+local:
+  kafka: # kafka 配置
+    bootstrap-servers: 10.12.12.186:9092
+    producer:
+      retries: 0
+      batch-size: 5
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: consumer_onelink_service
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 500
+      session.timeout.ms: 60000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      concurrency: 1    # 配置partions分区数, 保证每个分区一个消费线程  子系统特殊处理,只取1个线程
+    properties:
+      session.timeout.ms: 60000
+
+
+onelink:
+  config:
+    schedulePersistHisDataCron: 0 0/20 * * * ?
+  current:
+    mock: false
+schedule:
+  detect-collect:
+    cron: 0 0 0/6 * * ?
+  sign-collect:
+    cron: 0 0/5 * * * ?
+  schedule-collect:
+    cron: 0 0 3 * * ?
+  consume:
+    method: handle

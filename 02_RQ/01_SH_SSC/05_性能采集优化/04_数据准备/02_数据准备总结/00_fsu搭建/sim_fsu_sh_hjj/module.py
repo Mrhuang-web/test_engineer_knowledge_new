@@ -1,0 +1,476 @@
+#-*- coding:utf-8 -*-
+import config
+from sqlalchemy import Column, String, create_engine, MetaData,PrimaryKeyConstraint
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import func
+from sqlalchemy.sql.expression import cast
+from sqlalchemy import Integer
+from sqlalchemy import Integer, String, DateTime, ForeignKey, Sequence,VARCHAR,FLOAT
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import Mapped
+
+from sqlalchemy.pool import NullPool
+from sqlalchemy import and_,or_
+from utils.logger import logger
+from datetime import datetime, date, timedelta
+
+'''
+SHOW VARIABLES LIKE '%char%';
+SET character_set_server=utf8;
+SET character_set_database=utf8;
+
+DROP DATABASE IF EXISTS `fsu`;
+CREATE DATABASE `fsu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+'''
+
+# 创建对象的基类:
+class Base(DeclarativeBase):
+    pass
+
+class Fsu(Base):
+    __tablename__ = 'fsu'
+
+    id = Column( Integer, Sequence( 'fsu_id_seq' ), autoincrement = True, primary_key = True, index = True )
+    username = Column(String(50))
+    password = Column(String(50))
+    fsuid = Column(String(50), index = True)
+    fsuname = Column(String(50))
+    fsuip = Column(String(50))
+    fsumac = Column(String(50))
+    fsuver = Column(String(50))
+    siteid = Column(String(50))
+    sitename = Column(String(50))
+    roomid = Column(String(50))
+    roomname = Column(String(50))
+    tfsustatus_cpuusage = Column(String(10))
+    tfsustatus_memusage = Column(String(10))
+    tfsustatus_harddiskusage = Column(String(10))
+    interval =  Column(Integer)
+    #__table_args__ = {"mysql_charset" : "utf8"}
+
+class Device(Base):
+    __tablename__ = 'device'
+
+    id = Column( Integer, Sequence( 'device_id_seq' ), autoincrement = True, primary_key = True, index = True )
+    fsuid = Column(String(50), ForeignKey('fsu.fsuid'))
+    deviceid = Column(String(50), index = True)
+    devicename = Column(String(50))
+    siteid = Column(String(50))
+    roomid = Column(String(50))
+    sitename = Column(String(50))
+    roomname = Column(String(50))
+    devicetype = Column(String(50))
+    devicesubtype = Column(String(50))
+    model = Column(String(50))
+    brand = Column(String(50))
+    ratedcapacity = Column(String(50))
+    version = Column(String(50))
+    beginruntime = Column(String(50))
+    devdescribe = Column(String(50))
+    confremark = Column(String(50))
+
+class Signals(Base):
+    __tablename__ = 'signals'
+    
+    id = Column( Integer, Sequence( 'signals_id_seq' ), autoincrement = True, primary_key = True, index = True )
+    fsuid = Column(String(50))
+    deviceid = Column(String(50))
+    signalsid = Column(String(50))
+    type = Column(String(50))
+    signalname = Column(String(50))
+    signalnumber = Column(String(50))
+    alarmlevel = Column(String(50))
+    threshold = Column(String(50))
+    nmalarmid = Column(String(50))
+    measuredval = Column(String(50))
+    setupval = Column(String(50))
+    status = Column(String(50))
+    time = Column(DateTime)
+
+
+class Threshold(Base):
+    __tablename__ = 'threshold'
+
+    id = Column(Integer, Sequence('threshold_id_seq'), autoincrement=True, primary_key=True, index=True)
+    deviceid = Column(String(50), ForeignKey('device.deviceid'))
+    thresholdid = Column(String(50), primary_key=True, index=True)
+    type = Column(String(50))
+    signalnumber = Column(String(50))
+    threshold = Column(String(50))
+    alarmlevel = Column(String(50))
+    thresbhold = Column(String(50))
+    nmalarmid = Column(String(50))
+
+
+class Storage(Base):
+    __tablename__ = 'storage'
+    id = Column( Integer, Sequence( 'storage_id_seq' ), autoincrement = True, primary_key = True, index = True )
+    fsuid = Column(String(50))
+    deviceid = Column(String(50), ForeignKey('device.deviceid'))
+    type = Column(String(50))
+    storageid = Column(String(50), primary_key = True, index = True)
+    signalnumber = Column(String(50))
+    absoluteval = Column(String(50))
+    relativeval = Column(String(50))
+    storageinterval = Column(String(50))
+    storagereftime = Column(String(50))
+
+class CfgMete(Base):
+    __tablename__ = 't_cfg_mete'
+    
+    mete_code = Column( VARCHAR(20),index = True)
+    device_type = Column(VARCHAR(50))
+    mete_name = Column(VARCHAR(256))
+    mete_kind = Column(Integer)
+    raw_mete_kind = Column(Integer)
+    unit = Column(VARCHAR(50))
+    mete_explain_type = Column(Integer)
+    alarm_note = Column(VARCHAR(256))
+    alarm_explain = Column(VARCHAR(256))
+    remark = Column(VARCHAR(500))
+    link_mete_code = Column(VARCHAR(512))
+    up_mete_code = Column(VARCHAR(20))
+    logical_type = Column(VARCHAR(50))
+    sub_logical_type = Column(VARCHAR(256))
+    vipmete_flag = Column(Integer)
+    up_effect = Column(FLOAT)
+    low_effect = Column(FLOAT)
+    flag2g =Column(Integer)
+
+    __table_args__ = (
+        PrimaryKeyConstraint('mete_code', 'device_type'),
+        {},
+    )
+
+class Alarm(Base):
+    __tablename__ = 'alarm'
+
+    id = Column( Integer, Sequence( 'alarm_id_seq' ), autoincrement = True, primary_key = True, index = True )
+    fsuid = Column(String(50))
+    serialno = Column(String(50))
+    signalid = Column(String(50))
+    deviceid = Column(String(50))
+    nmalarmid = Column(String(50))
+    alarmtime = Column(DateTime,default=datetime.now())      #放写库时处理吧
+    alarmlevel = Column(String(50))
+    alarmflag = Column(String(50))
+    alarmdesc = Column(String(50))
+    eventvalue = Column(String(50))
+    signalnumber = Column(String(50))
+    alarmremark = Column(String(50))
+    
+# 初始化数据库连接:
+#engine = create_engine('sqlite:///./database.db')
+print(config.G_MYSQL_CONN_STR)
+engine = create_engine( config.G_MYSQL_CONN_STR, pool_recycle=120, pool_size=20, pool_pre_ping=True, pool_timeout=5, max_overflow=50,echo=False)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+Base.metadata.create_all(engine)
+
+def addFsu(username, password):
+    new_fsu = Fsu()
+    new_fsu.username = username
+    new_fsu.password = password
+    session.add( new_fsu )
+    session.commit()
+
+def updateFsu(fsuid, username,password):
+    session.query(Fsu).filter_by( fsuid = fsuid ).update({"username": username,"password":password})
+    session.commit()
+
+def updateSignal(fsuid, deviceid, signalsid, measuredval):
+    #每次设置的值存储到fsu库
+    session.query(Signals).filter_by( fsuid = fsuid ).filter_by( deviceid = deviceid ).filter_by( signalsid=signalsid ).update({"measuredval": measuredval})
+    session.commit()
+
+def queryFsu( fsuid ):
+    result = None
+    record = Session().query( Fsu ).filter_by( fsuid = fsuid )\
+            .first()
+    if record != None:
+        result = record
+    return result
+
+def queryFsus( ):
+    result = None
+    record = Session().query( Fsu ).order_by('fsuid').all()
+    if record != None:
+        result = record
+    return result
+
+def queryFtpPassword(username):
+    result = None
+    record = Session().query(Fsu).filter_by(username=username)\
+            .first()
+    if record != None:
+        result = record.password
+    return result
+
+def query_alarm_next_serialno(fsuid,deviceid,signalid):
+    result = None
+    #查同一个signalid的最后一条记录，如果是BEGIN,则取原值，　如果为空或者END则加１
+    last_alarmflag_query = Session().query(Alarm.alarmflag,Alarm.serialno).order_by(Alarm.alarmtime.desc())
+    if last_alarmflag_query ==None:
+        last_alarmflag = None
+    else:
+        last_alarmflag = last_alarmflag_query.first()
+    if last_alarmflag[0] in [None,'END']:
+        record = Session().query(Alarm.id).order_by(Alarm.id.desc())\
+                .first()
+        if record == None:
+            result = '1'
+        else:
+            result = str(record[0] + 1)
+    else:
+        result = last_alarmflag[1]
+    return result
+
+
+def query_alarm_begin_serialno(fsuid,deviceid,signalid):
+    '''
+    获取当前设备最新的一条告警数据和当前设备所在fsu最新的一条告警数据，当前设备最新的一条是消警或者为空，
+    serialno返回Fsu最新的告警数据+1，否则当前告警就取当前设备最新的serialno
+    :param fsuid:
+    :param deviceid:
+    :param signalid:
+    :return: serialno
+    '''
+    last_salarm_query = Session().query(Alarm.alarmflag,Alarm.serialno).filter_by(fsuid = fsuid).filter_by(signalid = signalid).filter_by(deviceid = deviceid).order_by(Alarm.alarmtime.desc())
+    last_alarmflag_query = Session().query(Alarm.alarmflag,func.max(cast(Alarm.serialno,Integer))).filter_by(fsuid = fsuid).filter_by(alarmflag = 'BEGIN')
+    last_serno = last_alarmflag_query.first()
+    if last_serno[1] == None :
+        result = '1'
+    else:
+        if last_salarm_query.first() == None:
+            result = str(int(last_serno[1])+1)
+        else:
+            last_serno_self = last_salarm_query.first()
+            if last_serno_self[0] == 'END':
+                result = str(int(last_serno[1])+1)
+            else:
+                result = last_serno_self[1]
+
+    return result
+
+def query_alarm_end_serialno(fsuid,deviceid,signalid):
+    '''
+    获取当前设备最新告警数据，如果为空，返回0，返回当前设备最新serialno
+    :param fsuid:
+    :param deviceid:
+    :param signalid:
+    :return: serialno
+    '''
+    last_alarmflag_query = Session().query(Alarm.alarmflag,Alarm.serialno).filter_by(fsuid = fsuid).filter_by(signalid = signalid).filter_by(deviceid = deviceid).filter_by(alarmflag = 'BEGIN').order_by(Alarm.id.desc())
+    #last_alarmflag_query = Session().query(Alarm.alarmflag,Alarm.serialno).filter_by(fsuid = fsuid).filter_by(deviceid = deviceid).filter_by(alarmflag = 'BEGIN').order_by(Alarm.id.desc())
+
+    if last_alarmflag_query ==None:
+        last_alarmflag = None
+    else:
+        last_alarmflag = last_alarmflag_query.first()
+    if last_alarmflag == None:
+         result = '0'
+    else:
+        result = last_alarmflag[1]
+    return result
+
+def queryFsuId(username):
+    result = None
+    record = Session().query(Fsu).filter_by(username=username)\
+            .first()
+    if record != None:
+        result = record.fsuid
+    return result
+    
+def queryAllFSUAccount():
+    record = [(li.username,li.password) for li in Session().query(Fsu).all()]
+    return record
+
+def query_devices_by_fsu(fsuid):
+    #session = Session()
+    result = None
+    record = Session().query( Device ).filter_by( fsuid = fsuid ).order_by('deviceid')\
+            .all()
+    if record != None:
+        result = record
+    return result
+
+def query_signalsid_list_by_deviceid(fsuid, deviceid):
+    """用于上报设备测点数据"""
+    result = None
+    record = Session().query(Signals).filter_by(fsuid=fsuid).filter_by(deviceid=deviceid).order_by('signalsid') \
+        .all()
+    return [li.signalsid for li in record]
+
+def query_signalsid_list_by_metacode(fsuid, deviceid,meta_code):
+    """hana查找测点上次设置的值"""
+    result = None
+    record = Session().query(Signals).filter_by(fsuid=fsuid).filter_by(deviceid=deviceid).filter_by(signalsid=meta_code).order_by('signalsid') \
+        .all()
+    return [li.signalsid for li in record]
+
+def query_signals_by_device(fsuid, deviceid,all_record=True):
+    result = None
+    record = Session().query(Signals).filter_by(fsuid=fsuid).filter_by(deviceid=deviceid).order_by('signalsid') \
+        .all()
+    # if all_record == True:
+    #     record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).order_by('signalsid')\
+    #         .all()
+    # else:
+    #     record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).filter(Signals.alarmlevel != None).filter(Signals.alarmlevel != '0').order_by('signalsid')\
+    #         .all()
+    #mete_list = [li.mete_code for li in Session().query(CfgMete.mete_code).all()]
+    #alert集团站点只显示指定mete_code的告警
+    #alert_mete_code=["001018","004001","005001","005021","005035","006023","006020","007002","008011","008023","008032","008043","014004","014005","017010","068008","087010","087012","087020","087021","087040","088001","088002","088003","092008","092010"]
+    #mete_list = [li for li in mete_list if li in alert_mete_code]
+    #record = session.query(Signals).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).join(CfgMete, Signals.signalsid==CfgMete.mete_code).all()
+    if record != None:
+        result = record
+        #result = [li for li in record if li.signalsid in mete_list]
+    return result    
+
+def query_alert_signals_by_device(fsuid, deviceid,all_record=True):
+    """查询告警信号"""
+    result = None
+    if all_record == True:
+        record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).order_by('signalsid')\
+            .all()
+    else:
+        record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).filter(Signals.alarmlevel != None).filter(Signals.alarmlevel != '0').order_by('signalsid')\
+            .all()
+    mete_list = [li.mete_code for li in Session().query(CfgMete.mete_code).all()]
+    #alert集团站点只显示指定mete_code的告警
+    alert_mete_code=["001018","004001","005001","005021","005035","006023","006020","007002","008011","008023","008032","008043","014004","014005","017010","068008","087010","087012","087020","087021","087040","088001","088002","088003","092008","092010"]
+    #mete_list = [li for li in mete_list if li in alert_mete_code]
+    record = Session().query(Signals).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid ).join(CfgMete, Signals.signalsid==CfgMete.mete_code).all()
+    if record != None:
+        #result = record
+        result = [li for li in record if li.signalsid in mete_list]
+    return result
+
+def queryDevice( deviceid ):
+    result = None
+    record = Session().query( Device ).filter_by( deviceid = deviceid )\
+            .first()
+    if record != None:
+        result = record
+    return result
+
+def queryDevice( fsuid, deviceid):
+    resut = None
+    record = Session().query( Device ).filter_by( fsuid = fsuid ).filter_by( deviceid = deviceid ).first()
+    if record != None:
+        result = record
+    return result
+
+def querySignal( fsuid, deviceid,signalsid ):
+    result=None
+    #logger.info('===============')
+    #logger.info(deviceid)
+    #logger.info(type(deviceid))
+    #logger.info(signalsid)
+    #logger.info(type(signalsid))
+
+    record = Session().query( Signals ).filter(Signals.fsuid==fsuid).filter(Signals.deviceid==deviceid).filter(Signals.signalsid==signalsid)\
+            .first()
+    #record = session.query(Signals).filter_by(signalsid=signalsid).first()
+    if record != None:
+        result = record
+    return result
+    
+def querySignals(fsuid,deviceid,signalsid):
+    result=None
+    record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by(deviceid=deviceid).filter_by(signalsid = signalsid ).all()
+    if record != None:
+        result = record
+        logger.info('signal null')
+    else:
+        logger.info('signal not null')
+    return result
+
+def queryTSemaphore(fsuid, deviceid, signalsid):
+    result = None
+    record = Session().query( Signals ).filter_by(fsuid=fsuid).filter_by(deviceid=deviceid).filter_by(id = signalsid ).all()  #.first()
+    if record != None:
+        result = record
+    return result
+
+#def queryTThreshold(thresholdid):
+    #result = None
+    #record = Session().query( Threshold ).filter_by( thresholdid = thresholdid )\
+    #        .first()
+    #if record != None:
+    #    result = record
+    #return result
+
+def queryTThreshold(fsuid, deviceid,signalsid):
+    '''对于每个测点，其实都有门限值，数据库中已经存在于Signal表中了，所以直接查Signal表就成了'''
+    return querySignal(fsuid,deviceid,signalsid)
+
+def queryStorage(storageid):
+    result = None
+    record = Session().query( Storage ).filter_by( storageid = storageid )\
+            .first()
+    if record != None:
+        result = record
+    return result
+    
+def queryStorageByDevice(fsuid, deviceid):
+    result = None
+    record = Session().query( Storage ).filter_by( fsuid = fsuid ).filter_by( deviceid = deviceid )\
+            .all()
+    if record != None:
+        result = record
+    return result
+    
+def queryStorageBySignal(fsuid, deviceid, storageid):
+    result = None
+    record = Session().query( Storage ).filter_by( fsuid = fsuid ).filter_by( deviceid = deviceid ).filter_by( storageid = storageid )\
+            .first()
+    if record != None:
+        result = record
+    return result
+
+def queryDeviceObjsByFsuid(fsuid):
+    return Session().query( Device ).filter_by( fsuid= fsuid )
+
+def querySignalsObjsbyDeviceID(fsuid, deviceid):
+    return Session().query( Signals ).filter_by(fsuid=fsuid).filter_by( deviceid = deviceid )
+
+def queryTThresholdObjsbyDeviceID(deviceid):
+    #return Session().query( Threshold ).filter_by(deviceid = deviceid)
+    #图简单，不使用Threshold表，直接使用Signal表
+    return Session().query(Signals).filter_by(deviceid=deviceid)
+
+def query_alarm_desc_by_deviceid_signalid(fsuid,deviceid,signalid,alarmflag):
+    result = '缺省的告警描述'
+    signal_obj = querySignal(fsuid, deviceid,signalid)
+    mete_code = signal_obj.signalsid
+    cfg_mete_obj = Session().query(CfgMete).filter_by( mete_code=mete_code).first()
+    result = cfg_mete_obj.alarm_explain
+    if result == None:
+        result = cfg_mete_obj.mete_name 
+    if alarmflag == 'END':
+        result = '告警消除:' + result
+    else:
+        result = result + '告警'
+    return result
+
+def queryYestodayAlarm(fsuid,days=-1):
+    yestoday = (date.today() + timedelta(days = days)).strftime("%Y-%m-%d")
+    start_str = '{} 00:00:00'.format(yestoday)
+    end_str = '{} 23:59:59'.format(yestoday)
+    result = session.query(Alarm).filter_by(fsuid=fsuid).filter(and_(Alarm.alarmtime>=start_str,Alarm.alarmtime<=end_str)).all()
+    session.rollback()
+    return result
+
+def test():
+    #addFsu(u'chenzw',u'chenzw')
+    #fsuobj = queryFsu(fsuid='1')
+    #print(query_alarm_next_serialno())
+    s=query_alarm_begin_serialno('100000000000001','100100000000001','001001')
+    print(s)
+
+
+if __name__=="__main__":
+    test()

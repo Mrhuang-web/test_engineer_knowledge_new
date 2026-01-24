@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+<a href='/'>返回机房列表</a>
+<hr/>
+<h3>当前机房名称:{{roomname}}</h3>
+<hr/>
+
+  <h3>设备(Device)列表</h3>
+  <table>
+  <tr>
+    <th>设备ID</th>
+    <th>DeviceType</th>
+    <th>设备名称</th>
+  <tr>
+  {% for device in devices %}
+    <tr>
+      <td><a href="/signals_list?roomid={{ device[2] }}&deviceid={{ device[1] }}">{{ device[1] }}</a></td>
+      <td>{{device[6]}}</td>
+      <td>{{device[4]}}</td>
+    </tr>
+  {% end %}
+  </table>
+{% end %}

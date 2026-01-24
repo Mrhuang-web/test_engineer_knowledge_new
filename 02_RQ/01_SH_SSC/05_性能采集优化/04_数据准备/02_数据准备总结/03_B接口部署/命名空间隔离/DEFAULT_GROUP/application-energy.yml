@@ -1,0 +1,89 @@
+server:
+  port: 9988
+
+bpmRuntime: http://10.12.3.79:8046/
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: composite-mirror
+
+feign-client:
+  ribbon:
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 3
+
+commonEnergyConfig: #能耗配置
+  ontime: "0 30 4 * * ?"  #定时任务执行时间
+  #配置能耗计算几天，为0的时候采集今天零点数据，入库 耗电量
+  inspectMeteTime: 3
+  province: 01-
+  energySwitch: true
+  dataAcquisitionMethod: 1
+  switchPowerFloatV: 54 # 开关电源浮充电压
+  upsCoefficient: 1 # ups损耗系数
+  # 高压直流240伏 浮充电压
+  hvdcFloatV_240: 270
+  # 高压直流336伏 浮充电压
+  hvdcFloatV_336: 378
+  energyAuditSchedule: "0 30 3 * * ?"
+  batchLowPercent: 10       #存量去除最低比例
+  batchHigHPercent: 10      #存量去除最高比例
+  batchBeginRange: 0.5      #存量最低数据范围
+  batchEndRange: 1.5        #存量最高数据范围
+  normalDays: 3            #正常数据取值天数
+  normalLowPercent: 10      #正常去除最低比例
+  normalHighPercent: 10     #正常去除最高比例
+  normalBeginRange: 0.5     #正常最低数据范围
+  normalEndRange: 1.5       #正常最高数据范围
+  precinctNameNot: 
+  hvdcFloatV: 220   # 陕西高压直流浮充电压
+  abnormalBeginRange: 0.2     #汇聚+基站正常最低数据范围（总用电）
+  abnormalEndRange: 1.8       #汇聚+基站正常最高数据范围（总用电）
+  ratioFlag: 1   #测点系数标识开关  0：关闭   1：开启
+  calSwitchFlag: 0    #1为小时级  0为天级 请注意
+
+webSiteLocation: 0    # 0:代表集团 1:代表陕西
+saveElectricitySupervisionSchedule.ontime: 0 0 7 1 * ?
+commonEnergyConfig.confirmLock: 10
+upsDeviceEfficiency:
+  ontime: "0 20 7 * * ?"  #定时任务执行时间
+  #配置ups效率计算几天，为0的是一天
+  inspectMeteTime: 0
+  energySwitch: true
+  #默认"01"的话是执行的全部，如果是选择省份的话，直接用逗号分隔开来
+  province: "01-"
+  
+energy.self.executor.corePoolSize: 5
+energy.self.executor.maxPoolSize: 8
+energy.es.executor.corePoolSize: 5
+energy.es.executor.maxPoolSize: 8
+energy.self.devicemete.count: 2000
+energy.index: dwd_energy_hour
+energy.precinctid: 01-01
+energy.scrollSize: 10000
+
+energyConfig: #能耗配置
+  ontime: "0 10 1 * * ?"  #定时任务执行时间
+    ##当配置能耗的省份和需要执行能耗的省份相同时才会执行能耗的配置定时任务，所以省站就配置相同,集团配置不相同即可
+  configProvince: 01-02  #配置能耗的省份
+  provinceId: 01-02      #需要执行能耗配置的省份
+#ftp配置  
+ftp:
+  enable: true
+  ftpIP: localhost
+  ftpPort: 21
+  ftpUser: user
+  ftpPwd: 123
+  isSFTP: false
+  path: BJ
+  cron: 0 1 1 * * ?
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+energyControlRecord:
+  fillDataLimit: 28 #能耗管控记录， 节能运维作业，当月数据可编辑时限为当月及次月25日前
+
+energy.toConverPrecinctId: 01-99-
+energy.prefixDevice: 999999

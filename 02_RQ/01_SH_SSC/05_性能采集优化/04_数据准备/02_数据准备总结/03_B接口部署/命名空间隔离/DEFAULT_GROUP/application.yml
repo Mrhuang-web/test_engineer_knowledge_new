@@ -1,0 +1,16 @@
+management.security.enabled: false
+management.endpoint.heapdump.enabled: false
+
+ribbon:
+  ReadTimeout: 320000
+  ConnectTimeout: 320000
+
+
+spring.cloud.openfeign.client.config.default.connectTimeout: 600000
+spring.cloud.openfeign.client.config.default.readTimeout: 600000
+
+aspire.webbas.json.serialization.write.timestamp: true
+
+# application.yaml 配置
+# 标识当前平台,区分gdems 和gdsc
+platform: gdsc

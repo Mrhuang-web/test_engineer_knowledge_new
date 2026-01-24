@@ -1,0 +1,35 @@
+server:
+  port: 28003
+
+
+#OpenLdap
+# ldap.contextSource.url: ldap://10.12.3.58:389
+# ldap.contextSource.base: dc=migu,dc=cn
+# ldap.contextSource.userDn: cn=admin,dc=migu,dc=cn
+# ldap.contextSource.password: password
+# ldap.defaultOu: migu.Inc
+#OpenLdap
+ldap.contextSource.url: ldap://10.1.203.120:389
+ldap.contextSource.base: dc=migu,dc=cn
+ldap.contextSource.userDn: cn=admin,dc=migu,dc=cn
+ldap.contextSource.password: UmS$dp#23-04
+ldap.defaultOu: migu.Inc
+
+spring:
+  mail: # JavaMailSender �ʼ����͵�����
+    usable: false # �Ƿ����ʼ�,Ĭ��ֵΪfasle
+    host: smtp.qq.com
+    username: 325056665@qq.com
+    password: gevxfzfpjodmbjic
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          starttls: # TLSЭ��
+            enable: true
+            required: true
+#          socketFactory: # SSLЭ��
+#            port: 465
+#            class: javax.net.ssl.SSLSocketFactory

@@ -1,0 +1,4 @@
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`,
+ `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`,
+ `status`, `config_info`, `reader_node_no`, `tcp_node_no`, `schedule_node_no`, `remark`, `data_sync`,
+  `precinct_id`) VALUES ('753', '贵州-接入', '10.1.203.38', 8197, 'root', 'Uykm5c444SUbrhoSgM5Z3w==', 6, '10.1.203.38', 3306, 'cinterdb_400_jt_gz', 'root', 'Uykm5c444SUbrhoSgM5Z3w==', '00001006000000755298', 400, 0, '{"filterOldData":false, "hisDelayTimeSec":60, "dataSyncCron":"0 0 1 * * ?","dataSyncRertyCron":"0 0/30 2-3 * * ?","hasPowerDeviceId":true, "enableTcpHeartbeatHandler":true, "autoAuditMapping":true}', 1, 1, 1, ' alarmOK:1733193854592 hisOK:1733193873397', '1', '01-08');

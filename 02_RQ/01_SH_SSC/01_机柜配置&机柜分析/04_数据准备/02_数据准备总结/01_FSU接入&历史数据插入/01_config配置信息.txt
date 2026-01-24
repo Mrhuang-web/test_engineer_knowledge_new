@@ -1,0 +1,8 @@
+用的sim_fsu(new的也行)  --> 下面内容可以在113服务器里面找到
+注意：数据准备里面的fsuid也需要改变
+
+
+
+PORT = 8081
+G_B_INF_WSDL = "http://10.12.8.147:31094/services/LSCService?wsdl"
+G_MYSQL_CONN_STR = "mysql+pymysql://root:GPGAErA%ZkhMk59*jaD@10.1.203.120:3306/sim_fsu?charset=utf8&autocommit=true"

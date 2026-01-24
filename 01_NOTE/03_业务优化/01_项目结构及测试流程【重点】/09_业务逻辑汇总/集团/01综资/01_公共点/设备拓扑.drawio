@@ -1,0 +1,74 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6" pages="2">
+  <diagram name="第 1 页" id="cyh_5U7vKDaGSATVTyQ9">
+    <mxGraphModel dx="1410" dy="833" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="EVY25KL0naQKs0i4a2To-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="EVY25KL0naQKs0i4a2To-1" target="EVY25KL0naQKs0i4a2To-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-1" value="动环（precinct_id）" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="56" y="232" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="EVY25KL0naQKs0i4a2To-2" target="EVY25KL0naQKs0i4a2To-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-2" value="es：机房映射表" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="431" y="232" width="132" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-4" value="通过precinct_id与dh_name匹配&lt;br&gt;拿到综资机房id-zg_name" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="215" y="196" width="186" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-15" value="es：动环专业内输出分路" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="830" y="232" width="174" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-17" value="通过机房int_id匹配到设备" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="635" y="206" width="155" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="EVY25KL0naQKs0i4a2To-18" target="EVY25KL0naQKs0i4a2To-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-18" value="设备上下游区分" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="866" y="392" width="102" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-20" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.474;exitY=0.978;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.464;entryY=-0.106;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="EVY25KL0naQKs0i4a2To-15" target="EVY25KL0naQKs0i4a2To-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="881" y="354" as="sourcePoint" />
+            <mxPoint x="931" y="304" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-21" value="设备表" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="471" y="392" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-23" value="确保综资设备所属机房已经关联综资" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="620" y="366" width="210" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="EVY25KL0naQKs0i4a2To-24" value="补充：&lt;div&gt;站点是否先匹配，&lt;div&gt;省市是否匹配，&lt;div&gt;省份编码是否匹配，&lt;div&gt;机房是否匹配上站点&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="59" y="27" width="126" height="84" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="NuEjFiomsNom3XYYky1a" name="第 2 页">
+    <mxGraphModel dx="786" dy="533" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cmdmxQO5s74K-KaPTkXW-1" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="137" width="40" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cmdmxQO5s74K-KaPTkXW-2" value="Text" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="338" y="132" width="40" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="cmdmxQO5s74K-KaPTkXW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.058;entryY=0.692;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cmdmxQO5s74K-KaPTkXW-1" target="cmdmxQO5s74K-KaPTkXW-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="216" />
+              <mxPoint x="336" y="216" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,309 @@
+# spring.cloud.nacos.discovery.ip: 10.1.4.243
+# spring.cloud.nacos.discovery.port: 60432
+
+#通过mvn -Dprofile 可以启用不同环境的配置，默认default
+spring:
+  cloud.nacos.discovery:
+    ip: 10.12.7.158
+    port: 30459
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  data:
+    redis:
+      password: 4rQJwA!KlGtzgqbA
+      host: 10.1.203.120
+      port: 6386
+      # cluster:
+      #   nodes:
+      #     - 10.1.203.121:7001
+      #     - 10.1.203.121:7002
+      #     # - 10.1.5.112:7003
+      #     # - 10.1.5.112:7004
+      #     - 10.1.5.113:7005
+      #     - 10.1.5.113:7006
+        # max-redirects: 3
+      lettuce.pool:
+        max-idle: 500  # 连接池中的最大空闲连接，默认值也是8。
+        min-idle: 50  #连接池中的最小空闲连接，默认值也是0。
+        max-active: 2000  # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+        max-wait: 1000  # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+
+server:
+  port: 8085
+hystrix:
+  command:
+    default.execution.isolation.thread.timeoutInMilliseconds: 200000
+
+
+#缓存启动开关， 默认false
+#spring.cache.enabled: true
+#spring.cache.clean: true
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+    safe-result-handler-enabled: false
+#数据源
+spring.datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+  druid:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://10.1.3.81:3306/webbas3_test?failOverReadOnly=false&autoReconnect=true&roundRobinLoadBalance=true&useOldAliasMetadataBehavior=true&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+#    username: webbas3_test
+#    password: ENC(FvnbsfaH1v1GPcl7wtqAELPCFLToIfofs67I1Micc18=)
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.1.203.120:3306/sc-spider?failOverReadOnly=false&autoReconnect=true&roundRobinLoadBalance=true&useOldAliasMetadataBehavior=true&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: GPGAErA%ZkhMk59*jaD
+    validation-query: SELECT 1
+    initial-size: 10  # 初始化大小，最小，最大
+    min-idle: 10
+    max-active: 200
+    max-wait: 60000  # 配置获取连接等待超时的时间
+    time-between-eviction-runs-millis: 60000  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    min-evictable-idle-time-millis: 300000  # 配置一个连接在池中最小生存的时间，单位是毫秒
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    pool-prepared-statements: false  # 关闭PSCache，并且指定每个连接上PSCache的大小
+    # 禁用druid监控
+    stat-view-servlet:
+      enabled: false
+    web-stat-filter:
+      enabled: false
+    filter:
+      config:
+        enabled: false
+
+springdoc:
+  swagger-ui:
+    # 修改Swagger UI路径
+    path: /swagger-ui.html
+    # 开启Swagger UI界面
+    enabled: true
+  api-docs:
+    # 修改api-docs路径
+    path: /v3/api-docs
+    # 开启api-docs
+    enabled: true
+
+aspire.webbas:
+  version: v1  #当前服务的版本号
+  component:
+    path: support
+    serviceName: webbas-service
+  auth-manager:
+    path: partner  #管理服务的URL配置，默认webbas
+    serviceName: webbas-service #
+  session-user.from: security #session用户获取方式，可配置header,security或者不配置
+  security:
+    path: auth #登录模块url配置项，默认webbas
+    permitAll: #可以不用鉴权就访问
+      - /** #必须，网关已经鉴权，所以后端服务不需要重新鉴权
+    logoutRedirectWithHost: false   #配置为true时，logoutRedirectUrl不需要配置http:ip:port，只需要配置相对的路径以/开头
+    logoutRedirectUrl: http://10.1.203.121:8380/spider/web/   #此参数可不配置，不配置使用默认登出重定向地址：/micrologin/#/login
+
+  auth:
+    sso:
+      useHost: false #当useHost配置为false的时候以下两个配置生效
+      specialChars: '@' #需要过滤的特殊字符
+      whiteList: #sso白名单，默认为空，不配置，则所有地址可重定向，配置后，接口不在白名单中的拒绝重定向
+        - http://10.1.203.121:8380/spider/web/login-app/sso
+        - http://localhost:8877/spider/web/login-app/sso
+        - http://10.1.203.121:8380/spider/web/views/workbench
+        - http://10.1.5.113:8480/prodenv/spider/inop/h5
+        - http://10.1.5.113:8480/spider/web/login-app/sso
+        - http://10.1.203.120:9080/spider/web/login-app/sso
+
+#attachment
+aspire.webbas.component.attachment:
+  storage:
+    datacenterId: 0 #Storage datacenter id for SnowFlakeGenerator.
+    machineId: 0 #Storage machie id for SnowFlakeGenerator.
+    type: sftp #可选配置 [local,ftp,dfs]
+    temp: D:\tmp\12   #D:\tmp\12  #附件服务本地临时目录，用于临时保存浏览器上传的附件
+  fastdfs:
+    charset: UTF-8 #fastDFS传输编码
+    connect-timeout-in-seconds: 15 #连接fastDfs服务器超时时间
+    http-anti-steal-token: false #连接fastDfs是否需要鉴权
+    http-secret-key: ''
+    http-tracker-http-port: 80  #fastDfs-tracker 端口
+    network-timeout-in-seconds: 30 #网络超时时间
+    storage:
+      os: linux  #fastdfs安装服务器操作系统:[linux(default)]
+    tracker-servers: xxx.xxx.xxx.xxx:22122 #fastdfsf服务器地址端口
+  ftp:
+    ip: xxx.xxx.xxx.xxx
+    port: 22
+    username: webbas
+    password: xxxxx
+    storage:
+      os: linux #ftp安装服务器操作系统类型
+      root-dir: /test #ftp用与存储的跟目录
+    timeout:
+      connect: 3000 #ftp连接超时时间单位秒
+      data: 30000 #ftp数据传输时间超时时间单位秒
+
+  local:
+    storage:
+      os: windows #附件服务使用本地存储时，服务所在服务器操作系统类型[windows,linux(default)],
+      root-dir: D:\tmp #附件服务使用本地存储时根目录: linux-> /tmp,windwos -> D:/tmp
+
+#support组件大文件配置 start
+aspire.webbas.component.bigfile:
+  max-reserve-time: 24  #大文件在临时存储空间的最大保存时长（小时）
+  storage:
+    type: local        #可选配置 [local]
+    local:
+      os: linux        #服务使用本地存储时，服务所在服务器操作系统类型  [windows,linux(default)]
+      root-dir: /tmp   #默认存储根路径  linux-> /tmp,windwos -> D:/tmp
+
+#support组件大文件配置 end
+
+my.security.kafka.ip-enc: 10.1.203.120
+#kafka配置
+aspire.webbas.component.kafka:
+  servers: ${my.security.kafka.ip-enc}:9092
+  producer:
+    retries: 0
+    batch.size: 4096
+    linger: 1
+    bufferMemory: 40960
+
+#======3.2.2.1日志配置 开始==========
+aspire.webbas.component.log:
+  type: local #默认local为数据库记录，messageClient为写入kafka中间件（需要同时配置配置aspire.webbas.component.log.async.type为messageConsumer）
+  kafka:
+    topic: webbas-log-topic #（不配置为webbas-log-topic）
+    concurrency: 10 #可选，处理线程数，不配置默认为kafka consumer.concurrency
+    group.id: webbas-log-group #可选，默认使用公共得group.id
+#======3.2.2.1日志配置 结束==========
+
+#======3.2.2.x短信配置 开始==========
+aspire.webbas.component.sms:
+  type: print #类型 print 默认打印,dbClient 仅入库,messageClient 消息队列客户端
+  forbidHolidaySend: true  #是否禁止节假日、双休日发送短信，默认false，不禁止 仅对SmsApi.sendInWorkDate 生效
+  allowSendTimes: #允许短信发送时间段，可配置多个时间段,时间段不允许交叉，精确到分钟,默认08:00-22:00
+    - 08:00-12:00
+    - 14:00-18:00
+
+#======3.2.2.x短信配置 结束==========
+
+spring.session:
+  store-type: redis
+
+#aspire.webbas.component.pendtask.type: local #3.2.2.7后无用废除
+spring.session.redis.namespace: webbas-dev-jdk17-dsf-sc #session缓存空间
+spring.session.timeout: 60m #默认设置30分钟
+spring.cache.enabled: false
+spring.cache.redis.key-prefix: webbas-dev-jdk17-dsf-cache-sc #接口缓存空间
+aspire.webbas.redis.serializer: jackson   #支持[jdk, jackson]
+
+aspire.webbas.json.serialization.write.timestamp: true
+
+#======3.2.2.x邮件配置 开始==========
+aspire.webbas.component.email.charset: UTF-8 #字符集
+aspire.webbas.component.email.type: print #邮件类型 print 默认打印,javaMail 及时发送,dbClient 仅入库,messageClient 消息队列客户端
+#======3.2.2.x邮件配置 结束==========
+
+
+aspire:
+  webbas:
+    assist:
+      dynamicValid: #动态校验
+        configType: json #数据源配置，db从数据读取规则，json从json文件获取规则
+        enabled: true #是否开启动态校验，默认为false
+
+#登录错误次数锁定IP、账号
+aspire.webbas.security.behavior.ip.isOn: false #是否开启ip检测
+aspire.webbas.security.behavior.user.isOn: false #是否开启用户检测
+aspire.webbas.security.behavior:
+  lockSustainTimeInMinute: 1 #分钟，锁定时间
+  maxErrorCount: 2 #限制次数
+  validSustainTimeInMinute: 2 #分钟，计算次数的有效时间
+
+aspire.webbas.loginControl.enable: true #是否控制用户登陆session，默认为false
+aspire.webbas.loginControl.preventsLogin: false #达到最大登陆session，是否禁止再登陆，true：禁止再登陆 false：最后登陆成功，最早登陆失效
+aspire.webbas.loginControl.maximumSessions: 10 #最大登陆session数量
+
+#密码强度检查规则 可选项 "reg","name","keyboard","dict" 其中dict需要使用元数据导入工具导入弱密码库到redis
+aspire.webbas.password.check.rules: ["reg"]
+aspire.webbas.password:
+  enhancer: unEnhance
+  encoder: bcrypt
+#sim卡登陆
+aspire.webbas.login.sim:
+  accessTokenUrl: https://de431214-7907-4351-8f24-e0af8944d9d7.mock.pstmn.io/accessToken
+  refreshTokenUrl: https://de431214-7907-4351-8f24-e0af8944d9d7.mock.pstmn.io/refreshToken
+  sendAuthMsgUrl: https://de431214-7907-4351-8f24-e0af8944d9d7.mock.pstmn.io/sendAuthMsg
+  userCapUrl: https://de431214-7907-4351-8f24-e0af8944d9d7.mock.pstmn.io/userCapUrl
+  callbackUrl: http://127.0.0.1:8082/web/auth/v1/sim/callback
+  domainConfigs:
+    - domain: admin
+      appId: cmccpcc
+      appKey: ddddd
+      templateId: 8
+
+# 缓存管理请求日志记录开关
+cache.manage.operation.log.on: true
+
+
+spring.security.oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://127.0.0.1:${server.port}  #认证中心端点，作为资源端的配置
+      auth-server:
+        issuer: http://localhost:8899  # 有代理服务器nginx时，配置的地址是nginx的地址
+        loginPage: http://localhost:8899/micrologin/#/login  #认证授权服务器，用户登录页面
+
+
+# batchinsert石头推送bpm
+rbacAccount:
+  enablePushBpm: false
+
+#webbas 升级到3650p2 版本配置
+# 定时任务配置
+quartz:
+ jobs:
+    #用户状态检测
+    # - jobName: 
+    #   cronExpression: 0 0/1 * * *  ?
+    #   # 1启用，0不启用
+    #   jobStatus: 0 
+    #   jobClass: userJob
+    #   methodName: checkUserStatus
+    #   parameters:
+    #     protocol:
+    #   isConcurrent: false
+      #账号过期前提醒定时任务
+    - jobName: 
+      cronExpression: 0 0 2 * * ?
+      #1启用，0不启用
+      jobStatus: 0 
+      jobClass: newUserExpireRemindJob
+      methodName: userExpireRemindNew
+      parameters:
+        protocol:
+      isConcurrent: false
+  
+aspire.webbas.manage.tenant.expire.quartz.cron: 0 5 0 * * ?
+aspire.webbas.manage.tenant.expire.isOn: true
+spring.jackson.date-format: yyyy-MM-dd HH:mm:ss
+
+#webbas 升级到3650p2 版本配置
+
+logging:
+  level:
+    com.aspire.webbas: debug
+
+
+platform: gdsc
+
+
+DateRightSiteTypeTask:
+  exculdeRoleId: 40bec5d7-a85a-4049-bd49-8a0fa5856c25

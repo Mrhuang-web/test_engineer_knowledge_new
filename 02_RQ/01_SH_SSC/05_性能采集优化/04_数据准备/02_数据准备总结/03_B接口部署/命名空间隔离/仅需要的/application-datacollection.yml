@@ -1,0 +1,19 @@
+server:
+  port: 8805
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package: 
+     org.springboot.sample.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 6000
+
+# 定时采集数据写入
+saveToEsViaKafka: true
+send.to.kafka: true
+save.to.mysql: true

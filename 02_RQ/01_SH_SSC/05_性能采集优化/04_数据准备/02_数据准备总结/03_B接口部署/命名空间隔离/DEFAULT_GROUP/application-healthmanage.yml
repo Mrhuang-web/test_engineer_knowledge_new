@@ -1,0 +1,14 @@
+server:
+  port: 6262
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+mybatis:
+  mapper-locations: classpath:sqlmap/*.xml
+
+cityEle:
+  day: 0 0 1 * * ?
+  month: 0 0 2 1 * ?
+
+

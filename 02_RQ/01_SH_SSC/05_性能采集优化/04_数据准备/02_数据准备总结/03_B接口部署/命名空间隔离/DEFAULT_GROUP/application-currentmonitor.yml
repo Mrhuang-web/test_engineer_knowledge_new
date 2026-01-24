@@ -1,0 +1,14 @@
+server:
+  port: 15889
+
+#是否开启监控试图面向子系统底端采集
+pageList.isCollectOnelink: false
+measureVal.enableKafka.enable: true
+measureVal.meteExplain.enable: false
+
+pageList.isCollectEntrance: true
+guangdong.entrance.setPoint: true
+
+
+# 实时数据请求分发，将 kafka 请求分发到 distribute-service 服务
+sendToDistribution: true

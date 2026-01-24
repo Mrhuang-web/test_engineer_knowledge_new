@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+<h3>FSUID:{{fsuid}}    deviceid:{{deviceid}}</h3>
+<hr/>
+
+  <h4>Signals 列表</h4>
+  <table>
+  <tr>
+     <th>Signal Name</th>
+     <th>type</th>
+     <th>告警级别</th>
+     <th>ID</th>
+     <th>action1</th>
+     <th>action2</th>
+  </tr>
+  {% for signal in signals %}
+    <tr>
+      <td>{{signal.signalname}}</td>
+      <td>{{signal.type}}</td>
+      <td>{{ signal.alarmlevel }}</td>
+      <td>{{ signal.signalsid }}</td>
+     {% if signal.type in ['0','4'] %}
+        <td><a href="/send_alert?fsuid={{fsuid}}&deviceid={{deviceid}}&signalid={{signal.signalsid}}&alarmflag=BEGIN">发送告警</a></td>
+        <td><a href="/send_alert?fsuid={{fsuid}}&deviceid={{deviceid}}&signalid={{signal.signalsid}}&alarmflag=END">消除告警</a></td>
+      {% else %}
+        <td><form action="/sets?fsuid={{fsuid}}&deviceid={{deviceid}}&signalid={{signal.signalsid}}&mete_value=mete_value">
+          <input type="hidden"  name="fsuid" value="{{fsuid}}" />
+          <input type="hidden"     name="deviceid" value="{{deviceid}}" />
+          <input type="hidden"     name="mete_code" value="{{ signal.signalsid }}" />
+          <input type="text" maxlength="6" style="width:100px;" name="mete_value">
+          <input type="submit" value="提交"><br>
+        </form></td>
+        <td>{{signal.measuredval}} </td>
+      {% end %}
+    </tr>
+  {% end %}
+</table>
+  
+{% end %}

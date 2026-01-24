@@ -1,0 +1,32 @@
+接入：中间库->动环   站点、数据中中心-楼栋
+接出：动环  -->中间库
+========================================================================
+《C400接入》包在gemc分支
+1、准备配置文件ms-cinterface-service-gd-in4.yml   app.client按照C接入文档检查数据
+注意：接入时候 t_cfg_cserverinfo中的lsc_id的前两位不能跟已有的相同
+ 
+2、准备中间库，可以从其他中间库复制 -  38  cinterdb_400_gd	 dbtype6是mysql
+ms-cinterface-service-gd-in4.yml 162 替换 lscid
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`) VALUES ('162', 'C接口接入4', '10.1.203.38', 8090, 'hyzomc', 'hyzomc@2023', 6, '10.1.203.38', 3306, 'cinterdb_400_gd', 'root', 'G$SGp!8L3O', '00001006000000755298', 400);
+
+3、t_cfg_cserverinfo使用  config接口进行加密
+t_cfg_cserverinfo使用  config接口进行加密  curl --location 'http://localhost:13563/v1/cserverinfo/encryptedInfoByLscId?lscId=162'
+Lscid为t_cfg_cserverinfo表的lsc_id，加密后数据库如下所示，注意只能调用一次curl，调用多次则会多次加密， 
+
+4、中间库站点或者楼栋要与动环做映射
+INSERT INTO `t_cfg_site_mapping` (`id`, `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES (11, '广东-卓望', '潮州市', '饶平县', 2, NULL, '01-01-23-02-10', 'LSC400测试机楼2006', 'LSC400测试机楼2006', NULL);
+INSERT INTO `t_cfg_site_mapping` (`id`, `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES (11, '广东-卓望', '潮州市', '饶平县', 2, NULL, '01-01-23-02-11', 'LSC400测试机楼2007', 'LSC400测试机楼2007', NULL);
+5、启动服务
+docker  rm -f  cinterface-service-gd-in4
+docker run --name cinterface-service-gd-in4 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=guangdong  --env ENV_APP_NAME=cinterface-service-gd-in4 --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/configmanagement:/opt/data/logs/ -d 10.1.6.34:8080/spider/gemc/cinterface-service:spider1.0.8.0_GEMC_SYT_206
+5、通过下面的curl开启定时任务，每次C接口重启时都需要执行。
+curl --location  'http://localhost:8390/v1/cinterface/startSyncTimer'
+6、同步站点等数据
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-01-23-02-10&justCompare=false'
+
+==========================================================================
+
+
+ 
+
+

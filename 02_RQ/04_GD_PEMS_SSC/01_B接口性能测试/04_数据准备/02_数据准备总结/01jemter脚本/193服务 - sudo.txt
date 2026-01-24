@@ -1,0 +1,1010 @@
+ kubectl config view --minify --output 'jsonpath={.clusters[0].name}'
+    3  kubectl config view --minify
+    4  cd
+    5  ls
+    6  vi hub-secret.yaml
+    7  ls
+    8  ll
+    9  history
+   10  pwd
+   11  cd /mnt
+   12  ls
+   13  cd nfs
+   14  ls
+   15  cd install
+   16  ls
+   17  cd deploy_scripts/
+   18  ls
+   19  cd k8s
+   20  ls
+   21  cd multiset/
+   22  ls
+   23  vi gateway_configmap.yaml
+   24  ls
+   25  vi gateway_configmap_gm.yaml
+   26  vi gateway_nginx_configmap_nginx.yaml
+   27  vi cmchain_configmap_bootstrap_single.yaml
+   28  vi kubectl apply -f cmchain_configmap_logback.yaml
+   29  ls -atl|more
+   30  pwd
+   31  ls
+   32  ll
+   33  history
+   34  kubectl  get pods -n cmchain
+   35  kubectl logs -n cmchain cmchain-baascore-7f69c65697-mwgdt
+   36  history
+   37  kubectl config view --minify
+   38  docekr
+   39  kubectl logs -n cmchain cmchain-baascore-7f69c65697-mwgdt
+   40  kubectl logs -n cmchain cmchain-baascore-7f69c65697-mwgdt --tail=500
+   41  kubectl logs -n cmchain cmchain-baascore-7f69c65697-mwgdt --tail=500|more
+   42  kubectl logs -n cmchain cmchain-baascore-7f69c65697-mwgdt
+   43  cd /mnt/nfs
+   44  ls
+   45  cd cmchain/
+   46  ls
+   47  cd cmri
+   48  ls
+   49  cd ../
+   50  kubectl get pods -n cmchain
+   51  kubectl -n cmchain logs cmchain-baascore-7f69c65697-mwgdt
+   52  pwd
+   53  cd ..
+   54  cd de
+   55  cd install
+   56  cd deploy_scripts/
+   57  ls
+   58  cd k8s
+   59  ls
+   60  cd multiset/
+   61  ls
+   62  ../sh/restart_service.sh baascore
+   63  kubectl  get pods -n cmchain
+   64  kubectl -n cmchain logs cmchain-baascore-7f69c65697-2rdxk
+   65  kubectl  get pods -n cmchain
+   66  kubectl -n cmchain logs cmchain-cmchain-baascore-7f69c65697-2rdxk
+   67  kubectl -n cmchain logs cmchain-cmchain-baascore-7f69c65697-2rdx
+   68  kubectl -n cmchain logs cmchain-baascore-7f69c65697-2rdxk
+   69  ls
+   70  vi cmchain_baascore_services.yaml
+   71  pwd
+   72  cd /mnt/nfs
+   73  ls
+   74  cd baas
+   75  ls
+   76  cd temp_cmchain/
+   77  ls
+   78  cd ../chainconf
+   79  ls
+   80  cd ../
+   81  kubectl get pods -n cmchain
+   82  kubectl exec -it cmchain-baascore-7f69c65697-2rdxk -n cmchain -- bash
+   83  kubectl get ns
+   84  cd /mnt/nfs/install/deploy_scripts/k8s/multiset
+   85  ../sh/restart_service.sh baascore
+   86  kubectl  get pods -n cmchain
+   87  kubectl exec -it cmchain-baascore-7f69c65697-wmwbn -n cmchain -- bash
+   88  kubectl get ns
+   89  pwd
+   90  cd /root
+   91  ls
+   92  cd .kube/
+   93  ls
+   94  vi config
+   95  cd /mnt/nfs/install/deploy_scripts/k8s/multiset
+   96  kubectl get ns
+   97  kubectl exec -it cmchain-baascore-7f69c65697-wmwbn -n cmchain -- bash
+   98  pwd
+   99  cd /mnt
+  100  cd nfs
+  101  ls
+  102  cd baas
+  103  ls
+  104  cd command
+  105  ls
+  106  ll
+  107  cd fabric1.4.6/
+  108  ls
+  109  cd ecdsa/
+  110  ls
+  111  ll
+  112  cd ../
+  113  ls
+  114  cd command
+  115  ls
+  116  cd fabric2.2.1/
+  117  ls
+  118  cd ecdsa/
+  119  ls
+  120  ll
+  121  kubectl exec -it cmchain-baascore-7f69c65697-wmwbn -n cmchain -- bash
+  122  cd ../../
+  123  ls
+  124  cd install/
+  125  ls
+  126  cd deploy_scripts/
+  127  ls
+  128  cd k8s
+  129  ls
+  130  cd multiset/
+  131  ls
+  132  vi cmchain_baassupport_services.yaml
+  133  kubectl get pods -n cmchain
+  134  kubectl -n cmchain exec -it cmchain-baassupport-66c9d9c4bc-nml5g -- bash
+  135  kubectl -n cmchain exec -it cmchain-baascore-7f69c65697-wmwbn -- bash
+  136  kubectl delete deployment -n cmchain cmchain-baascore
+  137  ls
+  138  kubectl apply -f cmchain_baascore_services.yaml
+  139  kubectl get pods -n cmchain
+  140  kubectl -n cmchain exec -it cmchain-baascore-7f69c65697-8fx9q -- bash
+  141  kubectl get ns
+  142  kubectl get pods -n erqqialhzq0durjd
+  143  kubectl logs -n erqqialhzq0durjd peer0-51d81789-org1-070016ee-56df69b9d6-jt5b4
+  144  kubectl get pods -n erqqialhzq0durjd -owide
+  145  kubectl get ns
+  146  kubectl get pods -n 47jovjyzszsrutwn -owide
+  147  kubectl -n  47jovjyzszsrutwn logs go-fabric-proxy-8b7f8bb54-pcnrm
+  148  kubectl get pods -n 47jovjyzszsrutwn -owide
+  149  kubectl get pods -n cmchain -owide
+  150  kubectl exec -it cmchain-baascore-7f69c65697-8fx9q -n 47jovjyzszsrutwn /bin/bash
+  151  kubectl exec -it cmchain-baascore-7f69c65697-8fx9q -n cmchain /bin/bash
+  152  kubectl get pods -n 47jovjyzszsrutwn -owide
+  153  kubectl get cm -n 47jovjyzszsrutwn -owide
+  154  kubectl edit cm go-fabric-proxy-configmap -n 47jovjyzszsrutwn
+  155  kubectl get nodes
+  156  kubectl taint 10.1.4.196
+  157  kubectl taint 10.1.4.196 key=test:NoSchedule
+  158  kubectl taint node 10.1.4.196 key=test:NoSchedule
+  159  kubectl get pods -n 47jovjyzszsrutwn -owide
+  160  kubectl delete pod -n 47jovjyzszsrutwn go-fabric-proxy-8b7f8bb54-pcnrm
+  161  kubectl get pods -n 47jovjyzszsrutwn -owide
+  162  kubectl delete pod -n 47jovjyzszsrutwn prometheus-47jovjyzszsrutwn-677457775f-q4dl8
+  163  kubectl get pods -n 47jovjyzszsrutwn -owide
+  164  kubectl describe pod -n 47jovjyzszsrutwn prometheus-47jovjyzszsrutwn-677457775f-f567m
+  165  kubectl edit deployment  -n 47jovjyzszsrutwn prometheus
+  166  kubectl get deploy  -n 47jovjyzszsrutwn
+  167  kubectl edit deployment  -n 47jovjyzszsrutwn prometheus-47jovjyzszsrutwn
+  168  kubectl get pods -n 47jovjyzszsrutwn -owide
+  169  kubectl get pods -n gateway
+  170  ls
+  171  vi gateway-service.yaml
+  172  kubectl get ns
+  173  kubectl get pods -n erqqialhzq0durjd
+  174  kubectl delete ns erqqialhzq0durjd
+  175  vi gateway-service.yaml
+  176   kubectl get pods -n gateway
+  177  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.193
+  178  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.193:31008
+  179  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.194:31008
+  180  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.195:31008
+  181  ls
+  182  kubectl get pods -n gatway
+  183  kubectl get pods -n gateway
+  184  kubectl exec -it -n gateway gateway-6fc669d45d-5gfbf -- bash
+  185  kubectl get pods -n gateway -owide
+  186  ../sh/restart_service_gateway.sh gateway
+  187  kubectl -n gateway delete pod gateway-6fc669d45d-5gfbf
+  188  kubectl -n gateway delete pod gateway-gm-f66f4644c-x424m
+  189  kubectl get pods -n gateway -owide
+  190  kubectl -n cmchain describe pod gateway-6fc669d45d-hnzs8
+  191  kubectl -n gateway  describe pod gateway-6fc669d45d-hnzs8
+  192  ls
+  193  vi    gateway-service.yaml
+  194  vi    gateway-service-gm.yaml
+  195  vi    gateway-service.yaml
+  196  vi    gateway-service-gm.yaml
+  197  kubectl apply -f gateway-service.yaml
+  198  kubectl apply -f gateway-service-gm.yaml
+  199  kubectl get pods -n gateway -owide
+  200  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.195:31008
+  201  kubectl exec -it -n gateway gateway-668c4fd87-j6cgw -- bash
+  202  ls
+  203  vi  gateway-service.yaml
+  204  vi gateway_configmap.yaml
+  205  vi gateway-service.yaml
+  206  vi gateway-service-gm.yaml
+  207  kubectl apply -f gateway-service.yaml
+  208  kubectl apply -f gateway-service-gm.yaml
+  209  kubectl get pods -n gateway
+  210  kubectl delete pod -n gateway gateway-85cbbdb6b9-qp8jw
+  211  kubectl delete pod -n gateway gateway-gm-675b5cf954-q7dbj
+  212  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.195:31008
+  213  kubectl exec -it -n gateway gateway-85cbbdb6b9-qp8jw -- bash
+  214  kubectl get pods -n gateway
+  215  kubectl exec -it -n gateway gateway-85cbbdb6b9-44g59 -- bash
+  216  ls
+  217  vi gateway-service.yaml
+  218  kubectl get deploy -n gateway
+  219  kubectl delete deploy -n gateway
+  220  kubectl delete deploy gateway -n gateway
+  221  kubectl delete deploy gateway-gm -n gateway
+  222  kbuectl apply -f gateway-service.yaml
+  223  kubectl apply -f gateway-service.yaml
+  224  kubectl get pods -n gateway
+  225  kubectl -n gateway exec -it gateway-85cbbdb6b9-lntsf -- bash
+  226  kubectl get pods -n gateway -owide
+  227  kubectl -n gateway exec -it gateway-85cbbdb6b9-lntsf -- bash
+  228  ls
+  229  vi gateway_configmap.yaml
+  230  kubectl get cm -n gateway
+  231  kubectl edit cm gateway-configmap -n gateway
+  232  kubectldelete deply -n gateway gateway
+  233  kubectl delete deply -n gateway gateway
+  234  kubectl delete deply gateway -n gateway
+  235  kubectl get deploy -n gateway
+  236  kubectl delete deploy -n gateway
+  237  kubectl delete deploy gateway -n gateway
+  238  vi gateway-service.yaml
+  239  vi gateway_configmap.yaml
+  240  kubectl apply -f gateway_configmap.yaml
+  241  kubectl apply -f gateway-service.yaml
+  242  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.195:31008
+  243  ls
+  244  vi gateway_configmap_gm.yaml
+  245  vi gateway-service-gm.yaml
+  246  history
+  247  ../sh/gatewayTest.sh 6e16bbc1da3f45a8b318a26687f09e4b 10.1.4.195:31008
+  248  pwd
+  249  top
+  250  df
+  251  top
+  252  df
+  253  vi /etc/sysconfig/iptables
+  254  pwd
+  255  ls
+  256  cd /etc/sysconfig/iptables
+  257  cd /etc/sysconfig
+  258  cp iptables iptables.org
+  259  vi iptables
+  260  systemctl restart iptables
+  261  cd /opt
+  262  ls
+  263  cd nfs
+  264  ls
+  265  cd /mnt
+  266  ls
+  267  cd nfs
+  268  ls
+  269  ll
+  270  ls
+  271  docker ps
+  272  history
+  273  cd /mnt/nfs
+  274  ls
+  275  pwd
+  276  ls
+  277  pwd
+  278  ls
+  279  cd ..
+  280  ls
+  281  cd ..
+  282  ls
+  283  history|grep mount
+  284  mount -t nfs -o nolock 10.1.4.196:/opt/nfs /mnt/nfs
+  285  cd /mnt/nfs
+  286  ls
+  287  cd baas
+  288  ls
+  289  cd command
+  290  ls
+  291  cd ..
+  292  ls
+  293  cd app
+  294  ls
+  295  cd ..
+  296  ls
+  297  pwd
+  298  ls
+  299  docker ps|grep gateway
+  300  docker logs -f c1ae --tail=10
+  301  kubectl get pods
+  302  kubectl get pods -n default
+  303  kubectl get pods
+  304  kubectl get nodes
+  305  docker ps
+  306  kubectl get pods -n cmchain
+  307  history|grep kubectl
+  308  kubectl get pods -n cmchain
+  309  kubectl logs -n cmchain cmchain-baascore-7f69c65697-8fx9q
+  310  ll /mnt/nfs/baas/chainconf/BC4EAC8FB7CB51D5B193E1ACD8F7EC8B
+  311  more /mnt/nfs/baas/chainconf/BC4EAC8FB7CB51D5B193E1ACD8F7EC8B
+  312  kubectl logs -n cmchain cmchain-baascore-7f69c65697-8fx9q
+  313  pwd
+  314  ls
+  315  cd  ..
+  316  ls
+  317  cd install
+  318  ls
+  319  cd deploy_scripts/
+  320  ls
+  321  cd k8s
+  322  ls
+  323  cd sh
+  324  ls
+  325  more restart_service.sh
+  326  sudo kubectl  get pods -n cmchain |grep $serviceName | awk '{print $1}'
+  327   kubectl  get pods -n cmchain |grep baas | awk '{print $1}'
+  328   kubectl  get pods -n cmchain |grep baascore | awk '{print $1}'
+  329  ls
+  330  vi restart_service.sh
+  331  history
+  332  history|grep kubectl|grep delete
+  333  pwd
+  334  ls
+  335  pwd
+  336  ls
+  337  kubectl get pods -n cmchain
+  338  pwd
+  339  ls
+  340  ./restart_service.sh cmchain-baascore
+  341  kubectl  get pods -n cmchain
+  342  docker images
+  343  curl 10.1.4.196:5000/cmri-baas/fabric-peer
+  344  pwd
+  345  ls
+  346  ./restart_service.sh cmchain-baascore
+  347  kubectl  get pods -n cmchain
+  348  kubectl logs -n cmchain  cmchain-baascore-7f69c65697-c294j
+  349  kubectl get pods -n cmchain
+  350  pwd
+  351  kubectl get pods -n cmchain
+  352  kubectl logs -n cmchain cmchain-baascore-7f69c65697-c294j
+  353  kubectl logs -n cmchain cmchain-baascore-7f69c65697-c294j --tail=10
+  354  ./restart_service.sh cmchain-baascore
+  355   kubectl  get pods -n cmchain
+  356  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7
+  357   kubectl  get pods -n cmchain
+  358  kubectl logs -n cmchain cmchain-admin-bc65cf444-2dg9n
+  359   kubectl  get pods -n cmchain
+  360  kubectl logs -n cmchain cmchain-auth-787569967c-mq7bt
+  361   kubectl  get pods -n cmchain
+  362  kubectl logs -n cmchain cmchain-gateway-f78d599f9-dfxqc
+  363   kubectl  get pods -n cmchain
+  364  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7
+  365   kubectl  get pods -n cmchain
+  366  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7
+  367  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7  --tail20
+  368  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7  --tail=20
+  369  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7  --tail=500
+  370   kubectl  get pods -n cmchain
+  371  kubectl logs -n cmchain cmchain-baassupport-66c9d9c4bc-nml5g --tail=500
+  372   kubectl  get pods -n cmchain
+  373  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7 --tail=500
+  374  curl http://36.139.0.78:7650/wizdata/ui
+  375  curl ifconfig.me
+  376  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7 --tail=500
+  377  ls
+  378  kubectl get pods -n cmchain
+  379  df -h |grep nfs
+  380  kubectl get nodes
+  381   kubectl get pods -n cmchain -owide
+  382  kubectl get ns
+  383  kubeclt -n 47jovjyzszsrutwn get pods
+  384  kubectl -n 47jovjyzszsrutwn get pods
+  385  kubectl -n 47jovjyzszsrutwn logs go-fabric-proxy-8b7f8bb54-9gv2t
+  386  pwd
+  387  cd /mnt/nfs/install/deploy_scripts/k8s/sh
+  388  ls
+  389  kubectl get ns
+  390  kubectl -n 47jovjyzszsrutwn get pods
+  391  kubectl -n 47jovjyzszsrutwn get pods |grep -v NAME|awk '{"kubectl -n 47jovjyzszsrutwn  delete pod " $1}'
+  392  kubectl -n 47jovjyzszsrutwn get pods |grep -v NAME
+  393  kubectl -n 47jovjyzszsrutwn get pods |grep -v NAME|awk '{print "kubectl -n 47jovjyzszsrutwn  delete pod " $1}'
+  394  kubectl -n 47jovjyzszsrutwn get pods |grep -v NAME|awk '{print "kubectl -n 47jovjyzszsrutwn  delete pod " $1}'  |sh
+  395  kubectl -n 47jovjyzszsrutwn get pods
+  396  kubectl -n gateway get pods
+  397  kubectl -n gateway delete pod gateway-668c4fd87-mjnm2
+  398  kubectl -n gateway get pods
+  399  kubectl exec -it -n gateway gateway-668c4fd87-mjnm2 -- bash
+  400  ls
+  401  kubectl exec -it -n gateway gateway-668c4fd87-mjnm2 -- sh
+  402  kubectl exec -it -n gateway gateway-668c4fd87-r7x7j -- sh
+  403  kubectl get pods -n cmchain
+  404  kubectl logs -n cmchain cmchain-baascore-7f69c65697-fc7f7 --tail=500
+  405  docker ps
+  406  vi /etc/fstab
+  407  mount -a
+  408  mount
+  409  vi /etc/fstab
+  410  ls
+  411  df
+  412  pwd
+  413  top
+  414  pwd
+  415  kubectl get nodes
+  416  df
+  417  cd /opt
+  418  ls
+  419  cd nfs
+  420  ls
+  421  cd nfs
+  422  ls
+  423  cd install
+  424  ls
+  425  cd scripts/
+  426  ls
+  427  cd ..
+  428  ls
+  429  cd ..
+  430  df
+  431  ls
+  432  du -sk 碳核宝部署
+  433  pwd
+  434  ls
+  435  crontab -l
+  436  cd /etc/sysconfig
+  437  ls
+  438  vi iptables
+  439  systemctl restart iptables
+  440  docker ps -a
+  441  ll
+  442  cd /mnt/nfs
+  443  ls
+  444  cd cmchain
+  445  ls
+  446  cd cmri
+  447  ls
+  448  cd A4FA9C1394BD7905A0A9AC3DE93280DC/
+  449  ls
+  450  pwd
+  451  ls
+  452  vi *.yaml
+  453  pwd
+  454  ls
+  455  cd ..
+  456  ls
+  457  vi
+  458  vi /etc/ssh/sshd_config
+  459  vi /etc/ssh/sshd_config
+  460  service sshd restart
+  461  /bin/systemctl restart sshd.service
+  462  lscpu
+  463  cat /proc/cpuinfo
+  464  cat /proc/cpuinfo |grep physical
+  465  cat /proc/meminfo
+  466  df -h
+  467  vi /etc/ssh/sshd_config
+  468  service sshd restart
+  469  ps -ef |grep Jetty
+  470  find / -name "jetty.xml" 2>/dev/null
+  471  cd /opt/aspmon/agent_host_root/spectre/standalone/3.0
+  472  netstat -pln |grep 2022
+  473  /opt/aspmon/agent_host_root/spectre/standalone/3.0
+  474  cd /opt/aspmon/agent_host_root/spectre/standalone/3.0
+  475  ll
+  476  netstat  -pln|grep 2022
+  477  kill -9 8309
+  478  rm  -rf /opt/aspmon/agent_host_root/spectre/standalone/3.0
+  479  netstat -pln |grep 10250
+  480  ps -ef |grep 986
+  481  netstat -pln |grep  1080
+  482  ps -ef |grep 5390
+  483  ps -ef |grep  8086
+  484  netstat -pln |grep  1080
+  485  cd /etc/
+  486  ll
+  487  cd sysconfig/
+  488  ll
+  489  vi  iptables
+  490  systemctl restart iptables
+  491  sudo shutdown -h now
+  492  cd /etc/docker
+  493  ll
+  494  vi daemon.json
+  495  ps -ef
+  496  ps -ef | grep java
+  497  top
+  498  docker ps
+  499  docker ps -a
+  500  docker ps -a | grep bin
+  501  docker ps -a | grep nginx
+  502  telnet 10.1.203.120 8848
+  503  sudo yum install telnet
+  504  telnet 10.1.203.120 8848
+  505  docker ps
+  506  netstat -ntlp
+  507  docker run --name ftpproxy-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev --env ENV_APP_NAME=ftpproxy --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/ftpproxy-service:/opt/data/logs/ -d  10.1.6.34:8080/cicd-public-60/ftpproxy-service:1.0.3.2_5_20250710070932
+  508  docker ps
+  509  netstat -ntlp
+  510  docker run --name switchmanage-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev --env ENV_APP_NAME=switchmanage --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/switchmanage-service:/opt/data/logs/ -d  10.1.6.34:8080/cicd-public-72/switchmanage-service:1.0.3.2_4_20250710070446
+  511  ps -ef | grep kafka
+  512  cd /opt/docker
+  513  ll
+  514  cd common/
+  515  cd kafka/
+  516  ll
+  517  cd zookeeper-3.4.10/
+  518  ps -ef | grep zookeeper
+  519  ll
+  520  cd data/
+  521  cd ..
+  522  rm -rf data/
+  523  ll
+  524  cd  conf/
+  525  cd ..
+  526  ll
+  527  mkdir data
+  528  ll
+  529  cd conf/
+  530  vim zoo.cfg
+  531  cd ../bin/
+  532  sh zkServer.sh start
+  533  ps -ef | grep zookeeper.out
+  534  ps -ef | grep zookeeper
+  535  cd ../data/
+  536  jps -ml
+  537  ps -ef | grep zookeeper
+  538  cd ../..
+  539  cd kafka_2.11-0.11.0.0/
+  540  cd logs/
+  541  cd ..
+  542  rm -rf logs/
+  543  ll
+  544  mkdir logs
+  545  cd config/
+  546  ll
+  547  vim server.properties
+  548  cd ..
+  549  rm -rf kafka-logs/
+  550  ll
+  551  cat start.sh
+  552  cd bin/
+  553  ll
+  554  ./kafka-server-start.sh ../config/server.properties &
+  555  java --version
+  556  java -version
+  557  cd /usr/local/
+  558  mkdir jdk
+  559  ll
+  560  cd jdk/
+  561  mv /home/sudoroot/jdk-8u181-linux-x64.tar.gz  .
+  562  ll
+  563  tar -zxvf jdk-8u181-linux-x64.tar.gz
+  564  ll
+  565  rm -rf jdk-8u181-linux-x64.tar.gz
+  566  ll
+  567  vim /etc/profile
+  568  source /etc/profile
+  569  java -version
+  570  cd /home/sudoroot/
+  571  ll
+  572  rm -rf kafka_2.11-0.11.0.0.tar.gz
+  573  ll
+  574  cd /opt/docker/common/
+  575  cd kafka/
+  576  ps -ef | grep kafka
+  577  cd kafka_2.11-0.11.0.0/bin/
+  578  ./kafka-server-start.sh ../config/server.properties &
+  579  cd ../
+  580  cd ..
+  581  cd zookeeper-3.4.10/
+  582  ll
+  583  cd bin/
+  584  sh zkServer.sh start
+  585  ps -ef | grep zookeeper
+  586  cd ../../kafka_2.11-0.11.0.0/bin/
+  587  ./kafka-server-start.sh ../config/server.properties &
+  588  ps -ef | grep kafka
+  589  docker ps
+  590  docker logs bcfff
+  591  docker logs -f --tail 200 bcfff
+  592  pwd
+  593  cd ../..
+  594  ll
+  595  rm -rf zookeeper-3.4.10.tar.gz
+  596  ll
+  597  docker ps
+  598  docker exec -it bcfff /bin/bash
+  599  docker ps
+  600  docker logs -f --tail 200 3c6d1
+  601  docker logs -f --tail 200 switchmanage-service-p1
+  602  docker logs -f --tail 200 ftpproxy-service-p1
+  603  docker ps
+  604  docker restart binterface-service-server-p1
+  605  docker logs -f --tail 200 binterface-service-server-p1
+  606  docker logs -f --tail 200 binterface-service-client-p1
+  607  docker restart binterface-service-client-p1
+  608  docker logs -f --tail 200 binterface-service-client-p1
+  609  docker logs -f --tail 200 binterface-service-server-p1
+  610  docker logs -f --tail 200 binterface-service-client-p1
+  611  docker logs -f --tail 200 binterface-service-data-p1
+  612  docker restart binterface-service-data-p1
+  613  docker logs -f --tail 200 binterface-service-data-p1
+  614  docker logs -f --tail 200 ftpproxy-service-p1
+  615  docker restart ftpproxy-service-p1
+  616  docker logs -f --tail 200 ftpproxy-service-p1
+  617  docker logs -f --tail 200 switchmanage-service-p1
+  618  docker stop switchmanage-service-p1
+  619  docker ps
+  620  docker logs -f --tail 200 bcfff
+  621  docker ps
+  622  docker logs -f --tail 200 4fa9c
+  623  docker ps
+  624  docker logs -f --tail 200 3c6d
+  625  docker logs -f --tail 200 bcfff
+  626  vim /etc/profile
+  627  docker logs -f --tail 200 bcfff
+  628  docker ps
+  629  docker logs -f -tail 200 3c6d1
+  630  docker logs -f --tail 200 3c6d1
+  631  docker ps
+  632  docker logs -f --tail 200 4fa9c
+  633  docker ps
+  634  ps -ef|grep swich
+  635  docker logs -f --tail 200 binterface-service-server-p1
+  636  docker ps
+  637  docker inspect bcfff82185a4
+  638  docker ps
+  639  ps -ef | grep kafka
+  640  docker ps
+  641  docker logs -f --tail 200 bcff
+  642  docker ps
+  643  yum
+  644  yum -y install gcc pcre-devel zlib-devel openssl openssl-devel
+  645  mv /home/sudoroot/nginx-1.21.6.tar.gz /usr/local/
+  646  cd /usr/local/
+  647  tar -zxvf nginx-1.21.6.tar.gz -C /usr/local/nginx
+  648  mkdir nginx
+  649  ll
+  650  tar -zxvf nginx-1.21.6.tar.gz -C /usr/local/nginx
+  651  cd /usr/local/nginx/nginx-1.21.6
+  652  ./configure --prefix=/usr/local/nginx
+  653  make && make install
+  654  cd /usr/local/nginx/sbin
+  655  ./nginx -v
+  656  ps -ef | grep nginx
+  657  ./nginx
+  658  vim ../conf/nginx.conf
+  659  cd ../conf/
+  660  ll
+  661  cp nginx.conf /home/sudoroot/
+  662  rm -rf /home/sudoroot/nginx.conf
+  663  ll
+  664  mv /home/sudoroot/nginx.conf .
+  665  ll
+  666  cd ../sbin/
+  667  ./nginx -s reload
+  668  docker ps
+  669  docker logs -f --tail 200 bcff
+  670  docker ps
+  671  docker logs -f --tail 200 3c6d
+  672  docker ps
+  673  docker logs -f --tail 200 4fa9
+  674  ls
+  675  docker ps
+  676  history
+  677  docker ps -a
+  678  docker ps
+  679  history
+  680  ps -ef |grep kafka
+  681  pwdx 58512
+  682  pwdx 60071
+  683  cd /opt/docker/common/kafka/zookeeper-3.4.10/bin
+  684  ls
+  685  ps -ef | grep nginx
+  686  netstat -ntlp | grep 24642
+  687  netstat -ntlp | 2
+  688  netstat -ntlp | grep 20614
+  689  docker ps
+  690  docker logs -f --tail 200 bcff
+  691  docker ps
+  692  docker stop ba29599bbf76
+  693  docker stop 3c6d152306bb
+  694  docker start ba29599bbf76
+  695  docker rm 3c6d152306bb
+  696  docker stop bcfff82185a4
+  697  docker rm bcfff82185a4
+  698  docker stop 4fa9c203e352
+  699  docker rm 4fa9c203e352
+  700  docker ps
+  701  docker run --name binterface-service-server-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface-p1 --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=18083 --env APPLICATION_NAME=binterface-service-server-p1 -v /tmp/logs/binterface-service-server:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  702  docker run --name binterface-service-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface-p1  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  --env SERVER_PORT=18081 --env APPLICATION_NAME=binterface-service-client-p1 -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  703  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface-p1  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18085 --env APPLICATION_NAME=binterface-service-data-p1 -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  704  docker ps
+  705  docker logs -f --tail 200 4f7d
+  706  ll
+  707  docker ps
+  708  docker logs -f --tail 400 binterface-service-client-p1
+  709  docker logs -f --tail 400 binterface-service-client-p1 | grep 20250912100455
+  710  docker ps
+  711  docker logs -f --tail 400 ftpproxy-service-p1
+  712  docker ps
+  713  docker logs -f --tail 400 binterface-service-server-p1
+  714  docker ps
+  715  docker logs -f --tail 400 binterface-service-client-p1
+  716  ll
+  717  lsof -i:8011
+  718  docker ps
+  719  docker logs -f --tail 200 3823
+  720  docker logs -f --tail 200 3823 | grep 10.1.4.194
+  721  docker logs  3823 | grep 10.1.4.194
+  722  docker logs -f --tail 200 3823
+  723  docker logs  3823 | grep 10.1.4.194
+  724  docker ps
+  725  docker logs  74ae | grep 10.1.4.194
+  726  docker logs -f --tail 200 74ae
+  727  docker logs 74ae | grep 20250912162755
+  728  docker logs 74ae | grep 20250912175656
+  729  docker ps
+  730  docker logs -f --tail 200 4f7d
+  731  docker ps
+  732  docker rm -f 35fa
+  733  docker rm -f 3823
+  734  docker rm -f 4f7d
+  735  docker ps
+  736  docker run --name binterface-service-server --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=gdems-binterface --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=18083 --env APPLICATION_NAME=binterface-service-server -v /tmp/logs/binterface-service-server:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  737  docker run --name binterface-service --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=gdems-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  --env SERVER_PORT=18081 --env APPLICATION_NAME=binterface-service -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  738  docker run --name binterface-service-data --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=gdems-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18085 --env APPLICATION_NAME=binterface-service-data -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_48_20250910075431
+  739  docker ps
+  740  docker logs -f --tail 200 5dcd
+  741  ps -ef | grep kafka
+  742  docker logs -f --tail 200 5dcd
+  743  docker ps
+  744  docker restart ba29
+  745  docker restart 5dcd
+  746  docker restart 74ae
+  747  docker restart 241d
+  748  docker ps
+  749  docker logs -f --tail 200 5dcd
+  750  telnet 10.1.5.109 9092
+  751  ping 10.1.5.109 9092
+  752  ping 10.1.5.109
+  753  vim /etc/sysconfig/iptables
+  754  telnet 10.1.5.109 9092
+  755  docker logs -f --tail 200 5dcd
+  756  docker ps
+  757  docker logs -f --tail 200 ba29
+  758  docker logs ba29 | grep 00001006000000167191
+  759  docker logs -f --tail 200 ba29
+  760  docker logs ba29 | grep 10.1.4.194
+  761  docker ps
+  762  docker inspect bcfff82185a4
+  763  docker logs -f --tail 2000 ba29599bbf7
+  764  clear
+  765  ls
+  766  docker ps
+  767  docker ps -a
+  768  docker ps -a|grep bin
+  769  clear
+  770  dokcer ps |grep bin
+  771  docker ps |grep bin
+  772  docker logs -f --tail 300 4f7d79419fb1
+  773  docker ps
+  774  docker logs -f --tail 200 binterface-service-client-p1
+  775  docker logs -f --tail 200 binterface-service
+  776  docker ps
+  777  docker logs -f --tail 200 35fa08a765f3
+  778  docker ps
+  779  docker inspect 35fa08a765f3
+  780  docker ps
+  781  docker logs 5dcd | grep "<Name>LOGIN</Name>"
+  782  docker logs 5dcd | grep "<Name>SEND_DEV_CONF_DATA</Name>"
+  783  docker logs 5dcd | grep "<Name>SEND_ALARM</Name>"
+  784  docker logs -f --tail 200 5dcd
+  785  docker logs 5dcd | grep "<Name>SEND_DEV_CONF_DATA</Name>"
+  786  docker logs -f --tail 200 5dcd
+  787  ps -ef
+  788  ps -ef | grep kafka
+  789  kill -9 60071
+  790  kill -9 58512
+  791  ps -ef | grep kafka
+  792  docker ps
+  793  top | grep nginx
+  794  ps -ef | grep nginx
+  795  free -m
+  796  top
+  797  ps -ef | grep kube
+  798  cat /etc/docker/daemon.json
+  799  tar -zcvf /home/sudoroot/kafka.tar.gz /opt/docker/common/
+  800  scp /home/sudoroot/kafka.tar.gz sudoroot@10.1.4.194:/opt/docker
+  801  scp /home/sudoroot/kafka.tar.gz sudoroot@10.1.4.194:/home/sudoroot
+  802  telnet 10.1.4.194 9092
+  803  docker ps
+  804  docker restart binterface-service-server
+  805  docker restart binterface-service
+  806  docker restart binterface-service-data
+  807  docker restart ftpproxy-service-p1
+  808  docker logs -f --tail 200 binterface-service-server
+  809  docker ps
+  810  docker restart binterface-service-server
+  811  docker restart binterface-service
+  812  docker restart binterface-service-data
+  813  docker restart ftpproxy-service-p1
+  814  docker logs -f --tail 200 binterface-service-server
+  815  docker logs binterface-service-server | grep SEND_ALARM
+  816  docker logs -f --tail 200 binterface-service-server
+  817  docker logs binterface-service-server | grep SEND_ALARM
+  818  docker logs binterface-service-server | grep ALARM
+  819  docker logs -f --tail 200 binterface-service-server
+  820  docker logs binterface-service-server | grep "SEND_DEV_CONF_DATA"
+  821  docker logs binterface-service-server | grep "<Name>SEND_DEV_CONF_DATA</Name>"
+  822    </PK_Type>
+  823    <Info>
+  824  docker logs binterface-service-server | grep "<Name>SEND_DEV_CONF_DATA</Name></PK_Type><Info><FSUID>20250912175656</FSUID>"
+  825  clear
+  826  docker logs binterface-service-server | grep "<Name>SEND_DEV_CONF_DATA</Name></PK_Type><Info><FSUID>20250912175656</FSUID>"
+  827  docker logs -f --tail 200 binterface-service-server
+
+
+
+
+
+
+
+
+
+
+  828  cd /home/sudoroot/
+  829  ll
+  830  rm -rf kafka.tar.gz
+  831  date
+  832  mv influxdb-1.6.3.x86_64.rpm /usr/local/
+  833  mv grafana-10.3.10-1.x86_64.rpm /usr/local/
+  834  cd /usr/local/
+  835  ll
+  836  sudo yum localinstall influxdb-1.6.3.x86_64.rpm
+  837  vim /etc/influxdb/influxdb.conf
+  838  systemctl start influxdb.service
+  839  systemctl status influxdb.service
+  840  netstat -ntl[
+  841  netstat -ntlp
+  842  vim /etc/influxdb/influxdb.conf
+  843  netstat -ntlp | grep 2003
+  844  netstat -ntlp | grep 8083
+  845  netstat -ntlp | grep 8088
+  846  systemctl start influxdb.service
+  847  systemctl status influxdb.service
+  848  netstat -ntlp | grep 8088
+  849  vim /etc/influxdb/influxdb.conf
+  850  cat /var/log/influxdb/influxdb.log
+  851  systemctl status influxdb.service
+  852  vim /etc/influxdb/influxdb.conf
+  853  ps -ef | grep influxdb
+  854  cd /var/lib/
+  855  ll
+  856  systemctl status influxdb.service
+  857  journalctl -u influxdb.service
+  858  systemctl start influxdb.service
+  859  journalctl -u influxdb.service
+  860  systemctl status influxdb.service
+  861  chmod 777 -R /etc/influxdb/
+  862  chmod 777 -R /var/lib/influxdb/
+  863  systemctl start influxdb.service
+  864  systemctl status influxdb.service
+  865  vim /etc/influxdb/influxdb.conf
+  866  cat /var/log/messages
+  867  tail -200f /var/log/messages
+  868  cat /var/log/messages | grep influxdb
+  869  cat /var/log/messages | grep "Sep 17 15:55:47"
+  870  cat /var/log/messages | grep "Sep 17 15:36:50"
+  871  cd /usr/local/
+  872  ll
+  873  sudo yum localinstall grafana-10.3.10-1.x86_64.rpm
+  874  systemctl start grafana-server.service
+  875  systemctl staus grafana-server.service
+  876  systemctl status grafana-server.service
+  877  netstat -ntlp | grep 3000
+  878  systemctl status firewalld
+  879  vim /etc/sysconfig/iptables
+  880  netstat -ntlp | grep 21726
+  881  cat /etc/grafana/grafana.ini
+  882  vim /etc/grafana/grafana.ini
+  883  journalctl -u grafana-server
+  884  systemctl status grafana-server.service
+  885  sudo firewall-cmd --list-all
+  886  cat /etc/grafana/grafana.ini
+  887  vim /etc/grafana/grafana.ini
+  888  systemctl restart grafana-server.service
+  889  systemctl status grafana-server.service
+  890  ps -ef | grep grafana
+  891  netstat -ntlp | grep 1604
+  892  netstat -ntlp | grep 16804
+  893  vim /etc/grafana/grafana.ini
+  894  systemctl restart grafana-server.service
+  895  ps -ef | grep grafana
+  896  vim /etc/grafana/grafana.ini
+  897  systemctl restart grafana-server.service
+  898  ll
+  899  cd /home/sudoroot/
+  900  ll
+  901  mv prometheus-2.44.0.linux-amd64.tar.gz /usr/local/
+  902  mv node_exporter-1.1.2.linux-amd64.tar.gz /usr/local/
+  903  cd /usr/local/
+  904  ll
+  905  tar -zxvf prometheus-2.44.0.linux-amd64.tar.gz
+  906  ll
+  907  mv prometheus-2.44.0.linux-amd64 prometheus
+  908  ll
+  909  cd /usr/lib/systemd/system
+  910  ll
+  911  vi prometheus.service
+  912  systemctl daemon-reload
+  913  systemctl start prometheus
+  914  cd /usr/local/
+  915  ll
+  916  rm -rf nginx-1.21.6.tar.gz
+  917  rm -rf grafana-10.3.10-1.x86_64.rpm
+  918  rm -rf prometheus-2.44.0.linux-amd64.tar.gz
+  919  tar -zxvf node_exporter-1.1.2.linux-amd64.tar.gz
+  920  ll
+  921  mv node_exporter-1.1.2.linux-amd64 node_exporter
+  922  ll
+  923  rm -rf node_exporter-1.1.2.linux-amd64.tar.gz
+  924  vi /usr/lib/systemd/system/node_exporter.service
+  925  systemctl daemon-reload
+  926  systemctl start node_exporter
+  927  cd prometheus/
+  928  ll
+  929  vim prometheus.yml
+  930  systemctl restart prometheus.service
+  931  ls
+  932  cd /
+  933  ls
+  934  ls usr
+  935  ls etc
+  936  ls /etc/nginx
+  937  ls
+  938  ls /etc/nginx/mine_mailcap.types
+  939  cd ..
+  940  ls
+  941  ls sys
+  942  ls /sys/kernel
+  943  ps -ef|grep nginx
+  944  pwdx 24642
+  945  cd /usr/local/nginx/sbin
+  946  ls
+  947  cd nginx
+  948  cat nginx
+  949  ls
+  950  cd ..
+  951  ls
+  952  cd conf
+  953  ls
+  954  cat ngxin.conf
+  955  cat nginx.conf
+  956  ls
+  957  cd ..
+  958  ls
+  959  ps -ef
+  960  docker ps
+  961  ps -ef | grep kafka
+  962  ps -ef | grep zookee
+  963  free -m
+  964  top
+  965  ps -ef | grep kube
+  966  top
+  967  ps -ef | grep kube
+  968  kill -9 982
+  969  kill -9 1049
+  970  kill -9 4000
+  971  kill -9 7167
+  972  ps -ef | grep kube
+  973  top
+  974  dockr logs -f --tail 200 binterface-service-server
+  975  docker logs -f --tail 200 binterface-service-server
+  976  docker logs binterface-service-server | grep "不存在的FSU"
+  977  docker logs binterface-service-server | grep "20250901000"
+  978  docker logs binterface-service-server | grep "20250900000"
+  979  docker logs binterface-service-server | grep "20250912175656"
+  980  docker ps
+  981  docker logs binterface-service-server | grep "20250912175656"
+  982  docker logs binterface-service-server | grep "20250905000"
+  983  docker logs binterface-service-server | grep "响应"
+  984  docker logs -f --tail 200 binterface-service-server
+  985  history
+  986  BigCloud Enterprise Linux For Euler 21.10 LTS
+  987  cat /etc/os-release
+  988  lscpu
+  989  free -h
+  990  lsblk -o NAME,SIZE,MODEL
+  991  ifconfig
+  992  ethtool enp1s0
+  993  docker logs -f --tail 200 binterface-service-server
+  994  docker ps
+  995  top
+  996  ps -ef | grep java
+  997  free -m
+  998  docker logs -f --tail 200 binterface-service-server
+  999  docker ps
+ 1000  docker logs --tail 400 -f 74aedfb29b07
+ 1001  history

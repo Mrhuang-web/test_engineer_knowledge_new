@@ -1,0 +1,27 @@
+server:
+  port: 9977
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+###Mybatis分页插件
+pagehelper:
+  helperdialect: mysql
+  reasonable: true
+  support-methods-arguments:  true
+  params: count=countSql
+
+#ups设备效率
+upsDeviceEfficiency: 
+  #执行公有功率因数的定时任务时间
+  calPowerFactor: 0 0 23 * * ?
+  calPowerDay: 15
+
+eventListener.signalHisDataSync.enable: true
+eventListener.upsEfficiencyCal.enable: true
+eventListener.upsEfficiencyCal.scheduleDelayProduce: 0 0/1 * * * ? #延迟生产消息定时任务

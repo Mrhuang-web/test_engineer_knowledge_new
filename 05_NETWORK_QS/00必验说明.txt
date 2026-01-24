@@ -1,0 +1,6 @@
+现网验证顺序
+	三个时间：开始，结束
+	1、先验上线功能
+	2、验证完后等开发 - 有问题发问题
+	3、1h后核心功能
+	https://docs.qq.com/doc/DVFRvQWNqWG1PdnJC

@@ -1,0 +1,112 @@
+# 触发对应综资的es -> 
+# mysql入库orderIds
+	从 
+		SSSP-20241031-000047,
+		SSSP-20241031-000022,
+		SSSP-20241031-000023,
+		SSSP-20241031-000025,
+		SSSP-20241031-000027,
+		SSSP-20241031-000028,
+		SSSP-20241031-000031,
+		SSSP-20241031-000032,
+		SSSP-20241031-000035,
+		SSSP-20241031-000036,
+		SSSP-20241031-000038,
+		SSSP-20241031-000039,
+		SSSP-20241031-000040,
+		SSSP-20241031-000041,
+		SSSP-20241031-000042,
+		SSSP-20241031-000043,
+		SSSP-20241031-000044,
+		SSSP-20241031-000018,
+		SSSP-20241031-000010
+
+
+在external执行
+
+
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000047,SSSP-20241031-000022,SSSP-20241031-000023,SSSP-20241031-000025,SSSP-20241031-000027,SSSP-20241031-000028,SSSP-20241031-000031,SSSP-20241031-000032,SSSP-20241031-000035,SSSP-20241031-000036,SSSP-20241031-000038,SSSP-20241031-000039,SSSP-20241031-000040,SSSP-20241031-000041,SSSP-20241031-000042,SSSP-20241031-000043,SSSP-20241031-000044,SSSP-20241031-000018,SSSP-20241031-000010'
+
+
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000022,SSSP-20241031-000023,SSSP-20241031-000025,SSSP-20241031-000027,SSSP-20241031-000028,SSSP-20241031-000031,SSSP-20241031-000032,SSSP-20241031-000035,SSSP-20241031-000036,SSSP-20241031-000038,SSSP-20241031-000039,SSSP-20241031-000040,SSSP-20241031-000041,SSSP-20241031-000042,SSSP-20241031-000043,SSSP-20241031-000044'
+
+
+
+
+http://10.12.5.119:31640/
+
+
+# 数据中心
+curl --location --request GET 'http://10.12.5.119:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000047'
+# 空间-站点（会去查看SSSP-20250110-000002：站点映射关系  -->  对应关系在总结中说明）
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000010'
+# 空间-机房
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000018'
+# 高压配电
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000025'
+# 低压交流配电
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000031'
+# 变压器
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000022'
+# 低压直流配电
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000036'
+# 发电机组
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000032'
+# 开关电源
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000035'
+# 蓄电池
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000039'
+# UPS设备
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000038'
+# 空调
+curl --location --request GET 'http://10.12.5.123:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000040'
+# 变换设备
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000023'
+# 动环监控
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000042'
+# 节能设备
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000041'
+# 高压直流电源
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000027'
+# 高压直流配电
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000028'
+# 智能电表
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000043'
+# 其它设备
+curl --location --request GET 'http://10.1.202.2:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000044'
+
+
+
+
+批次是根据，索引名的日期来判断的（然后再到里面那指定日期的）
+
+
+
+
+
+
+
+所有综资入库 -- 都是走exter
+
+
+
+
+
+
+设计表：
+	zz_audit_summary_site
+	zz_audit_summary_device_type(summary_id对应中间库设备)
+
+	走的report服务
+
+	report
+		curl --location --request POST 'http://10.1.202.2:30311/v1/zz/audit/callTask?auditDate=2025-11-27'
+
+	    curl --location --request POST 'http://10.1.202.2:30311/v1/zz/audit/callTask?auditDate=2025-11-23' \
+	--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+
+
+
+
+
+报表的都是走report

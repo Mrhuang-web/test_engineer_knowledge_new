@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+  <h3>Fsu 列表</h3>
+  <table>
+  <tr>
+    <th>fsuid</th>
+    <th>name</th>
+    <th>action1</th>
+    <th>action2</th>
+  <tr>
+  {% for fsu in fsus %}
+    <tr>
+      <td><a href="/device/{{ fsu.fsuid }}">{{ fsu.fsuid }}</a></td>
+      <td>{{fsu.fsuname}}</td>
+      <td><a href="/send_login?fsuid={{ fsu.fsuid }}">注册上报</a></td>
+      <td><a href="/send_dev_conf?fsuid={{ fsu.fsuid }}">上报配置数据</a></td>
+    </tr>
+  {% end %}
+  </table>
+{% end %}

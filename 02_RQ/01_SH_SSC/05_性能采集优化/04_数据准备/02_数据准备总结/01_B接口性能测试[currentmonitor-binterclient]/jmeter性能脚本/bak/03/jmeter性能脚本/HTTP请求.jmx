@@ -1,0 +1,1603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划">
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="NAMESPACE" elementType="Argument">
+            <stringProp name="Argument.name">NAMESPACE</stringProp>
+            <stringProp name="Argument.value">alauda</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="head_token" elementType="Argument">
+            <stringProp name="Argument.name">head_token</stringProp>
+            <stringProp name="Argument.value">7ccc1a4a79d37ebb2c992b7c8c4dac10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="head_username" elementType="Argument">
+            <stringProp name="Argument.name">head_username</stringProp>
+            <stringProp name="Argument.value">alauda</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="cookie" elementType="Argument">
+            <stringProp name="Argument.name">cookie</stringProp>
+            <stringProp name="Argument.value">SESSION=NGVjOGM1ZmItZjNkYy00M2QxLWE5ZmYtZTEzNDcwNGMzMDcy; JSESSIONID=9DA7FA035058F9B12F1669E26696D788</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="低压直流配电_200并发" enabled="false">
+        <stringProp name="TestPlan.comments">性能采集机房10_200快1-FSU设备性能采集_quickly1</stringProp>
+        <intProp name="ThreadGroup.num_threads">100</intProp>
+        <intProp name="ThreadGroup.ramp_time">3</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">D:/00-company/04_项目/038、【上海】——【B接口改造】——【新任务】——【案例未写】/02_测试用例/05_数据准备及归纳/01_B接口性能测试[currentmonitor-binterclient]/jmeter性能脚本/bak/03/jmeter性能脚本/data/quick1_低压直流配电200台.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">deviceId,deviceName,roomName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_token</stringProp>
+              <stringProp name="Header.value">${head_token}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_username</stringProp>
+              <stringProp name="Header.value">${head_username}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">${cookie}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <stringProp name="HTTPSampler.domain">10.1.203.120</stringProp>
+          <stringProp name="HTTPSampler.port">9081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/spider/web/v1/currentmonitor/getMeasureVal</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="低压直流配电_100台并发" enabled="true">
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestBody}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 预处理程序" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+
+// ========== 防御性变量获取 ==========
+def deviceId = vars.get(&apos;deviceId&apos;)?.trim()
+def deviceName = vars.get(&apos;deviceName&apos;)?.trim() ?: &quot;UnknownDevice&quot;
+def roomName = vars.get(&apos;roomName&apos;)?.trim() ?: &quot;UnknownRoom&quot;
+def namespace = vars.get(&apos;NAMESPACE&apos;)?.trim() ?: &quot;default&quot;
+
+// 严格校验
+if (!deviceId) {
+    def errorMsg = &quot;&quot;&quot;
+    ${&apos;=&apos;*50}
+    ❌ deviceId变量为空或不存在！
+    📋 可用变量列表: ${vars.getVariableNames()?.sort()?.join(&apos;, &apos;)}
+    💡 请检查：
+       1. CSV Data Set Config是否在JSR223之前
+       2. 变量名是否拼写错误
+       3. CSV文件路径是否正确
+    ${&apos;=&apos;*50}
+    &quot;&quot;&quot;
+    log.error(errorMsg)
+    throw new IllegalArgumentException(&quot;deviceId不能为空，终止测试！&quot;)
+}
+
+log.info(&quot;✅ 变量加载成功: deviceId=${deviceId}, deviceName=${deviceName}, roomName=${roomName}&quot;)
+
+// ========== 构建请求体 ==========
+def metrics = [
+    [meteId: &quot;6200400004301000001&quot;, meteCode: &quot;004301&quot;, meteName: &quot;直流电压&quot;, unit: &quot;V&quot;, index: 1],
+    [meteId: &quot;6200400004302000001&quot;, meteCode: &quot;004302&quot;, meteName: &quot;直流电流&quot;, unit: &quot;A&quot;, index: 2],
+    [meteId: &quot;6200400004303000001&quot;, meteCode: &quot;004303&quot;, meteName: &quot;分路XX输出电流&quot;, unit: &quot;A&quot;, index: 3],
+    [meteId: &quot;6200400004304000001&quot;, meteCode: &quot;004304&quot;, meteName: &quot;直流功率&quot;, unit: &quot;kW&quot;, index: 4]
+]
+
+def dataArray = metrics.collect { metric -&gt;
+    [
+        rowNum: 0,
+        deviceName: deviceName,
+        deviceId: deviceId,
+        meteId: metric.meteId,
+        meteCode: metric.meteCode,
+        meteKind: 1,
+        meteName: metric.meteName,
+        meteNo: 0,
+        unit: metric.unit,
+        alertLevel: 0,
+        deviceType: 4,
+        deviceTypeName: &quot;低压直流配电&quot;,
+        roomName: roomName,
+        meteType: 1,
+        index: metric.index,
+        isEdit: false,
+        meteKindName: &quot;遥测&quot;,
+        alertLevelName: &quot;正常&quot;
+    ]
+}
+
+def requestBody = [
+    data: dataArray,
+    type: &quot;device&quot;,
+    namespace: namespace
+]
+
+// ========== 写入并验证 ==========
+def jsonStr = JsonOutput.toJson(requestBody)
+vars.put(&apos;requestBody&apos;, jsonStr)
+
+// 双重验证
+def verify = vars.get(&apos;requestBody&apos;)
+if (!verify) {
+    throw new RuntimeException(&quot;变量写入失败！vars.put()未生效&quot;)
+}
+
+log.info(&quot;&quot;&quot;
+${&apos;=&apos;*50}
+✅ requestBody写入成功！
+📏 长度: ${jsonStr.length()} 字符
+🔍 变量验证: ${verify.take(100)}...
+${&apos;=&apos;*50}
+&quot;&quot;&quot;)
+
+// ========== 调试：保存到文件（可选）==========
+// new File(&apos;debug_requestBody.json&apos;).text = jsonStr</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="true">
+            <intProp name="groupSize">100</intProp>
+            <longProp name="timeoutInMs">500</longProp>
+          </SyncTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="查看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="低压直流配电_400并发" enabled="false">
+        <stringProp name="TestPlan.comments">性能采集机房10_200快1-FSU设备性能采集_quickly1-2</stringProp>
+        <intProp name="ThreadGroup.num_threads">400</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">E:/SOFTWARE_TEST_ENGINEER/6、练习题/卓望-联合永道/04_项目/038、【上海】——【B接口改造】——【新任务】——【案例未写】/02_测试用例/05_数据准备及归纳/jmeter性能数据准备/02_quickly_单FSU超200设备/quick1_低压直流配电200台.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">deviceId,deviceName,roomName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_token</stringProp>
+              <stringProp name="Header.value">${head_token}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_username</stringProp>
+              <stringProp name="Header.value">${head_username}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">${cookie}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <stringProp name="HTTPSampler.domain">10.1.203.120</stringProp>
+          <stringProp name="HTTPSampler.port">9081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/spider/web/v1/currentmonitor/getMeasureVal</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="低压直流配电_100台并发" enabled="true">
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestBody}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 预处理程序" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+
+// ========== 防御性变量获取 ==========
+def deviceId = vars.get(&apos;deviceId&apos;)?.trim()
+def deviceName = vars.get(&apos;deviceName&apos;)?.trim() ?: &quot;UnknownDevice&quot;
+def roomName = vars.get(&apos;roomName&apos;)?.trim() ?: &quot;UnknownRoom&quot;
+def namespace = vars.get(&apos;NAMESPACE&apos;)?.trim() ?: &quot;default&quot;
+
+// 严格校验
+if (!deviceId) {
+    def errorMsg = &quot;&quot;&quot;
+    ${&apos;=&apos;*50}
+    ❌ deviceId变量为空或不存在！
+    📋 可用变量列表: ${vars.getVariableNames()?.sort()?.join(&apos;, &apos;)}
+    💡 请检查：
+       1. CSV Data Set Config是否在JSR223之前
+       2. 变量名是否拼写错误
+       3. CSV文件路径是否正确
+    ${&apos;=&apos;*50}
+    &quot;&quot;&quot;
+    log.error(errorMsg)
+    throw new IllegalArgumentException(&quot;deviceId不能为空，终止测试！&quot;)
+}
+
+log.info(&quot;✅ 变量加载成功: deviceId=${deviceId}, deviceName=${deviceName}, roomName=${roomName}&quot;)
+
+// ========== 构建请求体 ==========
+def metrics = [
+    [meteId: &quot;6200400004301000001&quot;, meteCode: &quot;004301&quot;, meteName: &quot;直流电压&quot;, unit: &quot;V&quot;, index: 1],
+    [meteId: &quot;6200400004302000001&quot;, meteCode: &quot;004302&quot;, meteName: &quot;直流电流&quot;, unit: &quot;A&quot;, index: 2],
+    [meteId: &quot;6200400004303000001&quot;, meteCode: &quot;004303&quot;, meteName: &quot;分路XX输出电流&quot;, unit: &quot;A&quot;, index: 3],
+    [meteId: &quot;6200400004304000001&quot;, meteCode: &quot;004304&quot;, meteName: &quot;直流功率&quot;, unit: &quot;kW&quot;, index: 4]
+]
+
+def dataArray = metrics.collect { metric -&gt;
+    [
+        rowNum: 0,
+        deviceName: deviceName,
+        deviceId: deviceId,
+        meteId: metric.meteId,
+        meteCode: metric.meteCode,
+        meteKind: 1,
+        meteName: metric.meteName,
+        meteNo: 0,
+        unit: metric.unit,
+        alertLevel: 0,
+        deviceType: 4,
+        deviceTypeName: &quot;低压直流配电&quot;,
+        roomName: roomName,
+        meteType: 1,
+        index: metric.index,
+        isEdit: false,
+        meteKindName: &quot;遥测&quot;,
+        alertLevelName: &quot;正常&quot;
+    ]
+}
+
+def requestBody = [
+    data: dataArray,
+    type: &quot;device&quot;,
+    namespace: namespace
+]
+
+// ========== 写入并验证 ==========
+def jsonStr = JsonOutput.toJson(requestBody)
+vars.put(&apos;requestBody&apos;, jsonStr)
+
+// 双重验证
+def verify = vars.get(&apos;requestBody&apos;)
+if (!verify) {
+    throw new RuntimeException(&quot;变量写入失败！vars.put()未生效&quot;)
+}
+
+log.info(&quot;&quot;&quot;
+${&apos;=&apos;*50}
+✅ requestBody写入成功！
+📏 长度: ${jsonStr.length()} 字符
+🔍 变量验证: ${verify.take(100)}...
+${&apos;=&apos;*50}
+&quot;&quot;&quot;)
+
+// ========== 调试：保存到文件（可选）==========
+// new File(&apos;debug_requestBody.json&apos;).text = jsonStr</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="true">
+            <intProp name="groupSize">400</intProp>
+            <longProp name="timeoutInMs">500</longProp>
+          </SyncTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="低压直流配电_500并发" enabled="false">
+        <stringProp name="TestPlan.comments">性能采集机房10_200快1-FSU设备性能采集_quickly1-3</stringProp>
+        <intProp name="ThreadGroup.num_threads">500</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">D:/00-company/04_项目/038、【上海】——【B接口改造】——【新任务】——【案例未写】/02_测试用例/05_数据准备及归纳/01_B接口性能测试[currentmonitor-binterclient]/jmeter性能脚本/bak/03/jmeter性能脚本/data/quick1_低压直流配电500台.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">deviceId,deviceName,roomName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_token</stringProp>
+              <stringProp name="Header.value">${head_token}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_username</stringProp>
+              <stringProp name="Header.value">${head_username}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">${cookie}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <stringProp name="HTTPSampler.domain">10.1.203.120</stringProp>
+          <stringProp name="HTTPSampler.port">9081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/spider/web/v1/currentmonitor/getMeasureVal</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="低压直流配电_100台并发" enabled="true">
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestBody}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 预处理程序" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+
+// ========== 防御性变量获取 ==========
+def deviceId = vars.get(&apos;deviceId&apos;)?.trim()
+def deviceName = vars.get(&apos;deviceName&apos;)?.trim() ?: &quot;UnknownDevice&quot;
+def roomName = vars.get(&apos;roomName&apos;)?.trim() ?: &quot;UnknownRoom&quot;
+def namespace = vars.get(&apos;NAMESPACE&apos;)?.trim() ?: &quot;default&quot;
+
+// 严格校验
+if (!deviceId) {
+    def errorMsg = &quot;&quot;&quot;
+    ${&apos;=&apos;*50}
+    ❌ deviceId变量为空或不存在！
+    📋 可用变量列表: ${vars.getVariableNames()?.sort()?.join(&apos;, &apos;)}
+    💡 请检查：
+       1. CSV Data Set Config是否在JSR223之前
+       2. 变量名是否拼写错误
+       3. CSV文件路径是否正确
+    ${&apos;=&apos;*50}
+    &quot;&quot;&quot;
+    log.error(errorMsg)
+    throw new IllegalArgumentException(&quot;deviceId不能为空，终止测试！&quot;)
+}
+
+log.info(&quot;✅ 变量加载成功: deviceId=${deviceId}, deviceName=${deviceName}, roomName=${roomName}&quot;)
+
+// ========== 构建请求体 ==========
+def metrics = [
+    [meteId: &quot;6200400004301000001&quot;, meteCode: &quot;004301&quot;, meteName: &quot;直流电压&quot;, unit: &quot;V&quot;, index: 1],
+    [meteId: &quot;6200400004302000001&quot;, meteCode: &quot;004302&quot;, meteName: &quot;直流电流&quot;, unit: &quot;A&quot;, index: 2],
+    [meteId: &quot;6200400004303000001&quot;, meteCode: &quot;004303&quot;, meteName: &quot;分路XX输出电流&quot;, unit: &quot;A&quot;, index: 3],
+    [meteId: &quot;6200400004304000001&quot;, meteCode: &quot;004304&quot;, meteName: &quot;直流功率&quot;, unit: &quot;kW&quot;, index: 4]
+]
+
+def dataArray = metrics.collect { metric -&gt;
+    [
+        rowNum: 0,
+        deviceName: deviceName,
+        deviceId: deviceId,
+        meteId: metric.meteId,
+        meteCode: metric.meteCode,
+        meteKind: 1,
+        meteName: metric.meteName,
+        meteNo: 0,
+        unit: metric.unit,
+        alertLevel: 0,
+        deviceType: 4,
+        deviceTypeName: &quot;低压直流配电&quot;,
+        roomName: roomName,
+        meteType: 1,
+        index: metric.index,
+        isEdit: false,
+        meteKindName: &quot;遥测&quot;,
+        alertLevelName: &quot;正常&quot;
+    ]
+}
+
+def requestBody = [
+    data: dataArray,
+    type: &quot;device&quot;,
+    namespace: namespace
+]
+
+// ========== 写入并验证 ==========
+def jsonStr = JsonOutput.toJson(requestBody)
+vars.put(&apos;requestBody&apos;, jsonStr)
+
+// 双重验证
+def verify = vars.get(&apos;requestBody&apos;)
+if (!verify) {
+    throw new RuntimeException(&quot;变量写入失败！vars.put()未生效&quot;)
+}
+
+log.info(&quot;&quot;&quot;
+${&apos;=&apos;*50}
+✅ requestBody写入成功！
+📏 长度: ${jsonStr.length()} 字符
+🔍 变量验证: ${verify.take(100)}...
+${&apos;=&apos;*50}
+&quot;&quot;&quot;)
+
+// ========== 调试：保存到文件（可选）==========
+// new File(&apos;debug_requestBody.json&apos;).text = jsonStr</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="true">
+            <intProp name="groupSize">500</intProp>
+            <longProp name="timeoutInMs">500</longProp>
+          </SyncTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="低压直流配电_700并发" enabled="false">
+        <stringProp name="TestPlan.comments">性能采集机房10_200快1-FSU设备性能采集_quickly1-4</stringProp>
+        <intProp name="ThreadGroup.num_threads">700</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">E:/SOFTWARE_TEST_ENGINEER/6、练习题/卓望-联合永道/04_项目/038、【上海】——【B接口改造】——【新任务】——【案例未写】/02_测试用例/05_数据准备及归纳/jmeter性能数据准备/02_quickly_单FSU超200设备/quick1_低压直流配电200台.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">deviceId,deviceName,roomName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_token</stringProp>
+              <stringProp name="Header.value">${head_token}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_username</stringProp>
+              <stringProp name="Header.value">${head_username}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">${cookie}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <stringProp name="HTTPSampler.domain">10.1.203.120</stringProp>
+          <stringProp name="HTTPSampler.port">9081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/spider/web/v1/currentmonitor/getMeasureVal</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="低压直流配电_100台并发" enabled="true">
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestBody}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 预处理程序" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+
+// ========== 防御性变量获取 ==========
+def deviceId = vars.get(&apos;deviceId&apos;)?.trim()
+def deviceName = vars.get(&apos;deviceName&apos;)?.trim() ?: &quot;UnknownDevice&quot;
+def roomName = vars.get(&apos;roomName&apos;)?.trim() ?: &quot;UnknownRoom&quot;
+def namespace = vars.get(&apos;NAMESPACE&apos;)?.trim() ?: &quot;default&quot;
+
+// 严格校验
+if (!deviceId) {
+    def errorMsg = &quot;&quot;&quot;
+    ${&apos;=&apos;*50}
+    ❌ deviceId变量为空或不存在！
+    📋 可用变量列表: ${vars.getVariableNames()?.sort()?.join(&apos;, &apos;)}
+    💡 请检查：
+       1. CSV Data Set Config是否在JSR223之前
+       2. 变量名是否拼写错误
+       3. CSV文件路径是否正确
+    ${&apos;=&apos;*50}
+    &quot;&quot;&quot;
+    log.error(errorMsg)
+    throw new IllegalArgumentException(&quot;deviceId不能为空，终止测试！&quot;)
+}
+
+log.info(&quot;✅ 变量加载成功: deviceId=${deviceId}, deviceName=${deviceName}, roomName=${roomName}&quot;)
+
+// ========== 构建请求体 ==========
+def metrics = [
+    [meteId: &quot;6200400004301000001&quot;, meteCode: &quot;004301&quot;, meteName: &quot;直流电压&quot;, unit: &quot;V&quot;, index: 1],
+    [meteId: &quot;6200400004302000001&quot;, meteCode: &quot;004302&quot;, meteName: &quot;直流电流&quot;, unit: &quot;A&quot;, index: 2],
+    [meteId: &quot;6200400004303000001&quot;, meteCode: &quot;004303&quot;, meteName: &quot;分路XX输出电流&quot;, unit: &quot;A&quot;, index: 3],
+    [meteId: &quot;6200400004304000001&quot;, meteCode: &quot;004304&quot;, meteName: &quot;直流功率&quot;, unit: &quot;kW&quot;, index: 4]
+]
+
+def dataArray = metrics.collect { metric -&gt;
+    [
+        rowNum: 0,
+        deviceName: deviceName,
+        deviceId: deviceId,
+        meteId: metric.meteId,
+        meteCode: metric.meteCode,
+        meteKind: 1,
+        meteName: metric.meteName,
+        meteNo: 0,
+        unit: metric.unit,
+        alertLevel: 0,
+        deviceType: 4,
+        deviceTypeName: &quot;低压直流配电&quot;,
+        roomName: roomName,
+        meteType: 1,
+        index: metric.index,
+        isEdit: false,
+        meteKindName: &quot;遥测&quot;,
+        alertLevelName: &quot;正常&quot;
+    ]
+}
+
+def requestBody = [
+    data: dataArray,
+    type: &quot;device&quot;,
+    namespace: namespace
+]
+
+// ========== 写入并验证 ==========
+def jsonStr = JsonOutput.toJson(requestBody)
+vars.put(&apos;requestBody&apos;, jsonStr)
+
+// 双重验证
+def verify = vars.get(&apos;requestBody&apos;)
+if (!verify) {
+    throw new RuntimeException(&quot;变量写入失败！vars.put()未生效&quot;)
+}
+
+log.info(&quot;&quot;&quot;
+${&apos;=&apos;*50}
+✅ requestBody写入成功！
+📏 长度: ${jsonStr.length()} 字符
+🔍 变量验证: ${verify.take(100)}...
+${&apos;=&apos;*50}
+&quot;&quot;&quot;)
+
+// ========== 调试：保存到文件（可选）==========
+// new File(&apos;debug_requestBody.json&apos;).text = jsonStr</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="true">
+            <intProp name="groupSize">700</intProp>
+            <longProp name="timeoutInMs">500</longProp>
+          </SyncTimer>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="低压直流配电_1000并发">
+        <stringProp name="TestPlan.comments">性能采集机房10_200快1-FSU设备性能采集_quickly1-5</stringProp>
+        <intProp name="ThreadGroup.num_threads">1000</intProp>
+        <intProp name="ThreadGroup.ramp_time">6</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <stringProp name="LoopController.loops">5</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV 数据文件设置" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding">UTF-8</stringProp>
+          <stringProp name="filename">D:/00-company/04_项目/038、【上海】——【B接口改造】——【新任务】——【案例未写】/02_测试用例/05_数据准备及归纳/01_B接口性能测试[currentmonitor-binterclient]/jmeter性能脚本/bak/03/jmeter性能脚本/data/quick1_低压直流配电1000台.csv</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="variableNames">deviceId,deviceName,roomName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">content-type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_token</stringProp>
+              <stringProp name="Header.value">${head_token}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">head_username</stringProp>
+              <stringProp name="Header.value">${head_username}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">cookie</stringProp>
+              <stringProp name="Header.value">${cookie}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <stringProp name="HTTPSampler.domain">10.1.203.120</stringProp>
+          <stringProp name="HTTPSampler.port">9081</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.path">/spider/web/v1/currentmonitor/getMeasureVal</stringProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.implementation"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="低压直流配电_1000台并发">
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestBody}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 预处理程序">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">false</stringProp>
+            <stringProp name="script">import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
+
+// ========== 防御性变量获取 ==========
+def deviceId = vars.get(&apos;deviceId&apos;)?.trim()
+def deviceName = vars.get(&apos;deviceName&apos;)?.trim() ?: &quot;UnknownDevice&quot;
+def roomName = vars.get(&apos;roomName&apos;)?.trim() ?: &quot;UnknownRoom&quot;
+def namespace = vars.get(&apos;NAMESPACE&apos;)?.trim() ?: &quot;default&quot;
+
+// 严格校验
+if (!deviceId) {
+    def errorMsg = &quot;&quot;&quot;
+    ${&apos;=&apos;*50}
+    ❌ deviceId变量为空或不存在！
+    📋 可用变量列表: ${vars.getVariableNames()?.sort()?.join(&apos;, &apos;)}
+    💡 请检查：
+       1. CSV Data Set Config是否在JSR223之前
+       2. 变量名是否拼写错误
+       3. CSV文件路径是否正确
+    ${&apos;=&apos;*50}
+    &quot;&quot;&quot;
+    log.error(errorMsg)
+    throw new IllegalArgumentException(&quot;deviceId不能为空，终止测试！&quot;)
+}
+
+log.info(&quot;✅ 变量加载成功: deviceId=${deviceId}, deviceName=${deviceName}, roomName=${roomName}&quot;)
+
+// ========== 构建请求体 ==========
+def metrics = [
+    [meteId: &quot;6200400004301000001&quot;, meteCode: &quot;004301&quot;, meteName: &quot;直流电压&quot;, unit: &quot;V&quot;, index: 1],
+    [meteId: &quot;6200400004302000001&quot;, meteCode: &quot;004302&quot;, meteName: &quot;直流电流&quot;, unit: &quot;A&quot;, index: 2],
+    [meteId: &quot;6200400004303000001&quot;, meteCode: &quot;004303&quot;, meteName: &quot;分路XX输出电流&quot;, unit: &quot;A&quot;, index: 3],
+    [meteId: &quot;6200400004304000001&quot;, meteCode: &quot;004304&quot;, meteName: &quot;直流功率&quot;, unit: &quot;kW&quot;, index: 4]
+]
+
+def dataArray = metrics.collect { metric -&gt;
+    [
+        rowNum: 0,
+        deviceName: deviceName,
+        deviceId: deviceId,
+        meteId: metric.meteId,
+        meteCode: metric.meteCode,
+        meteKind: 1,
+        meteName: metric.meteName,
+        meteNo: 0,
+        unit: metric.unit,
+        alertLevel: 0,
+        deviceType: 4,
+        deviceTypeName: &quot;低压直流配电&quot;,
+        roomName: roomName,
+        meteType: 1,
+        index: metric.index,
+        isEdit: false,
+        meteKindName: &quot;遥测&quot;,
+        alertLevelName: &quot;正常&quot;
+    ]
+}
+
+def requestBody = [
+    data: dataArray,
+    type: &quot;device&quot;,
+    namespace: namespace
+]
+
+// ========== 写入并验证 ==========
+def jsonStr = JsonOutput.toJson(requestBody)
+vars.put(&apos;requestBody&apos;, jsonStr)
+
+// 双重验证
+def verify = vars.get(&apos;requestBody&apos;)
+if (!verify) {
+    throw new RuntimeException(&quot;变量写入失败！vars.put()未生效&quot;)
+}
+
+log.info(&quot;&quot;&quot;
+${&apos;=&apos;*50}
+✅ requestBody写入成功！
+📏 长度: ${jsonStr.length()} 字符
+🔍 变量验证: ${verify.take(100)}...
+${&apos;=&apos;*50}
+&quot;&quot;&quot;)
+
+// ========== 调试：保存到文件（可选）==========
+// new File(&apos;debug_requestBody.json&apos;).text = jsonStr</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="同步定时器" enabled="false">
+            <intProp name="groupSize">1000</intProp>
+            <longProp name="timeoutInMs">500</longProp>
+          </SyncTimer>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="聚合报告">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

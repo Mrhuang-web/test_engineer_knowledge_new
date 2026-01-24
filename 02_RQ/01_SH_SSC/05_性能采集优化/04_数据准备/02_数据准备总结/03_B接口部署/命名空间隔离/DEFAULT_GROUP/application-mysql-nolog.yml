@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.1.203.120:3306/sc-spider?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: GPGAErA%ZkhMk59*jaD
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 20
+    minIdle: 10
+    maxActive: 50
+    maxWait: 60000
+    druid:
+      initialSize: 22
+      minIdle: 12
+      maxActive: 52
+      maxWait: 62000
+      connectTimeout: 300000  #1.2.12版本需要单独配置才生效
+      socketTimeout: 300000   #1.2.12版本需要单独配置才生效
+      stat-view-servlet:
+        enabled: false
+      web-stat-filter:
+        enabled: false
+      filter:
+        config:
+          enabled: false
+
+druid:
+  ribbon:
+    ConnectTimeout: 10000 # Ribbon的连接超时时间
+    ReadTimeout: 50000 # Ribbon的数据读取超时时间
+    #ConnectTimeout: 2500 # Ribbon的连接超时时间
+    #ReadTimeout: 10000 # Ribbon的数据读取超时时间
+    OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
+    MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
+    MaxAutoRetries: 2 # 对当前实例的重试次数
+  url: jdbc:mysql://10.1.203.120:3306/sc-spider?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false
+  username: root
+  password: GPGAErA%ZkhMk59*jaD
+  useSSL: false
+  initial-size: 50
+  min-idle: 50
+  max-active: 200
+  maxWait: 10000
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+aspire.webbas.json.serialization.write.timestamp: true
+
+aspire.webbas:
+  serviceName: webbas-service
+  version: v1  #当前服务的版本号
+  component:
+    path: support
+    serviceName: webbas-service
+  auth-manager:
+    path: partner  #管理服务的URL配置，默认webbas
+    serviceName: webbas-service #
+
+#webbas 升级配置项。偶像服务间调用日期格式转换失败，用这个配置覆盖webbas 配置。此配置可配置于任何所有服务都引用的yml 文件中。重启生效
+spring.jackson.date-format: yyyy-MM-dd HH:mm:ss
+
+
+    

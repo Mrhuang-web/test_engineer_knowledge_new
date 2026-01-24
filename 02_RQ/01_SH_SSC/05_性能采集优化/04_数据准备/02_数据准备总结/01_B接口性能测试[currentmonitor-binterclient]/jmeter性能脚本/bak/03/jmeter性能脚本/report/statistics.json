@@ -1,0 +1,34 @@
+{
+  "低压直流配电_1000台并发" : {
+    "transaction" : "低压直流配电_1000台并发",
+    "sampleCount" : 5000,
+    "errorCount" : 1753,
+    "errorPct" : 35.06,
+    "meanResTime" : 3144.312799999992,
+    "medianResTime" : 2945.5,
+    "minResTime" : 0.0,
+    "maxResTime" : 11029.0,
+    "pct1ResTime" : 7540.0,
+    "pct2ResTime" : 8384.399999999998,
+    "pct3ResTime" : 9433.879999999997,
+    "throughput" : 72.27313463039518,
+    "receivedKBytesPerSec" : 112.04559113551935,
+    "sentKBytesPerSec" : 136.48226722178455
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 5000,
+    "errorCount" : 1753,
+    "errorPct" : 35.06,
+    "meanResTime" : 3144.312799999992,
+    "medianResTime" : 2945.5,
+    "minResTime" : 0.0,
+    "maxResTime" : 11029.0,
+    "pct1ResTime" : 7540.0,
+    "pct2ResTime" : 8384.399999999998,
+    "pct3ResTime" : 9433.879999999997,
+    "throughput" : 72.27313463039518,
+    "receivedKBytesPerSec" : 112.04559113551935,
+    "sentKBytesPerSec" : 136.48226722178455
+  }
+}

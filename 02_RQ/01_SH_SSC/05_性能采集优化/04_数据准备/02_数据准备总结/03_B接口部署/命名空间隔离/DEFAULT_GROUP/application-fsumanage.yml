@@ -1,0 +1,24 @@
+server:
+  port: 28003
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+# mybatis:
+#   configuration:
+#     log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+
+logging:
+  level:
+    root: info
+    com.aspire.spider: info
+    org.apache.ibatis: warn
+    org.mybatis.spring: warn
+    org.springframework.jdbc: warn
+    org.springframework.jdbc.datasource: warn
+
+
+# fsu管理-配置管理-机房设备信息维护，是否开启设备编码一致性校验
+enable-device-code-unify-check: true
+fsuInspect:
+  defaultProxyPort: 50598

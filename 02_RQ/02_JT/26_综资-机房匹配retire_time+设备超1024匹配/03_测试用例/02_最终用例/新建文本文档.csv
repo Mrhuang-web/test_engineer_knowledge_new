@@ -1,0 +1,21 @@
+用户名,部门,角色权限,数据范围,用途
+U001,DeptA,VIEW,个人,测试仅查看自身数据
+U002,DeptA,EDIT,个人,测试仅编辑自身数据
+U003,DeptA,EXPORT,个人,测试仅导出自身数据
+U004,DeptA,IMPORT,个人,测试仅导入数据（归属自身）
+U005,DeptA,VIEW+EDIT,个人,测试查看 + 编辑自身数据
+U006,DeptA,VIEW+EXPORT,部门,测试查看 + 导出本部门数据
+U007,DeptA,EDIT+IMPORT,部门,测试编辑 + 导入本部门数据
+U008,DeptA,VIEW+EDIT+EXPORT+IMPORT,部门,测试全功能（部门级）
+U009,DeptB,VIEW,个人,跨部门查看权限测试（对比 DeptA）
+U010,DeptB,EDIT,部门,跨部门编辑权限测试（对比 DeptA）
+U011,DeptB,EXPORT+IMPORT,部门,跨部门导出 + 导入测试
+U012,DeptB,VIEW+EDIT+EXPORT+IMPORT,部门,跨部门全功能测试
+U013,DeptC,VIEW,全量,测试查看所有部门数据
+U014,DeptC,EDIT,全量,测试编辑所有部门数据
+U015,DeptC,EXPORT,全量,测试导出所有部门数据
+U016,DeptC,IMPORT,全量,测试导入数据（归属本部门）
+U017,DeptC,VIEW+EDIT+EXPORT+IMPORT,全量,测试全功能（全量级）
+U018,无部门,无任何权限,无,测试无权限访问所有页面 / 接口
+U019,系统管理员,无部门,ADMIN（所有权限）,测试管理员操作（数据移动、权限配置）
+U020,DeptA,VIEW+EDIT+EXPORT+IMPORT,全量,测试全功能（全量级，对比部门级）

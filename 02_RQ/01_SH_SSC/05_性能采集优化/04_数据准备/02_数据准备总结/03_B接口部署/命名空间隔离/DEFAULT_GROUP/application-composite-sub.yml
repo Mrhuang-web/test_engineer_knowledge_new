@@ -1,0 +1,171 @@
+server:
+  port: 9330
+
+##版本号
+version: /v1
+
+integrate: N
+#synchro:
+#  url: jdbc:mysql://10.12.70.40:3306/mirror?useUnicode=true&characterEncoding=UTF-8
+#  username: root
+#  password: 1234@qwer
+#  driverClassName: com.mysql.jdbc.Driver
+#SynchroTaskCron: "0 0 1 * * ?"
+
+#web-hook-url: http://${server.ip}:${server.port}${version}/private-builds/{0}/auto/{1} #构建钩子地址用于自动构建
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+  mvc:
+    # hiddenmethod:
+    #   filter:
+    #     enabled: true
+    pathmatch:
+      matching-strategy: ant_path_matcher
+    throw-exception-if-no-handler-found: true #当出现404错误时,是否直接抛出异常
+    async:
+      request-timeout: 120000
+  resources:
+    add-mappings: false #是否开启默认的资源处理
+  #  redis:
+  #    expiration: 3600 #设置缓存到期时间,单位秒
+  #    password: foo
+  #    database: 1
+  #    timeout: 100000 #客户端超时时间：单位是毫秒
+  #    pool:
+  #      max-active: 50 #最大连接数：能够同时建立的“最大链接个数”
+  #      max-idle: 20 #最大空闲数：空闲链接数大于maxIdle时，将进行回收
+  #      min-idle: 5 #最小空闲数
+  #      max-wait: 1000 #最大等待时间：单位ms
+  #    #单节点方式
+  #    host: 10.12.70.61:6379
+  #    port: 6379
+  http:
+    multipart:
+      max-file-size: 60MB
+      max-request-size: 60MB
+
+# druid:
+#   #url: jdbc:mysql://10.243.67.75:3307/spider2?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+# #  url: jdbc:mysql://10.12.70.61:3306/spider2?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#   url: jdbc:mysql://10.1.5.104:3306/spider3?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+#   username: root
+#   #password: 1mqay3zXSW!
+# #  password: Spider234
+#   password: Opstest789
+#   driverClassName: com.mysql.jdbc.Driver
+#   useSSL: false
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: true
+
+
+exportScadaImage:
+  path: E:\test
+
+drillKnowledgeUploadPath: /tmp/
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 800000
+
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: debug
+    com.migu.tsg.microservice.atomicservice.composite.controller: debug #输出rbac-service日志
+    #tk.mybatis.mapper.common.base.select: debug #输出mybatis select SQL
+    #tk.mybatis.mapper.common.base.update: debug #输出mybatis update SQL
+    #tk.mybatis.mapper.common.base.insert: debug #输出mybatis insert SQL
+    #tk.mybatis.mapper.common.base.delete: debug #输出mybatis delete SQL
+  file: ./composite.log ##日志文件,绝对路径或相对路径
+
+log:
+  hosts: 172.30.150.26:29200
+  userName: 123
+  password: 456
+  needAuth: true
+  maxTotalConnectionPerRoute: 1
+  maxTotalConnection: 10
+  multiThreaded: true
+  readTimeout: 200000
+
+ribbon:
+  ReadTimeout: 1200000
+  ConnectTimeout: 1200000
+
+path: /temp/
+ftpIP: 10.1.122.36
+ftpPort: 21
+ftpUser: user
+ftpPwd: 123
+
+composite:
+  yamlUrl: http://172.30.150.30:18888/ms-sso-dev.yml
+
+
+ftp:
+  #  host: 10.12.70.61
+  #  port: 2121
+  #  username: root
+  #  password: Opstest+789
+  host: 10.1.203.120
+  port: 21
+  username: vsftpd
+  password: Dhuan_Dev!23#
+
+
+
+nginx:
+  host: 10.1.203.120
+  port: 8899
+#10.212.233.213:9423
+sso:
+  url: http://10.243.67.75:3375/index/park?entryparams=
+  sso_password: admin&nics,ECCR!2#4&nics,zhuowang
+
+aspire.webbas.component.safeguarding:
+  illegalityParam:  <,>,</script,<script,script[\s],<img,%27,and[\s],select[\s],insert[\s],exec[\s],update[\s],drop[\s],truncate[\s],declare[\s],count[\(],decode[\s],<script.*>.*<\/script\s*>,document\s*.\s*cookie,document\s*.\s*write,ascii\s*\(.*\),chr\s*\(.*\),alter\s+,create\s+,dbms_pipe\s*.\s*receive_message,truncate\s+,drop\s+,insert\s+,update\s+,delete\s+,select\s+,execute\s+,waitfor\s+,grant\s+,lock\s+table\s+,cast\s*\(.*\),str\s*\(.*\),convert\s*\(.*\),floor\s*\(.*\),upper\s*\(.*\),lower\s*\(.*\),sleep\s*\(.*\),pg_sleep\s*\(.*\),union\s+all\s+,order\s+by\s+,group\s+by\s+,case\s+when\s+,waitfor\s+delay\s+,from\s+information_schema\s*,limit\s+\d\s*,extractvalue\s*\(.*\),concat\s*\(.*\),md5\s*\(.*\)
+  availableSuffixes: doc,docx,xls,xlsx,ppt,pptx,pdf,txt,rar,zip,mp4,jpg,jpeg,gif,png
+  whiteList:  #白名单，List集合
+  - /v1/bulletin/saveSendNotice
+  - /v1/scada/saveScadaCanvas/**
+  - /v1/alerts/createColumnInfo**
+  - /xxl-static/**
+  - /xxl/**
+  
+#是否省省平台，0为不是，1为是
+isProvincePlat: 0
+#杭研的数据统计接口url
+cmccAnalyticsServerUrl: "http://120.79.221.0:86/analyzer/api/"
+#杭研的数据统计接口appSecret
+cmccAnalyticsAppSecret: "dxefIupji3m68MLvC4xrNIuQPvSRmThrpxa5PS9NEXMqKHrDdgCdY2Zjq93v7pVlXybO5tJYmE0="
+#是否发送杭研统计数据 1为发送 0为不发送
+cmccAnalyticsIsSend: 1
+#杭研的数据统计定时发送间隔，单位是毫秒，不配置的话默认是10秒
+cmccAnalyticsCron: 10000
+
+oa_sso: N
+unportal.client.user.enable: true
+unportal.host: 10.12.70.60
+unportal.client_id: 11111
+unportal.client_key: 222222
+
+# spring.autoconfigure.exclude: org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration

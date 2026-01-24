@@ -1,0 +1,16 @@
+server:
+  port: 9103
+
+runMode: binterface
+
+kafka: 
+  topic:
+    binterface_getPointDataRequest: spider_binterface_getPointDataRequest
+    # cinterface_getPointDataRequest: spider_cinterface_getPointDataRequest%s
+    # cinterface_getPointDataRequest_distribution: spider_cinterface_getPointDataRequest_distribution21
+    # cinterface_hisCollectDataRequest_distribution: cinterface_hisCollectDataRequest_distribution21\
+
+
+logging:
+  level:
+   com.aspire.gemc.distribute: debug

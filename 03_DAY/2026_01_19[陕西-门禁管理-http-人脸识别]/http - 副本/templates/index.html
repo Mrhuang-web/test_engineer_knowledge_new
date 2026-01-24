@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人脸门禁MockServer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+        .tab-content {
+            margin-top: 20px;
+        }
+        .response {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-group {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">人脸门禁MockServer</h1>
+        
+        <!-- 导航标签 -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="device-tab" data-bs-toggle="tab" data-bs-target="#device" type="button" role="tab" aria-controls="device" aria-selected="true">设备管理</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="person-tab" data-bs-toggle="tab" data-bs-target="#person" type="button" role="tab" aria-controls="person" aria-selected="false">人员管理</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="face-tab" data-bs-toggle="tab" data-bs-target="#face" type="button" role="tab" aria-controls="face" aria-selected="false">照片管理</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="record-tab" data-bs-toggle="tab" data-bs-target="#record" type="button" role="tab" aria-controls="record" aria-selected="false">识别记录</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="simulate-tab" data-bs-toggle="tab" data-bs-target="#simulate" type="button" role="tab" aria-controls="simulate" aria-selected="false">模拟识别</button>
+            </li>
+        </ul>
+        
+        <!-- 标签内容 -->
+        <div class="tab-content" id="myTabContent">
+            <!-- 设备管理 -->
+            <div class="tab-pane fade show active" id="device" role="tabpanel" aria-labelledby="device-tab">
+                <div class="card">
+                    <div class="card-header">设备信息</div>
+                    <div class="card-body">
+                        <form id="deviceInfoForm">
+                            <div class="mb-3">
+                                <label for="devicePass" class="form-label">设备密码</label>
+                                <input type="text" class="form-control" id="devicePass" value="12345678">
+                            </div>
+                            <button type="submit" class="btn btn-primary">查询设备信息</button>
+                        </form>
+                        <div class="response mt-3" id="deviceInfoResponse"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">设置设备密码</div>
+                    <div class="card-body">
+                        <form id="setPasswordForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="oldPass" class="form-label">旧密码</label>
+                                    <input type="text" class="form-control" id="oldPass" value="12345678">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="newPass" class="form-label">新密码</label>
+                                    <input type="text" class="form-control" id="newPass">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">设置密码</button>
+                        </form>
+                        <div class="response mt-3" id="setPasswordResponse"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">远程开门</div>
+                    <div class="card-body">
+                        <form id="openDoorForm">
+                            <div class="mb-3">
+                                <label for="openDoorPass" class="form-label">设备密码</label>
+                                <input type="text" class="form-control" id="openDoorPass" value="12345678">
+                            </div>
+                            <button type="submit" class="btn btn-primary">开门</button>
+                        </form>
+                        <div class="response mt-3" id="openDoorResponse"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">获取门磁状态</div>
+                    <div class="card-body">
+                        <form id="doorStatusForm">
+                            <div class="mb-3">
+                                <label for="doorStatusPass" class="form-label">设备密码</label>
+                                <input type="text" class="form-control" id="doorStatusPass" value="12345678">
+                            </div>
+                            <button type="submit" class="btn btn-primary">查询门磁状态</button>
+                        </form>
+                        <div class="response mt-3" id="doorStatusResponse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 人员管理 -->
+            <div class="tab-pane fade" id="person" role="tabpanel" aria-labelledby="person-tab">
+                <div class="card">
+                    <div class="card-header">人员注册</div>
+                    <div class="card-body">
+                        <form id="createPersonForm">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="personName" class="form-label">姓名</label>
+                                    <input type="text" class="form-control" id="personName" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="personIdcard" class="form-label">身份证号</label>
+                                    <input type="text" class="form-control" id="personIdcard">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="personPass" class="form-label">设备密码</label>
+                                    <input type="text" class="form-control" id="personPass" value="12345678">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">注册人员</button>
+                        </form>
+                        <div class="response mt-3" id="createPersonResponse"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">查询所有人员</div>
+                    <div class="card-body">
+                        <form id="findPersonsForm">
+                            <div class="mb-3">
+                                <label for="findPersonsPass" class="form-label">设备密码</label>
+                                <input type="text" class="form-control" id="findPersonsPass" value="12345678">
+                            </div>
+                            <button type="submit" class="btn btn-primary">查询所有人员</button>
+                        </form>
+                        <div class="response mt-3" id="findPersonsResponse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 照片管理 -->
+            <div class="tab-pane fade" id="face" role="tabpanel" aria-labelledby="face-tab">
+                <div class="card">
+                    <div class="card-header">照片注册</div>
+                    <div class="card-body">
+                        <form id="createFaceForm">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="facePersonId" class="form-label">人员ID</label>
+                                    <input type="text" class="form-control" id="facePersonId" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="faceId" class="form-label">照片ID（可选）</label>
+                                    <input type="text" class="form-control" id="faceId">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="facePass" class="form-label">设备密码</label>
+                                    <input type="text" class="form-control" id="facePass" value="12345678">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imgBase64" class="form-label">照片Base64</label>
+                                <textarea class="form-control" id="imgBase64" rows="3" placeholder="请输入照片Base64编码"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">注册照片</button>
+                        </form>
+                        <div class="response mt-3" id="createFaceResponse"></div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">拍照注册</div>
+                    <div class="card-body">
+                        <form id="takeImgForm">
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label for="takeImgPersonId" class="form-label">人员ID</label>
+                                    <input type="text" class="form-control" id="takeImgPersonId" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="takeImgPass" class="form-label">设备密码</label>
+                                    <input type="text" class="form-control" id="takeImgPass" value="12345678">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">拍照注册</button>
+                        </form>
+                        <div class="response mt-3" id="takeImgResponse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 识别记录 -->
+            <div class="tab-pane fade" id="record" role="tabpanel" aria-labelledby="record-tab">
+                <div class="card">
+                    <div class="card-header">查询识别记录</div>
+                    <div class="card-body">
+                        <form id="findRecordsForm">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="recordPersonId" class="form-label">人员ID（-1查询所有）</label>
+                                    <input type="text" class="form-control" id="recordPersonId" value="-1">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="recordPass" class="form-label">设备密码</label>
+                                    <input type="text" class="form-control" id="recordPass" value="12345678">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">查询记录</button>
+                        </form>
+                        <div class="response mt-3" id="findRecordsResponse"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 模拟识别 -->
+            <div class="tab-pane fade" id="simulate" role="tabpanel" aria-labelledby="simulate-tab">
+                <div class="card">
+                    <div class="card-header">模拟人脸识别</div>
+                    <div class="card-body">
+                        <form id="simulateIdentifyForm">
+                            <div class="row g-3">
+                                <div class="col-md-8">
+                                    <label for="simulatePersonId" class="form-label">人员ID（留空模拟陌生人）</label>
+                                    <input type="text" class="form-control" id="simulatePersonId">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="simulatePass" class="form-label">设备密码</label>
+                                    <input type="text" class="form-control" id="simulatePass" value="12345678">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">模拟识别</button>
+                        </form>
+                        <div class="response mt-3" id="simulateIdentifyResponse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 通用AJAX请求函数
+        function sendRequest(url, method, data, callbackElementId) {
+            fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById(callbackElementId).textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById(callbackElementId).textContent = '请求失败: ' + error.message;
+            });
+        }
+        
+        // 设备信息查询
+        document.getElementById('deviceInfoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pass = document.getElementById('devicePass').value;
+            fetch(`/device/information?pass=${encodeURIComponent(pass)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('deviceInfoResponse').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('deviceInfoResponse').textContent = '请求失败: ' + error.message;
+                });
+        });
+        
+        // 设置设备密码
+        document.getElementById('setPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const oldPass = document.getElementById('oldPass').value;
+            const newPass = document.getElementById('newPass').value;
+            sendRequest('/setPassWord', 'POST', { oldPass, newPass }, 'setPasswordResponse');
+        });
+        
+        // 远程开门
+        document.getElementById('openDoorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pass = document.getElementById('openDoorPass').value;
+            sendRequest('/device/openDoorControl', 'POST', { pass }, 'openDoorResponse');
+        });
+        
+        // 获取门磁状态
+        document.getElementById('doorStatusForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pass = document.getElementById('doorStatusPass').value;
+            fetch(`/getDoorSensor?pass=${encodeURIComponent(pass)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('doorStatusResponse').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('doorStatusResponse').textContent = '请求失败: ' + error.message;
+                });
+        });
+        
+        // 人员注册
+        document.getElementById('createPersonForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('personName').value;
+            const idcardNum = document.getElementById('personIdcard').value;
+            const pass = document.getElementById('personPass').value;
+            const person = JSON.stringify({ name, idcardNum });
+            sendRequest('/person/create', 'POST', { pass, person }, 'createPersonResponse');
+        });
+        
+        // 查询所有人员
+        document.getElementById('findPersonsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const pass = document.getElementById('findPersonsPass').value;
+            fetch(`/person/find?id=-1&pass=${encodeURIComponent(pass)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('findPersonsResponse').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('findPersonsResponse').textContent = '请求失败: ' + error.message;
+                });
+        });
+        
+        // 照片注册
+        document.getElementById('createFaceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const personId = document.getElementById('facePersonId').value;
+            const faceId = document.getElementById('faceId').value;
+            const imgBase64 = document.getElementById('imgBase64').value;
+            const pass = document.getElementById('facePass').value;
+            sendRequest('/face/create', 'POST', { personId, faceId, imgBase64, pass }, 'createFaceResponse');
+        });
+        
+        // 拍照注册
+        document.getElementById('takeImgForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const personId = document.getElementById('takeImgPersonId').value;
+            const pass = document.getElementById('takeImgPass').value;
+            sendRequest('/face/takeImg', 'POST', { personId, pass }, 'takeImgResponse');
+        });
+        
+        // 查询识别记录
+        document.getElementById('findRecordsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const personId = document.getElementById('recordPersonId').value;
+            const pass = document.getElementById('recordPass').value;
+            const startTime = '0';
+            const endTime = '9999-12-31 23:59:59';
+            fetch(`/newFindRecords?personId=${encodeURIComponent(personId)}&startTime=${encodeURIComponent(startTime)}&endTime=${encodeURIComponent(endTime)}&pass=${encodeURIComponent(pass)}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('findRecordsResponse').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('findRecordsResponse').textContent = '请求失败: ' + error.message;
+                });
+        });
+        
+        // 模拟识别
+        document.getElementById('simulateIdentifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const personId = document.getElementById('simulatePersonId').value;
+            const pass = document.getElementById('simulatePass').value;
+            sendRequest('/simulateIdentify', 'POST', { personId, pass }, 'simulateIdentifyResponse');
+        });
+    </script>
+</body>
+</html>

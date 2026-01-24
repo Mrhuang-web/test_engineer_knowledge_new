@@ -1,0 +1,86 @@
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3948a61e] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: select * from zz_power_dict_mapping where zz_col_name = ? and power_col_name = ?
+==> Parameters: zz_es_oil_machine_level(String), es_oil_machine_level(String)
+<==    Columns: mapping_id, zz_dict_code, power_dict_code, zz_col_name, power_col_name
+<==        Row: 00b26267-5b9c-4d84-a70c-bc71bcd9e947, 1, 2, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 1e297f22-eca7-4086-8c36-4485282bd69b, 1, 2, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 3237a291-ba6b-48ef-acbe-82d39fdd0bec, 5, 5, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 5d6ea5c0-b420-4df1-b2ba-d14bf8e825d5, 9, 4, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 82d7277e-e6ee-4655-9923-7043d380d8d1, 5, 3, zz_es_oil_machine_level, es_oil_machine_level
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3948a61e]
+2025-11-30 20:05:01.221 ERROR 7 --- [  MyScheduler-9] c.a.g.s.service.handler.AbstractHandler  : handle异常
+
+
+
+java.lang.IllegalStateException: Duplicate key 1 (attempted merging values 2 and 2)
+	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:135)
+	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:182)
+	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at com.aspire.spider.scheduledtask.service.handler.GxZZSiteSyncHandler.handle(GxZZSiteSyncHandler.java:240)
+	at com.aspire.gemc.scheduledtask.service.handler.AbstractHandler.run(AbstractHandler.java:58)
+	at jdk.internal.reflect.GeneratedMethodAccessor98.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.aspire.spider.scheduledtask.service.handler.GxZZSiteSyncHandler$$SpringCGLIB$$0.run(<generated>)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+
+
+2025-11-30 20:05:01.221  INFO 7 --- [  MyScheduler-9] c.a.g.s.service.handler.AbstractHandler  : 任务:动环同步综资站点信息,执行时长:1s
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d0955fa] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: update t_scheduled_task set task_exec_time=?,task_exec_ex=? where task_id=?
+==> Parameters: 2025-11-30 20:05:01.221(Timestamp), Duplicatekey1(attemptedmergingvalues2and2)(String), 22(Integer)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3d0955fa]
+2025-11-30 20:06:00.000  INFO 7 --- [  MyScheduler-9] c.a.g.s.service.handler.AbstractHandler  : 任务:动环同步综资站点信息,开始执行
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ab0b0d4] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: select a.precinct_id precinctId,b.site_id siteId,a.precinct_name siteName,b.site_type siteType,b.property property, b.es_sum_ways esSumWays, b.es_voltage_level esVoltageLevel, b.es_capacity esCapacity, b.es_nature esNature, b.backup_method backupMethod, b.is_from_differ_trans_site is_fromDifferTransSite, b.es_oil_machine_level esOilMachineLevel, b.design_pue designPue from t_cfg_precinct a left join t_cfg_site b on a.precinct_id = b.site_id where a.precinct_kind = 2 and a.isdel= 0;
+==> Parameters: 
+<==    Columns: precinctId, siteId, siteName, siteType, property, esSumWays, esVoltageLevel, esCapacity, esNature, backupMethod, is_fromDifferTransSite, esOilMachineLevel, designPue
+<==        Row: 01-07-01-01-01, 01-07-01-01-01, 柳州测试数据数据西安乡, 4, 1, 1, 4, 50, 1, 5, 0, 3, 1
+<==        Row: 01-07-01-01-02, 01-07-01-01-02, 柳州测试数据数据马山乡肯洛村, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-03, 01-07-01-01-03, 柳州测试数据数据东泉镇, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-04, 01-07-01-01-04, 柳州测试数据数据古砦乡, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-05, 01-07-01-01-05, 柳州测试数据数据冲脉镇, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-06, 01-07-01-01-06, 柳州测试数据数据东泉镇华侨农场, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-07, 01-07-01-01-07, 柳州测试数据数据中心站, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-08, 01-07-01-01-08, 柳州测试数据数据六塘镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-09, 01-07-01-01-09, 柳州测试数据数据太平镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-10, 01-07-01-01-10, 柳州测试数据数据马山乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-11, 01-07-01-01-11, 柳州测试数据数据西安乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-12, 01-07-01-01-12, 柳州测试数据数据沙埔镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-13, 01-07-01-01-13, 柳州测试数据数据寨隆乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-14, 01-07-01-01-14, 柳州测试数据数据冲脉镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-15, 01-07-01-01-15, 柳州测试数据数据古砦乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-16, 01-07-01-01-16, 柳州测试数据数据凤山镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-17, 01-07-01-01-17, 柳州测试数据数据东泉镇传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-18, 01-07-01-01-18, 柳州测试数据数据洛崖乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-19, 01-07-01-01-19, 柳州测试数据数据社冲乡传输站, 3, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-20, 01-07-01-01-20, 柳州测试数据数据东泉镇2站, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-21, 01-07-01-01-21, 柳州测试数据数据社冲乡公店, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-22, 01-07-01-01-22, 柳州测试数据数据马山乡四塘农场, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-23, 01-07-01-01-23, 柳州测试数据数据古砦乡汶炉, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-24, 01-07-01-01-24, 柳州测试数据数据沙埔镇, 4, null, null, 0, null, 0, 0, 0, 0, null
+<==        Row: 01-07-01-01-25, 01-07-01-01-25, 柳州测试数据数据太平镇杨梅2站, 4, null, null, 0, null, 0, 0, 0, 0, null

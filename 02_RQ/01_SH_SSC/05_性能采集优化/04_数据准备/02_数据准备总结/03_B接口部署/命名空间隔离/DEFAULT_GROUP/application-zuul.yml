@@ -1,0 +1,50 @@
+server:
+  port: 28000
+  tomcat:
+    # relaxed-query-chars: "|"
+    relaxed-query-chars: ^,|,[,],
+    relaxed-path-chars: ^,|,[,],
+
+
+management:
+  port: 5567
+
+keycloak:
+  auth-server-url: http://10.1.5.113:8180/auth
+  public-client: true
+  realm: demo_realm
+  resource: demo_server
+  bearer-only: true
+  security-constraints:
+    - authRoles:
+        - uma_authorization
+      securityCollections:
+        - patterns:
+            - /x/*
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          #开启小写验证，默认feign根据服务名查找都是用的全大写
+          lower-case-service-id: true
+      routes:
+        - id: composite-mirror
+          uri: lb://composite-mirror
+          predicates:
+            - Path=/v1/**
+          filters:
+            - AuthenticationFilter
+
+        - id: jakiro
+          uri: http://10.1.203.119:28001       #onebox api地址
+          predicates:
+            - Path=/**
+
+logging:
+  level:
+    root: debug

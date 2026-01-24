@@ -1,0 +1,11 @@
+文件中存在两个为burp suit community Edition插件
+	autorizepro-master：为同时发起三种请求
+	jython-standalone：用于运行上面工具的前置
+	
+	具体说明：E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道\00_note\02_技术优化\16_渗透测试
+
+
+
+如果需要申诉：
+	需要进入：
+	

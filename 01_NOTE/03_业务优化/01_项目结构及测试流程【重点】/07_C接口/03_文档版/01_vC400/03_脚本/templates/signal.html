@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+<a href='/device_list?roomid={{roomid}}'>返回设备列表</a>
+<hr/>
+
+<h3>机房名称: {{roomname}}</h3>
+<h3>设备ID: {{deviceid}}</h3>
+<h3>设备名称: {{devicename}}</h3>
+<h3>机房ID: {{roomid}}</h3>
+<hr/>
+
+  <h4>Signals 列表</h4>
+  <table>
+  <tr>
+     <th>Signal Name</th>
+     <th>type</th>
+     <th>告警级别</th>
+     <th>ID</th>
+     <th>action1</th>
+     <th>action2</th>
+  </tr>
+  {% for signal in signals %}
+    <tr>
+      <td>{{signal.SignalName}}</td>
+      <td>{{signal.Type}}</td>
+      <td>{{ signal.AlarmLevel }}</td>
+      <td>{{ signal.SignalID }}</td>
+        {% if signal.Type  in [0] %}
+        <td><a href="/send_alert?devicename={{ devicename}}&roomname={{ roomname}}&roomid={{ roomid}}&deviceid={{deviceid}}&signalid={{signal.SignalID}}&signalnumber={{signal.SignalNumber}}&alarmflag=0" target="_blank">发送告警</a></td>
+        <td><a href="/send_alert?devicename={{ devicename}}&roomname={{ roomname}}&roomid={{ roomid }}&deviceid={{deviceid}}&signalid={{signal.SignalID}}&signalnumber={{signal.SignalNumber}}&alarmflag=2" target="_blank">消除告警</a></td>
+      {% else %}
+        <td><form action="/send_value?deviceid={{deviceid}}&signalid={{signal.SignalID}}&signalnumber={{signal.SignalNumber}}&mete_value=mete_value&mete_value_max=mete_value_max&mete_value_min=mete_value_min">
+          <input type="hidden"  name="roomid" value="{{roomid}}" />
+          <input type="hidden"     name="deviceid" value="{{deviceid}}" />
+          <input type="hidden"     name="signalid" value="{{ signal.SignalID }}" />
+          <input type="hidden"     name="signalnumber" value="{{ signal.SignalNumber }}" />
+          <input type="text" maxlength="6" style="width:100px;" name="mete_value" value="写入值">
+          <input type="text" maxlength="6" style="width:100px;" name="mete_value_max" value="最大值">
+          <input type="text" maxlength="6" style="width:100px;" name="mete_value_min" value="最小值">
+          <input target="_self"  type="submit" value="提交"><br>
+        </form></td>
+        <td>{{signal.SignalID}} </td>
+      {% end %}
+
+
+    </tr>
+    {% end %}
+    </table>
+  
+{% end %}

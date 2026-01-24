@@ -1,0 +1,19 @@
+server:
+  port: 28102
+
+# 远程kafka
+remote:
+  kafka:
+    # 是否开启双kafka
+    enable: true
+    # 另一个kafka配置
+    bootstrap-servers: 10.1.203.121:9095
+
+logging:
+  level:
+    com.aspire.gemc.alertexternal: debug
+
+ability:
+  gateway:
+    urlMap: '{"RM_SITE_PROPERTY":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/zbuild-site","RM_ROOM_PROPERTY":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/roomsite-info","CE_DEVICE_PE_TRANSFORM":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/transformer","CE_NET_PE_HIGH_DISTRIBUTION":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/HIGHDISTRIBUTION-SYS","CE_DEVICE_PE_HIGH_POWER":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/highpower","CE_NET_PE_UPS":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-UPS-SYS-NEW","CE_DEVICE_PE_UPS":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-ups","CE_NET_PE_OPEN_POWER":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-TSWITCHPOWER-SYS-NEW","CE_DEVICE_PE_LOW_DC_DISTRIBUTION":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/low-dcdistribution","CE_DEVICE_PE_BATTERY_LA":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-battery","CE_DEVICE_PE_BATTERY_LI":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-battery","CE_DEVICE_PE_CACH":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_CACH_END":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_HIROSS":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_NA":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_BB":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_HES":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_WPC":"http://api.open.cqmc.oss/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_MONITOR":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-RINGMONITOR-NEW","CE_DEVICE_PE_IAC":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-OTHER","CE_DEVICE_PE_SMART_METER":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-SMART-METER-NEW","CE_LINK_PE_IN":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-BIFURCATION-NEW","CE_LINK_PE_OUT":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-FUSE-OUT-NEW","CE_DEVICE_PE_OTHER":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-OTHER","CE_NET_PE_CACH":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/CSC-RINGMONITOR-NEW","RM_AREA_SITE":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/sitecon","RM_AREA_RESPOINT":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/accesspoint","RM_AREA_ROOM":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/equiproomcon","RM_AREA_RACKPOS":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/rack-position-data","PHYSICAL_STATION":"http://api.open.cqmc.oss/gate/data/net-res/basicdata/v1/sitecon"}'
+

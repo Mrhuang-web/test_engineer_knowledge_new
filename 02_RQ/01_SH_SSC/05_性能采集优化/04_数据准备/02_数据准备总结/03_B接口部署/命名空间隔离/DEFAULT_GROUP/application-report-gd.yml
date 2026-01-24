@@ -1,0 +1,120 @@
+server:
+  port: 28077
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+# kafka.topic.topic_system_alerts: TOPIC_SYSTEM_ALERTS      # 系统告警kafka主题
+kafka.topic.topic_system_alerts: spider_binterface_alarm      # 系统告警kafka主题
+
+elasticsearch:
+  #  clustername: escluster
+  mete_index: fsu*           #四遥相关数据的index
+  #  mete_index: xiaojun
+  mete_type: point_history_data     #四遥相关数据的type
+  ops_index: event-*           #用户操作相关数据的index
+  ops_type: event           #用户操作相关数据的type
+  syslog_index: syslog-*   #系统日志相关的数据index
+  syslog_type: syslog   #系统日志相关的数据type
+
+# 告警事件监听
+alert.event.listener:
+  AlertEventNotifier: # 监听实现名
+    switch: false        # 监听开关
+    awareLevel: 4       # 告警级别:  1-提示 2-低 3-中 4-高 5-严重
+    kafkaServers: vmhadoop12:9092,vmhadoop13:9092,vmhadoop14:9092
+    kafkaTopic: ZW-Monitor
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        heart-beat-interval: 5000  # 5秒心跳间隔
+        heart-beat-timeout: 15000   # 15秒心跳超时
+        ip-delete-timeout: 30000   # 30秒服务剔除超时
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  zipkin:
+    enabled: true
+    baseUrl: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      # enabled: true
+  messages:
+    encoding: UTF-8
+  #邮件服务相关配置
+  mail:
+    host: smtp.qq.com
+    username: 666666@qq.com
+    password: 12345678
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+#  jackson:
+#    default-property-inclusion: always
+
+sample:
+  zipkin:
+    enabled: true
+
+logging:
+  level:
+    org.springframework.web.servlet.DispatcherServlet: info
+    # com.mirror.report.finereport: info
+    # com.alibaba.druid: debug
+    # org.apache.ibatis: debug
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 60000
+
+FLOW_KEY: gzsjclgd0523
+FULLNAME: admin
+ORDER_AUTOGEN_LEVEL: 4,5
+
+WSDL_URL: http://10.1.4.245:58080/bpmx/service/ProcessService?wsdl
+
+orderAutoGen.cron: 0 0/5 *  * * ?
+
+banner:
+  charset: UTF-8
+
+#cboard通用url头 弃用!
+cboard.urlHead: http://${ENV_CBOARD_IP:10.1.121.113}:${ENV_CBOARD_PORT:8080}/cboard/starter.do
+
+#未消除告警记录报表相关id 弃用!
+cboard.nonClearAlertPageList.boardId: 1555494498365
+cboard.nonClearAlertPageList.datasetId: 6
+
+
+#excel临时文件存储位置
+excel.tmp.file.dir: d:/666/
+#运行质量报表的省份配置项
+configProvinceName:
+
+
+#机楼监控覆盖率数据采集任务
+buildingMonitorCoverageTaskCron: 0 0 6 * * ?
+
+
+#报表最大行数限制
+reportMaxRow: 200000
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  # configuration:
+  #   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

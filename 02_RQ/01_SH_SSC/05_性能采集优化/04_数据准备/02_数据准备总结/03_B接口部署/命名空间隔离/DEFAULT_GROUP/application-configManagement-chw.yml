@@ -1,0 +1,63 @@
+server:
+  port: 13563
+
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+kafka.topic.topic_system_sendChanged: spider_configManagement_fsuChanged
+
+kafka.topic.topic_system_receiveChanged: spider_binterface_fsuStatusChanged
+
+kafka.topic.topic_system_receiveRegister: spider_binterface_fsuRegister
+
+# kafka.topic.topic_system_devConfigChanged: spider_binterface_devConfigChanged
+kafka.topic.topic_system_devConfigChanged: spider_binterface_devConfigChanged
+
+TOPIC_CLIENT_SAVE_CDATE_SUCCESS: client_save_cdata_sucess
+
+cache.refresh.workstate.interval: 300000
+
+###Mybatis分页插件
+pagehelper:
+  helperdialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+### 容量nan网络云空调  01-16-15-04 5-2数据机房> 科华
+capacityAir:
+  precinctId4A: "01-16-15"
+  precinctIdHource01: "01-16-15-01"
+  precinctIdHource02: "01-16-15-04"
+  precinctKh: "01-16-15-04-02"
+  precinctUps: "01-16-15-01-02"
+
+#关于IT运维首页的配置
+itShowConfig:
+  huchiId: 01-01  #呼池的站点id
+  hachiId: 01-02  #哈池的站点id
+  nanjiId: 01-03  #南基的站点id
+  beigangId: 01-04 #北方信息港的站点id
+
+ftp:
+  ip: 10.1.123.75
+  port: 21
+  user: user1
+  password: 123456
+  path: /cinterfaceExData
+  cron: 0 56 2 * * ?
+  days: 10
+
+#开启定时任务
+enableScheduling: true
+
+# mybatis:
+#   configuration:
+#     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+schedule.loss_ratio.cron: 0 0/10 * * * ?
+
+protocolConvert.enable: true

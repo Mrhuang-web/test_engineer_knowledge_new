@@ -1,0 +1,90 @@
+server:
+  port: 1515
+  tomcat:
+    uri-encoding: UTF-8   # 只影响请求参数的解码
+    max-http-post-size: -1
+
+
+logging:
+  level:
+    root: info
+
+elasticsearch:
+  index_name: fsu*                  #index的名称
+  type_name: point_history_data     #type的名称
+
+
+
+# 参数巡检配置的天数
+parameterInspectMeteTime: 7
+# 参数巡检配置巡检的通道
+parameterInspectMete: "007302:电池组总电压,007303:单体XX电压,007307:充电电流,007308:放电电流,007401:工作状态"
+
+# 参数巡检定时任务执行时间
+batteryParameterInspect.cron: 0 0 3 * * ?
+#蓄电池规格定时时间
+batteryNorms.cron: 0 30 3 * * ?
+#蓄电池规格检索时间(天)
+normsMeteTime: 7
+
+# 蓄电池单体统计定时任务执行时间
+batteryUnit.cron: 0 50 6 * * ?
+# 蓄电池放电数据相关配置
+# 蓄电池放电数据定时任务采集时间
+BatteryDischargeTaskCron: 0 0 5 * * ?
+# 蓄电池组放电异常计算变量
+BatteryDischargeTaskCron.xvalue: '0.6'
+# 蓄电池单体放电异常计算变量
+BatteryDischargeTaskCron.tvalue: '0.6'
+
+#蓄电池续航百分比
+endurance_precent: 50
+
+
+#蓄电池续航定时任务相关
+BatteryEnduranceBackground:
+  taskCron: 0 0 2 * * ?
+  typ3const: 1.6
+  sftp1:
+    host: 10.12.70.61
+    port: 2121
+    username: root
+    password: Opstest+789
+    baseDir: /BatteryEndurance/
+    metecode: 002010,006031,006038,092001
+  sftp2:
+    host: 10.12.70.61
+    port: 2121
+    username: root
+    password: Opstest+789
+    baseDir: /BatteryEndurance/
+    metecode: 002010,006031,006038,092001
+  ftp3:
+    host: 10.12.70.61
+    port: 2121
+    username: root
+    password: Opstest+789
+    baseDir: /BatteryEndurance/
+  ftp4:
+    host: 10.12.70.61
+    port: 2121
+    username: root
+    password: Opstest+789
+    baseDir: /BatteryEndurance/
+  uploadFile:
+    host: 10.1.203.120
+    port: 22
+    username: sudoroot
+    password: sudoroot#202L
+    baseDir: /tmp/sftptest/
+  
+#蓄电池充放电管理-策略相关定时任务：
+#1.每5分钟执行一次策略扫描
+batteryManageStrategyScannerCron: 0 */5 * * * *
+#batteryManageStrategyScannerCron:0/1 * * * * *
+#2.扫描未来10（多少）分钟内需要下发的策略
+batteryManageStrategyScanInterval: 10
+#3.每秒执行一次策略下发任务
+batteryManageStrategyDispatcherCron: 0/1 * * * * *
+#4.每秒执行一次策略校验任务
+batteryManageStrategyValidatorCron: 0/1 * * * * *

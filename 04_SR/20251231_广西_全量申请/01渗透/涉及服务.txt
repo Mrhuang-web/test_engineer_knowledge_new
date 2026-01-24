@@ -1,0 +1,3 @@
+先打gemc_all --> 分支为develop_gx_0115
+config、alert、composite(gemc)   -- develop_gx_0115
+	打完之后打gx的

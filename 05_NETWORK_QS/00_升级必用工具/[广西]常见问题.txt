@@ -1,0 +1,43 @@
+权限
+	auto表（里面需要加上限制）
+	现在是A用户登录有，然后有下载，这样就绑定了（就相当于有权限）  -- auth filter表会有一条记录
+		然后用户B也有功能权限，但是没导出，这样，拿着用户A的地址（也就是相当于该cookies）然后去下载是下载不出来的
+
+		SELECT * FROM t_cfg_auth_uri_config;
+		SELECT * FROM t_cfg_filter_file_auth;
+
+			现在存在一个问题（一个模板只能绑定一个人，其他人就下载不了了）
+			
+			
+
+
+sftp连接：
+
+
+用户root用户切换
+	页面进入 -- 有个4a（点击应用的小地图） -- 进入浏览器
+		进入页面后--页面首页列
+			1、设备登录：选择对应服务ip -- 选择服务进行远程普通用户登录 -- 进入页面切换到~目录，执行spider.sh 输入记事本中密码即可进入
+			2、应用登录：选择对应的动环工作平台web01或web02，即可登入动环系统 -- 用户密码也在笔记本上
+			3、应用登录：选择对应的动环工作平台nacos，即可登入nacos里面 -- 用户密码也在笔记本上
+	
+
+用户进入sftp
+	页面进入 -- 有个4a（点击应用的小地图） -- 进入浏览器
+		进入页面后--页面首页列
+			1、设备登录：选择对应服务ip -- 选择服务进行远程普通用户登录 -- 进入页面切换到~目录，执行vsxxx啥的.sh  -- 然后执行f.sh
+			2、路径和密码在task_scheduled表里面可以查看
+			
+			登入进去后，cd到对应目录
+				下载文件到用户里面(sftp里面的路径要写全，linux中的也要写全，要包括/)
+					get /xx/xx/Building_GX_202511.csv.gz /tmp/ 或
+					get /xx/xx/Building_GX_202511.csv.gz /tmp/Building_GX_202511.csv.gz
+			然后推出sftp模式，查看对应文件数据，且统计行数
+				exit
+				zcat /tmp/Building_GX_202511.csv.gz
+				wc -l /GX/MeterPowerDaily_GX_20231210.csv
+				
+			
+
+4a登录
+	好像需要切换sc啥的账号进入才行

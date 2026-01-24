@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+  <h3>机房(Station)列表</h3>
+  <table>
+  <tr>
+    <th>机房ID</th>
+    <th>机房名称</th>
+  <tr>
+  {% for room in rooms %}
+    <tr>
+      <td><a href="/device_list?roomid={{ room.RoomID }}">{{ room.RoomID }}</a></td>
+      <td>{{room.RoomName}}</td>
+    </tr>
+  {% end %}
+  </table>
+{% end %}

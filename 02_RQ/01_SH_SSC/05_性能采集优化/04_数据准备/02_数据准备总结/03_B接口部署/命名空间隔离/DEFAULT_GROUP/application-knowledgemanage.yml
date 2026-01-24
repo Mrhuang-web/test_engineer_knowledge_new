@@ -1,0 +1,43 @@
+server:
+  port: 6161
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+elasticsearch:
+  index_name: knowledgemanage
+  type_name: klgtype
+  scroll_select_count: 1000
+  scroll_select_thread: 4
+
+ftp:
+  host: 10.12.70.61
+  port: 2121
+  username: root
+  password: Opstest+789
+
+#临时目录设置,linux服务器下请设置成/tmp/,注意要以斜杠结尾
+tmp:
+  dir: d:/tmp/
+
+#深度分析的告警取值
+alerttype: #告警类型
+  temalert: '017010'  #温度告警取值
+  smokealert: '017002,017003,016010,016011'   #烟感告警取值
+  wateralert: '017001'    #漏水、水浸告警取值
+
+
+#作业管理定时任务执行时间
+workTime: "0 10 1 * * ?"
+
+# 温度测点考核数量定时任务, 每五分钟执行一次
+# 回填机制 每天凌晨触发
+temperatureMete:
+  temperatureMeteCountTask: 300000
+  resetTemperatureMeteRemark: "0 0 1 * * ?"
+
+
+#温度分析月报定时任务
+RoomTemperatureMonthlyTaskCron: "0 0 6 1 * ?"
+
+get_emergencyplanfile_addr: http://10.243.67.75:3371/

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+  <h3>ThresHold åˆ—è¡¨</h3>
+  <table>
+  {% for threshold in threshods %}
+    <tr><td>{{threshold.threshold}}</td><td><a href="/signal/{{ threshold.thresholdid }}">{{ threshold.thresholdid }}</a></td></tr>
+  {% end %}
+</table>
+{% end %}

@@ -1,0 +1,408 @@
+
+# runtime
+
+
+#  test delete
+threadPool:
+  corePoolSize: 6
+  maximumPoolSize: 10
+  queueCapacity: 400
+
+
+# gml网管-超时配置
+bpm:
+  runtime: http://10.1.203.87:8086
+
+export:
+  exportSize: 10000  #流程检索-表单导出最大数量
+  exportCount: 10000
+
+# gml网管-超时时间
+order:
+  timeout.scan.extTime: 0.1 #超时扫描额外时间（小时）
+
+async:
+  kafka:
+    topic: bpm-re-consumer-test
+  api:
+    version: v2
+  clean:
+    process:
+      version: v2
+  listen:
+    enable: true
+
+ladp.url: ldap://10.1.9.13:389/
+
+
+# ############################uc########################################
+
+# gml存储路劲
+system.attachment.path: /tmp
+
+
+
+# ###############################model########################################################
+
+
+
+ums:
+  desk.syncWorkDraft.formDefId: http://10.12.70.39:28129/v1/desk/commonOperations/syncBpmDefIdByKey
+  
+  
+  
+  
+  
+  
+# #####################################portal#############################################
+
+# 配置加密密钥
+jasypt:
+  encryptor:
+    password: EbfYkitulv73I2p0mXI50JMXoaxZTKJ0
+
+
+
+
+# Mail settings
+mail:
+  host: smtp.139.com
+  port: 25
+  ssl: true
+  from: 13824349541@139.com
+  nickName: 13824349541@139.com
+  username: 13824349541@139.com
+  password: baidU0873
+  username2: 13824349541@139.com
+  password2: baidU0873
+  from2: 13824349541@139.com
+  host2: smtp.139.com
+  produceUrl: http://10.153.98.82:91970/sendHtmlMail
+  yunyingUrl: http://10.153.98.82:91960/sendHtmlMail
+
+
+
+# gml短信发送-其他项目改造
+osaProxy:
+  fetion:
+    pushUrl: http://10.153.1.81:28081/osaProxy/messagePush/flowMessagePush
+    pendingUrl: http://www.baidu.com
+  sms:
+    sendUrl: http://localhost:8080/osaProxy/sms/sendMsg
+    sendChatBotUrl: http://localhost:8180/osaProxy/sms/sendMsg4Chatbot
+
+
+
+
+
+# alidayu setting 阿里大鱼配置 短信/语音
+alidayu:
+  freeSignName: 赵祥云
+  appkey: LTAIZavhqeRS2sAZ
+  secret: HvuzX4wou7E00jdjeHsRgOQQzGLFkC
+  url: dysmsapi.aliyuncs.com
+  extend: 90997
+  calledShowNum: 0
+
+
+
+# ueditor setting  端口五合一打包时记得修改为对应的五合一端口
+base.domain: http://www.hotent.xyz:8084
+
+
+
+
+
+# ###############################################form#########################################################################
+# 配置打印SQL语句
+logging:
+  level:
+    com.hotent.i18n.persistence.dao: DEBUG
+    com.hotent.bpmModel.dao: DEBUG
+    com.hotent.Calendar.dao: DEBUG
+    com.hotent.runtime.dao: DEBUG
+    com.hotent.bpm.persistence.dao: DEBUG
+    com.hotent.sys.persistence.dao: DEBUG
+    com.hotent.portal.persistence.dao: DEBUG
+    com.hotent.uc.dao: DEBUG
+    com.hotent.uc.base: DEBUG
+    com.hotent.form.dao: DEBUG
+    com.hotent.form.persistence.dao: DEBUG
+  config: classpath:logback-spring.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,cert
+
+swagger:
+  basic:
+    enable: true
+    username: admin
+    password: Dh@dev_159
+
+info:
+  app:
+    encoding:
+    java:
+      source: "@@java.version@@"
+      target: "@@java.version@@"
+
+banner:
+  charset: UTF-8
+
+mybatis:
+  typeAliasesPackage: com.hotent.base.entity
+  mapperLocations: classpath*:mapper/*.xml,classpath*:mapper/aspire/*.xml
+  typeHandlersPackage: com.hotent.base.typehandle
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 86400 # 单位秒
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+
+# machine
+system:
+  id:
+    machineName: form
+    idBase: 1000
+    increaseBound: 10000
+  attachment:
+    type: folder
+    path: e:\attachment
+  bpm:
+    engineName: eip7
+  basic:
+    token: eyJBdXRob3JpemF0aW9uIjoiQmFzaWMgWVdSdGFXNDZNVEl6TkRVMiJ9
+
+# file settings
+file:
+  file.dir: D:\\x7\\conver\\
+  office.home: C:\\Program Files (x86)\\OpenOffice 4
+  simText: txt,html,xml,java,properties,sql
+  media: mp3,mp4,flv,rmvb,wmv
+  converted.file.charset: utf-8
+
+# FTP settings
+FTP:
+  FTP.url: 10.12.8.194
+  FTP.username: lj
+  FTP.password: 123
+  FTP.port: 21
+  FTP.remotePath: /data/sftp/dianqu/adjust
+
+#配置 active mq 启动的ip 和账号密码 和端口。
+jms:
+  username: admin
+  password: ASfag#134
+  ip: 10.1.4.50
+  port: 61616
+  queue:
+    name: edenQueue
+  topic:
+    name: auth.topic
+
+#配置 active mq 启动的ip，端口默认
+mqtt:
+  host: 10.1.203.120
+  #port: 8161
+  port: 1883	# chenzw: 根据acivemq的配置，8161是web_console的端口， mqtt端口应为1883
+
+# 单点登录配置
+sso:
+  enable: true
+  mode: basic
+  cas:
+    url: http://www.hotent.org:7080/cas    #CAS服务地址
+  oauth:
+    url: http://192.168.1.211:8093  #oauth2服务地址
+    loginPath: /oauth/authorize
+    tokenPath: /oauth/token
+    checkPath: /oauth/check
+    clientId: eip7
+    secret: flossy
+
+epc:
+  sso.checkurl: http://10.254.9.21:31026/v1/sso/check/
+
+
+auth:
+  serviceUrl: http://10.153.1.61:8080/cnms-auth-ws/services/AuthenticationService?wsdl
+#短信验证码登录
+sms:
+  auth:
+    serviceUrl: http://auth.cmpassport.com:6500/UmcWeb/s?func=CheckSMSCodeRequest
+    sendSmsCode: http://auth.cmpassport.com:6500/UmcWeb/s?func=SendSMSCodeRequest
+
+#sim登录
+sim:
+  app:
+    id: 135
+    secret: RMwavudgb2r4Ee9CO9cn9vQ5ojdkW3oqgnrXOYYB
+  send:
+    # sim快捷登录
+    url: https://10.1.108.31:9143/cmic-portal-auth/sim/simQuickAuth
+    functionId: simQuickAuth
+    # sim密码登录
+    sendUrl4pwd: https://10.1.108.31:9143/cmic-portal-auth/sim/signAuth
+    functionId4pwd: signauth
+
+# portal 登录
+portal:
+  auth:
+    userIp: 10.153.1.35
+    functionId: account_login
+    url: https://10.1.108.31:9143/cmic-portal-auth/login/account
+
+
+#tyrz validate
+tyrz:
+  auth:
+    url: http://10.1.108.31:9000/CMIC_SERVICE/service/cmicTokenService?wsdl
+    appId: 16
+    appSecret: b78f6d0f9321df1cce375bcf7d6e50fe813211f5
+
+
+
+spring:
+  http:
+    encoding:
+      enabled: true
+      force: true
+      charset: UTF-8
+    messages:
+      encoding: UTF-8
+  freemarker:
+    template-loader-path: classpath:/templates/ #模板加载路径 按需配置
+    charset: UTF-8
+  profiles:
+    title: "@@project.name@@"
+    description: "@@project.description@@"
+    version: "@@project.version@@"
+    # active: dev
+    platform: mysql
+    base: com.hotent.form.controller
+  datasource:
+    name: dev
+    url: jdbc:mysql://10.12.12.186:3306/bpm_shaoguan?serverTimezone=UTC&useSSL=false&&characterEncoding=UTF-8
+    username: root
+    password: 2oLYLnC-1*y7lub5hX$h
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 200
+    initialSize: 20
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  mvc:
+    pathmatch.matching-strategy: ant_path_matcher
+    formcontent.putfilter.enabled: false
+  servlet:
+    multipart:
+      maxFileSize: 70MB
+      maxRequestSize: 100MB
+
+# Server settings (ServerProperties)
+server:
+  port: 28052
+  address: 0.0.0.0
+  sessionTimeout: 30
+  contextPath: /
+  undertow:
+    io-threads: 2
+    worker-threads: 30
+  session:
+    timeout: 30
+  compression:
+    enabled: true
+    mime-types: 'text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json'
+    min-response-size: 1024
+
+# feign配置
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 50000
+        readTimeout: 50000
+        loggerLevel: full
+
+# 断路器配置
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE   # THREAD  SEMAPHORE
+          semaphore:
+            maxConcurrentRequests: 200 # 默认情况下下面两个值都是10，也就是超过10个的并发会直接进入fallback方法，不会去真正请求
+          thread:
+            timeoutInMilliseconds: 50000 #缺省为1000
+      fallback:
+        isolation:
+          semaphore:
+            maxConcurrentRequests: 200   # 默认情况下下面两个值都是10，也就是超过10个的并发会直接进入fallback方法，不会去真正请求
+
+# 负载均衡配置
+ribbon:
+  eager-load:
+    enabled: true
+
+
+docx:
+  template:
+    path: /opt/bpm/ceshi/form/templete/tmplate.docx
+
+#数据库驱动
+HLW4A:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.12.12.186:3306/bpm_shaoguan?useSSL=false&&characterEncoding=UTF-8
+    username: root
+    password: 2oLYLnC-1*y7lub5hX$h
+    #   driverClassName: oracle.jdbc.driver.OracleDriver
+    #  url: jdbc:oracle:thin:@10.153.1.51:1521:wgbpmdb
+    # username: ums2
+    #password: "ums2_@2018"
+  druid:
+    initialSize: 1
+    minIdle: 1
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+aspire.webbas.component.safeguarding:
+  illegalityParam:  <,>,</script,<script,script[\s],<img,%27,and[\s],select[\s],insert[\s],exec[\s],update[\s],drop[\s],truncate[\s],declare[\s],count[\(],decode[\s],<script.*>.*<\/script\s*>,document\s*.\s*cookie,document\s*.\s*write,ascii\s*\(.*\),chr\s*\(.*\),alter\s+,create\s+,dbms_pipe\s*.\s*receive_message,truncate\s+,drop\s+,insert\s+,update\s+,delete\s+,select\s+,execute\s+,waitfor\s+,grant\s+,lock\s+table\s+,cast\s*\(.*\),str\s*\(.*\),convert\s*\(.*\),floor\s*\(.*\),upper\s*\(.*\),lower\s*\(.*\),sleep\s*\(.*\),pg_sleep\s*\(.*\),union\s+all\s+,order\s+by\s+,group\s+by\s+,case\s+when\s+,waitfor\s+delay\s+,from\s+information_schema\s*,limit\s+\d\s*,extractvalue\s*\(.*\),concat\s*\(.*\),md5\s*\(.*\)
+  whiteList:  #白名单，List集合
+    - /form/formServiceController/v1/handlerBoData

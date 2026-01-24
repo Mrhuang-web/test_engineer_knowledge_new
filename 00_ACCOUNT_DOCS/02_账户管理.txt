@@ -1,0 +1,141 @@
+	邮箱：http://email.aspirecn.com/
+	邮箱地址:huangjiajie@aspirecn.com
+	密码：ksic23HEe41.w9w
+oa：
+	连接：http://oa.aspirecn.com/index.html?code=e741ff88-41ea-400c-ae0a-bed10b2380c0
+	账户：huangjiajie
+	密码：kje98s@241.w9w
+wifi：
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+卓效云：
+	连接：http://10.1.6.39/#/home
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+研发云：
+	连接：https://devcloud.aspirecn.com/index.php?m=user&f=login&referer=L2luZGV4LnBocD9tPWJ1ZyZmPWJyb3dzZSZwcm9kdWN0SUQ9NA==
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+vpn：
+	连接：vpn.aspirecn.com
+	新链接：https://vpnsz.aspirecn.com
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+wiki：
+	连接：http://10.1.203.38:8087/author/index
+	账号：huangjiajie
+	密码：Ck$a6Onr1z2i781w
+cicd[查看前后端代码构建，部署操作，日志查看]：
+	连接：cicd.devops.aspire.com/#/member/list 
+	账号：huangjiajie
+	密码：BIs/!85oB@&8.63
+nacos[查看各环境所有服务器内配置环境-如MySQL等]：
+	连接：http://10.1.203.120:8848/nacos/#
+	账号：nacos
+	密码：D&V2HR43TutFjf%aKqk
+es：
+	连接：http://10.12.12.186:9200/      【对应服务器：10.12.12.186，路径/.. easticsearch  】
+jenkins:
+	链接：http://10.1.4.113:8082/
+	没有密码
+svn：
+	连接：https://10.1.6.57:8443/svn/MIGUMS_PROJECT/trunk/
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+数据库[重点]：
+	根据nocas进行查看，在data id中查看
+rancher
+	连接：
+		https://10.12.5.117:8443/dashboard/auth/login?timed-out
+		https://10.1.4.217:8443/dashboard/c/c-m-clgwxhqg/explorer/apps.deployment
+	账户：cicd
+	密码：kc4T8Rf0C%@rwm087G
+ai用例记录
+	连接：http://10.12.3.31:8501/
+	账户：huangjiajie
+	密码：BIs/!85oB@&8.63
+ai用例记录文档
+	连接：https://docs.qq.com/sheet/DYVN2Z2JvWm5hWWpC?nlc=1&tab=luno3i
+蓝湖
+	连接：https://lanhuapp.com/dashboard/#/item
+测试邮箱（用于集团中注册时使用）
+	账户：huangjiajie@opstest.com
+	密码：LgTBio#sOd
+	
+	ip：10.1.203.38
+	端口：收-110，发25
+	注意：需要先到10.1.203.38服务中，进行端口开放
+	
+	
+fsu
+	链接：http://10.1.4.113:8084/login?next=%2F
+	账号：admin
+	密码：Dh@159_dev
+	
+	【上海】
+	链接：http://10.12.12.186:8011/login
+	账号：admin
+	密码：GXu8kp0*4az3Eg8emLM7
+	
+	链接：http://10.12.12.186:8044/login
+	账号：admin
+	密码：GXu8kp0*4az3Eg8emLM7
+	
+	【陕西】
+	链接：http://10.12.12.186:8014/login
+	账号：admin
+	密码：GXu8kp0*4az3Eg8emLM7
+	
+Test001
+
+C接口
+	上海
+		链接：http://10.1.203.38:8033/
+		账号：admin
+		密码：Dh@159_dev
+	
+	广西
+		链接：http://10.1.203.38:2900/
+		账号：admin
+		密码：Dh@159_dev
+
+	集团-广西：
+		连接：http://10.1.203.38:8187/login?next=%2F
+		账号：admin
+		密码：Dh@159_dev
+	
+站点
+	黄某某
+
+gitlab
+	链接：https://gitsz1.aspirecn.com/
+	账号：huangjiajie
+	密码：BIs/!85oB@&8.63
+
+
+
+
+
+纵横任务： 
+	http://10.1.5.111:12345/wizdata/ui/projects/15930069689600/workflow/definitions/19582780279424
+	admin 
+	YWLYN&tswcbyy@22
+	基础数据流向：C接口 Mysql中间库 > C服务 > MPP数据库 > 纵横任务> know任务 > 平台展示
+	
+
+
+ai自动化
+	http://10.12.5.137:9003/ 
+	用户：huangjiajie
+	密码：To#cq*Fupswys@w0
+		sunzhonghua   To#cq*XW8wys@w02
+		https://10.1.6.58:8443/svn/TestCenter/trunk/10testCase/spider/kernel/Spider_API/ 
+
+
+
+10.8.187.2
+
+
+渗透申诉：
+	资管平台地址：http://10.2.5.65:31614 
+	用户名chenzhiyong_a，密码：iznVt%sq%7dG

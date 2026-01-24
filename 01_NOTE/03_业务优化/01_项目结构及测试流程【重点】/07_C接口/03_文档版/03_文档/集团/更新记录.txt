@@ -1,0 +1,33 @@
+20250424本次提测内容：
+1、汇聚基站自动接入
+涉及服务：
+configmanagement-service、cinterface-auditsync-service、cinterface-scheduletask-service
+
+涉及脚本（中间库执行，区分4.0、3.5版本）：
+1、https://gitsz1.aspirecn.com/spider/kernel/-/blob/develop/master/bin/dbscript/3.0.21.0/ddl/汇聚基站自动接入中间库新增字段4.0_ddl_20250421.sql?ref_type=heads
+2、https://gitsz1.aspirecn.com/spider/kernel/-/blob/develop/master/bin/dbscript/3.0.21.0/ddl/汇聚基站自动接入中间库新增字段3.5_ddl_20250421.sql?ref_type=heads
+
+配置项：
+1、t_cfg_cserverinfo表config_info字段，新增"autoAuditMapping":true 配置
+
+其它说明：
+1、触发自动稽核的curl：curl --location --request GET 'http://localhost:28092/v1/cinterfaceAuditSync/auditSyncMapping?lscId=862'
+curl --location --request GET 'http://localhost:28092/v1/cinterfaceAuditSync/auditSyncMapping?lscId=753'
+=========================================================================================================================================================
+20250918本次提测内容：中间库新增入网时间、供电方式，并稽核同步到动环平台
+涉及服务：
+configmanagement-service、cinterface-auditsync-service、cinterface-scheduletask-service。（不涉及前端）
+
+脚本（此脚本测试环境已经执行）：
+https://gitsz1.aspirecn.com/spider/kernel/-/blob/develop/master/bin/dbscript/3.0.25.0/ddl/站点接入增加入网时间和供电方式_ddl_20250915.sql
+
+配置项：
+无
+
+
+RunDate  入网时间  PowerType供电方式，格式为:0-直供电;1-者转供电。
+
+
+C接口-新增字段入网时间和PowerType-C4.0-没有这两个字段能正常稽核
+C接口-新增字段入网时间和PowerType-C4.0-有这两个字段能正常稽核，数据入库到表字段t_cfg_precinctrun_date,power_type
+

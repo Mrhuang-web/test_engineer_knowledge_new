@@ -1,0 +1,1103 @@
+{
+	"info": {
+		"_postman_id": "639fa780-9d0c-4884-a093-8be4b06f9d82",
+		"name": "广西-渗透测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4134524"
+	},
+	"item": [
+		{
+			"name": "测试申请-获取工单总数",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=70FF1655351DF9864B092D39A5C1DFE8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getOrderNum?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getOrderNum"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取设备建设工程",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"precinctId\": \"01-07\",\r\n    \"type\": 1,\r\n    \"time\": 1760782639477,\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getProjectNameList?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getProjectNameList"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取工单列表（待处理）",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=70FF1655351DF9864B092D39A5C1DFE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": 1,\r\n    \"rows\": 15,\r\n    \"creator\": \"\",\r\n    \"data\": {\r\n        \"tabType\": \"1\",\r\n        \"workCode\": \"\",\r\n        \"projectName\": \"\",\r\n        \"sysCategory\": \"\"\r\n    },\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getOrderList?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getOrderList"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取工单详情",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 220,\r\n    \"deviceStatus\": 2,\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getOrderDetail?workCode=CS20251204001&namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getOrderDetail"
+					],
+					"query": [
+						{
+							"key": "workCode",
+							"value": "CS20251204001"
+						},
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取操作日志列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204001\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getHistory?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getHistory"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-验收测试填报-驳回",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provinceManager\": \"protest01\",\r\n    \"provinceManagerName\": \"protest01\",\r\n    \"stationUser\": \"protest01\",\r\n    \"stationUserName\": \"protest01\",\r\n    \"cityCompanyUser\": \"protest01\",\r\n    \"cityCompanyUserName\": \"protest01\",\r\n    \"engerManager\": \"protest02\",\r\n    \"engerManagerName\": \"protest02\",\r\n    \"manufacturerManager\": \"protest01\",\r\n    \"manufacturerManagerName\": \"protest01\",\r\n    \"maintenancePersonnelName\": \"周健胜\",\r\n    \"maintenancePersonnel\": \"zhoujiansheng\",\r\n    \"workCode\": \"CS20251204003\",\r\n    \"flowStatus\": \"5\",\r\n    \"approval\": 0,\r\n    \"approvalOpinions\": \"\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/reject?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"reject"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取工单对应设备列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204001\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getAcceptFlowApplyDevice?namespace=alauda&workCode=CS20251204001",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getAcceptFlowApplyDevice"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						},
+						{
+							"key": "workCode",
+							"value": "CS20251204001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-保存草稿",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"projectName\": \"测试草稿单\",\r\n    \"sysCategory\": \"1\",\r\n    \"label_radio_1717401990082\": \"局房动环\",\r\n    \"finishDate\": \"2025-12-05\",\r\n    \"mobileAcceptanceUser\": \"cehsi1\",\r\n    \"fillManufacturerAcceptUser\": \"cehsi2\",\r\n    \"projectNameNew\": \"\",\r\n    \"sysCategoryNew\": \"\",\r\n    \"finishDateNew\": \"\",\r\n    \"mobileAcceptanceUserNew\": \"\",\r\n    \"fillManufacturerAcceptUserNew\": \"\",\r\n    \"provinceManager\": \"protest01\",\r\n    \"stationUser\": \"protest01\",\r\n    \"cityCompanyUser\": \"protest01\",\r\n    \"maintenancePersonnel\": \"protest01\",\r\n    \"engerManager\": \"protest01\",\r\n    \"manufacturerManager\": \"protest01\",\r\n    \"provinceManagerName\": \"protest01\",\r\n    \"cityCompanyUserName\": \"protest01\",\r\n    \"engerManagerName\": \"protest01\",\r\n    \"maintenancePersonnelName\": \"protest01\",\r\n    \"stationUserName\": \"protest01\",\r\n    \"manufacturerManagerName\": \"protest01\",\r\n    \"deviceList1\": [],\r\n    \"fsuList\": [],\r\n    \"flowStatus\": \"0\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/save?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"save"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-工单发起",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"projectName\": \"测试草稿单\",\r\n    \"sysCategory\": \"1\",\r\n    \"label_radio_1717401990082\": \"局房动环\",\r\n    \"finishDate\": \"2025-12-05\",\r\n    \"mobileAcceptanceUser\": \"cehsi1\",\r\n    \"fillManufacturerAcceptUser\": \"cehsi2\",\r\n    \"projectNameNew\": \"\",\r\n    \"sysCategoryNew\": \"\",\r\n    \"finishDateNew\": \"\",\r\n    \"mobileAcceptanceUserNew\": \"\",\r\n    \"fillManufacturerAcceptUserNew\": \"\",\r\n    \"provinceManager\": \"protest01\",\r\n    \"stationUser\": \"protest01\",\r\n    \"cityCompanyUser\": \"protest01\",\r\n    \"maintenancePersonnel\": \"zhoujiansheng\",\r\n    \"engerManager\": \"protest02\",\r\n    \"manufacturerManager\": \"protest01\",\r\n    \"stationUserName\": \"protest01\",\r\n    \"maintenancePersonnelName\": \"周健胜\",\r\n    \"provinceManagerName\": \"protest01\",\r\n    \"cityCompanyUserName\": \"protest01\",\r\n    \"engerManagerName\": \"protest02\",\r\n    \"manufacturerManagerName\": \"protest01\",\r\n    \"deviceList1\": [\r\n        {\r\n            \"resCode\": \"95cc0b02ae2149c0b3fd1d1b6b74601d\",\r\n            \"deviceId\": \"00781006000003667282\",\r\n            \"cityName\": \"梧州市\",\r\n            \"areaName\": \"万秀区\",\r\n            \"siteType\": \"通信枢纽楼\",\r\n            \"siteLevel\": \"通信机楼\",\r\n            \"siteName\": \"梧州测试数据区工业园生产楼\",\r\n            \"deviceSubclass\": \"开关电源铅酸电池\",\r\n            \"siteId\": \"SITE-ff80808155de01c501560093ff3e0030\",\r\n            \"roomName\": \"梧州测试数据区工业园生产楼二楼电力机房\",\r\n            \"deviceType\": \"铅酸电池\",\r\n            \"deviceName\": \"雄韬开关电源铅酸电池231/3\",\r\n            \"lifecycleStatus\": \"现网\",\r\n            \"intId\": \"梧州万秀区工业园生产楼\",\r\n            \"index\": 1,\r\n            \"isEdit\": true,\r\n            \"projectName\": \"测试草稿单\",\r\n            \"isInit\": false,\r\n            \"collectorName\": \"艾默生FSU308\",\r\n            \"collectorIp\": \"10.178.64.217\",\r\n            \"collectorRoomName\": \"梧州万秀区工业园生产楼三楼电力电池机房\",\r\n            \"collectorListJson\": \"[{\\\"id\\\":\\\"6696\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU3\\\",\\\"collectorIp\\\":\\\"10.178.64.125\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"6698\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU305\\\",\\\"collectorIp\\\":\\\"10.178.64.214\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6700\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU310\\\",\\\"collectorIp\\\":\\\"10.178.64.166\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6702\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU111\\\",\\\"collectorIp\\\":\\\"10.178.64.123\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼电力1机房\\\"},{\\\"id\\\":\\\"6706\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU306\\\",\\\"collectorIp\\\":\\\"10.178.64.215\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6708\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU5\\\",\\\"collectorIp\\\":\\\"10.178.64.127\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"6716\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU303\\\",\\\"collectorIp\\\":\\\"10.178.64.212\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6720\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU304\\\",\\\"collectorIp\\\":\\\"10.178.64.213\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6722\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU307\\\",\\\"collectorIp\\\":\\\"10.178.64.216\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6728\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU10\\\",\\\"collectorIp\\\":\\\"10.178.64.132\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼四楼传输1机房\\\"},{\\\"id\\\":\\\"6736\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU314\\\",\\\"collectorIp\\\":\\\"10.178.64.197\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6744\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU8\\\",\\\"collectorIp\\\":\\\"10.178.64.163\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼传输1机房\\\"},{\\\"id\\\":\\\"6746\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU308\\\",\\\"collectorIp\\\":\\\"10.178.64.217\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\",\\\"resCode\\\":\\\"95cc0b02ae2149c0b3fd1d1b6b74601d\\\",\\\"srcList\\\":[\\\"http://10.1.203.120:8380/spider/web/download/alterAcceptFlow/20251204154838/u7908.png\\\"],\\\"index\\\":1,\\\"isEdit\\\":false,\\\"fsuUrl\\\":\\\"http://10.1.203.120:8380/spider/web/download/alterAcceptFlow/20251204154838/u7908.png\\\"},{\\\"id\\\":\\\"6748\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU4\\\",\\\"collectorIp\\\":\\\"10.178.64.126\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"6750\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU2\\\",\\\"collectorIp\\\":\\\"10.178.64.124\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼电力2机房\\\"},{\\\"id\\\":\\\"6758\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU311\\\",\\\"collectorIp\\\":\\\"10.178.64.167\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"6760\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU412\\\",\\\"collectorIp\\\":\\\"10.178.64.133\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼四楼传输1机房\\\"},{\\\"id\\\":\\\"7028\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU15\\\",\\\"collectorIp\\\":\\\"10.178.64.208\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"7030\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU301\\\",\\\"collectorIp\\\":\\\"10.178.64.210\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7034\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU14\\\",\\\"collectorIp\\\":\\\"10.178.64.207\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"7084\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU201\\\",\\\"collectorIp\\\":\\\"10.178.64.131\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼传输1机房\\\"},{\\\"id\\\":\\\"7096\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU315\\\",\\\"collectorIp\\\":\\\"10.178.64.198\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7326\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"维谛技术FSU112\\\",\\\"collectorIp\\\":\\\"10.178.64.196\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼电力1机房\\\"},{\\\"id\\\":\\\"7334\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU414\\\",\\\"collectorIp\\\":\\\"10.178.64.135\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼四楼传输1机房\\\"},{\\\"id\\\":\\\"7336\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU29\\\",\\\"collectorIp\\\":\\\"10.178.64.169\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7342\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU302\\\",\\\"collectorIp\\\":\\\"10.178.64.211\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7350\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU309\\\",\\\"collectorIp\\\":\\\"10.178.64.218\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7388\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU202\\\",\\\"collectorIp\\\":\\\"10.178.64.129\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼传输1机房\\\"},{\\\"id\\\":\\\"7416\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU28\\\",\\\"collectorIp\\\":\\\"10.178.64.168\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7420\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"艾默生FSU413\\\",\\\"collectorIp\\\":\\\"10.178.64.134\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼四楼传输1机房\\\"},{\\\"id\\\":\\\"7470\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"佳力图FSU321\\\",\\\"collectorIp\\\":\\\"10.178.64.45\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼IDC1#机房\\\"},{\\\"id\\\":\\\"7472\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"佳力图FSU322\\\",\\\"collectorIp\\\":\\\"10.178.64.46\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼IDC1#机房\\\"},{\\\"id\\\":\\\"7474\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"佳力图FSU331\\\",\\\"collectorIp\\\":\\\"10.178.64.36\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼IDC2#机房\\\"},{\\\"id\\\":\\\"7476\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"佳力图FSU332\\\",\\\"collectorIp\\\":\\\"10.178.64.37\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼IDC2#机房\\\"},{\\\"id\\\":\\\"7516\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU205\\\",\\\"collectorIp\\\":\\\"10.178.65.224\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼传输1机房\\\"},{\\\"id\\\":\\\"7524\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU13\\\",\\\"collectorIp\\\":\\\"10.178.64.221\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼电力1机房\\\"},{\\\"id\\\":\\\"7526\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU40\\\",\\\"collectorIp\\\":\\\"10.178.64.222\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼一楼数据机房\\\"},{\\\"id\\\":\\\"7528\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU41\\\",\\\"collectorIp\\\":\\\"10.178.64.223\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼电力机房\\\"},{\\\"id\\\":\\\"7530\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU16\\\",\\\"collectorIp\\\":\\\"10.178.64.224\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼二楼传输1机房\\\"},{\\\"id\\\":\\\"7532\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU17\\\",\\\"collectorIp\\\":\\\"10.178.64.225\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼三楼电力电池机房\\\"},{\\\"id\\\":\\\"7534\\\",\\\"siteId\\\":\\\"SITE-ff80808155de01c501560093ff3e0030\\\",\\\"collectorName\\\":\\\"中兴力维FSU18\\\",\\\"collectorIp\\\":\\\"10.178.64.226\\\",\\\"collectorRoomName\\\":\\\"梧州万秀区工业园生产楼四楼传输1机房\\\"}]\"\r\n        }\r\n    ],\r\n    \"fsuList\": [\r\n        {\r\n            \"id\": \"6746\",\r\n            \"siteId\": \"SITE-ff80808155de01c501560093ff3e0030\",\r\n            \"collectorName\": \"艾默生FSU308\",\r\n            \"collectorIp\": \"10.178.64.217\",\r\n            \"collectorRoomName\": \"梧州万秀区工业园生产楼三楼电力电池机房\",\r\n            \"resCode\": \"95cc0b02ae2149c0b3fd1d1b6b74601d\",\r\n            \"srcList\": [\r\n                \"http://10.1.203.120:8380/spider/web/download/alterAcceptFlow/20251204154838/u7908.png\"\r\n            ],\r\n            \"index\": 1,\r\n            \"isEdit\": false,\r\n            \"fsuUrl\": \"http://10.1.203.120:8380/spider/web/download/alterAcceptFlow/20251204154838/u7908.png\"\r\n        }\r\n    ],\r\n    \"flowStatus\": \"1\",\r\n    \"workCode\": \"CS20251204002\",\r\n    \"id\": 130,\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/start?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"start"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-工单批复",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provinceManager\": \"protest01\",\r\n    \"provinceManagerName\": \"protest01\",\r\n    \"stationUser\": \"protest01\",\r\n    \"stationUserName\": \"protest01\",\r\n    \"cityCompanyUser\": \"protest01\",\r\n    \"cityCompanyUserName\": \"protest01\",\r\n    \"engerManager\": \"protest02\",\r\n    \"engerManagerName\": \"protest02\",\r\n    \"manufacturerManager\": \"protest01\",\r\n    \"manufacturerManagerName\": \"protest01\",\r\n    \"maintenancePersonnelName\": \"周健胜\",\r\n    \"maintenancePersonnel\": \"zhoujiansheng\",\r\n    \"workCode\": \"CS20251204001\",\r\n    \"flowStatus\": \"2\",\r\n    \"approval\": 1,\r\n    \"approvalOpinions\": \"测试通过\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/complete?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"complete"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-导出工单对应设备的实时数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204003\",\r\n    \"deviceId\": \"00771006000003055429\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/exportAcceptTestData?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"exportAcceptTestData"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-导出工单对应的待验收设备列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204003\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/exportAcceptDevice?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"exportAcceptDevice"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取验证测试资料设备名称列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204003\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getDeviceInfoByCode?workCode=CS20251204003&namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getDeviceInfoByCode"
+					],
+					"query": [
+						{
+							"key": "workCode",
+							"value": "CS20251204003"
+						},
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-获取实时数据",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workCode\": \"CS20251204003\",\r\n    \"deviceId\": \"00771006000003055429\",\r\n    \"deviceType\": \"开关电源\",\r\n    \"deviceName\": \"中恒组合开关电源1/1\",\r\n    \"modelName\": \"普通空调测试1\",\r\n    \"siteName\": \"桂林测试数据县中心机房业务区1三江合国际汇聚\",\r\n    \"deviceSubclass\": \"组合开关电源\",\r\n    \"time\": \"2025-12-04T07:50:43.176Z\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/getRealTimeData?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"getRealTimeData"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试申请-取消预割接提交",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"provinceManager\": \"protest01\",\r\n    \"provinceManagerName\": \"protest01\",\r\n    \"stationUser\": \"protest01\",\r\n    \"stationUserName\": \"protest01\",\r\n    \"cityCompanyUser\": \"protest01\",\r\n    \"cityCompanyUserName\": \"protest01\",\r\n    \"engerManager\": \"protest02\",\r\n    \"engerManagerName\": \"protest02\",\r\n    \"manufacturerManager\": \"protest01\",\r\n    \"manufacturerManagerName\": \"protest01\",\r\n    \"maintenancePersonnelName\": \"周健胜\",\r\n    \"maintenancePersonnel\": \"zhoujiansheng\",\r\n    \"workCode\": \"CS20251204003\",\r\n    \"flowStatus\": \"15\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alertAccetpFlow/completeByOrderTimeOut?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alertAccetpFlow",
+						"completeByOrderTimeOut"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-获取设备类型列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/getZzDeviceType?isExclude=0&namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"getZzDeviceType"
+					],
+					"query": [
+						{
+							"key": "isExclude",
+							"value": "0"
+						},
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-获取列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": 1,\r\n    \"rows\": 15,\r\n    \"modelName\": \"\",\r\n    \"zzDeviceType\": \"\",\r\n    \"data\": {\r\n        \"modelName\": \"\",\r\n        \"zzDeviceType\": \"\"\r\n    },\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/queryList?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"queryList"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-获取设备类型对应设备子类列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/getDeviceSubclass?deviceType=UPS%E8%AE%BE%E5%A4%87&namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"getDeviceSubclass"
+					],
+					"query": [
+						{
+							"key": "deviceType",
+							"value": "UPS%E8%AE%BE%E5%A4%87"
+						},
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-获取导入日志列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/getImportLog?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"getImportLog"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-导出导入日志列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/exportImportLog?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"exportImportLog"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-新增或者编辑模板信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"modelName\": \"普通空调测试1\",\r\n    \"zzDeviceType\": \"开关电源\",\r\n    \"deviceSubclassName\": \"组合开关电源\",\r\n    \"fileUrl\": \"/download/alterAcceptModel/20251121102643/动环告警信号测试模板 (4).xlsx\",\r\n    \"zzDeviceTypeName\": \"\",\r\n    \"zzDeviceSubclassList\": [\r\n        \"组合开关电源\"\r\n    ],\r\n    \"zzDeviceSubclass\": [\r\n        \"组合开关电源\"\r\n    ],\r\n    \"id\": \"54\",\r\n    \"oldModelName\": \"普通空调测试1\",\r\n    \"createTime\": \"2025-11-07 19:34:22\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/addOrEditModel?namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"addOrEditModel"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-模板文件上传",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Admin/Downloads/动环告警信号测试模板 (1).xlsx"
+						},
+						{
+							"key": "zzDeviceType",
+							"value": "低压直流配电",
+							"type": "text"
+						},
+						{
+							"key": "modelName",
+							"value": "11",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/upload?namespace=alauda&_t=1764835814929",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "namespace",
+							"value": "alauda"
+						},
+						{
+							"key": "_t",
+							"value": "1764835814929"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "测试模板管理-模板信息删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "SESSION=NjYxMmMxZTItNWNiNi00YTYzLWE4MjQtMzY0NTUzNzhjOWRm; JSESSIONID=FF4A3121D361595722584B5553D26B81",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"modelName\": \"普通空调测试7\",\r\n    \"namespace\": \"alauda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.1.203.120:8380/spider/web/v1/alterNetworkAccetp/delete?modelName=%E6%99%AE%E9%80%9A%E7%A9%BA%E8%B0%83%E6%B5%8B%E8%AF%957&namespace=alauda",
+					"protocol": "http",
+					"host": [
+						"10",
+						"1",
+						"203",
+						"120"
+					],
+					"port": "8380",
+					"path": [
+						"spider",
+						"web",
+						"v1",
+						"alterNetworkAccetp",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "modelName",
+							"value": "%E6%99%AE%E9%80%9A%E7%A9%BA%E8%B0%83%E6%B5%8B%E8%AF%957"
+						},
+						{
+							"key": "namespace",
+							"value": "alauda"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

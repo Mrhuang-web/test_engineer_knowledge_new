@@ -1,0 +1,87 @@
+local:
+  kafka:
+    enable: true
+    bootstrap_servers: 10.1.5.109:9092
+    producer:
+      retries: 0
+      batch-size: 5
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: sc-${ENV_APP_NAME:spider-gemc}
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 500
+      session.timeout.ms: 60000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程
+      # ack-mode: manual
+    properties:
+      session.timeout.ms: 60000
+
+spring:
+  kafka: # kafka 配置
+    bootstrap-servers: 10.1.5.109:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: sc-${ENV_APP_NAME:spider-gemc}
+      auto-offset-reset: latest
+       # 设置成手工提交(spring代理提交)
+      enable-auto-commit: false
+      auto-commit-interval: 2000
+      session.timeout.ms: 20000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      ack-mode: manual
+      concurrency: 3    # 配置partions分区数, 保证每个分区至少1个消费线程     
+    properties:
+      session.timeout.ms: 60000
+
+# 资源池y kafka集群配置
+# remote:
+#   kafka:
+#     enable: true
+# #    bootstrap_servers: 10.206.156.68:9092,10.206.156.69:9092,10.206.156.70:9092,10.206.156.71:9092,10.206.156.72:9092
+#     bootstrap_servers: 10.12.12.186:9092
+#     producer:
+#       retries: 0
+#       batch-size: 5
+#       buffer-memory: 33554432
+#       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#     consumer:
+#       group-id: consumer-iot-center-x
+#       auto-offset-reset: latest
+#       enable-auto-commit: true
+#       auto-commit-interval: 100
+#       session.timeout.ms: 60000
+#       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#     listener:
+#       concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程
+#       # ack-mode: manual
+#     properties:
+#       session.timeout.ms: 60000
+
+#============== UMS机房 kafka ===================
+centerUmsRoom:
+  kafka:
+    enable: true
+    bootstrap-servers: 10.1.5.109:9092
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    listener:
+      concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程

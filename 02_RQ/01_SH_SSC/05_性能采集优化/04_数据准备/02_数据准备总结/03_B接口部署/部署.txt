@@ -1,0 +1,113 @@
+注意点：
+	ENV_TYPE：为nacos对应环境
+	ENV_APP_NAME：为配置application后缀内容
+		如果是ms，也只取后面的
+	APPLICATION_NAME：为应用展示的名字而已
+
+
+
+B接口server（GEMC_binterface-service）：
+docker run --name binterface-service-server-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=binterface --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=18083 --env APPLICATION_NAME=binterface-service-server -v /tmp/logs/binterface-service-server-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_77_20251225090900
+
+
+
+
+B接口client（GEMC_binterface-service）：
+docker run --name binterface-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=binterface-client  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  --env SERVER_PORT=18081 --env APPLICATION_NAME=binterface-service -v /tmp/logs/binterface-service-client-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_77_20251225090900
+
+
+
+
+
+B接口data（GEMC_binterface-service）：
+docker run --name binterface-service-datahandle-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=binterface-dataHandle  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18085 --env APPLICATION_NAME=binterface-service-data -v /tmp/logs/binterface-service-datahandle-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_77_20251225090900
+
+
+
+
+
+currentmonitor（v2_sc_currentmonitor-service）：
+docker run --name currentmonitor-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=currentmonitor --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=15889 --env APPLICATION_NAME=currentmonitor-service -v /tmp/logs/currentmonitor-service-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-60/currentmonitor-service:1.0.2.0_38_20251225091100
+
+
+
+
+
+distribute（v2_sc_distribute-service  还是GEMC_distribute-service？）
+docker run --name distribute-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=distribute-service --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=9103 --env APPLICATION_NAME=distribute-server -v /tmp/logs/distribute-service-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-89/distribute-service:1.0.1.0_8_20251225091228
+
+
+
+
+
+
+configManagement（v2_sc_configManagement-service）：
+docker run --name configManagement-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=configManagement --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=9103 --env APPLICATION_NAME=configManagement-server -v /tmp/logs/configManagement-service-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-60/configmanagement-service:1.0.1.0_132_20251225091155
+
+
+
+
+
+
+
+
+
+
+
+datacollection（v2_sc_datacollection-service 还是GEMC_datacollection-service？） --- 需要先打gemc的common包（但是好像没权限）
+
+
+docker run --name datacollection-service-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=datacollection --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=9103 --env APPLICATION_NAME=datacollection-server -v /tmp/logs/datacollection-service-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-76/datacollection-service:1.0.3.1_13_20251225091109
+
+
+
+
+
+
+
+
+docker run --name binterface-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.213.190:8848 --env ENV_TYPE=sc-dev  --env ENV_APP_NAME=binterface-client  --env ENV_NACOS_PASSWORD='123123'  --env RUN_MODE=client  --env SERVER_PORT=18081 --env APPLICATION_NAME=binterface-service -v /tmp/logs/binterface-service-client-p1:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_77_20251225090900
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+只给jar包
+	先打镜像
+		mkdir -p /opt/build/currentmonitor
+		cd /opt/build/currentmonitor
+		ls -l currentmonitor-service-0.0.1-SNAPSHOT.jar
+	写dockerfile
+		FROM openjdk:17-jdk-slim
+		WORKDIR /app
+		COPY currentmonitor-service-0.0.1-SNAPSHOT.jar app.jar
+		EXPOSE 18081
+		ENTRYPOINT ["java","-jar","/app/app.jar"]
+
+		docker build -t currentmonitor:20251226 .
+
+
+
+	docker run --name currentmonitor-p1 \
+  --net host \
+  --log-driver=json-file \
+  --log-opt max-size=30m \
+  --log-opt max-file=3 \
+  --env ENV_NACOS=10.1.213.190:8848 \
+  --env ENV_TYPE=sc-dev \
+  --env ENV_APP_NAME=currentmonitor \
+  --env ENV_NACOS_PASSWORD='123123' \
+  --env RUN_MODE=client \
+  --env SERVER_PORT=18081 \
+  --env APPLICATION_NAME=currentmonitor-service \
+  -v /tmp/logs/currentmonitor-service-p1:/opt/data/logs/ \
+  -d currentmonitor:20251226

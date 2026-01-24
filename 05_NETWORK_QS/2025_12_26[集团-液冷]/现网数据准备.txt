@@ -1,0 +1,62 @@
+现网数据准备
+	液冷(需要两个系统，一个验证中央空调主机，一个中央空调末端)
+		站点-汕头市-数据中心-第二机楼
+			
+			中央空调主机013323:总流量（m³/h）					：XX水流量							BA群控2024 - 2号制冷站-BA群控
+			中央空调主机013206:一次侧进液温度（℃）			：回水温度
+			中央空调主机013205：一次侧出液温度（℃）			：出水温度
+
+			中央空调末端012325:水流量（m³/h）					：一次侧循环流量
+			中央空调末端012339:运行频率（HZ）					：循环泵变频器反馈频率
+
+
+			中央空调末端012340:电流							：循环泵变频器反馈电流
+
+
+	现网机房：
+		中国移动呼和浩特数据中心（01-19-05-07-01）
+			中国移动呼和浩特数据中心B05机：（干球，湿球，室外）
+			中国移动呼和浩特数据中心B07机房楼1层106模块IDC机房：（中央空调 - 013323，013206，013205）
+
+
+
+
+
+knowledge服务
+
+
+# 中国移动呼和浩特数据中心B07机房楼1层106模块IDC机房    ->   J列CDU1(012325,012339,012340)
+curl -X GET "http://localhost:28016/v1/liquidCoolingReport/scheduleLiquidCoolingReport?precinctId=01-19-05-07-01&startTime=2025-12-20&endTime=2025-12-26" -H "accept: application/json"
+
+
+# 沈阳省公司沈北第二生产楼9层900动力机房			--  013206
+curl -X GET "http://localhost:28016/v1/liquidCoolingReport/scheduleLiquidCoolingReport?precinctId=01-38-13-07-04&startTime=2025-12-20&endTime=2025-12-26" -H "accept: application/json"
+
+
+# 佛山三水数据中心第二通信机楼 -> --  013205
+curl -X GET "http://localhost:28016/v1/liquidCoolingReport/scheduleLiquidCoolingReport?precinctId=01-01-05-01-13-02&startTime=2025-12-20&endTime=2025-12-26" -H "accept: application/json"
+
+
+# 广州天河区南方基地2.3栋六楼机房BA天面动力5
+curl -X GET "http://localhost:28016/v1/liquidCoolingReport/scheduleLiquidCoolingReport?precinctId=01-01-05-01-13-02&startTime=2025-12-20&endTime=2025-12-26" -H "accept: application/json"
+
+
+
+想要看系统有那些设备
+	页面快速定位：
+		批量维护里面
+			里面就记录了系统所有的系统、设备等信息
+
+
+
+
+清表：
+	t_liquid_cooling_config
+		t_liquid_cooling_config_parameter
+		t_liquid_cooling_refrigeration_room_config
+		t_liquid_cooling_primary_side_config
+		t_liquid_cooling_cdu_reference_info
+		
+		t_liquid_cooling_data_statistics
+		t_liquid_cooling_primary_side_statistics
+		t_liquid_cooling_refrigeration_room_statistics

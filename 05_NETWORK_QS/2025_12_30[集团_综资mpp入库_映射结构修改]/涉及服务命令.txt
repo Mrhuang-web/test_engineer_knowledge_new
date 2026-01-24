@@ -1,0 +1,51 @@
+综资的csv文件写入mpp
+	涉及服务：external-service
+
+	涉及配置：
+	1、external-service添加如下配置
+	starrocks:
+	  host: 10.1.4.115 #StarRocks的fe的LEADER节点ip
+	  port: 8030 #StarRocks的fe的http端口
+	  data-base: dh
+	  user-name: dh
+	  passcode: xxxx
+	  batch-size: 10000 #每批次写入StarRocks的行数
+	  label-flag: 0 #是否启用label(事务，避免重复导入), 0-不启用，1-启用
+
+
+	涉及curl(现网不用跑)
+		1、触发任务curl，ip和端口是cicd上external-service服务对应的ip和端口；
+		2、orderId参数的值可以对应修改；
+		3、batchNum格式为yyyyMMdd；saveEsOrMpp是es或mpp，es则是写入es，mpp则写入mpp
+		curl --location --request GET 'http://10.12.5.119:31640/migration/v1/zzSyncData/startSyncZZData?orderId=SSSP-20241031-000010,SSSP-20241031-000018,SSSP-20241031-000021,SSSP-20241031-000022,SSSP-20241031-000023,SSSP-20241031-000025,SSSP-20241031-000027,SSSP-20241031-000028,SSSP-20241031-000029,SSSP-20241031-000031,SSSP-20241031-000032,SSSP-20241031-000035,SSSP-20241031-000036,SSSP-20241031-000038,SSSP-20241031-000039,SSSP-20241031-000040,SSSP-20241031-000041,SSSP-20241031-000042,SSSP-20241031-000043,SSSP-20241031-000044,SSSP-20241031-000045,SSSP-20250110-000002,SSSP-20250110-000003,SSSP-20250110-000004&batchNum=20251210&saveEsOrMpp=mpp'
+
+
+		curl --location --request GET 'http://localhost:31640/migration/v1/zzSyncData/startSyncZZData?orderId=SSSP-20241031-000010,SSSP-20241031-000018,SSSP-20241031-000021,SSSP-20241031-000022,SSSP-20241031-000023,SSSP-20241031-000025,SSSP-20241031-000027,SSSP-20241031-000028,SSSP-20241031-000029,SSSP-20241031-000031,SSSP-20241031-000032,SSSP-20241031-000035,SSSP-20241031-000036,SSSP-20241031-000038,SSSP-20241031-000039,SSSP-20241031-000040,SSSP-20241031-000041,SSSP-20241031-000042,SSSP-20241031-000043,SSSP-20241031-000044,SSSP-20241031-000045,SSSP-20250110-000002,SSSP-20250110-000003,SSSP-20250110-000004&batchNum=20251210&saveEsOrMpp=mpp'
+
+
+
+综资站点/机房映射索引（ods_zz_irms_site_map，ods_zz_irms_rom_map）结构变化
+	1.供电拓扑 
+	2.综资站点/机房入库
+	3.超期服役
+
+	涉及服务
+	    scada,external, hiddendger
+
+	涉及curl(现网本次只跑 - 机房-站点)
+		/触发scada抽取任务（scada服务跑）
+		curl --location --request GET 'http://localhost:30655/v1/topuConfig/mappingResourceAll'
+
+
+		// 触发综资站点入库（external）
+			curl --location --request GET 'http://localhost:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000010' \
+		--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+
+
+		// 触发综资机房入库（external）
+			curl --location --request GET 'http://localhost:31640/migration/v1/zzSyncData/saveZZData?orderIds=SSSP-20241031-000018' \
+		--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'
+
+		// 触发超期服役（hiddendger）
+		curl --location --request GET 'http://localhost:32119/v1/hiddenDanger/startOverdueAll' \
+	--header 'User-Agent: Apifox/1.0.0 (https://apifox.com)'

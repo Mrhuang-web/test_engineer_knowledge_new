@@ -1,0 +1,902 @@
+ 1  bash Bclinux_21_10_init-vm.sh
+    2  ls
+    3  clear
+    4  lsblk
+    5  mkdir .ssh
+    6  cd .ssh
+    7  vi authorized_keys
+    8  hostname
+    9  ping dh194
+   10  cd /etc
+   11  vi hostname
+   12  vi hostsa
+   13  vi hosts
+   14  ping dh194
+   15  kubectl get node
+   16  cd /etc/docker
+   17  ls
+   18  vi daemon.json
+   19  systemctl restart docker
+   20  docker info
+   21  yum install rpcbind nfs-utils
+   22   systemctl enable rpcbind nfs-server
+   23  systemctl start rpcbind nfs-server
+   24  mkdir /mnt/nfs
+   25  cd
+   26  ls
+   27  vi mount_nfs.sh
+   28  chmod +x mount_nfs.sh
+   29  ls
+   30  ./mount_nfs.sh
+   31  cd /mnt/nfs
+   32  ls
+   33  pwd
+   34  ls
+   35  ll
+   36  docker
+   37  top
+   38  df
+   39  cd /etc/sysconfig
+   40  cp iptables iptables.org
+   41  vi iptables
+   42  systemctl restart iptables
+   43  mount -t nfs -o nolock 10.1.4.196:/opt/nfs /mnt/nfs
+   44  cd /mnt
+   45  ls
+   46  cd nfs
+   47  ls
+   48  cd /opt
+   49  ls
+   50  cd cmchainlog
+   51  ls
+   52  cd docker_microservice/
+   53  ls
+   54  vi baascore_info.log
+   55  docker ps
+   56  vi /etc/fstab
+   57  cd /etc/sysconfig
+   58  l
+   59  ls
+   60  vi iptables
+   61  systemctl restart iptables
+   62  vi /etc/ssh/sshd_config
+   63  service sshd restart
+   64  /bin/systemctl restart sshd.service
+   65  vi /etc/ssh/sshd_config
+   66  vi /root/pypi
+   67  cd /opt/aspmon/agent_host_root/spectre/standalone/3.0
+   68  netstat -pln |grep 2022
+   69  cd /opt/aspmon/agent_host_root/spectre/standalone/3.0
+   70  netstat  -pln|grep 2022
+   71  kill -9 6538
+   72  rm  -rf /opt/aspmon/agent_host_root/spectre/standalone/3.0
+   73  vi /etc/sysconfig/iptables
+   74  systemctl restart iptables
+   75  sudo shutdown -h now
+   76  ls
+   77  history
+   78  dokcker ps -a
+   79  docker ps -a|grep bin
+   80  docker restart binterface-service-client;docker logs -f --tail 200 binterface-service-client
+   81  docker run --name binterface-service-server-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=binterface --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server -v /tmp/logs/binterface-service-server:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_30_20250703091351
+   82  docker ps |grep bin
+   83  docker ps -a|grep bin
+   84  docker logs -f --tail 200 binterface-service-server-p1
+   85  docker ps -a|grep bin
+   86  docker rm binterface-service-server-p1 binterface-service-client
+   87  docker images |grep binterface
+   88  docker rmi be736a58c81b
+   89  docker images |grep binterface
+   90  docker run --name binterface-service-server-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server -v /tmp/logs/binterface-service-server:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_34_20250707085426
+   91  docker ps -a|grep binterface
+   92  docker logs -f --tail 200 binterface-service-server-p1
+   93  telnet 10.1.203.120 6381
+   94  telnet
+   95  ping
+   96  clear
+   97  sudo yum install telnet
+   98  telnet 10.1.203.120 6381
+   99  clear
+  100  docker ps -a|grep bin
+  101  docker restart a87d3f6f1b8f;docker logs -f --tail 200 a87d3f6f1b8f
+  102  docker restart 8b00749198c6;docker logs -f --tail 200 8b00749198c6
+  103  docker ps
+  104  docker ps |grep binterface
+  105  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 10.1.6.34:8080/cicd-public-49/binterface-service:1.0.3.2_34_20250707085426
+  106  ls
+  107  docker ps -a|grep bin
+  108  docker images|grep bin
+  109  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f:1.0.3.2_34_20250707085426
+  110  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f
+  111  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f
+  112  docker ps -a|grep bin
+  113  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f
+  114  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f:latest
+  115  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f:1.0.3.2_34_20250707085426
+  116  docker run --name binterface-service-client—p1 net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' --env RUN_MODE=client -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f:1.0.3.2_34_20250707085426
+  117  docker ps |grep bin
+  118  docker run --name binterface-service-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f
+  119  docker ps |grep bin
+  120  docker logs -f --tail 200 binterface-service-client-p1
+  121  lsof -i:18081
+  122  docker logs -f --tail 200 binterface-service-data-p1
+  123  docker logs -f --tail 200 binterface-service-server-p1
+  124  docker ps |grep bin
+  125  docker stop binterface-service-client-p1 binterface-service-data-p1
+  126  docker rm binterface-service-client-p1 binterface-service-data-p1
+  127  ocker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18182 -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f:1.0.3.2_34_20250707085426
+  128  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18182 -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f:1.0.3.2_34_20250707085426
+  129  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18182 -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f
+  130  docker logs -f --tail 200 binterface-service-data-p1
+  131  docker rm binterface-service-data-p1
+  132  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18183-v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f
+  133  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18183 -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f
+  134  docker logs -f --tail 200 binterface-service-data-p1
+  135  docker run --name binterface-service-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  --env SERVER_PORT=18193 -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f
+  136  docker logs -f --tail 200 binterface-service-client-p1
+  137  docker stop binterface-service-client-p1 binterface-service-data-p1
+  138  docker rm binterface-service-client-p1 binterface-service-data-p1
+  139  docker run --name binterface-service-data-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=dataHandle --env SERVER_PORT=18183 --env APPLICATION_NAME=binterface-service-data -v /tmp/logs/binterface-service-data:/opt/data/logs/ -d 6b1a2f57791f
+  140  docker run --name binterface-service-client-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=client  --env SERVER_PORT=18193 --env APPLICATION_NAME=binterface-service -v /tmp/logs/binterface-service-client:/opt/data/logs/ -d 6b1a2f57791f
+  141  docker logs -f --tail 200 binterface-service-data-p1
+  142  docker stop  binterface-service-server-p1
+  143  docker rm  binterface-service-server-p1
+  144  docker run --name binterface-service-server-p1 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev  --env ENV_APP_NAME=sc-binterface --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk'  --env RUN_MODE=server --env SERVER_PORT=18173 --env APPLICATION_NAME=binterface-service-server -v /tmp/logs/binterface-service-server:/opt/data/logs/ -d 6b1a2f57791f
+  145  docker logs -f --tail 200 binterface-service-server-p1
+  146  docker ps -a|grep bin
+  147  docker inspect 74daf4ad979e
+  148  cd /opt/docker-data/
+  149  ls
+  150  cd /etc/docker/
+  151  ls
+  152  cat daemon.json
+  153  pwd
+  154  telnet 10.1.203.120 8848
+  155  docker ps
+  156  docker run --name ftpproxy-service-p2 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev --env ENV_APP_NAME=ftpproxy --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/ftpproxy-service:/opt/data/logs/ -d  10.1.6.34:8080/cicd-public-60/ftpproxy-service:1.0.3.2_5_20250710070932
+  157  docker logs f8094
+  158  netstat -ntlp | grep 8091
+  159  docker run --name switchmanage-service-p2 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=gdems-dev --env ENV_APP_NAME=switchmanage --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/switchmanage-service:/opt/data/logs/ -d  10.1.6.34:8080/cicd-public-72/switchmanage-service:1.0.3.2_4_20250710070446
+  160  ps -ef | grep kafka
+  161  python
+  162  pip list
+  163  python --version
+  164  python3.7 --version
+  165  pip3.7 list
+  166  telnet
+  167  telnet 10.12.12.186 8011
+  168  ping www.baidu.com
+  169  cd /usr/local/
+  170  ll
+  171  mv /home/sudoroot/Python-3.12.3.tgz .
+  172  ll
+  173  tar -zxvf Python-3.12.3.tgz
+  174  ll
+  175  rm -rf Python-3.12.3.tgz
+  176  cd Python-3.12.3/
+  177  ll
+  178  ./configure --prefix=/usr/local/Python-3.12.3/
+  179  ll
+  180  make && make install
+  181  ll
+  182  cd bin/
+  183  ll
+  184  ln -s /usr/local/Python-3.12.3/bin/python3.12 /usr/bin/python312
+  185  ln -s /usr/local/Python-3.12.3/bin/pip3.12 /usr/bin/pip312
+  186  python312 --version
+  187  pip312 list
+  188  cd ..
+  189  ll
+  190  cd Lib/
+  191  ll
+  192  cd site-packages/
+  193  ll
+  194  cd /usr/local/
+  195  ll
+  196  mkdir sim
+  197  ll
+  198  cd sim/
+  199  mv /home/sudoroot/gd_sim_fsu_xgc.tar.gz .
+  200  ll
+  201  tar -zxvf gd_sim_fsu_xgc.tar.gz
+  202  ll
+  203  rm -rf gd_sim_fsu_xgc.tar.gz
+  204  cd gd_sim_fsu_xgc/
+  205  ll
+  206  vim start.sh
+  207  mv gd_sim_fsu_xgc.py gd_sim_fsu_xw.py
+  208  ll
+  209  cat config.py
+  210  netstat -ntlp | grep 8081
+  211  cd ..
+  212  ll
+  213  mv gd_sim_fsu_xgc gd_sim_fsu_xw
+  214  ll
+  215  cd gd_sim_fsu_xw/
+  216  ll
+  217  vim FSUService.wsdl
+  218  python312 --version
+  219  ping pypi.tuna.tsinghua.edu.cn
+  220  pip312 install faker
+  221  pip312 list
+  222  pip312 install -r requirements.txt -f /home/sudoroot/some_folder
+  223  pip312 install --no-index -r requirements.txt -f /home/sudoroot/some_folder
+  224  ll
+  225  cat requirements.txt
+  226  rm -rf /home/sudoroot/some_folder/
+  227  ll
+  228  cp requirements.txt /home/sudoroot/
+  229  pip312 install --no-index -r requirements.txt -f /home/sudoroot/some_folder
+  230  pip312 install --no-index -f /home/sudoroot/some_folder
+  231  cd /home/sudoroot/
+  232  cd some_folder/
+  233  ll
+  234  pip312 install --no-index -f . -r requirements.txt
+  235  pip312 install --no-index -f . -r /home/sudoroot/requirements.txt
+  236  pip312 install --no-index -f .
+  237  pip312 install -f .
+  238  pwd
+  239  pip312 install --no-index --find-links=/home/sudoroot/some_folder
+  240  pip312 install --no-index --find-links=/home/sudoroot/some_folder -r /home/sudoroot/requirements.txt
+  241  pip312 install --no-index --find-links=/home/sudoroot/some_folder charset-normalizer
+  242  cd /usr/local/sim/gd_sim_fsu_xw/
+  243  ll
+  244  pip312 freeze > requirement.txt
+  245  ll
+  246  cat requirement.txt
+  247  vim requirement.txt
+  248  rm -rf requirement.txt
+  249  ll
+  250  cd /home/sudoroot/some_folder/
+  251  pip312 install --no-index --find-links=/home/sudoroot/some_folder -r /home/sudoroot/requirements.txt
+  252  cd /usr/local/sim/gd_sim_fsu_xw/
+  253  cat requirements.txt
+  254  cat /home/sudoroot/requirements.txt
+  255  vim /home/sudoroot/requirements.txt
+  256  pip3 list
+  257  vim /home/sudoroot/requirements.txt
+  258  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  259  pip3 list
+  260  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  261  vim /home/sudoroot/requirements.txt
+  262  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt --verbose
+  263  pip312 list
+  264  cm requirements.txt requirements2.txt
+  265  cp requirements.txt requirements2.txt
+  266  vim requirements2.txt
+  267  vim requirements.txt
+  268  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt --verbose
+  269  cp requirements.txt requirements2.txt
+  270  vim requirements2.txt
+  271  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  272  rm -rf requirements2.txt
+  273  vim requirements.txt
+  274  cp /home/sudoroot/requirements.txt /home/sudoroot/requirements2.txt
+  275  vim /home/sudoroot/requirements2.txt
+  276  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  277  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  278  pip312 list
+  279  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  280  python312 --version
+  281  rm -rf /home/sudoroot/requirements2.txt
+  282  rm -rf /home/sudoroot/folder_some/
+  283  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  284  rm -rf /home/sudoroot/folder_some/numpy-1.23.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  285  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  286  cd /home/sudoroot/some_folder/
+  287  cd ..
+  288  vim requirements2.txt
+  289  pip312 install --no-index --find-links=/home/sudoroot/some_folder -r /home/sudoroot/requirements2.txt
+  290  vim requirements.txt
+  291  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  292  uname -m
+  293  ls cpu
+  294  lscpu
+  295  uname -a
+  296  pip32 list
+  297  pip312 list
+  298  cp some_folder/setuptools-59.2.0-py3-none-any.whl folder_some/
+  299  vim requirements.txt
+  300  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  301  vim requirements.txt
+  302  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  303  vim requirements.txt
+  304  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  305  vim requirements2.txt
+  306  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  307  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements.txt
+  308  vim requirements2.txt
+  309  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  310  vim requirements2.txt
+  311  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  312  vim requirements2.txt
+  313  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  314  vim requirements2.txt
+  315  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  316  vim requirements2.txt
+  317  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  318  vim requirements2.txt
+  319  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  320  vim requirements2.txt
+  321  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  322  vim requirements2.txt
+  323  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  324  vim requirements2.txt
+  325  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  326  vim requirements2.txt
+  327  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  328  vim requirements2.txt
+  329  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  330  vim requirements2.txt
+  331  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  332  vim requirements2.txt
+  333  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  334  vim requirements2.txt
+  335  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  336  vim requirements2.txt
+  337  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  338  vim requirements2.txt
+  339  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  340  vim requirements2.txt
+  341  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  342  vim requirements2.txt
+  343  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  344  vim requirements2.txt
+  345  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  346  vim requirements2.txt
+  347  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  348  vim requirements2.txt
+  349  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  350  vim requirements2.txt
+  351  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  352  vim requirements2.txt
+  353  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  354  vim requirements2.txt
+  355  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  356  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  357  vim requirements2.txt
+  358  pip312 install --no-index --find-links=/home/sudoroot/folder_some -r /home/sudoroot/requirements2.txt
+  359  pip312 list
+  360  docker ps
+  361  clear
+  362  cd /usr/local/sim/gd_sim_fsu_xw/
+  363  ll
+  364  vim config.py
+  365  netstat -ntlp | grep 8011
+  366  cat start.sh
+  367  ps -ef | grep fsu
+  368  ./start.sh
+  369  ps -ef | grep fsu
+  370  cat gd_sim_fsu_xw.py | grep password
+  371  ps -ef | grep fsu
+  372  ll
+  373  cat gd_sim_fsu_xw.py
+  374  vim gd_sim_fsu_xw.py
+  375  ps -ef | grep fsu
+  376  netstat -ntlp | grep 47353
+  377  netstat -ntlp | grep 801
+  378  netstat -ntlp | grep 55947
+  379  kill -9 55947
+  380  ps -ef | grep fsu
+  381  vim config.py
+  382  ps -ef | grep fsu
+  383  ./start.sh
+  384  ps -ef | grep fsu
+  385  cat config.py
+  386  find / -name "nginx"
+  387  yum -y install gcc pcre-devel zlib-devel openssl openssl-devel
+  388  cd /home/sudoroot/
+  389  rm -rf some_folder/
+  390  rm -rf requirements.txt
+  391  ll
+  392  lsof -i"8011
+  393  lsof -i:8011
+  394  pwdx 53046
+  395  cd /usr/local/sim/gd_sim_fsu_xw
+  396  ll
+  397  tail -f nohup.out
+  398  cat config.py
+  399  clera
+  400  clear
+  401  cat config.py
+  402  cd /usr/local/sim/gd_sim_fsu_xw/
+  403  ll
+  404  ps -ef | grep fsu
+  405  kill -9 53046
+  406  ps -ef | grep fsu
+  407  vim config.py
+  408  ./start.sh
+  409  ps -ef | grep fsu
+  410  ll
+  411  ps -ef | grep fsu
+  412  kill -9 24502
+  413  vim config.py
+  414  ps -ef | grep fsu
+  415  vim config.py
+  416  ./start.sh
+  417  ps -ef | grep java
+  418  docker ps
+  419  ps -ef | grep fsu
+  420  cd /opt/
+  421  mkdir docker
+  422  ll
+  423  mv /home/sudoroot/kafka.tar.gz /opt/docker
+  424  cd docker
+  425  ll
+  426  tar -zxvf kafka.tar.gz
+  427  ll
+  428  cd opt/
+  429  ll
+  430  docker
+  431  cd docker
+  432  ll
+  433  cd common/
+  434  ll
+  435  cd kafka/
+  436  ll
+  437  pwd
+  438  mv /opt/docker/opt/docker/common/ /opt/docker
+  439  cd /opt/docker
+  440  ll
+  441  rm -rf opt/
+  442  ll
+  443  rm -rf kafka.tar.gz
+  444  cd common/
+  445  ll
+  446  cd kafka/
+  447  ll
+  448  cd zookeeper-3.4.10/
+  449  ll
+  450  rm -rf data/
+  451  mkdir data
+  452  ll
+  453  cd conf/
+  454  ll
+  455  vim zoo.cfg
+  456  cd ../bin/
+  457  sh zkServer.sh start
+  458  ps -ef | grep zookeeper
+  459  java --version
+  460  cd ../../..
+  461  ll
+  462  cd kafka/
+  463  cd kafka_2.11-0.11.0.0/
+  464  ll
+  465  rm -rf logs/
+  466  ll
+  467  mkdir logs
+  468  cd config/
+  469  vim server.properties
+  470  cd /usr/local/
+  471  ll
+  472  mkdir jdk
+  473  ll
+  474  mv /home/sudoroot/jdk-8u181-linux-x64.tar.gz jdk/
+  475  cd jdk/
+  476  ll
+  477  tar -zxvf jdk-8u181-linux-x64.tar.gz
+  478  ll
+  479  vim /etc/profile
+  480  source /etc/profile
+  481  java -version
+  482  cd /opt/docker/common/kafka/zookeeper-3.4.10/
+  483  ll
+  484  cd bin/
+  485  sh zkServer.sh start
+  486  ps -ef | grep zookeeper
+  487  cd ../../..
+  488  cd kafka/kafka_2.11-0.11.0.0/
+  489  cd bin/
+  490  ./kafka-server-start.sh ../config/server.properties &
+  491  ps -ef | grep kafka
+  492  ps -ef | grep fsu
+  493  pwdx 57246
+  494  cd /usr/local/sim/gd_sim_fsu_xw/
+  495  kill -9 57246
+  496  ps -ef | grep fsu
+  497  ll
+  498  vim config.py
+  499  ./start.sh
+  500  ps -ef | grep fsu
+  501  cd /opt/docker/common/kafka/kafka_2.11-0.11.0.0/
+  502  cd config/
+  503  vim server.properties
+  504  ps -ef | grep kafka
+  505  pwdx 25055
+  506  kill -9 25055
+  507  pwd
+  508  cd ../bin/
+  509  ./kafka-server-start.sh ../config/server.properties &
+  510  telnet 10.12.12.186 9200
+  511  ps -ef | grep fsu
+  512  pwdx 50370
+  513  cd /usr/local/sim/gd_sim_fsu_xw/
+  514  ll
+  515  tail -f run.log
+  516  tail -f 200 run.log
+  517  tail -200f run.log
+  518  ps -ef | grep zookeeper
+  519  ps -ef | grep kafka
+  520  kill -9 22165
+  521  ps -ef | grep kafka
+  522  ps -ef | grep zookeeper
+  523  ps -ef | grep fsu
+  524  kill -9 50370
+  525  ll
+  526  ./start.sh
+  527  ps -ef | grep fsu
+  528  kill -9 22788
+  529  ps -ef | grep fsu
+  530  ./start.sh
+  531  vim start.sh
+  532  ps -ef | grep fsu
+  533  kill -9 50884
+  534  ps -ef | grep fsu
+  535  ./start.sh
+  536  ps -ef | grep fsu
+  537  kill -9 64446
+  538  cd /usr/local/sim/gd_sim_fsu_xw/
+  539  ll
+  540  ./start.sh
+  541  unzip
+  542  pwd
+  543  mv /home/sudoroot/sim_fsu_newstandard.rar /usr/local/sim/
+  544  cd /usr/local/
+  545  cd sim/
+  546  ll
+  547  rm -rf sim_fsu_newstandard.rar
+  548  mv /home/sudoroot/sim_fsu_newstandard.zip /usr/local/sim/
+  549  ll
+  550  unzip sim_fsu_newstandard.zip
+  551  ll
+  552  rm -rf sim_fsu_newstandard.zip
+  553  cd sim_fsu_newstandard/
+  554  ll
+  555  vim start.sh
+  556  ps -ef | grep python
+  557  ll
+  558  cd ../gd_sim_fsu_xw/
+  559  ll
+  560  vim start.sh
+  561  cp start.sh ../sim_fsu_newstandard/
+  562  cd -
+  563  ll
+  564  cd -
+  565  cp start.sh ../sim_fsu_newstandard/
+  566  cd -
+  567  ll
+  568  cd -
+  569  cp -f start.sh ../sim_fsu_newstandard/
+  570  cd -
+  571  ll
+  572  chmod 777 start.sh
+  573  ll
+  574  vim start.sh
+  575  ps -ef | grep python
+  576  ./start.sh
+  577  ps -ef | grep python
+  578  cd -
+  579  vim gd_sim_fsu_xw.py
+  580  cd -
+  581  ll
+  582  python312 --version
+  583  python312 xncs_fsu.py
+  584  ll
+  585  mv b╜╙┐┌.csv b.csv
+  586  ll
+  587  vim xncs_fsu.py
+  588  python312 xncs_fsu.py
+  589  cd /usr/local/sim/
+  590  ll
+  591  cd sim_fsu_newstandard/
+  592  vim b.csv
+  593  ll
+  594  ps -ef | grep python
+  595  vim start.sh
+  596  ./start.sh
+  597  ps -ef | grep python
+  598  kill -9 63446
+  599  kill -9 36907
+  600  ps -ef | grep python
+  601  cd ../gd_sim_fsu_xw/
+  602  ll
+  603  ./start.sh
+  604  cd -
+  605  ll
+  606  vim b.csv
+  607  ll
+  608  vim start.sh
+  609  nohup python312 xncs_fsu.py &
+  610  ps -ef | grep python
+  611  cd /usr/local/sim/
+  612  ll
+  613  pwd
+  614  cd ..
+  615  ;;
+  616  ll
+  617  mv /home/sudoroot/apache-jmeter-5.4.3.tgz .
+  618  ll
+  619  tar -zxvf apache-jmeter-5.4.3.tgz
+  620  ll
+  621  rm -rf apache-jmeter-5.4.3.tgz
+  622  ll
+  623  cd apache-jmeter-5.4.3/
+  624  ll
+  625  cd ..
+  626  vim /etc/profile
+  627  source /etc/profile
+  628  java -version
+  629  jmeter --version
+  630  ll
+  631  mkdir xncs
+  632  ll
+  633  cd xncs/
+  634  ll
+  635  mkdir data
+  636  mkdir jmeter
+  637  mkdir report
+  638  ll
+  639  mv /home/sudoroot/signal.txt data/
+  640  mv /home/sudoroot/bfsu.csv data/
+  641  mv /home/sudoroot/binterface_gaizao.jmx jmeter/
+  642  ll
+  643  cd data/
+  644  ll
+  645  cd ../jmeter/
+  646  jmeter -n -t binterface_gaizao.jmx -l ../report/results.jtl
+  647  cd ../report/
+  648  ll
+  649  cp results.jtl /home/sudoroot/
+  650  ll
+  651  cd -
+  652  ll
+  653  jmeter -n -t binterface_gaizao.jmx -l ../report/results.jtl -e -o ../report/folder
+  654  jmeter -n -t binterface_gaizao.jmx -l ../report/results1.jtl -e -o ../report/folder
+  655  cd -
+  656  ll
+  657  mv folder/ /home/sudoroot/
+  658  ll
+  659  rm -rf results.jtl
+  660  rm -rf results1.jtl
+  661  ll
+  662  cd -
+  663  ll
+  664  rm -rf /home/sudoroot/folder
+  665  ll
+  666  rm -rf binterface_gaizao.jmx
+  667  ll
+  668  mv /home/sudoroot/binterface_gaizao.jmx .
+  669  ll
+  670  jmeter -n -t binterface_gaizao.jmx -l ../report/results_register1000.jtl -e -o ../report/register1000
+  671  cd -
+  672  ll
+  673  cp results_register1000.jtl /home/sudoroot/
+  674  du -h
+  675  du -h results_register1000.jtl
+  676  du -h register1000/
+  677  cp register1000/ /home/sudoroot/
+  678  cp register1000 /home/sudoroot/
+  679  ll
+  680  mv register1000/ /home/sudoroot/
+  681  ll
+  682  rm -rf /home/sudoroot/results_register1000.jtl
+  683  ps -ef | grep fsu
+  684  ps -ef | grep jmeter
+  685  cd /usr/local/sim/gd_sim_fsu_xw/
+  686  ll
+  687  tail -f run.log
+  688  tail -f run.log | grep error
+  689  cat run.log | grep error
+  690  tail -f run.log | grep error
+  691  tail -f run.log
+  692  ll
+  693  tail -f nohup.out
+  694  cat start.sh
+  695  cat nohup.out
+  696  cat nohup.out | grep error
+  697  tial -200f nohup.out | grep error
+  698  tail -200f nohup.out | grep error
+  699  cd /usr/local/xncs/
+  700  ll
+  701  cd jmeter/
+  702  ll
+  703  cd ../report/
+  704  ll
+  705  rm -rf results_register1000.jtl
+  706  rm -rf /home/sudoroot/register1000/
+  707  cd -
+  708  ll
+  709  rm -rf binterface_gaizao.jmx
+  710  mv /home/sudoroot/binterface_gaizao.jmx .
+  711  ll
+  712  jmeter -n -t binterface_gaizao.jmx -l ../report/results_register1000.jtl -e -o ../report/register1000
+  713  ll
+  714  cd ../report/
+  715  ll
+  716  uname -a
+  717  uname -r
+  718  cat /etc/os-release
+  719  lscpu
+  720  free -h
+  721  lsblk
+  722  fdisk -l
+  723  df -h
+  724  cat /sys/block/sda/queue/rotational
+  725  lsblk -o NAME,SIZE,MODEL
+  726  ifconfig
+  727  ethtool enp1s0
+  728  pwd
+  729  ll
+  730  du -h results_register1000.jtl
+  731  cd ../jmeter/
+  732  ll
+  733  mv binterface_gaizao.jmx b_register1000.jmx
+  734  ll
+  735  mv /home/sudoroot/binterface_gaizao.jmx ./b_register2000.jmx
+  736  ll
+  737  mv /home/sudoroot/binterface_gaizao.jmx ./b_register3000.jmx
+  738  ll
+  739  mv /home/sudoroot/binterface_gaizao.jmx ./b_register4000.jmx
+  740  ll
+  741  mv /home/sudoroot/binterface_gaizao.jmx ./b_register5000.jmx
+  742  mv /home/sudoroot/binterface_gaizao.jmx ./b_register6000.jmx
+  743  ll
+  744  mv /home/sudoroot/binterface_gaizao.jmx ./b_config1000.jmx
+  745  mv /home/sudoroot/binterface_gaizao.jmx ./b_config2000.jmx
+  746  mv /home/sudoroot/binterface_gaizao.jmx ./b_config3000.jmx
+  747  mv /home/sudoroot/binterface_gaizao.jmx ./b_config4000.jmx
+  748  mv /home/sudoroot/binterface_gaizao.jmx ./b_config5000.jmx
+  749  mv /home/sudoroot/binterface_gaizao.jmx ./b_config6000.jmx
+  750  mv /home/sudoroot/binterface_gaizao.jmx ./b_send1000.jmx
+  751  mv /home/sudoroot/binterface_gaizao.jmx ./b_send2000.jmx
+  752  mv /home/sudoroot/binterface_gaizao.jmx ./b_send3000.jmx
+  753  mv /home/sudoroot/binterface_gaizao.jmx ./b_send4000.jmx
+  754  mv /home/sudoroot/binterface_gaizao.jmx ./b_send5000.jmx
+  755  mv /home/sudoroot/binterface_gaizao.jmx ./b_send6000.jmx
+  756  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove1000.jmx
+  757  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove2000.jmx
+  758  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove3000.jmx
+  759  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove4000.jmx
+  760  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove5000.jmx
+  761  mv /home/sudoroot/binterface_gaizao.jmx ./b_remove6000.jmx
+  762  ll
+  763  cd ../report/
+  764  ll
+  765  mv results_register1000.jtl /home/sudoroot/
+  766  ll
+  767  rm -rf /home/sudoroot/results.jtl
+  768  rm -rf /home/sudoroot/results_register1000.jtl
+  769  pwd
+  770  ll
+  771  cd ../jmeter/
+  772  ll
+  773  jmeter -n -t b_register1000.jmx -l ../report/results_register1000.jtl -e -o ../report/register1000
+  774  jmeter -n -t b_register2000.jmx -l ../report/results_register2000.jtl -e -o ../report/register2000
+  775  jmeter -n -t b_register3000.jmx -l ../report/results_register3000.jtl -e -o ../report/register3000
+  776  jmeter -n -t b_register4000.jmx -l ../report/results_register4000.jtl -e -o ../report/register4000
+  777  jmeter -n -t b_register5000.jmx -l ../report/results_register5000.jtl -e -o ../report/register5000
+  778  jmeter -n -t b_register6000.jmx -l ../report/results_register6000.jtl -e -o ../report/register6000
+  779  cd ../report/
+  780  ll
+  781  cp results_register1000.jtl /home/sudoroot/
+  782  cp results_register2000.jtl /home/sudoroot/
+  783  cp results_register3000.jtl /home/sudoroot/
+  784  cp results_register4000.jtl /home/sudoroot/
+  785  cp results_register5000.jtl /home/sudoroot/
+  786  cp results_register6000.jtl /home/sudoroot/
+  787  cd -
+  788  ll
+  789  vim b_register1000.jmx
+  790  rm -rf /home/sudoroot/results_register1000.jtl
+  791  rm -rf /home/sudoroot/results_register2000.jtl
+  792  rm -rf /home/sudoroot/results_register3000.jtl
+  793  rm -rf /home/sudoroot/results_register4000.jtl
+  794  rm -rf /home/sudoroot/results_register5000.jtl
+  795  rm -rf /home/sudoroot/results_register6000.jtl
+  796  cd /usr/local/xncs
+  797  ls
+  798  cd jmeter
+  799  ls
+  800  vim /etc/sysconfig/iptables
+  801  systemctl restart iptables
+  802  cd ..
+  803  ls
+  804  cd ..
+  805  ls
+  806  cp -a ./xncs ./xncs_new
+  807  ls
+  808  cd xncs_new
+  809  ls
+  810  pwd
+  811  ls
+  812  cd jmeter
+  813  rm ./
+  814  cd ..
+  815  rm -rf ./jmeter
+  816  ls
+  817  mkdir jmeter
+  818  ls
+  819  pwd
+  820  ls
+  821  mv /home/sudoroot/b_register1000.jmx ./jmeter/
+  822  ls
+  823  cd jmeter
+  824  ls
+  825  cd //
+  826  cd /usr/local/xncs
+  827  cd //
+  828  cd /usr/local/xncs
+  829  cd ..
+  830  ls
+  831  cd xncs_new/
+  832  ls
+  833  rm -rf ./report/*
+  834  ls
+  835  jmeter -n -t  ./jmeter/b_register1000.jmx -l  ./report/b_register1000.jtl   -e -o ./report/register1000
+  836  ls
+  837  cat jmeter.log
+  838  :q
+  839  ls
+  840  cd report
+  841  ls
+  842  cd //
+  843  cd /usr/local/xncs
+  844  ls
+  845  pwd
+  846  cd ..
+  847  ls
+  848  cd xncs_new/
+  849  ls
+  850  pwdx
+  851  pwd
+  852  ls
+  853  cd report/
+  854  ls
+  855  ll
+  856  jmeter -g ./report/b_register1000.jtl -o ./report/register1000
+  857  cd ..
+  858  ls
+  859  jmeter -g ./report/b_register1000.jtl -o ./report/register1000
+  860  ls
+  861  cd report/
+  862  ls
+  863  rm -rf ./register1000
+  864  ls
+  865  cd ,,
+  866  cd ..
+  867  jmeter -g ./report/b_register1000.jtl -o ./report/register1000
+  868  ls
+  869  cd report/
+  870  ll
+  871  cd ..
+  872  ls
+  873  head -n 50 ./jmeter.log
+  874  wc -l ./report/b_register1000.jtl
+  875  head -n 5 ./report/b_register1000.jt
+  876  head -n 5 ./report/b_register1000.jtl
+  877  head -n 2 ./report/b_register1000.jtl | grep -E "<|>"
+  878  ls
+  879  cd report/
+  880  ls
+  881  cd register1000/
+  882  ls
+  883  cd ..
+  884  ls
+  885  pwdx
+  886  pwd
+  887  ls
+  888  cd register1000/
+  889  ls
+  890  vim index.html
+  891  ls
+  892  cd ..
+  893  ls
+  894  cd ..
+  895  ls
+  896  cat jmeter
+  897  cat jmeter.log
+  898  ls
+  899  cd ..
+  900  ls
+  901  lsof -i:9100
+  902  history

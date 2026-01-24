@@ -1,0 +1,38 @@
+{
+  "password": "12345678",
+  "disabled": false,
+  "busy": false,
+  "information": {
+    "SDKVersion": "109",
+    "cpuTemperature": "48",
+    "cpuUsageRate": "37%",
+    "deviceKey": "E03C1CB214AC1801",
+    "faceCount": "4",
+    "fingerCount": "0",
+    "freeDiskSpace": "5624M",
+    "ip": "192.168.1.89",
+    "languageType": "zh_CN",
+    "memoryUsageRate": "50%",
+    "personCount": "7",
+    "time": "1768909920180",
+    "timeZone": "",
+    "version": "GD-V216.2130"
+  },
+  "callbacks": {
+    "identify": {
+      "url": "http://127.0.0.1/callback",
+      "base64Enable": 1
+    },
+    "imgReg": {
+      "url": "",
+      "base64Enable": 1
+    },
+    "event": {
+      "url": ""
+    }
+  },
+  "doorStatus": 3,
+  "system_time": 1768909920180,
+  "last_sync_time": null,
+  "network_available": false
+}

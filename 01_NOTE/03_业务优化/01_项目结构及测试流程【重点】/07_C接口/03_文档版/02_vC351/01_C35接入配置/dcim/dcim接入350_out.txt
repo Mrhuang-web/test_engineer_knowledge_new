@@ -1,0 +1,85 @@
+接入：中间库->动环   站点、数据中中心-楼栋
+接出：动环  -->中间库
+========================================================================
+《C400接入》包在gemc分支
+========================================================================
+1、准备配置文件ms-cinterface-service-dcim-in35.yml  其中 app.client按照C接入文档(《C接口接入文档(V版本350接入).docx》)检查数据（范例接入配置中的"163"替换为指定的;空间01-07是广西）
+2、准备中间库，可以从其他中间库复制-如10.1.203.38中 cinterdb_351dcim,dbtype6是mysql
+动环库
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`, `access_type`) VALUES ('4435', 'C接口接入35', '10.1.203.38', 8295, 'hyzomc', 'Uykm5c444SUbrhoSgM5Z3w==', 6, '10.1.203.38', 3306, 'cinterdb_351dcim', 'root', 'Uykm5c444SUbrhoSgM5Z3w==', '00001006000000010002', 350, 1);
+
+
+注意：接入时候 t_cfg_cserverinfo中的lsc_id的前两位不能跟已有的相同
+3、t_cfg_cserverinfo使用  configmanagement-service服务接口进行加密
+加密  curl --location 'http://localhost:13563/v1/cserverinfo/encryptedInfoByLscId?lscId=261'
+Lscid为t_cfg_cserverinfo表的lsc_id，加密后数据库如下所示，注意只能调用一次curl，调用多次则会多次加密，
+
+
+4、中间库站点或者楼栋要与动环做映射
+4.1首先需要在动环存在如下站点或者数据中心楼栋（配置-空间通过页面新增站点和数据中心楼栋）
+4.2通过脚本 C351基础数据准备.py构造C接口数据（注意修改config.py中的中间库连接和接入的站点表格excel_file = './lsc400_data.xlsx'）
+4.3写入C中间库机楼和动环的映射关系到动环库
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ('内蒙-卓望', '钦州市', '经济开发区', 2, 1, '01-07-12-02-03', '黄河核心机楼', '黄河核心机楼', 'site河核心机楼');
+
+5、启动C服务并开启定时任务（当前起在 10.1.4.225）
+docker  rm -f  cinterface-service-dcim-in35
+docker run --name cinterface-service-dcim-in35 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.4.48:8848 --env ENV_TYPE=neimenggu  --env ENV_APP_NAME=cinterface-service-dcim-in35 --env ENV_NACOS_PASSWORD='GXu8kp0*4az3Eg8emLM7' -v /tmp/logs/configmanagement:/opt/data/logs/ -d 10.1.6.34:8080/spider/gemc/cinterface-service:GEMC1.0.3.0_kernel_SYT_34
+docker logs -f --tail 400   cinterface-service-dcim-in35
+
+通过下面的curl开启定时任务，每次C接口重启时都需要执行。
+curl --location 'http://localhost:8390/v1/cinterface/startOldSyncTimer'  与400的不同
+6、C服务-手动执行同步空间设备测点数据
+
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-19-10-01-14&justCompare=false'
+
+====================================================================================================
+增量接入其他站点只需如下步骤:
+4、中间库站点或者楼栋要与动环做映射
+4.1首先需要在动环存在如下站点或者数据中心楼栋（配置-空间通过页面新增站点和数据中心楼栋）
+4.2通过脚本 C400基础数据准备.py构造C接口数据（注意修改config.py中的中间库连接和接入的站点表格）
+4.3写入C中间库机楼和动环的映射关系到动环库
+6、C服务-手动执行同步空间设备测点数据
+
+===========接出 动环系统-中间库========================================================================================
+===========接出 动环系统-中间库========================================================================================
+
+1、准备4.0的中间库，cinterdb_400_gd_out  所有表的都是空
+2、按照接出文档修改配置文件 access_type=2是接出
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`, `access_type`) VALUES ('4435', 'C接口接出内蒙350', '10.1.203.38', 8295, 'hyzomc', 'Uykm5c444SUbrhoSgM5Z3w==', 6, '10.1.203.38', 3306, 'cinterdb_351dcim_out', 'root', 'Uykm5c444SUbrhoSgM5Z3w==', '00001006000000010002', 350,2);
+
+3、配置文件
+
+ms-cinterface-service-dcim-out35.yml
+  server: #接出端配置
+    clientId: 4535 #上级SC的SCID
+    rightLevel : 2  #上级SC的权限
+    isEnableTerminalId: false #是否启用terminalID参数，客户端也要同步开启
+    version: 350 #服务端版本号
+    WRITE_TOP_PRECINCT: "01-19" #将配置管理该区域下的所有信息写入中间库，没有则是"01"
+    syncHisProvince: 01-19 #同步的省份id
+    alarmSeqType: cinterface_out_mockserver
+    mock: true
+
+3、启动接出的C服务
+
+docker  rm -f  cinterface-service-dcim-out35
+docker run --name cinterface-service-dcim-out35 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.4.48:8848 --env ENV_TYPE=neimenggu  --env ENV_APP_NAME=cinterface-service-dcim-out35 --env ENV_NACOS_PASSWORD='GXu8kp0*4az3Eg8emLM7' -v /tmp/logs/configmanagement:/opt/data/logs/ -d 10.1.6.34:8080/spider/gemc/cinterface-service:GEMC1.0.3.0_kernel_SYT_34
+docker logs -f --tail 400   cinterface-service-dcim-out35
+
+4、 启动C接口时需要先调用configmanagement对t_cfg_cserverinfo进行加密，不能重复执行。
+调用方式：curl --location 'http://localhost:13563/v1/cserverinfo/encryptedInfoByLscId?lscId=862'
+
+5、配置导出模板-定制每个站点导出的机房和设备类型
+t_north_db_site_config 字段precinct_id 唯一 01-01-22-02-05，无法为不同的机房配置不同的设备类型
+select   * from  t_north_db_site_config
+select   * from  t_north_db_site_model
+
+INSERT INTO `t_north_db_site_config` (`id`, `precinct_id`, `model_id`, `isdel`, `update_time`, `data_type`, `updated_by`, `remark`, `lsc_id`) VALUES (238, '01-19-10-01-14', NULL, 0, '2025-03-31 17:21:39', 1, NULL, NULL, '4535');
+
+6、触发导出
+全量稽核
+curl --location 'http://localhost:8490/v1/cinterface/checkAndFixWriteCdb?siteId=&checkSignal=true'
+单独一个站点或者楼栋
+curl --location 'http://localhost:8490/v1/cinterface/checkAndFixWriteCdb?siteId=01-19-10-01-14&checkSignal=true'
+7-检查中间库数据是否按照导出模板导出
+

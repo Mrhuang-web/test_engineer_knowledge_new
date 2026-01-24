@@ -1,0 +1,138 @@
+server:
+  port: 28084
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+# MQTT配置开关 - 默认关闭所有MQTT功能
+mqtt:
+  enable: false  # MQTT总开关，控制是否启用MQTT功能，默认关闭
+  
+  # MQTT Broker配置
+  broker:
+    url: "tcp://localhost:1883"  # MQTT Broker地址
+    connection-timeout: 30        # 连接超时时间（秒）
+    keep-alive-interval: 60      # 心跳间隔（秒）
+    clean-session: true          # 是否清理会话
+    auto-reconnect: true         # 是否自动重连
+    connection-delay: 5000       # 连接延迟（毫秒），避免同时连接冲突
+  
+  # MQTT生产者配置
+  producer:
+    enable: false                # MQTT生产者开关，默认关闭
+    client-id: "iot-gateway-producer"  # 客户端ID
+    username: ""                 # 用户名（如果需要认证）
+    password: ""                 # 密码（如果需要认证）
+    connection-timeout: 30       # 连接超时时间（秒）
+    keep-alive-interval: 60     # 心跳间隔（秒）
+    clean-session: true         # 是否清理会话
+    auto-reconnect: true        # 是否自动重连
+    # 生产者默认topic配置
+    default:
+      topic: "iot/gateway/message"  # 默认发送的topic模板
+      qos: 1                          # 默认QoS级别
+      retain: false                   # 是否保留消息
+  
+  # MQTT消费者配置
+  consumer:
+    enable: false                # MQTT消费者开关，默认关闭
+    client-id: "iot-gateway-consumer"  # 客户端ID
+    username: ""                 # 用户名（如果需要认证）
+    password: ""                 # 密码（如果需要认证）
+    connection-timeout: 30       # 连接超时时间（秒）
+    keep-alive-interval: 60     # 心跳间隔（秒）
+    clean-session: false         # 是否清理会话
+    auto-reconnect: true        # 是否自动重连
+    max-inflight: 1000         # 最大并发消息数
+    # 消费者默认topic配置
+    default:
+      topic: "iot/gateway/ack"   # 默认监听的topic模板
+      qos: 2                          # 默认QoS级别
+      enable: false                   # 是否启用监听，默认关闭
+  
+  # MQTT消息确认服务配置
+  ack:
+    enable: false                # MQTT消息确认服务开关，默认关闭
+    topic-prefix: "iot/gateway/ack"  # 确认消息topic前缀
+  
+  # MQTT消息清理配置
+  cleanup:
+    enable: false                # MQTT消息清理功能开关，默认关闭
+    interval: 300000             # 清理间隔（毫秒），默认5分钟
+    max-message-age: 86400000    # 消息最大保留时间（毫秒），默认24小时
+
+# 资源池x kafka集群配置
+local:
+  kafka:
+    enable: true
+#    bootstrap_servers: 10.206.156.68:9092,10.206.156.69:9092,10.206.156.70:9092,10.206.156.71:9092,10.206.156.72:9092
+    bootstrap_servers: 10.1.203.120:9092
+#    bootstrap_servers: 10.12.12.186:9092
+#    bootstrap_servers: 192.180.89.231:9092,192.180.89.232:9092,192.180.89.233:9092
+    producer:
+      retries: 0
+      batch-size: 5
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: consumer-iot-center-x-76
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      session.timeout.ms: 60000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程 陕西5个分区 广东3个分区 分区消费时此处要配置为1
+      # ack-mode: manual
+    properties:
+      session.timeout.ms: 60000
+spring:
+  main:
+    allow-circular-references: true
+
+# 资源池y kafka集群配置
+remote:
+  kafka:
+#    bootstrap_servers: 10.206.156.68:9092,10.206.156.69:9092,10.206.156.70:9092,10.206.156.71:9092,10.206.156.72:9092
+    enable: false
+    bootstrap_servers: 10.1.203.120:9092
+    producer:
+      retries: 0
+      batch-size: 5
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: consumer-iot-center-x-76
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      session.timeout.ms: 60000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程
+      # ack-mode: manual
+    properties:
+      session.timeout.ms: 60000å
+# 处理服务端消息ip过滤器 默认关闭
+ip:
+  filter:
+    enable: false
+    allowed:
+      networks: "192.168.1.0/24,10.0.0.0/8,172.16.0.0/16"
+# 处理服务短消息节点过滤器 默认关闭
+node:
+  filter:
+    enable: true
+    node: 10.9.128.76
+
+netty:
+  port: 28090
+
+logging:
+  level:
+    root: info
+  file: /opt/data/logs/entrance.log

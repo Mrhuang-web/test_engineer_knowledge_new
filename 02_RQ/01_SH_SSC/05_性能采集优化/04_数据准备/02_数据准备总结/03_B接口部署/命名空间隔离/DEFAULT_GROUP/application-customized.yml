@@ -1,0 +1,21 @@
+server:
+  port: 9102
+
+spring:
+  cloud.nacos.discovery:
+    ip: 10.12.7.160
+    port: 32037
+    
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 60000
+
+feign-client:
+  ribbon:
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 3
+
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

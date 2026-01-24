@@ -1,0 +1,89 @@
+ods_zz_site_202505m:
+	{
+	  "query": {
+	    "query_string": {
+	      "query": "batch_num:20250507 AND county_id:440305  AND int_id:441000000000007995874553"
+	    }
+	  },
+	  "size": 10,
+	  "from": 0,
+	  "sort": []
+	}
+
+
+	{
+	  "query": {
+	    "query_string": {
+	      "query": "batch_num:20250507 AND county_id:440305 AND int_id:441100000000069742579382"
+	    }
+	  },
+	  "size": 10,
+	  "from": 0,
+	  "sort": []
+	}
+
+
+
+"query": "statis_ymd:20250507 AND zg_id:440000"
+
+
+ods_zz_irms_site_map_2025y:
+	{
+	  "query": {
+	    "bool": {
+	      "must": [
+	        {
+	          "exists": {
+	            "field": "dh_name"
+	          }
+	        },
+	        {
+	          "term": {
+	            "zg_name.keyword": "441000000000007995874553"
+	          }
+	        }
+	      ],
+	      "must_not": [
+	        {
+	          "term": {
+	            "dh_name.keyword": ""
+	          }
+	        }
+	      ]
+	    }
+	  },
+	  "size": 10,
+	  "from": 0,
+	  "sort": []
+	}
+
+
+
+	{
+	  "query": {
+	    "bool": {
+	      "must": [
+	        {
+	          "exists": {
+	            "field": "dh_name"
+	          }
+	        },
+	        {
+	          "term": {
+	            "pms_name.keyword": "JF-NM-SJZX-0030"
+	          }
+	        }
+	      ],
+	      "must_not": [
+	        {
+	          "term": {
+	            "dh_name.keyword": ""
+	          }
+	        }
+	      ]
+	    }
+	  },
+	  "size": 10,
+	  "from": 0,
+	  "sort": []
+	}

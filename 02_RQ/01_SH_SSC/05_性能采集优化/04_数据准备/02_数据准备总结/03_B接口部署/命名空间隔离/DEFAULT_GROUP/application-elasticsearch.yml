@@ -1,0 +1,24 @@
+elasticsearch:
+  host: 10.12.12.186
+  port: 9300
+  nodes: 10.12.12.186:9300
+  newnodes: 10.12.12.186:9200
+  clustername: elasticsearch
+  type_name: point_history_data     #type的名称
+  index_name: fsu*                  #index的名称
+  cluster.name: elasticsearch
+  node.type: client
+
+#索引前缀
+history.index_pre: fsu
+
+# elasticsearch:
+#   host: 10.1.203.38
+#   port: 9300
+#   nodes: 10.1.203.38:9300
+#   newnodes: 10.1.203.38:9200
+#   clustername: elasticsearch
+#   type_name: point_history_data     #type的名称
+#   index_name: fsu*                  #index的名称
+#   cluster.name: elasticsearch
+#   node.type: client

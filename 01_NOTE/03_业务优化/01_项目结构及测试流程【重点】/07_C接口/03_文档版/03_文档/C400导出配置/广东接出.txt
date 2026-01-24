@@ -1,0 +1,44 @@
+接出 动环系统-中间库
+
+1、准备4.0的中间库，cinterdb_400_gd_out  所有表的都是空
+2、按照接出文档修改配置文件
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`) VALUES ('862', 'C接口接出广东4', '127.0.0.1', 8283, 'hyzomc', 'hyzomc@2023', 6, '10.1.203.38', 3306, 'cinterdb_400_gd_out', 'root', 'G$SGp!8L3O', '00001006000000755298', 400);
+3、配置文件
+
+ms-cinterface-service-gd-out400.yml
+	server: #接出端配置
+		clientId: 862 #上级SC的SCID
+		rightLevel : 2  #上级SC的权限
+		isEnableTerminalId: false #是否启用terminalID参数，客户端也要同步开启
+		version: 400 #服务端版本号
+		WRITE_TOP_PRECINCT: "01-01" #将配置管理该区域下的所有信息写入中间库，没有则是"01"
+		syncHisProvince: 01-01 #同步的省份id
+		alarmSeqType: gd-out-400
+		mock: true
+		incrWriteTaskCron: 0 0/1 * * * *
+		fullWriteTaskCron: 0 0 1 * * *
+		syncHisCron: 0 0/1 * * * *
+		syncHisDayFrom: -2
+		enableSynDesc: true
+		newtcp:
+		  enableAlarm: true
+
+3、启动接出的C服务
+docker  rm -f  cinterface-service-gd-out400
+docker run --name cinterface-service-gd-out400 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.203.120:8848 --env ENV_TYPE=guangdong --env ENV_APP_NAME=cinterface-service-gd-out400  --env ENV_NACOS_PASSWORD='D&V2HR43TutFjf%aKqk' -v /tmp/logs/cinterface-service:/opt/data/logs/ -d 10.1.6.34:8080/spider/gemc/cinterface-service:spider1.0.8.0_GEMC_SYT_206
+
+4、 启动C接口时需要先调用configmanagement对t_cfg_cserverinfo进行加密，不能重复执行。 
+调用方式：curl --location 'http://localhost:13563/v1/cserverinfo/encryptedInfoByLscId?lscId=862'
+
+5、配置导出模板-定制每个站点导出的机房和设备类型
+
+t_north_db_site_config 字段precinct_id 唯一 01-01-22-02-05，无法为不同的机房配置不同的设备类型
+select   * from  t_north_db_site_config     
+select   * from  t_north_db_site_model  
+6、触发导出
+全量稽核
+curl --location 'http://localhost:8296/v1/cinterface/checkAndFixWriteCdb?siteId=&checkSignal=true'
+单独一个站点或者楼栋
+curl --location 'http://localhost:8296/v1/cinterface/checkAndFixWriteCdb?siteId=01-01&checkSignal=true'
+7-检查中间库数据是否按照导出模板导出
+

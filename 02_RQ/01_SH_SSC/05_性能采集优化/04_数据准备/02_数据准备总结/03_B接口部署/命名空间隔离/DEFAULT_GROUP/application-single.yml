@@ -1,0 +1,224 @@
+#通过mvn -Dprofile 可以启用不同环境的配置，默认default
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+
+server:
+  port: 8089
+hystrix:
+  command:
+    default.execution.isolation.thread.timeoutInMilliseconds: 200000
+jasypt.encryptor.password: z524lav097Rq8RVFWK0JxGgQlUPJaJx41r7ndQicTD97b4GO9KTeTRykunLL
+
+#nacos
+#spring.cloud.nacos.discovery.server-addr: 10.1.203.120:8848
+#spring.cloud.nacos.discovery.namespace: webbas
+#spring.cloud.nacos.discovery.group: DEFAULT_GROUP
+#spring.cloud.nacos.discovery.username: nacos
+#spring.cloud.nacos.discovery.password: Dh@159_dev
+#spring.cloud.nacos.discovery.contextPath: /nacos
+
+
+#swgger2开关控制，默认不打开swagger，如需打开，下面的配置设置为true
+swagger.enable: false
+
+#springdoc:
+#  swagger-ui:
+#    # 修改Swagger UI路径
+#    path: /swagger-ui.html
+#    # 开启Swagger UI界面
+#    enabled: true
+#  api-docs:
+#    # 修改api-docs路径
+#    path: /v3/api-docs
+#    # 开启api-docs
+#    enabled: true
+#  packages-to-scan: com.aspire.webbas
+#  paths-to-match: /web/**,/alerts/**
+#缓存启动开关， 默认false
+#spring.cache.enabled: true
+#spring.cache.clean: true
+mybatis:
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+#数据源
+spring.datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+#  druid:
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://10.1.5.104:3306/webbas?failOverReadOnly=false&autoReconnect=true&roundRobinLoadBalance=true&useOldAliasMetadataBehavior=true&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+  username: root
+  password: Dh_fYkiX@12!487Tulv7
+  validation-query: SELECT 1
+  initial-size: 10  # 初始化大小，最小，最大
+  min-idle: 10
+  max-active: 200
+  max-wait: 60000  # 配置获取连接等待超时的时间
+  time-between-eviction-runs-millis: 60000  # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+  min-evictable-idle-time-millis: 300000  # 配置一个连接在池中最小生存的时间，单位是毫秒
+  test-while-idle: true
+  test-on-borrow: false
+  test-on-return: false
+  pool-prepared-statements: false  # 关闭PSCache，并且指定每个连接上PSCache的大小
+  # 禁用druid监控
+  stat-view-servlet:
+    enabled: false
+  web-stat-filter:
+      enabled: false
+  filter:
+    config:
+      enabled: false
+
+aspire.webbas:
+  version: v1  #当前服务的版本号
+  component:
+    path: support
+    serviceName: webbas32-manage-v1
+  auth-manager:
+    path: partner  #管理服务的URL配置，默认webbas
+    serviceName: webbas32-manage-v1 #
+  session-user.from: security #session用户获取方式，可配置header,security或者不配置
+  security:
+    path: auth #登录模块url配置项，默认webbas
+    permitAll: #可以不用鉴权就访问
+      - /** #必须，网关已经鉴权，所以后端服务不需要重新鉴权
+
+#安全拦截组件，配置非法字符和鉴权例外白名单
+
+aspire.webbas.component.safeguarding:
+  illegalityParam:  <,>,",',</script,<script,script[\s],<img,%27,and[\s],select[\s],insert[\s],exec[\s],update[\s],drop[\s],truncate[\s],declare[\s],count[\(],decode[\s]
+  whiteList:  #白名单，List集合
+    - /xxl-static/**
+    - /xxl/**
+    - /web/**
+  encryptConfig: #前后端加密传输，默认不开启
+    enabled: true   #默认false不开启
+    whiteList: #免加密白名单
+      - /web/partner/v1/user/export           #系统成员管理导出
+      - /web/partner/v1/organization/export   #系统机构管理导出
+      - /web/partner/v1/userOrganization/export #机构成员管理导出
+      - /web/partner/v1/role/export           #系统角色管理导出
+      - /web/partner/v1/roleOrganization/export #机构角色管理导出
+      - /web/support/v1/component/log/exportLog #日志管理导出
+      - /web/partner/v1/resource/exportResource #资源列表导出
+      - /web/partner/v1/resource/exportResourceHistory #资源历史列表导出
+      - /web/partner/v1/virtual/exportVirtualGroup #虚拟组管理导出
+      - /web/support/v1/prompt/export               #页面字段帮助信息查询导出
+  crsfConfig:
+    open: false  #是否开启crsf验证，默认false
+    checkToken: false # 是否开启验证token，默认false
+    checkReferer: false # 是否检查http_referer，默认false
+    checkHost: false #是否检查http host ，默认false
+    permitNullReferer: false #是否允许空referer 默认false
+    checkAllRequest: false # 是否检查所有请求，默认false，设置为true,checkUrlList无效。
+    tokenTimeOutMinute: 40 # token有效时间，单位分钟
+    tokenCreateCount: 15 # 每次请求返回多少个有效token
+    refererWhiteList:  #list集合，referer白名单
+      #- http://localhost:8080/
+      - http://127.0.0.1:8089/
+    hostWhiteList: # host白名单
+    checkUrlList:   #需要crsf检查的列表，checkAllRequest=true时无效
+    excludeUrlList:  #拦截例外，当开启全部请求拦截时，此项生效 ,支持url ant匹配
+    #- /web/support/v1/division/listDivisionTree
+
+
+#attachment
+aspire.webbas.component.attachment:
+  storage:
+    datacenterId: 0 #Storage datacenter id for SnowFlakeGenerator.
+    machineId: 0 #Storage machie id for SnowFlakeGenerator.
+    type: sftp #可选配置 [local,ftp,dfs]
+    temp: D:\tmp\12   #D:\tmp\12  #附件服务本地临时目录，用于临时保存浏览器上传的附件
+  fastdfs:
+    charset: UTF-8 #fastDFS传输编码
+    connect-timeout-in-seconds: 15 #连接fastDfs服务器超时时间
+    http-anti-steal-token: false #连接fastDfs是否需要鉴权
+    http-secret-key: ''
+    http-tracker-http-port: 80  #fastDfs-tracker 端口
+    network-timeout-in-seconds: 30 #网络超时时间
+    storage:
+      os: linux  #fastdfs安装服务器操作系统:[linux(default)]
+    tracker-servers: xxx.xxx.xxx.xxx:22122 #fastdfsf服务器地址端口
+  ftp:
+    ip: xxx.xxx.xxx.xxx
+    port: 22
+    username: webbas
+    password: xxxxx
+    storage:
+      os: linux #ftp安装服务器操作系统类型
+      root-dir: /test #ftp用与存储的跟目录
+    timeout:
+      connect: 3000 #ftp连接超时时间单位秒
+      data: 30000 #ftp数据传输时间超时时间单位秒
+
+  local:
+    storage:
+      os: windows #附件服务使用本地存储时，服务所在服务器操作系统类型[windows,linux(default)],
+      root-dir: D:\tmp #附件服务使用本地存储时根目录: linux-> /tmp,windwos -> D:/tmp
+
+#support组件大文件配置 start
+aspire.webbas.component.bigfile:
+  max-reserve-time: 24  #大文件在临时存储空间的最大保存时长（小时）
+  storage:
+    type: local        #可选配置 [local]
+    local:
+      os: linux        #服务使用本地存储时，服务所在服务器操作系统类型  [windows,linux(default)]
+      root-dir: /tmp   #默认存储根路径  linux-> /tmp,windwos -> D:/tmp
+
+#support组件大文件配置 end
+
+my.security.kafka.ip-enc: 10.1.203.120
+#kafka配置
+aspire.webbas.component.kafka:
+  servers: ${my.security.kafka.ip-enc}:9092
+  producer:
+    retries: 0
+    batch.size: 4096
+    linger: 1
+    bufferMemory: 40960
+
+#======3.2.2.1日志配置 开始==========
+aspire.webbas.component.log:
+  type: local #默认local为数据库记录，messageClient为写入kafka中间件（需要同时配置配置aspire.webbas.component.log.async.type为messageConsumer）
+  kafka:
+    topic: webbas-log-topic #（不配置为webbas-log-topic）
+    concurrency: 10 #可选，处理线程数，不配置默认为kafka consumer.concurrency
+    group.id: webbas-log-group #可选，默认使用公共得group.id
+#======3.2.2.1日志配置 结束==========
+
+#======3.2.2.x短信配置 开始==========
+aspire.webbas.component.sms:
+  type: print #类型 print 默认打印,dbClient 仅入库,messageClient 消息队列客户端
+  forbidHolidaySend: true  #是否禁止节假日、双休日发送短信，默认false，不禁止 仅对SmsApi.sendInWorkDate 生效
+  allowSendTimes: #允许短信发送时间段，可配置多个时间段,时间段不允许交叉，精确到分钟,默认08:00-22:00
+    - 08:00-12:00
+    - 14:00-18:00
+
+#======3.2.2.x短信配置 结束==========
+
+spring.session:
+  store-type: redis
+
+#aspire.webbas.component.pendtask.type: local #3.2.2.7后无用废除
+spring.session.redis.namespace: webbas-dev-dsf #session缓存空间
+spring.session.timeout: 50m
+spring.cache.enabled: false
+spring.cache.redis.key-prefix: webbas-dev-dsf-cache #接口缓存空间
+spring.data.redis:
+  password: 4rQJwA!KlGtzgqbA
+  cluster:
+    nodes:
+      - "10.1.203.121:7001"
+      - "10.1.203.121:7002"
+      - "10.1.5.112:7003"
+      - "10.1.5.112:7004"
+      - "10.1.5.113:7005"
+      - "10.1.5.113:7006"
+    max-redirects: 3
+  lettuce.pool:
+    max-idle: 500  # 连接池中的最大空闲连接，默认值也是8。
+    min-idle: 50  #连接池中的最小空闲连接，默认值也是0。
+    max-active: 2000  # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+    max-wait: 1000  # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException

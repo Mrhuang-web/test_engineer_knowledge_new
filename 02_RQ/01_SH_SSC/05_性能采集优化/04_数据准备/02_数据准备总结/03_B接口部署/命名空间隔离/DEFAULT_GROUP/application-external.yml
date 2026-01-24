@@ -1,0 +1,189 @@
+server:
+  port: 21530
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  devtools:
+    restart:
+      enabled: true
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+
+
+# csvSplitChar: ^
+# ftpIp: 10.1.4.143
+# ftpPort: 21
+# ftpUser: sudoroot
+# ftpPwd: wccQKPbCmx8@r*6p
+# ftpBasePath: /tmp/zhongzhi
+# threadNum: 1
+isDelIdxName: true
+dataSyncMysqlSchedule.ontime: 0 0 6 * * ?
+# shareCenterDataSyncSchedule.isRun: true
+
+# msb同步用户、组织配置
+msb-config:
+  ftpIp: 10.1.4.113
+  ftpWay: 'sftp'
+  ftpPort: 22
+  batchInsertSize: 5000
+  csvSplitChar: ","
+  threadNum: 1
+  enabled: true
+  departmentId: "12ddaf47-2d53-486b-b3b8-326d4077f4ce"
+  updateFlag: true
+  menu-role:
+    # zyRole: '250102000000003193'    #278e880a-3939-4774-8f33-53ff847a7bce'
+    # dwRole: '250102000000003489'    #'278e880a-3939-4774-8f33-53ff847a7bce'
+    # otherRole: '250102000000003870'    #'278e880a-3939-4774-8f33-53ff847a7bce'
+    provinceZyRole: '250102000000003193'
+    cityZyRole: '250102000000003193'    
+    provinceDwRole: '250102000000003489'   
+    cityDwRole: '250102000000003489'
+    otherRole: '250102000000003870' 
+
+#msb sso单点配置
+MSB:
+  enableNotice: true
+  URL: http://localhost:21530/
+  
+
+aspire:
+  webbas:
+    serviceName: webbas-service
+
+abilityOpenDataSyncSchedule.ontime: 0 0 0 31 2 ? 
+
+
+# 统一单点登录
+loginsso:
+  isDev: true
+  #动环统一url
+  redirectUrl: http://10.1.203.120:8280/spider/web/v1/login/sso
+  #webbas内置url
+  webbasSSOUrl: http://10.1.203.120:8280/spider/web/web/auth/v1/sso/verify?loginType=2&domain=admin&username=%s&token=%s&redirectUrl=%s
+  #pc端成功错误跳转url
+  PCFrontSuccessUrl: http://10.1.203.120:8280/spider/web/login-app/sso?sso=1&username=%s&domain=admin&ssoType=1
+  PCFrontFailUrl: http://10.1.203.120:8280/spider/web/
+  #MOA成功错误跳转地址
+  MOAFrontSuccessUrl: http://10.1.203.120:8280/prodenv/spider/inop/h5?sso=1&username=%s&domain=admin&ssoType=1
+  MOAFrontFailUrl: http://10.1.203.120:8280/prodenv/spider/inop/h5?sso=1&username=%s&domain=admin&ssoType=1
+
+
+# msb-config:
+#   ftpIp: 10.243.24.246
+#   ftpWay: 'sftp'
+#   ftpPort: 8012
+#   batchInsertSize: 5000
+#   csvSplitChar: ","
+#   threadNum: 1
+#   departmentId: "12ddaf47-2d53-486b-b3b8-326d4077f4ce"  
+#   updateFlag: true
+#   menu-role:
+#     provinceZyRole: '0321d2c6-7143-40d6-9c14-9f8926523e80'
+#     cityZyRole: '241122000000003691'    
+#     provinceDwRole: '241122000000004056'   
+#     cityDwRole: '241122000000004666'
+#     otherRole: '241217000000001180' 
+
+
+# share_center_data_sync_key: GX:external:zzdatasync
+
+ability:
+  gateway:
+    urlMap: '{"CE_NET_PE_HIGH_POWER":"/gate/data/net-res/basicdata/v1/CSC-HIGHPOWER-SYS","RM_SITE_PROPERTY":"/gate/data/dsp/cm/v1/zbuild-site","RM_ROOM_PROPERTY":"/gate/data/dsp/cm/v1/roomsite-info","CE_DEVICE_PE_TRANSFORM":"/gate/data/dsp/cm/v1/transformer","CE_NET_PE_HIGH_DISTRIBUTION":"/gate/data/net-res/basicdata/v1/HIGHDISTRIBUTION-SYS","CE_DEVICE_PE_HIGH_POWER":"/gate/data/dsp/cm/v1/highpower","CE_NET_PE_UPS":"/gate/data/net-res/basicdata/v1/CSC-UPS-SYS-NEW","CE_DEVICE_PE_UPS":"/gate/data/dsp/cm/v1/csc-ups","CE_NET_PE_OPEN_POWER":"/gate/data/net-res/basicdata/v1/CSC-TSWITCHPOWER-SYS-NEW","CE_DEVICE_PE_LOW_DC_DISTRIBUTION":"/gate/data/dsp/cm/v1/low-dcdistribution","CE_DEVICE_PE_BATTERY_LA":"/gate/data/dsp/cm/v1/csc-battery","CE_DEVICE_PE_BATTERY_LI":"/gate/data/dsp/cm/v1/csc-battery","CE_DEVICE_PE_CACH":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_CACH_END":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_HIROSS":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_NA":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_BB":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_HES":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_WPC":"/gate/data/dsp/cm/v1/csc-dgeneralair","CE_DEVICE_PE_MONITOR":"/gate/data/net-res/basicdata/v1/CSC-RINGMONITOR-NEW","CE_DEVICE_PE_IAC":"/gate/data/net-res/basicdata/v1/CSC-OTHER","CE_DEVICE_PE_SMART_METER":"/gate/data/net-res/basicdata/v1/CSC-SMART-METER-NEW","CE_LINK_PE_IN":"/gate/data/net-res/basicdata/v1/CSC-BIFURCATION-NEW","CE_LINK_PE_OUT":"/gate/data/net-res/basicdata/v1/CSC-FUSE-OUT-NEW","CE_DEVICE_PE_OTHER":"/gate/data/net-res/basicdata/v1/CSC-OTHER","CE_NET_PE_CACH":"/gate/data/net-res/basicdata/v1/CSC-RINGMONITOR-NEW","RM_AREA_SITE":"/gate/data/net-res/basicdata/v1/sitecon","RM_AREA_ROOM":"/gate/data/net-res/basicdata/v1/equiproomcon","RM_AREA_RACKPOS":"/gate/data/net-res/basicdata/v1/rack-position-data"}'
+
+# deviceTypeId: 0,101,102,1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,68,77,78,87,88,92,93,201,202,203
+# filed-mapping: true    #是否打开字段映射文件到es
+# EsDataSync.enableCheck: false
+# provinceId: 01-01-23-04-01
+
+
+sftp:
+  host: 10.1.5.143
+  port: 22
+  username: sudoroot
+  password: wccQKPbCmx8@r*6p
+  zzFilePushPath: /home/sudoroot/data/zzFile/
+  way: sftp
+
+# mybatis:
+#   configuration:
+#     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# logging:
+#   level:
+#     org.springframework.web.servlet.DispatcherServlet: debug
+#     com.aspire.spider: debug
+
+
+msb:
+  pusher:
+    protocol: sftp
+    host: 10.1.4.113
+    port: 22
+    username: sudoroot
+    password: wccQKPbCmx8@r*6p
+    remoteFilePath: /home/sudoroot/zongzi/
+
+
+csvSplitChar: ^
+ftpIp: 10.1.4.113
+ftpPort: 22
+ftpUser:  sudoroot
+ftpPwd: wccQKPbCmx8@r*6p
+ftpBasePath: /home/sudoroot/zongzi/
+pathWithDate: false                       #路径是否携带日期子目录
+threadNum: 1
+backDataDay: 7
+ftpFileName: DHNH.SPACE_yyyymmdd*
+# ftpFileName: VE_PET_POWERSITE_14_yyyymmdd.CSV,VE_PET_POWERROOM_17_yyyymmdd.CSV,VE_PET_CHANGER_10_yyyymmdd.CSV,VE_PET_CONVERTER_7_yyyymmdd.CSV,VE_PET_HIGHVOLTSYSTEM_7_yyyymmdd.CSV,VE_PET_HIGHVOLD_9_yyyymmdd.CSV,VE_PET_HIGHVOLTDCSYSTEM_9_yyyymmdd.CSV,VE_PET_HIGHVOLTDCPOWER_12_yyyymmdd.CSV,VE_PET_HIGHVOLTDC_11_yyyymmdd.CSV,VE_PET_LOWVOLTSYSTEM_8_yyyymmdd.CSV,VE_PET_LOWVOLTAC_11_yyyymmdd.CSV,VE_PET_GENERATORCOMSYSTEM_7_yyyymmdd.CSV,VE_PET_GENERATORCOM_12_yyyymmdd.CSV,VE_PET_SWITCHINGPOWERSYSTEM_9_yyyymmdd.CSV,VE_PET_SWITCHINGPOWER_13_yyyymmdd.CSV,VE_PET_LOWVOLTDC_10_yyyymmdd.CSV,VE_PET_UPSSYSTEM_9_yyyymmdd.CSV,VE_PET_UPS_13_yyyymmdd.CSV,VE_PET_BATTERYDEVICE_13_yyyymmdd.CSV,VE_PET_AIRCONDITION_13_yyyymmdd.CSV,VE_PET_ENERGYSAVINGDEVICE_6_yyyymmdd.CSV,VE_PET_MONITORINGDEVICE_13_yyyymmdd.CSV,VE_PET_AMMETER_9_yyyymmdd.CSV,VE_PET_POWERLINEIN_7_yyyymmdd.CSV,VE_PET_POWERLINEOUT_7_yyyymmdd.CSV
+deviceTypeId: 0,101,102,1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,68,76,77,78,87,88,92,93,201,202,203
+filed-mapping: true    #是否打开字段映射文件到es
+share_center_data_sync_key: GDEMS:external:zzdatasync
+#是否启用非标准文件处理
+enableNotStandardFile: true 	
+#标准对应的非标文件
+notstandardfileconfig:
+  map:
+    RM_AREA_SITE: VE_PET_POWERSITE_14
+    RM_AREA_ROOM: VE_PET_POWERROOM_17
+    RM_SITE_PROPERTY: VE_PET_POWERSITE_14
+    RM_ROOM_PROPERTY: VE_PET_POWERROOM_17
+    CE_DEVICE_PE_TRANSFORM: VE_PET_CHANGER_10
+    CE_DECIVE_PE_TRANSFORM_DEVICE: VE_PET_CONVERTER_7
+    CE_NET_PE_HIGH_DISTRIBUTION: VE_PET_HIGHVOLTSYSTEM_7
+    CE_DEVICE_PE_HIGH_DISTRIBUTION: VE_PET_HIGHVOLD_9
+    CE_NET_PE_HIGH_POWER: VE_PET_HIGHVOLTDCSYSTEM_9
+    CE_DEVICE_PE_HIGH_POWER: VE_PET_HIGHVOLTDCPOWER_12
+    CE_DEVICE_PE_HIGH_DC_DISTRIBUTION: VE_PET_HIGHVOLTDC_11
+    CE_NET_PE_LOW_DISTRIBUTION: VE_PET_LOWVOLTSYSTEM_8
+    CE_DEVICE_PE_LOW_AC_DISTRIBUTION: VE_PET_LOWVOLTAC_11
+    CE_NET_PE_SWITCH_POWER: VE_PET_GENERATORCOMSYSTEM_7
+    CE_DEVICE_PE_POWER_GENERATION: VE_PET_GENERATORCOM_12
+    CE_NET_PE_OPEN_POWER: VE_PET_SWITCHINGPOWERSYSTEM_9
+    CE_DEVICE_PE_SWITCH_POWER: VE_PET_SWITCHINGPOWER_13
+    CE_DEVICE_PE_LOW_DC_DISTRIBUTION: VE_PET_LOWVOLTDC_10
+    CE_NET_PE_UPS: VE_PET_UPSSYSTEM_9
+    CE_DEVICE_PE_UPS: VE_PET_UPS_13
+    CE_DEVICE_PE_BATTERY: VE_PET_BATTERYDEVICE_13
+    CE_DEVICE_PE_AIR: VE_PET_AIRCONDITION_13
+    CE_DEVICE_PE_ENERY_SAVE: VE_PET_ENERGYSAVINGDEVICE_6
+    CE_DEVICE_PE_POWER_MONITOR: VE_PET_MONITORINGDEVICE_13
+    CE_DEVICE_PE_SMART_METER: VE_PET_AMMETER_9
+    CE_LINK_PE_IN: VE_PET_POWERLINEIN_7
+    CE_LINK_PE_OUT: VE_PET_POWERLINEOUT_7
+
+resourceDataSyncSchedule: 
+  isRun: true 
+  ontime: 0 30 2 * * ?
+
+
+full-site-enabled: true
+
+
+
+platform: gdems

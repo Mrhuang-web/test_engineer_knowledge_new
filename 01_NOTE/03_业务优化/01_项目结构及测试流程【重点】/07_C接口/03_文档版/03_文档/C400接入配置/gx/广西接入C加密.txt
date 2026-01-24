@@ -1,0 +1,44 @@
+接入：中间库->动环   站点、数据中中心-楼栋
+接出：动环  -->中间库
+========================================================================
+《C400接入》包在gemc分支
+========================================================================
+1、准备配置文件ms-cinterface-service-gx-in4.yml  其中 app.client按照C接入文档(《C接口接入文档(V版本400接入).docx》)检查数据（范例接入配置中的"163"替换为指定的;空间01-07是广西）
+2、准备中间库，可以从其他中间库复制-如10.1.203.38中cinterdb_400_gx,dbtype6是mysql
+动环库
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`) VALUES ('163', 'C接口接入4', '10.1.203.38', 8090, 'hyzomc', 'hyzomc@2023', 6, '10.1.203.38', 3306, 'cinterdb_400_gx', 'root', 'G$SGp!8L3O', '00001006000000755298', 400);
+注意：接入时候 t_cfg_cserverinfo中的lsc_id的前两位不能跟已有的相同
+3、t_cfg_cserverinfo使用  configmanagement-service服务接口进行加密
+加密  curl --location 'http://localhost:13569/v1/cserverinfo/encryptedInfoByLscId?lscId=163'
+Lscid为t_cfg_cserverinfo表的lsc_id，加密后数据库如下所示，注意只能调用一次curl，调用多次则会多次加密， 
+INSERT INTO `t_cfg_cserverinfo` (`lsc_id`, `lsc_name`, `csvrip`, `csvrport`, `clogusrname`, `clogusrpwd`, `dbtype`, `dbsvrip`, `dbsvrport`, `dbname`, `dblogname`, `dblogpwd`, `access_device_id`, `protocol_id`) VALUES ('163', 'C接口接入4', '10.1.203.38', 8090, 'hyzomc', 'Hrs0L298kBeRKSHLUKnkOQ==', 6, '10.1.203.38', 3306, 'cinterdb_400_gx', 'root', 'Uykm5c444SUbrhoSgM5Z3w==', '00001006000000755298', 400);
+
+4、中间库站点或者楼栋要与动环做映射
+4.1首先需要在动环存在如下站点或者数据中心楼栋（配置-空间通过页面新增站点和数据中心楼栋）
+4.2通过脚本 C400基础数据准备.py构造C接口数据（注意修改config.py中的中间库连接和接入的站点表格excel_file = './lsc400_data_gx_huanghe4.xlsx'）
+4.3写入C中间库机楼和动环的映射关系到动环库
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ('广西-卓望', '钦州市', '经济开发区', 2, 1, '01-07-12-02-03', '黄河核心机楼', '黄河核心机楼', 'site河核心机楼');
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ( '广西-卓望', '钦州市', '经济开发区', 3, 1, '01-07-12-02-04', '黄河传输节点', '黄河传输节点', 'site黄河传输节点');
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ( '广西-卓望', '钦州市', '经济开发区', 4, 1, '01-07-12-02-05', '黄河通讯基站', '黄河通讯基站', 'site黄河通讯基站');
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ( '广西-卓望', '钦州市', '经济开发区', 1, 1, '01-07-12-02-02-02', '黄河数据中心二号楼', '黄河数据中心二号楼', 'site黄河数据中心二号楼');
+INSERT INTO `t_cfg_site_mapping` ( `province_name`, `city_name`, `area_name`, `site_type`, `interface_type`, `lsc_id`, `lsc_name`, `mapping_name`, `mark`) VALUES ( '广西-卓望', '钦州市', '经济开发区', 1, 1, '01-07-12-02-02-01', '黄河数据中心一号楼', '黄河数据中心一号楼', 'site黄河数据中心一号楼');
+
+5、启动C服务并开启定时任务（当前起在 10.1.4.225）
+docker  rm -f  cinterface-service-gx-in4
+docker run --name cinterface-service-gx-in4 --net host --log-driver=json-file --log-opt max-size=30m --log-opt max-file=3 --env ENV_NACOS=10.1.5.109:8848 --env ENV_TYPE=guangxi --env ENV_APP_NAME=cinterface-service-gx-in4 --env ENV_NACOS_PASSWORD=r2G%zwoCj#Oz -d 10.1.6.34:8080/spider/gemc/cinterface-service:spider1.0.7.0_GEMC_SYT_103
+docker logs -f --tail 400   cinterface-service-gx-in4
+通过下面的curl开启定时任务，每次C接口重启时都需要执行。
+curl --location  'http://localhost:8390/v1/cinterface/startSyncTimer'
+6、C服务-手动执行同步空间设备测点数据
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-07-12-02-02-01&justCompare=false'
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-07-12-02-02-02&justCompare=false'
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-07-12-02-03&justCompare=false'
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-07-12-02-04&justCompare=false'
+curl --location 'http://localhost:8390/v1/cinterface/compareAndSyncBySite?operateUser=chw-0919&siteId=01-07-12-02-05&justCompare=false'
+====================================================================================================
+增量接入其他站点只需如下步骤:
+4、中间库站点或者楼栋要与动环做映射
+4.1首先需要在动环存在如下站点或者数据中心楼栋（配置-空间通过页面新增站点和数据中心楼栋）
+4.2通过脚本 C400基础数据准备.py构造C接口数据（注意修改config.py中的中间库连接和接入的站点表格）
+4.3写入C中间库机楼和动环的映射关系到动环库
+6、C服务-手动执行同步空间设备测点数据

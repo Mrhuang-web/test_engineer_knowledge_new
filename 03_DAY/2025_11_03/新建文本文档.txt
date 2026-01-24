@@ -1,0 +1,97 @@
+SELECT * FROM t_cfg_topology_config;
+SELECT * FROM t_cfg_topology_config_part WHERE site_id = '01-07-05-07-53';
+
+
+`gx-spider`
+SELECT * FROM overdue_device_type_dict WHERE device_type = '变压器';
+
+SELECT p.update_cycle,p.*
+FROM overdue_device_detail p
+WHERE p.device_type_name = '变压器' AND p.device_sub_type_name = '非晶合金变压器' 
+LIMIT 100;
+
+# 中央空调主机  中央空调主机
+# UPS配电 UPS电池开关柜
+# UPS设备 UPS设备01
+# 低压交流配电 低压出线柜
+
+SELECT device_type FROM t_zz_power_specialty  GROUP BY device_type LIMIT 10 ;
+SELECT device_type FROM t_zz_power_device GROUP BY device_type;
+SELECT * FROM t_cfg_device WHERE device_name = '高压直流电源配电' LIMIT 10;
+
+
+
+SELECT * FROM t_overdue_service_life_config 
+
+
+SELECT * FROM t_gathering_config_device 
+ORDER BY CREATE_time desc
+WHERE union_id = '671bcded-5e0b-4af5-a54a-3a4627e6b3e4'; 
+
+
+
+
+
+
+
+
+
+
+ select a.res_code              as resCode,
+               a.device_id             as deviceId,
+               a.zh_label              as deviceName,
+               a.related_site          as relatedSite,
+               c.system_rated_capacity as systemRatedCapacity,
+               c.system_code           as systemCode
+        from t_zz_power_device_sys a
+        join t_zz_space_resources b on a.related_site = b.int_id
+        left join t_zz_ups_system c on a.res_code = c.res_code
+        where a.device_type_id = 201 and b.precinct_id = '01-07-10-02-01'
+
+
+
+SELECT * FROM t_cfg_device WHERE precinct_id = '01-07-10-02-01'  LIMIT 10; 
+SELECT * FROM t_cfg_precinct  WHERE precinct_id = '01-07-21-01-01-03' LIMIT 10;
+
+
+
+
+
+
+
+
+
+
+SELECT * FROM t_cfg_fsu LIMIT 10
+SELECT * FROM t_cfg_cserverinfo LIMIT 10
+
+
+SELECT * FROM t_cfg_device WHERE precinct_id = '01-07-21-01-01-04-01'  LIMIT 10;
+SELECT * FROM t_cfg_devicesys  WHERE up_id = '01-07-21-01-01-04'  LIMIT 10;
+SELECT * FROM t_cfg_devicesys WHERE devicesys_id = 'd341464eeaa54425a6dcc3c34f61ef43';
+
+
+# 01-07-21-01-01-04
+SELECT * FROM t_zz_power_device_sys LIMIT 10;
+SELECT * FROM t_zz_space_resources LIMIT 10;
+SELECT * FROM t_zz_space_resources where related_site is not null LIMIT 10;
+SELECT * FROM t_zz_power_device_sys where related_site = '07977e6db645423bb8b61a3fd1ccb542' LIMIT 10;
+SELECT * FROM t_zz_power_device_sys LIMIT 10
+SELECT * FROM t_zz_power_device_sys where zh_label = '%UPS%' LIMIT 10;
+
+
+
+# 要改的
+# precinct_id:01-07-21-01-01-01
+# related_site SITE-ff8080815f04e571015fae1b63f42dc1
+# int_id  空
+SELECT * FROM t_zz_space_resources WHERE zh_label = '柳州城中区东祥福苑路灯杆'
+
+
+
+# 要改的
+# related_site 07977e6db645423bb8b61a3fd1ccb542
+# int_id  448184474aac43019e85cf354c2af1c5
+SELECT * FROM t_zz_space_resources WHERE zh_label = '柳州鹿寨县金科集美江山普通汇聚站点传输机房'
+
+

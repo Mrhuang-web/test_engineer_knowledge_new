@@ -1,0 +1,4 @@
+SERVER_PORT: 28020
+ENV_APP_NAME: sc-binterface
+APPLICATION_NAME: binterface-service-dataHandle
+RUN_MODE: dataHandle

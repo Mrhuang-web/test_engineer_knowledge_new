@@ -1,0 +1,93 @@
+[
+  {
+    "name": "test1",
+    "idcardNum": "",
+    "iDNumber": "",
+    "id": "ZqIgwUFKhAxqfO8RWJdL1yGzz2wV4Aa8",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768934059420,
+    "iDPermission": 2,
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "name": "test2",
+    "idcardNum": "",
+    "iDNumber": "",
+    "id": "gbSpAIXGRdTZbLzuxHMJdnE2sMPSV21X",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768966792448,
+    "iDPermission": 2,
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "id": "testperson",
+    "name": "Test Person",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768970352577,
+    "iDNumber": "",
+    "iDPermission": 2,
+    "idcardNum": "",
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "id": "testperson2",
+    "name": "Test Person 2",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768970729524,
+    "iDNumber": "",
+    "iDPermission": 2,
+    "idcardNum": "",
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "id": "testperson3",
+    "name": "Test Person 3",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768970770606,
+    "iDNumber": "",
+    "iDPermission": 2,
+    "idcardNum": "",
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "name": "test4",
+    "idcardNum": "",
+    "iDNumber": "",
+    "id": "cMLGJlkh2Eoj8bfL5btT4yeLDvPuURao",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768970878062,
+    "iDPermission": 2,
+    "phone": "",
+    "tag": "00"
+  },
+  {
+    "id": "testperson4",
+    "name": "Test Person 4",
+    "facePermission": 2,
+    "idCardPermission": 2,
+    "faceAndCardPermission": 1,
+    "createTime": 1768971672745,
+    "iDNumber": "",
+    "iDPermission": 2,
+    "idcardNum": "",
+    "phone": "",
+    "tag": "00"
+  }
+]

@@ -1,0 +1,117 @@
+server:
+  port: 8865
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+mybatis:
+  mapper-locations: classpath:sqlmap/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  http:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+
+sms:
+  # 发送类型：cmpp(cmppSms、cmppNewSms)和亚信接口(asiaSms),通过这里设置短信发送的类型
+  notify_type: "cmppSms"
+  #亚信接口：1（模拟发送，保存数据库，不调用短信网关） 2（真实发送，保存数据库，调用短信网关）
+  send_flag: 1
+  # 数据库中redisKey值的前缀
+  limit_key_pre: "smsNotify:key:"
+  #ip限制访问在redis中的key模板
+  ip_limit_key: "smsNotify:ipLimit:"
+  #ip限制访问key的有效期 单位s
+  validity_ip: 60
+  #ip限制的访问次数  有效期内允许校验失败的请求次数  超过该次数将限制访问
+  ip_limit_num: 10
+  #发送次数限制在redis中的key模板
+  phone_limit_key: "smsNotify:phoneLimit:"
+  # 相同内容不能重复发送的key值
+  same_msg_key: "smsNotify:sameMsgLimit:"
+  # 相同内容不能重复发送的有效期，单位s
+  validity_same_msg: 60
+  
+  # 发送失败重试
+  send_fail:
+    is_enable_retry: true  # 是否开启发送失败重试，true 开启，false 关闭，默认关闭
+    retry_delay: 6 #发送失败时的延时发送时间，单位为秒，默认5秒
+    max_retry_num: 6 #发送失败最大重试次数，默认5次
+    
+
+email:
+  # 发送类型：亚信接口(asiaEmail)
+  notify_type: "asiaEmail"
+  #亚信接口：1（模拟发送，保存数据库，不调用短信网关） 2（真实发送，保存数据库，调用短信网关）
+  send_flag: 1
+  # 数据库中redisKey值的前缀
+  limit_key_pre: "emailNotify:key:"
+  #ip限制访问在redis中的key模板
+  ip_limit_key: "emailNotify:ipLimit:"
+  #ip限制访问key的有效期 单位s
+  validity_ip: 60
+  #ip限制的访问次数  有效期内允许校验失败的请求次数  超过该次数将限制访问
+  ip_limit_num: 10
+  #发送次数限制在redis中的key模板
+  email_limit_key: "emailNotify:phoneLimit:"
+  # 相同内容不能重复发送的key值
+  same_msg_key: "emailNotify:sameMsgLimit:"
+  # 相同内容不能重复发送的有效期，单位s
+  validity_same_msg: 60
+  # 是否开启jmail发送
+  enable_jmail: true
+  
+  # 发送失败重试
+  send_fail:
+    is_enable_retry: false  # 是否开启发送失败重试，true 开启，false 关闭，默认关闭
+    retry_delay: 6 #发送失败时的延时发送时间，单位为秒，默认5秒
+    max_retry_num: 6 #发送失败最大重试次数，默认5次
+
+asia:
+  gateway:
+    # 网关地址
+    #host: 127.0.0.1
+    host: 10.12.12.186
+    # 网关端口
+    port: 8066
+    # App的应⽤编码
+    appCode: app_1669628980459538327
+    # App应⽤密钥
+    appSecrect: b836f7caf675fb75c111f8f57f16296b
+    # 服务编码
+    # 注册编码
+    smsRegisterApiCode: API_CODE_16589130855381180433
+    emailRegisterApiCode: API_CODE_16683896403509059444
+    # 发送短信编码
+    smsApiCode: API_CODE_16625181631312298548
+    # 发送邮件编码
+    emailApiCode: API_CODE_16703133732811233024
+    # 发送邮件附件编码
+    emailAttApiCode: API_CODE_16683900052796319074
+    # 客户端名称
+    client: bigdata_dhgl
+    # 客户端唯⼀标识
+    clientId: deb6e18d-4674-42ef-bbf4-000000000001
+    # 客户端连接令牌
+    clientToken: bigdata_dhgl_01
+    # 是否接收投递反馈
+    needAck: false
+    # 投递报告接收地址
+    callbackAddress: /notifier/api/callbackAddress
+    # 获取accessToken接口
+    accessTokenUrl: /api/auth/oauth2/oauth/token?grant_type={grant_type}&client_id={client_id}&client_secret={client_secret}
+    # 注册接口
+    registerUrl: /api/gw/http
+    # 注销接口
+    unregisterUrl: /api/gw/http
+    # 短信发送接口
+    sendSmsUrl: /api/gw/http
+    # 邮件发送接口(不带附件)
+    sendMailUrl: /api/gw/http
+    # 邮件发送接口(带附件)
+    sendMailAttUrl: /api/gw/http
+    # 发送信息前缀
+    sendContentPre: "【来自动环平台】"

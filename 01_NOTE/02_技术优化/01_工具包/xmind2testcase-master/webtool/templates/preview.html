@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} | Xmind2TestCase Preview</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static',filename='css/pure-min.css') }}">
+    <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static',filename='css/custom.css') }}">
+</head>
+<body>
+<div class="header">
+    <h1>{{ name }} - 预览</h1>
+    <h2>TestSuites（模块数）: {{ suite_count }} | TestCases（用例数）: {{ suite | length }}</h2>
+    <h2>
+        | <a href="{{ url_for('download_zentao_file',filename= name) }}">转CSV</a>
+        | <a href="{{ url_for('index') }}">返回首页</a> | </h2>
+    </h2>
+</div>
+<table class="pure-table tests-table">
+    <thead>
+    <tr>
+        <th width="5%">#</th>
+        <th width="12%">Suite（模块名）</th>
+        <th width="20%">Title（用例名）</th>
+        <th width="200px">Steps（步骤）</th>
+        <th width="23%">Expected（预期）</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for test in suite %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>
+            {% if test.模块 %}
+            {{ test.模块 }}
+            {% endif %}
+        </td>
+        <td>
+            {% if test.测试用例 %}
+            {{ test.测试用例 }}
+            {% endif %}
+        </td>
+        <td>
+            {% if test.步骤%}
+            {{ test.步骤 }}
+            {% endif %}
+        </td>
+        <td>
+            {% if test.步骤%}
+            {{ test.预期 }}
+            {% endif %}
+
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

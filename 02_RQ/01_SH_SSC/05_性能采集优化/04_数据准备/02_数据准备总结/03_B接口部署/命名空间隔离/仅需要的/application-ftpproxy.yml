@@ -1,0 +1,8 @@
+server:
+  port: 28102
+
+# ftpProxy.download.path: D:\tmp\ftp\proxyTest\ftpProxy\
+ftp.local.temp.path: /tmp/uploadTmp/
+logging:
+  level:
+    com.aspire.gemc.ftpproxy: debug

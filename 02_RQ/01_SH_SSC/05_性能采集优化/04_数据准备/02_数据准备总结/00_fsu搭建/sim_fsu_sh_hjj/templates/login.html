@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+  <h2>模拟FSU - 请登录</h2>
+  <table>
+  <form action="/login" method="post">
+  <tr><th>用户名</th><td><input type="text" name="user"></td></tr>
+  <tr><th>密码</th><td><input type="password" name="password"></td></tr>
+  <tr><td></td><th><input type="submit" value="登录"></th></tr>
+  </form>
+  </table>
+  
+{% end %}

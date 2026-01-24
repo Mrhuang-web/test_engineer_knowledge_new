@@ -1,0 +1,1 @@
+jmeter -n -t HTTP请求.jmx -l HTTP请求.jtl -e -o report

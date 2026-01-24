@@ -1,0 +1,13 @@
+server:
+  port: 9966
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-form-post-size: -1
+
+mybatis:
+  mapper-locations: classpath:sqlmap/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+

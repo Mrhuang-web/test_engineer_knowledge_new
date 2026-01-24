@@ -1,0 +1,75 @@
+# redisson:
+#   alert.clear.count.interval: 48 
+#   activeConfig: singleServerConfig
+#   singleServerConfig:
+#     idleConnectionTimeout: 10000
+#     connectTimeout: 500000
+#     timeout: 500000
+#     retryAttempts: 5
+#     retryInterval: 1500
+#     password: 4rQJwA!KlGtzgqbA
+#     subscriptionsPerConnection: 5
+#     clientName: null
+#     address: "redis://10.1.203.120:6386"
+#     # address: "redis://10.1.203.121:7001"
+#     subscriptionConnectionMinimumIdleSize: 1
+#     subscriptionConnectionPoolSize: 50
+#     connectionMinimumIdleSize: 32
+#     connectionPoolSize: 64
+#     database: 0
+#     dnsMonitoringInterval: 5000
+redisson:
+  alert.clear.count.interval: 48 
+  activeConfig: singleServerConfig
+  singleServerConfig:
+    idleConnectionTimeout: 30000
+    # connectTimeout: 8000
+    connectTimeout: 10000
+    # timeout: 3000
+    timeout: 10000
+    retryAttempts: 3
+    retryInterval: 1000
+    password: 4rQJwA!KlGtzgqbA
+    subscriptionsPerConnection: 5
+    clientName: null
+    address: "redis://10.1.203.120:6386"
+    # address: "redis://127.0.0.1:6379"
+    subscriptionConnectionMinimumIdleSize: 2
+    subscriptionConnectionPoolSize: 80
+    connectionMinimumIdleSize: 60
+    connectionPoolSize: 150
+    database: 0
+    dnsMonitoringInterval: 5000
+  clusterServersConfig:
+    idleConnectionTimeout: 10000
+    connectTimeout: 10000
+    timeout: 3000
+    retryAttempts: 3
+    retryInterval: 1500
+    failedSlaveReconnectionInterval: 3000
+    failedSlaveCheckInterval: 60000
+    password: 4rQJwA!KlGtzgqbA
+    subscriptionsPerConnection: 5
+    clientName: null
+    subscriptionConnectionMinimumIdleSize: 1
+    subscriptionConnectionPoolSize: 50
+    slaveConnectionMinimumIdleSize: 32
+    slaveConnectionPoolSize: 64
+    masterConnectionMinimumIdleSize: 32
+    masterConnectionPoolSize: 64
+    readMode: "MASTER"
+    subscriptionMode: "MASTER"
+    nodeAddresses:
+      - "redis://10.1.203.121:7001"
+      - "redis://10.1.203.121:7002"
+      - "redis://10.1.5.112:7003"
+      - "redis://10.1.5.112:7004"
+      - "redis://10.1.5.113:7005"
+      - "redis://10.1.5.113:7006"
+    scanInterval: 1000
+    pingConnectionInterval: 0
+    keepAlive: false
+    tcpNoDelay: false
+  threads: 0
+  nettyThreads: 1
+  transportMode: "NIO"

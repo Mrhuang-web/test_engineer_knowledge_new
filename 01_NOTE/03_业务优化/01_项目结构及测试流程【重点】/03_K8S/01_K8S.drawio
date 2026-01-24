@@ -1,0 +1,162 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6">
+  <diagram name="第 1 页" id="Dnx3W87QaJlq_ALIQeoW">
+    <mxGraphModel dx="925" dy="627" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nA7neJpZPB56BivLte_A-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130.5" y="160.45101031135107" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-1" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Rancher—server&lt;br&gt;图形界面工具管理k8s集群&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="72" y="9" width="117" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-2" value="" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="72" y="162" width="724" height="533" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-5" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;rancher explain&lt;/h1&gt;&lt;p&gt;1、在某台机器（可以是集群内也可以是集群外）安装 Rancher SERVER&lt;br&gt;2、Rancher UI 中选择“导入现有集群”或让 Rancher 帮你创建一个新集群（它会自动在指定的物理机/VM 上安装 K8s）&lt;br&gt;3、Rancher 通过 Kubernetes 提供的 API 与集群进行通信。Kubernetes API 是控制集群、获取集群信息的标准入口&lt;br&gt;4、使得Rancher 连接到 K8s 集群的 API SERVER&lt;br&gt;5、后续：通过 Rancher 的图形化界面查看所有 Nodes（物理机/VM）的状态、在上面运行的 Pods、部署新应用、查看日志、监控资源使用情况等等，而不必直接使用复杂的 kubectl 命令行&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="194" y="6" width="626" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-7" value="Kubernetes Cluster" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="344" y="189" width="208" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-9" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="303" width="177" height="323" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-10" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="355" width="177" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-12" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="574" y="355" width="173" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-13" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="122" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-14" target="nA7neJpZPB56BivLte_A-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-14" value="kube-api&lt;br&gt;server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="184" y="418" width="82" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-15" target="nA7neJpZPB56BivLte_A-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="139" y="502" />
+              <mxPoint x="136" y="502" />
+              <mxPoint x="136" y="491" />
+              <mxPoint x="164" y="491" />
+              <mxPoint x="164" y="463" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-15" value="scheduler" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="107" y="511" width="63" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-16" target="nA7neJpZPB56BivLte_A-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-16" value="controller" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="194" y="524" width="63" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-17" value="etcd" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="423.5" width="46.75" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-18" target="nA7neJpZPB56BivLte_A-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-18" target="nA7neJpZPB56BivLte_A-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-18" value="kubelet" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="379" y="374" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-19" target="nA7neJpZPB56BivLte_A-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="323" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="498" y="365" />
+              <mxPoint x="323" y="365" />
+              <mxPoint x="323" y="393" />
+              <mxPoint x="326" y="393" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-19" value="kube-PROXY" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="464" y="374" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-20" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="379" y="491" width="153" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-21" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="584" y="491" width="153" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-24" target="nA7neJpZPB56BivLte_A-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-24" target="nA7neJpZPB56BivLte_A-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="309" />
+              <mxPoint x="297" y="309" />
+              <mxPoint x="297" y="448" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-24" value="kubelet" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="586" y="393" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-25" target="nA7neJpZPB56BivLte_A-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="nA7neJpZPB56BivLte_A-25">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="618.5294117647059" y="309.47057028377765" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="700" y="309" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-25" value="kube-PROXY" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="666" y="393" width="68" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-26" value="Pod A&lt;br&gt;Container&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="601" y="499.5" width="57" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-27" value="Pod 1&lt;br&gt;Container (App)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="392" y="497" width="68" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-28" value="Pod B&lt;br&gt;Container&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="498" width="60" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-29" value="Pod 2&lt;br&gt;Container" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="472" y="499.5" width="56" height="38.5" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-30" value="Pod 3&lt;br&gt;Container" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435.5" y="540" width="61.5" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-31" value="容器运行时 (Docker)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="402" y="460" width="122" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-48" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;explain&lt;/h1&gt;&lt;p&gt;1、Kubernetes 集群由一个控制平面和一组工作机器组成，称为节点、 运行容器化应用程序。每个集群至少需要一个工作节点才能运行 Pod。&lt;br&gt;2、工作节点托管作为应用程序工作负载组件的 Pod。 控制平面管理集群中的工作节点和 Pod。生产中 环境中，控制平面通常跨多台计算机和集群运行 通常运行多个节点，提供容错和高可用性。&lt;br&gt;3、&lt;span style=&quot;background-color: transparent;&quot;&gt;etcd：&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;一致且高可用性的键值存储，用作所有集群数据的 Kubernetes 支持存储。&lt;/span&gt;&lt;/p&gt;&lt;div&gt;&lt;div&gt;4、Kubernetes 安装在这些机器上，将它们组织成一个集群，分为 Master Node(大脑) 和 Worker Node(干活的)。&lt;/div&gt;&lt;div&gt;5、Pod 是 K8s 管理的最小单位，包含一个或多个紧密关联的容器，被调度运行在 Worker Node 上。&lt;/div&gt;&lt;div&gt;6、Rancher 连接到 K8s 集群的 API，提供一个友好的界面让你查看和管理集群中的 Nodes、Pods 以及运行在 Pod 里的容器和应用&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="72" y="711" width="737" height="237" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-49" value="Master Node(s)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="127.5" y="303" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-50" value="Wor&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ker Node1&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="402" y="328" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-51" value="Wor&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;ker Node2&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="619" y="360" width="85" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nA7neJpZPB56BivLte_A-52" value="&lt;a href=&quot;https://kubernetes.io/docs/concepts/architecture/&quot;&gt;集群架构 |Kubernetes&lt;/a&gt;&lt;br&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="39" y="977" width="134" height="41" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

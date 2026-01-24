@@ -1,0 +1,251 @@
+2025-11-30 20:08:59.999  INFO 7 --- [  MyScheduler-9] c.a.g.s.service.handler.AbstractHandler  : 任务:动环同步综资站点信息,开始执行
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52714e9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: 
+	select a.precinct_id precinctId,b.site_id siteId,a.precinct_name siteName,b.site_type siteType,b.property property, b.es_sum_ways esSumWays, b.es_voltage_level esVoltageLevel, 
+	b.es_capacity esCapacity, b.es_nature esNature, b.backup_method backupMethod, b.is_from_differ_trans_site is_fromDifferTransSite, b.es_oil_machine_level esOilMachineLevel, 
+	b.design_pue designPue from t_cfg_precinct a left join t_cfg_site b on a.precinct_id = b.site_id where a.precinct_kind = 2 and a.isdel= 0;
+==> Parameters: 
+<==    Columns: precinctId, siteId, siteName, siteType, property, esSumWays, esVoltageLevel, esCapacity, esNature, backupMethod, is_fromDifferTransSite, esOilMachineLevel, designPue
+<==        Row: 01-07-01-01-01, 01-07-01-01-01, 柳州测试数据数据西安乡, 4, 1, 1, 4, 50, 1, 5, 0, 3, 1
+<==        Row: 01-07-01-01-02, 01-07-01-01-02, 柳州测试数据数据马山乡肯洛村, 4, null, null, 0, null, 0, 0, 0, 0, null
+
+
+
+
+
+<==      Total: 6743
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52714e9c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f2df58] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: 
+	SELECT a.res_code, a.zh_label, a.power_site_level, b.asset_company, b.total_mains_number, b.mains_voltage_level, b.mains_capacity, b.mains_nature, b.mains_backup_method, b.power_is_substations, 
+	b.mains_configuration_level, b.design_pue FROM t_zz_power_specialty a left join t_zz_site_property b on a.res_code = b.res_code WHERE a.device_type_id = 0
+==> Parameters: 
+<==    Columns: res_code, zh_label, power_site_level, asset_company, total_mains_number, mains_voltage_level, mains_capacity, mains_nature, mains_backup_method, power_is_substations, mains_configuration_level, design_pue
+<==        Row: 00060554a2a348ca9faf265828fdd575, 北海海城区富丽华海御小区, 通信基站, 中国移动, 1, 220V, 50, 市电直供, 单路引入, 否, 1市电无油机, 1
+
+
+
+<==      Total: 29619
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41f2df58]
+2025-11-30 20:09:00.665  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林平乐县政府新办公楼室分，保留第一个值
+2025-11-30 20:09:00.666  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林象山区经贸商务大厦2，保留第一个值
+2025-11-30 20:09:00.667  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林七星区五里店移动办公楼，保留第一个值
+2025-11-30 20:09:00.667  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 贺州钟山钟山法院小区-DMT0004资源点，保留第一个值
+2025-11-30 20:09:00.667  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林平乐县人民法院新综合楼2，保留第一个值
+2025-11-30 20:09:00.668  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林象山区汇通广场，保留第一个值
+2025-11-30 20:09:00.668  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林七星区花都国际会所2，保留第一个值
+2025-11-30 20:09:00.669  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林七星区大学科技园4#-7#楼室分，保留第一个值
+2025-11-30 20:09:00.669  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林恭城县梦迪电影院室分，保留第一个值
+2025-11-30 20:09:00.669  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 贺州昭平县马江镇盘古村盘古村居民区资源点，保留第一个值
+2025-11-30 20:09:00.670  WARN 7 --- [  MyScheduler-9] c.a.s.s.s.handler.GxZZSiteSyncHandler    : 发现重复键: 桂林象山区电力宾馆大楼，保留第一个值
+
+
+
+
+
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28c17ff] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+
+
+
+
+==>  Preparing: SELECT distinct asset_company FROM t_zz_site_property order by asset_company
+==> Parameters: 
+<==    Columns: asset_company
+<==        Row: 中国移动
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28c17ff]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d6b1a9c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT dict_id, dict_code, dict_note, col_name, up_dict FROM t_cfg_dict WHERE col_name = ? order by dict_code;
+==> Parameters: zz_property(String)
+<==    Columns: dict_id, dict_code, dict_note, col_name, up_dict
+<==        Row: 9901224, 1, 中国移动, zz_property, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d6b1a9c]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7880be63] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT max(dict_code) FROM t_cfg_dict WHERE col_name = ?;
+==> Parameters: zz_property(String)
+<==    Columns: max(dict_code)
+<==        Row: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7880be63]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d04aa1] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT distinct mains_voltage_level FROM t_zz_site_property order by mains_voltage_level
+==> Parameters: 
+<==    Columns: mains_voltage_level
+<==        Row: 10KV
+<==        Row: 10KV以上
+<==        Row: 220V
+<==        Row: 380V
+<==        Row: 无市电
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d04aa1]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b977ccd] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT dict_id, dict_code, dict_note, col_name, up_dict FROM t_cfg_dict WHERE col_name = ? order by dict_code;
+==> Parameters: zz_es_voltage_level(String)
+<==    Columns: dict_id, dict_code, dict_note, col_name, up_dict
+<==        Row: 9901225, 1, 10KV, zz_es_voltage_level, 0
+<==        Row: 9901226, 2, 10KV以上, zz_es_voltage_level, 0
+<==        Row: 9901227, 3, 220V, zz_es_voltage_level, 0
+<==        Row: 9901228, 4, 380V, zz_es_voltage_level, 0
+<==        Row: 9901229, 5, 无市电, zz_es_voltage_level, 0
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b977ccd]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c13a83b] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT max(dict_code) FROM t_cfg_dict WHERE col_name = ?;
+==> Parameters: zz_es_voltage_level(String)
+<==    Columns: max(dict_code)
+<==        Row: 5
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c13a83b]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77fe32a3] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT distinct mains_nature FROM t_zz_site_property order by mains_nature
+==> Parameters: 
+<==    Columns: mains_nature
+<==        Row: 市电直供
+<==        Row: 市电转供
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@77fe32a3]
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24ebe836] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT dict_id, dict_code, dict_note, col_name, up_dict FROM t_cfg_dict WHERE col_name = ? order by dict_code;
+==> Parameters: zz_es_nature(String)
+<==    Columns: dict_id, dict_code, dict_note, col_name, up_dict
+<==        Row: 9901230, 1, 市电直供, zz_es_nature, 0
+<==        Row: 9901231, 2, 市电转供, zz_es_nature, 0
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@24ebe836]
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fc86a8c] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT max(dict_code) FROM t_cfg_dict WHERE col_name = ?;
+==> Parameters: zz_es_nature(String)
+<==    Columns: max(dict_code)
+<==        Row: 2
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2fc86a8c]
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d4342f] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT distinct mains_backup_method FROM t_zz_site_property order by mains_backup_method
+==> Parameters: 
+<==    Columns: mains_backup_method
+<==        Row: 1+1冷备
+<==        Row: 1+1热备
+<==        Row: N+0主用
+<==        Row: N+1热备
+<==        Row: 单路引入
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@57d4342f]
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b705034] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT dict_id, dict_code, dict_note, col_name, up_dict FROM t_cfg_dict WHERE col_name = ? order by dict_code;
+==> Parameters: zz_backup_method(String)
+<==    Columns: dict_id, dict_code, dict_note, col_name, up_dict
+<==        Row: 9901232, 1, 1+1冷备, zz_backup_method, 0
+<==        Row: 9901233, 2, 1+1热备, zz_backup_method, 0
+<==        Row: 9901234, 3, N+0主用, zz_backup_method, 0
+<==        Row: 9901235, 4, N+1热备, zz_backup_method, 0
+<==        Row: 9901236, 5, 单路引入, zz_backup_method, 0
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b705034]
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6a390e] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: SELECT max(dict_code) FROM t_cfg_dict WHERE col_name = ?;
+==> Parameters: zz_backup_method(String)
+<==    Columns: max(dict_code)
+<==        Row: 5
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6a390e]
+
+
+
+
+
+
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27910ce2] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@79c27336] will not be managed by Spring
+==>  Preparing: select * from zz_power_dict_mapping where zz_col_name = ? and power_col_name = ?
+==> Parameters: zz_es_oil_machine_level(String), es_oil_machine_level(String)
+<==    Columns: mapping_id, zz_dict_code, power_dict_code, zz_col_name, power_col_name
+<==        Row: 00b26267-5b9c-4d84-a70c-bc71bcd9e947, 1, 2, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 1e297f22-eca7-4086-8c36-4485282bd69b, 1, 2, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 3237a291-ba6b-48ef-acbe-82d39fdd0bec, 5, 5, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 5d6ea5c0-b420-4df1-b2ba-d14bf8e825d5, 9, 4, zz_es_oil_machine_level, es_oil_machine_level
+<==        Row: 82d7277e-e6ee-4655-9923-7043d380d8d1, 5, 3, zz_es_oil_machine_level, es_oil_machine_level
+<==      Total: 5
+

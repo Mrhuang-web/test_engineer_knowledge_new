@@ -1,0 +1,25 @@
+server:
+  port: 7783
+
+exportScadaImage:
+  cron: 0 0 9 * * ?
+  path: E:\test
+  ftp: ftp://127.0.0.1
+  scale: 3
+
+
+elasticsearch:
+  index_name: fsu*
+  type_name: point_history_data
+
+ftp.password62: Opstest+789
+ftp.password103: spider+999
+ftp.host103: 10.1.5.103
+ftp.host62: 10.12.70.62
+
+
+ftp:
+  host: 10.1.5.143
+  port: 21
+  username: vsftpd
+  password: wccQKPbCmx8@r*6p

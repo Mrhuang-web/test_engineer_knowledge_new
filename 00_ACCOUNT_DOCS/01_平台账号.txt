@@ -1,0 +1,131 @@
+集团：
+	连接：http://10.1.203.38:18580/spider/web/
+	现网：http://10.217.240.30:8082/#/login?redirect=%2Fapi%2FhomePage%2Findex
+		密码：HS3231jsj.s23
+	zgyd_hjj15    中国移动集团    省级管理员    bkB7U7Du8$			出问题，没功能角色
+	hjj11         省公司         省级管理员    S&Ks9{s'".6Ds
+	hjj12		  中国移动集团    省级管理员    S&Ks9{s'".6Ds
+=======
+	zgyd_hjj15    中国移动集团    省级管理员    bkB7U7Du8$
+	hjj11         省公司 - 陕西-内蒙古         省级管理员    S&Ks9{s'".6Ds
+	hjj12		  中国移动集团				省级管理员    S&Ks9{s'".6Ds
+	alauda   							    !sl!6^ig*UhUGLtM
+	hjj16									bkB7U7Du8$
+	moa/
+
+	现网账号：
+	
+	
+
+上海：
+	连接：http://10.1.203.120:9081/spider/web/ 
+	最高权限-可看所有资源
+		alauda               			    GXu8kp0*4az3Eg8emLM7
+	中国移动归属部门 - 上海全量角色 - 省公司
+		gdydhjj01							sd*5s^%?sjdJo
+	中国移动归属部门 - 上海全量角色 - 广州市
+		gdydhjjcity							sd&)29>j23H)
+	上海定制（潮州市-潮安区-20250517、上海定制；珠海市）
+		shdz001								sd&)29>j23H)    -- 归属中国移动   广东省     管理员
+		shdz002								sd&)29>j23H)    -- 归属广东省     潮州市     普通员工
+		
+	
+
+云南：
+	【注意，登录的时候需要先切换页面的中心】
+	连接：http://10.1.203.120:8580/spider/web/login-app/login
+	最高权限-可看所有资源
+	alauda               			    GXu8kp0*4az3Eg8emLM7
+	hjj001								s(23&828231.S3aAIJ
+	
+	
+
+内蒙
+	链接：http://10.1.203.120:8980/spider/web/
+	hjj001								s(23Hks.-183aAIJ   未注册成功
+	hjj002								s(23Hks.-183aAIJ
+	alauda								GXu8kp0*4az3Eg8emLM7
+	
+	
+
+广西
+	链接：http://10.1.203.120:8380/spider/web/
+	alauda								GXu8kp0*4az3Eg8emLM7
+	hjj001								s(23&828231.S3aAIJ
+	hjj002								s(23&828231.S3aAIJ
+	hjj003								s(23&828231.S3aAIJ
+	hjj4								s(23&828231.S3aAIJ
+	hjj005								s(23&828231.S3aAIJ
+	hjj006								s(23&828231.S3aAIJ
+	hjj007								s(23&828231.S3aAIJ
+	
+	现网
+		远程工具Todesk
+			广西现网远程：
+			788371930
+			Lsmm@@9527
+			电脑锁屏密码：
+			Lsmm@@9525    Lsmm@@9524
+			Lsmm@@9527
+
+		远程raylink
+			132 811 230 密码：Lsmm@@9527
+	
+	
+	
+陕西
+	链接：http://10.1.203.120:8480/spider/web/
+	alauda								GXu8kp0*4az3Eg8emLM7
+	hjj001								s(23&8289SJSG8S3aAIJ
+
+
+
+广东
+	连接：http://10.1.203.120:9080/spider/web/
+	alauda								GXu8kp0*4az3Eg8emLM7
+	hjj001								s(23&828231.S3aAIJ				全部
+	hjj002								s(23&828231.S3aAIJ				潮州市
+
+	远程：
+		raylink  78服务
+			245005632
+			bB43Q58K
+		76服务：
+			720 557 415
+			b7otw3cD
+
+
+	
+移动端
+	http://10.1.203.38:18480/spider/moa/h5/?portal_token=alauda
+	注册方式：需要在集团环境、
+	alauda               			    GXu8kp0*4az3Eg8emLM7
+	
+	
+	http://10.1.203.38:18480/spider/moa/h5/?portal_token=zgyd_hjj15
+	
+	http://10.1.203.38:18480/spider/moa/h5/?portal_token=登录名
+	
+	http://10.1.203.38:18480/spider/moa/h5/ai/chat     [目前用这个]
+	
+	
+
+现网【有对应app  -- 密码好像都要手动输入】
+	web链接：http://10.217.240.30:8082/#/api/homePage/index
+	账号：15018385819
+	密码：H.sk510!sad.
+	
+	移动端
+	账号：15018385819
+	密码：H.sk510!sad.
+	
+
+docker更包
+	如果已经打了docker，那么只需要进入docker容器，查看jar包所在位置
+	然后通过docker cp命令来把jar包更替 - 这样就是先服务容器换包
+	然后需要重启服务
+
+
+
+测全需要的数据
+授权需要的数据

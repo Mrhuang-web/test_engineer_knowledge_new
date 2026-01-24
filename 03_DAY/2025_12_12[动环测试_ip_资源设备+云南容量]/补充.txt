@@ -1,0 +1,1 @@
+SELECT * FROM t_zz_power_device WHERE device_subclass = 'FSU' LIMIT 1000

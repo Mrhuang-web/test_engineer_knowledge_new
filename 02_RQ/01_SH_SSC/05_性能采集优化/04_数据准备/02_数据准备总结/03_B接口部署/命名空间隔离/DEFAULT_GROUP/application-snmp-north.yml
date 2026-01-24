@@ -1,0 +1,17 @@
+server:
+  port: 19999
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+spring:
+  fox:
+    documentation:
+      enabled: false
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: false
+  swagger-ui: 
+    enabled: false

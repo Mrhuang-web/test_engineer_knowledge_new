@@ -1,0 +1,27 @@
+升级内容：
+1.综合优化
+2.问题修复
+3.超期服役/生命周期
+	1.触发超期服役+统计任务定时任务  curl --location --request GET 'http://localhost:28028/v1/hiddenDanger/startOverdueAll' 
+	2.告警触发   curl --location --request GET 'http://localhost:28028/v1/hiddenDanger/startOverdueAlert'
+
+升级服务：
+capacity-service
+composite-service
+configmanagement-service
+healthmanage-service
+hiddendanger-service（新服务）
+report-service
+scada-service
+ 前端
+脚本：
+	http://10.12.5.53/spider/kernel/-/tree/develop/master/bin/dbscript/3.0.25.0/ddl/超期服役_ddl_20250917.sql
+	http://10.12.5.53/spider/kernel/-/tree/develop/master/bin/dbscript/3.0.25.0/dml/超期服役_dml_20250915.sql
+
+
+配置：
+	120nacos - jt_cicd - ms-hiddendanger-service.yml
+
+
+
+

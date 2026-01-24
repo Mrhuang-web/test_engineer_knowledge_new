@@ -1,0 +1,11 @@
+ftp:
+  host: 10.1.4.113
+  port: 21
+  username: vsftpd
+  password: wccQKPbCmx8@r*6p
+  password2: wccQKPbCmx8@r*6p
+
+# fsu.ftp.download.path: "D://tmp//ftp//test//"
+fsu.ftp.update.path: "/upload/binterface/ftpProxy/"
+fsu.ftp.file.download.path: "/tmp/upload"
+# ftpProxy.download.path: "D://tmp//ftp//ftpProxy1//"

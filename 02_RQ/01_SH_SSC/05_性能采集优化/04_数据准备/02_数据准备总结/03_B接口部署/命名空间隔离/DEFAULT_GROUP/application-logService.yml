@@ -1,0 +1,41 @@
+server:
+  port: 19999
+
+elasticsearch.index: theme
+elasticsearch.index.fields.limit: 10000
+
+spring:
+  cloud.nacos.discovery:
+    ip: 10.1.202.2
+    port: 32068
+log:
+  hosts: 10.1.5.112:9200
+  userName: admin
+  password: Opstest+789
+  needAuth: false
+  maxTotalConnectionPerRoute: 1
+  maxTotalConnection: 10
+  multiThreaded: false
+  readTimeout: 20000
+  isManager: false
+
+kafka:
+  contentMaxNumber: 2000
+  partitionTotalNumber: 10
+  kafkaZkUrl: 10.1.5.109:2181
+  kafkaHosts: 10.1.5.109:9092
+
+allService: '{"alert-service":"告警模块","cinterface-service":"C接口","template-service":"容量预警模块","rbac":"权限模块","energy-service":"能耗模块","batterymanage-service":"蓄电池管理模块","importdata-service":"C接口","capacity-service":"容量模块","healthmanage-service":"健康度模块","zuul-server":"网关模块","knowledgemanage-service":"知识管理模块","ldap":"权限模块","logservice":"日志模块","currentmonitor-service":"业务模块","binterface-service":"B接口","application-report":"报表模块","composite-mirror":"封装层模块","scada":"组态模块","config":"配置文件模块","configmanagement-service":"配置模块"}'
+
+#系统性能数据统计时间每天
+sysDataTime: "0 10 1 * * ?"
+
+
+#杭研的数据统计接口url
+cmccAnalyticsServerUrl: "http://120.79.221.0:86/analyzer/api/"
+#杭研的数据统计接口appSecret
+cmccAnalyticsAppSecret: "dxefIupji3m68MLvC4xrNIuQPvSRmThrpxa5PS9NEXMqKHrDdgCdY2Zjq93v7pVlXybO5tJYmE0="
+#是否发送杭研统计数据 1为发送 0为不发送
+cmccAnalyticsIsSend: 0
+#杭研的数据统计定时发送间隔，单位是毫秒，不配置的话默认是10秒
+cmccAnalyticsCron: 10000

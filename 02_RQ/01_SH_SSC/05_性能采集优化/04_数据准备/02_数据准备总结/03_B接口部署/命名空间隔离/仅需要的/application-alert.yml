@@ -1,0 +1,100 @@
+server:
+  port: 8130
+
+# kafka.topic.topic_system_alerts: TOPIC_SYSTEM_ALERTS      # 系统告警kafka主题
+kafka.topic.topic_system_alerts: spider_binterface_alarm      # 系统告警kafka主题
+
+#中间库告警日志统计任务
+alarmStatic.cron: 0 1/2 * * * ?
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  devtools:
+    restart:
+      enabled: true
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+
+# 告警处理开关  
+alertStatusMasksResolver:
+  DelayStatusMaskResolver.switch: true                  # 延时告警处理开关    true 开启   false 关闭
+  DuplicateCountStatusMaskResolver.switch: true         # 告警翻转处理开关    true 开启   false 关闭         
+  ShieldStatusMaskResolver.switch: true                 # 告警屏蔽处理开关    true 开启   false 关闭
+  DeviceAlarmRelationStatusMaskResolver.switch: true    # 主次告警处理开关    true 开启   false 关闭
+  DeviceDelayStatusMaskResolver.switch: true            # 设备层次方面的延时告警处理开关 true 开启 false 关闭
+  AlertFilterStatusMaskResolver.switch: true            # 告警过滤处理开关 true 开启 false 关闭
+# 告警处理定时任务配置
+AlertStatusProcess.job:
+  switch: true          # 开关    true 开启, false 关闭
+  fixedDelay: 10000     # 定时处理间隔      单位毫秒
+
+logging:
+  level:
+    root: info
+    org.springframework: info
+    com.aspire.mirror.alert: info
+  file: ./alert-service.log
+
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 60000
+
+FLOW_KEY: gzsjclgd0523
+FULLNAME: admin
+ORDER_AUTOGEN_LEVEL: 4,5
+
+WSDL_URL: http://10.1.4.245:58080/bpmx/service/ProcessService?wsdl
+
+orderAutoGen.cron: 0 0/5 *  * * ?
+#以逗号分隔
+c_interface_precinct: 01-01
+alert_mete_code: 001018,004001,005001,005021,005035,006023,006020,007002,008011,008023,008032,008043,014004,014005,017010,068008,087010,087012,087020,087021,087040,088001,088002,088003,092008,092010
+c_precinct_id: 01-01,01-16,01-20,01-11,01-15
+alert.timer: 0 0/1 * * * ?
+schedule.on: 1
+activeAlert.timer: 0 0/1 * * * ?
+map_alm_showWay: showAll
+b_interface_precinct: 01-01    #集团站点配1, 省站例如陕西配置01-24
+#map_alm_showWay: showNot
+#map_alm_showWay: 17-017031;6-006003
+
+ftp.userName: root
+ftp.passWord: Opstest+789
+ftp.ip: 10.12.70.61
+ftp.host: 10.12.70.61
+ftp.port: 2121
+ftp.currentDir: /GZPT
+
+showPrecinctId: 01-01
+
+#报表最大行数限制
+reportMaxRow: 200000
+
+#关于IT运维首页的配置
+itShowConfig:
+  huchiId: 01-01  #呼池的站点id
+  hachiId: 01-02  #哈池的站点id
+  nanjiId: 01-03  #南基的站点id
+  beigangId: 01-04 #北方信息港的站点id
+
+alert_resolve_ref_doc: http://10.12.70.62:8998/alertResolveRefDoc/biz_ref_doc.xlsx
+
+# mybatis:
+#   configuration:
+#     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+alertEventListener.VisibleAlertEventListner.switch: true
+
+synModify.meteModel.meteKind.enableAlarmLevel: false
+
+# logging:
+#   level:
+#     com.aspire.gemc: debug
+
+alert.revoke.save.enable: true
+
+# 消除告警列表查询新改造开关
+cancelAlert.list.query.new.enabled: true

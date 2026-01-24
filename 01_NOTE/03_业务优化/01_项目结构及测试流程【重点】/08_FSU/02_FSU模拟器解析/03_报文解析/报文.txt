@@ -1,0 +1,63 @@
+<?xmlversion='1.0'encoding='utf-8'?><Response><PK_Type><Name>GET_DATA_ACK</Name></PK_Type><Info><FSUID>2025120504</FSUID><Values><DeviceList><DeviceID="10010000000001"><TSemaphoreType="3"ID="001301"SignalNumber="000"MeasuredVal="89.0"SetupVal="88.0"Status="0"Time="2025-12-1921:13:34"/></Device></DeviceList></Values><Result>1</Result><FailureCause/></Info></Response>
+2025-12-19 21:15:39.353 DEBUG 7 --- [ol-8-thread-266] c.a.g.b.c.service.ClientServiceImpl      : getPointData end webservice,fsuCode=2025120504,signalIDs=[DeviceSignalMeasurementIds(deviceID=10010000000001, signIDs=[SignalMeasurementId(ID=001301, signalNumber=null)])]，
+
+
+
+
+
+发送webservice请求：<?xmlversion="1.0"encoding="UTF-8"?><Request><PK_Type><Name>GET_DATA</Name></PK_Type><Info><FSUID>2025120504</FSUID><DeviceList><DeviceID="10010000000001"><ID>001301</ID></Device></DeviceList></Info></Request>
+2025-12-19 21:52:49.454  INFO 7 --- [ol-8-thread-309] c.a.g.b.c.webservice.WebServiceHelper    : 
+
+
+接收webservice响应：<?xmlversion='1.0'encoding='utf-8'?><Response><PK_Type><Name>GET_DATA_ACK</Name></PK_Type><Info><FSUID>2025120504</FSUID><Values><DeviceList><DeviceID="10010000000001"><TSemaphoreType="3"ID="001301"SignalNumber="000"MeasuredVal="2.0"SetupVal="16.0"Status="0"Time="2025-12-1921:50:44"/></Device></DeviceList></Values><Result>1</Result><FailureCause/></Info></Response>
+
+
+
+2025-12-19 21:52:49.455 DEBUG 7 --- [ol-8-thread-309] c.a.g.b.c.service.ClientServiceImpl      : getPointData end webservice,fsuCode=2025120504,signalIDs=[DeviceSignalMeasurementIds(deviceID=10010000000001, signIDs=[SignalMeasurementId(ID=001301, signalNumber=null)])]，耗时=197ms
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Request>
+  <PK_Type>
+    <Name>GET_DATA</Name>
+  </PK_Type>
+  <Info>
+    <FSUID>2025120504</FSUID>
+    <DeviceList>
+      <Device ID="10010000000001">
+        <ID>001301</ID>
+      </Device>
+    </DeviceList>
+  </Info>
+</Request>
+
+
+
+
+
+<Response>
+  <PK_Type>
+    <Name>GET_DATA_ACK</Name>
+  </PK_Type>
+  <Info>
+    <FSUID>2025120504</FSUID>
+    <Values>
+      <DeviceList>
+        <Device ID="10010000000001">
+          < TSemaphoreType="3"
+             ID="001301"
+             SignalNumber="000"
+             MeasuredVal="2.0"
+             SetupVal="16.0"
+             Status="0"
+             Time="2025-12-19 21:50:44"/>
+        </Device>
+      </DeviceList>
+    </Values>
+    <Result>1</Result>
+    <FailureCause/>
+  </Info>
+</Response>

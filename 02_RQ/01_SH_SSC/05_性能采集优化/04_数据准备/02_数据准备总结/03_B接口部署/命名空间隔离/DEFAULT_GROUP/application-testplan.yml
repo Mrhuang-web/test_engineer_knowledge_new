@@ -1,0 +1,44 @@
+server:
+  port: 18816
+  max-http-header-size: 803600
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helperdialect: mysql
+  reasonable: true
+  support-methods-arguments:  true
+  params: count=countSql
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+testplanValidTask:
+  cron: 0 29 * * * ?
+  #cron: "0 8 18 12 6 ?"
+
+shanxiUploadUrl: /shanxi/ #ftp山西文件目录（默认：/shanxi/）
+#compositeUrl: http://10.12.3.79:28129/ #composite服务地址
+#性能指标分析实时数据执行定时器
+performanceIndexAnalysisTask: 0 0/30 * * * ?
+
+# ftp:
+#   host: 10.1.203.120
+#   port: 21
+#   username: vsftpd
+#   password: sudoroot#202L
+ftp:
+  host: 10.1.4.113
+  port: 21
+  username: vsftpd
+  password: wccQKPbCmx8@r*6p
+  password2: wccQKPbCmx8@r*6p
+batteryUnit.cron: 0 0/30 * * * ?

@@ -1,0 +1,203 @@
+C接口改造测试说明
+C接口一共拆分为5个服务，cinterface-reader-service、cinterface-writer-service、cinterface-auditsync-service、cinterface-tcpclient-service、cinterface-scheduletask-service，所有服务都是对接多个下级sc。
+
+reader重启执行curl
+curl -X GET --header 'Accept: text/plain' 'http://localhost:28090/v1/cinterfaceReader/refreshReaderQueue'
+
+1、cinterface-reader-service服务主要功能，不间断读取中间库告警数据及历史数据，把读取到的原始数据发送到kafka。测试要点：
+	（1）不间断读取告警及历史数据。如果本次读取中间库，没有数据，将会进行延期读取，告警数据默认延期1分钟，历史数据默认延期15分钟，可以通过配置项进行修改延期时间：
+		app.reader.alarmDelaySecond: 60 #告警无数据延时时间，默认1分钟
+		app.reader.hisDelaySecond: 900 #历史数据无数据延时时间，默认15分钟
+	（2）读取到中间库的数据直接发送到kafka，按中间库不同版本发送到对应topic
+		历史数据ODS 3.5版本topic：signal_ods_v35
+		历史数据ODS 4.0版本topic：signal_ods_v40
+		告警数据ODS 3.5版本topic：alarm_ods_v35
+		告警数据ODS 4.0版本topic：alarm_ods_v40
+	（3）startrocks自动消费上面4个topic，写入mpp对应的表(mpp对应的库为spider_mpp)：
+		signal_ods_v35 -> fact_ods_signal_value_v35
+		signal_ods_v40 -> fact_ods_signal_value_v40
+		alarm_ods_v35 -> fact_ods_alarm_v35
+		alarm_ods_v40 -> fact_ods_alarm_v40
+
+2、cinterface-writer-service服务主要功能，消费告警数据和历史数据的4个topic，组装成对应的dwd数据，写入ES和MPP中。
+	（1）历史数据消费topic：signal_ods_v35、signal_ods_v40，组装成dwd数据，正确写入ES（和当前写入ES一样）和MPP（对应的表fact_dwd_signal_value）中。
+	（2）告警数据消费topic：alarm_ods_v35、alarm_ods_v40，组装成dwd数据，活动告警写入alert_alerts表中，历史告警写入ES和当前写入ES一样）和MPP（对应的表fact_dwd_alarm_value）中。
+	
+3、cinterface-auditsync-service服务主要功能，站点、机房、设备、测点的稽核同步。
+	（1）原有的稽核同步逻辑不变，支持通过页面新增站点接入及稽核
+	（2）原有的回填功能保存不变，t_cfg_precinct表新增了dim_spatial_id字段，在机房ID回填的时候要同时回填dim_spatial_id字段；t_cfg_device表新增了dim_device_id字段，在设备ID回填的时候要同时回填dim_device_id字段。
+	（3）t_cfg_metemodel_detail表新增了signal_number字段，4.0版本的测点，通道号要同时保存到mete_no和signal_number中；3.5版本的测点，mete_no为空，自动生成一个数字保存到signal_number作为通道号
+	（4）3.5版本中间库测点发生变化（如中间库新增或者减少测点），稽核同步后，t_cfg_metemodel_detail表中mete_code+up_mete_id一样的情况下，signal_number不能变。
+	（5）通信机楼、数据中心的楼栋，非合并站点的时候，如果中间库修改了站点名称，稽核同步后，t_cfg_precinct表的站点名称和t_cfg_site_mapping表的mapping_name会自动修改中间库的站点名称
+
+4、cinterface-tcpclient-service服务主要功能，实时数据请求发送及监听返回结果。
+	（1）能正常建立tpc连接
+	（2）实时数据请求发送及监听返回结果
+
+5、cinterface-scheduletask-service服务主要功能，定时清理中间库历史数据表、告警数据表、spider库的告警同步日志表（ci_alarm_sync_log），定时全量稽核任务
+	（1）定时清理中间库历史数据表数据，4.0版本是删除D_SignalH表数据，3.5版本是删除D_TAH、D_TDH表数据。保留数据范围可以通过signalHCleanHour配置项进行配置，如"signalHCleanHour":-24，表示保留24小时内的数据。
+	（2）定时清理中间库告警表数据，删除的表是D_ActiveAlarm。保留数据范围可以通过alarmCleanHour配置项进行配置，如"alarmCleanHour":-48，表示保留48小时内的数据。
+	（3）定时删除spider库的告警同步日志表（ci_alarm_sync_log）数据。执行（2）的同时，会执行此项任务。保留数据范围通过app.scheduletask.clearSyncLogDay: 7 进行配置。
+	（4）定时全量稽核任务，和现在功能一致。
+
+6、t_cfg_cserverinfo表说明，此表新增了5给自动（测试环境已执行新增字段的脚本）
+	status：0-启用mpp模式，1-停用，2-启用旧模式
+	config_info：配置信息，json格式
+	reader_node_no：cinterface-reader-service服务多节点部署的情况下，通过此字段判断此中间库在哪个节点生效
+	tcp_node_no：cinterface-tcpclient-service服务多节点部署的情况下，通过此字段判断此tcp在哪个节点生效
+	schedule_node_no：cinterface-scheduletask-service服务多节点部署的情况下，通过此字段判断此定时任务在哪个节点生效
+
+7、部署说明：
+	（1）C接口5个服务、configmanagement服务，使用develop_mpp分支打包，其它包可以使用develop分支的包
+	（2）C接口的配置文件已经存在测试环境的nacos中
+	（3）docker run命令，以cinterface-auditsync-service为例：
+	docker run --name cinterface-auditsync-service  --net host --log-driver=json-file --log-opt max-size=100m --log-opt max-file=3  --env ENV_APP_NAME=cinterface-auditsync-service --env ENV_NODE_NO=1 --env ENV_NACOS=10.1.203.120:8848 --env ENV_NACOS_PASSWORD=Dh@159_dev  --env ENV_TYPE=prod -v /tmp/logs/cinterface-auditsync:/opt/data/logs/ -d 10.1.6.34:8080/spider/cinterface-auditsync:spider3.0.13.0_kernel_SYT_135
+
+8、其它说明
+	（1）测试C接口版本要包括3.5和4.0版本
+	（2）以前是一个中间库对应一个C接口服务，改造后是一个C接口服务对接N个中间库，所以测试的时候要最少对接两个及两个以上中间库同时测试
+	
+8、配置项说明，对单个下级sc生效（可以理解为对带个中间库生效），通过t_cfg_cserverinfo表的config_info字段进行配置，json格式，样例：{"hasHisDataNotify":false, "signalHCleanHour":-24, "signalHCleanCron":"0 46 16 * * ?", "alarmCleanHour":-48, "alarmCleanCron":"0 46 16 * * ?", "filterOldData":true, "isStandardNMAlarmID":false, "auditSyncCron":"0 46 16 * * ?", "enableTcpHeartbeatHandler":false}
+	/**
+     * 使用模块：reader
+     * 是否开启ID溢出自动处理
+     */
+    Boolean hasHisDataNotify = false;
+
+    /**
+     * 使用模块：reader
+     * 历史数据保存时长
+     */
+    Integer signalHCleanHour = -24;
+
+    /**
+     * 使用模块：reader
+     * 清除历史数据任务cron
+     */
+    String signalHCleanCron;
+
+    /**
+     * 使用模块：reader
+     * 告警数据保存时长
+     */
+    Integer alarmCleanHour = -48;
+
+    /**
+     * 使用模块：reader
+     * 清除告警数据任务cron
+     */
+    String alarmCleanCron;
+
+    /**
+     * 使用模块：auditsync
+     * 每天稽核同步任务cron
+     */
+    String auditSyncCron;
+
+    /**
+     * 以站点映射方式接入
+     */
+    Boolean hasSiteMapping = true;
+
+    /**
+     * 使用模块：auditsync
+     * 是否存在子设备id字段
+     */
+    Boolean hasSubDeviceIdColumn = false;
+
+    /**
+     * 使用模块：auditsync
+     * 生产厂商稽核
+     */
+    Boolean modifyProductorFlag = false;
+
+    /**
+     * 使用模块：auditsync
+     * 是否关闭修改t_cfg_precinct表的站点名称：云南省关闭同步修改t_cfg_precinct表的站点名称
+     */
+    Boolean closeSyncPrecinctName = false;
+
+    /**
+     * 使用模块：auditsync
+     * M_Area表是否有NodeType字段标识
+     */
+    Boolean hasAreaSiteSign = false;
+
+    /**
+     * 使用模块：auditsync
+     * 3.5版本，M_Device表是否有deviceType字段标识
+     */
+    Boolean hasDeviceTypeColumn = false;
+
+    /**
+     * 使用模块：tcpclient、auditsync、reader
+     * mysql连接是否使用useSSL=false配置，mysql 8.0版本需要配置为true
+     */
+    Boolean isUseSSL = false;
+
+    /**
+     * 使用模块：tcpclient
+     * 是否开启TCP心跳检测
+     */
+    Boolean enableTcpHeartbeatHandler = true;
+
+    /**
+     * 使用模块：tcpclient
+     * 是否开启TCP时钟检测
+     */
+    Boolean enableTcpTimeCheckHandler = false;
+
+    /**
+     * 使用模块：tcpclient
+     * 解析返回报文的ta,td时是否统一用float解析value
+     */
+    Boolean tatdValueAllFloat = true;
+
+    /**
+     * 使用模块：tcpclient
+     * isEnableTerminalId是否都是1
+     */
+    Boolean enableTerminalId = true;
+
+    /**
+     * 使用模块：tcpclient、auditsync
+     * 是否使用测点映射t_cfg_signal_mapping
+     */
+    Boolean needSignalMapping = false;
+
+    /**
+     * 使用模块：tcpclient
+     * terminalID是否是char类型
+     */
+    Boolean terminalIDChar = false;
+
+    /**
+     * 使用模块：tcpclient、auditsync、reader
+     * 3.5版本，测点表是否有NMAlarmID字段标识
+     */
+    Boolean hasNMAlarmIDColumn = true;
+
+    /**
+     * 使用模块：tcpclient、auditsync
+     * 是否截取NMAlarmID后面6位作为测点编码
+     */
+    Boolean standardNMAlarmID = false;
+	
+	/**
+	 * 使用模块：writer
+     * 是否三天前的历史数据
+     */
+    Boolean filterOldData = true;
+
+    /**
+	 * 使用模块：writer
+     *  是否开启：广东特殊化需求,非南基的数据接入历史数据(4.0)也按照3.5进行拼接channelId
+     */
+    Boolean transformFlag = false;
+
+    /**
+	 * 使用模块：writer
+     * 300版本，存在NMAlarmID，山西
+     */
+    Boolean isStandardNMAlarmID = false;
+	

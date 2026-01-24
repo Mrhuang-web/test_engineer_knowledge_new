@@ -1,0 +1,34 @@
+{
+  "注册上报" : {
+    "transaction" : "注册上报",
+    "sampleCount" : 1000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 766.315,
+    "medianResTime" : 661.0,
+    "minResTime" : 12.0,
+    "maxResTime" : 1680.0,
+    "pct1ResTime" : 1502.0,
+    "pct2ResTime" : 1568.7999999999997,
+    "pct3ResTime" : 1622.98,
+    "throughput" : 584.4535359438925,
+    "receivedKBytesPerSec" : 356.72212887200465,
+    "sentKBytesPerSec" : 509.68457773232024
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 1000,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 766.315,
+    "medianResTime" : 661.0,
+    "minResTime" : 12.0,
+    "maxResTime" : 1680.0,
+    "pct1ResTime" : 1502.0,
+    "pct2ResTime" : 1568.7999999999997,
+    "pct3ResTime" : 1622.98,
+    "throughput" : 584.4535359438925,
+    "receivedKBytesPerSec" : 356.72212887200465,
+    "sentKBytesPerSec" : 509.68457773232024
+  }
+}

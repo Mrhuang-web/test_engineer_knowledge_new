@@ -1,0 +1,26 @@
+server:
+  port: 28034
+
+kafka:
+  enableListener: true
+  topic:
+    group_share_alarm: "group_share_alarm_p3"
+
+group-share-alarm.filter.enableNotify: true
+group-share-alarm.filter.taweiAlarmTitle:
+  - "交流输入停电告警"
+
+#group_share_alarm.filter.specialty:  #传输或无线告警
+#  - "specialty:1|alarm_name:[衍生告警]234G共站基站退服告警,[衍生告警]S1ap链路故障衍生基站退服,[衍生告警]地市VIP基站退服数超门限,[衍生告警]省VIP基站退服率超比例,累计地市2G基站退服数超门限（40个）,累计地市2G基站退服数超门限（120个）,突发地市2G基站退服数超门限（40个）,突发地市2G基站退服数超门限（120个）,突发地市4G基站退服数超门限（60个）,突发地市4G基站退服数超门限（150个）,累计地市4G基站退服数超门限（60个）,累计地市4G基站退服数超门限（150个）,地市高铁专网GSM-RRU退服数超门限（30个）,地市高铁专网GSM-RRU退服数超门限（90个）,地市高铁专网LTE-RRU退服数超门限（30个）,地市高铁专网LTE-RRU退服数超门限（90个）,2G基站退服告警,OML故障告警,eNodeB退服告警,基站退服,基站退出服务,ENBEquipmentAdminDown,BASE STATION FAULTY,ReachabilityProblem,网元断链告警,NEA和网元断连,网元连接中断,NE O&M CONNECTION FAILURE|"   #无线
+#  - "specialty:3|alarm_name:ETH_LOS,R_LOS,MUT_LOS,OSC_LOS,以太网物理接口(ETPI) 信号丢失(LOS),以太网物理接口(ETPI) Ethernet端口未连接,信号丢失(LOS),输入无光告警,信号丢失告警,信号丢失(WDM)告警,[衍生告警]中兴OTN同一网元出现多条输入无光告警,[衍生告警]中兴WDM同一网元出现多条输入无光告警,[衍生告警]中兴PTN同一网元出现多条以太网物理接口(ETPI) 信号丢失(LOS)告警,[衍生告警]中兴PTN同一网元出现多条以太网物理接口(ETPI) Ethernet端口未连接告警,[衍生告警]中兴SDH同一网元出现多条信号丢失(LOS)告警,[衍生告警]华为OTN同一网元出现多条MUT_LOS告警,[衍生告警]华为OTN同一网元出现多条R_LOS告警,[衍生告警]华为OTN同一网元出现多条ETH_LOS,[衍生告警]华为OTN同一网元出现多条OSC_LOS告警,[衍生告警]华为WDM同一网元出现多条MUT_LOS告警,[衍生告警]华为PTN同一网元出现多条ETH_LOS告警,[衍生告警]华为SDH同一网元出现多条R_LOS告警,[衍生告警]中兴OTN同一网元出现多条信号丢失告警,[衍生告警]华为PTN环上一点中断ETH_LOS,[衍生告警]华为SDH环上一点中断R_LOS,[衍生告警]中兴PTN环上一点中断以太网物理接口(ETPI) 信号丢失(LOS),[衍生告警]中兴SDH环上一点中断信号丢失(LOS),[衍生告警]中兴PTN环上一点中断以太网物理接口(ETPI) Ethernet端口未连接,[衍生告警]华为WDM环上一点中断MUT_LOS,[衍生告警]华为PTN环上单纤断,[衍生告警]华为WDM环上单纤断,[衍生告警]中兴SDH环上单纤断,[衍生告警]华为SDH环上单纤断,[衍生告警]中兴PTN环上单纤断,[衍生告警]中兴OTN环上单纤断,[衍生告警]华为OTN环上单纤断,[衍生告警]华为SDH环上网元断开,[衍生告警]华为PTN环上网元断开,[衍生告警]中兴PTN环上网元断开,[衍生告警]中兴PTN城域汇聚层及以上环上单点中断,[衍生告警]华为PTN城域汇聚层及以上环上单点中断,[衍生告警]华为SDH城域汇聚层及以上环上单点中断,[衍生告警]中兴SDH城域汇聚层及以上环上单点中断,[衍生告警]中兴SDH单链中断,[衍生告警]华为SDH单链中断,[衍生告警]中兴PTN单链中断,[衍生告警]华为PTN单链中断,[衍生告警]中兴SDH环上两点中断信号丢失,[衍生告警]华为SDH环上两点中断信号丢失,[衍生告警]华为汇聚SDH环上两点中断信号丢失,[衍生告警]中兴汇聚SDH环上两点中断信号丢失,[衍生告警]中兴SDH环上网元断开,[衍生告警]华为PTN环上两点中断,[衍生告警]中兴PTN环上两点中断,[衍生告警]华为PTN汇聚层环上两点中断,[衍生告警]中兴PTN汇聚层环上两点中断,[衍生告警]华为OTN同机房多设备出现多条MUT_LOS,[衍生告警]华为OTN环上一点中断,[衍生告警]中兴OTN环上一点中断输入无光告警,[衍生告警]中兴WDM环上一点中断,[衍生告警]二干波分单点中断告警,[衍生告警]传输共用光缆段,[衍生告警]城域网传送网中承载LTE业务的L3层PTN网元的NNI口线路中断告警,NE_COMMU_BREAK ,NE_NOT_LOGIN,NE_COMMU_BREAK,[衍生告警]同维护单位网元断链告警衍生告警,承载网管系统告警 网元断链,无脱管告警,承载网管系统告警网元断链,[衍生告警]城域网汇聚层及以上传输网元脱管超过3个|"   #传输
+
+
+
+group-share-alarm.filter.specialty: #传输或无线告警
+  - "specialty:1|alarm_name:RADIO X-CEIVER ADMINISTRATION MANAGED OBJECT FAULT,RADIO X-CEIVER ADMINISTRATION MANAGED OBJECTS IN TRANSCEIVER GROUP MANUALLY BLOCKED,No Connection,HW Fault,Power Loss,Link Failure,SFP HW Fault,Heartbeat Failure,PLMN Service Unavailable,射频单元不在位告警,射频单元掉电,RHUB不在位,小区退服,基站掉电通知,NEA和网元断连,基站退服,射频单元不在位告警,RRU电源故障告警,RHUB不在位告警,小区退服,基站掉电通知,NEA和网元断连,基站退服,射频单元维护链路异常告警,NR小区不可用告警,网元连接中断,gNodeB退服告警,射频单元维护链路异常告警,射频单元维护链路异常告警(高铁),GSM小区退出服务告警,GSM小区退出服务告警(高铁),射频单元维护链路异常告警,射频单元交流掉电告警,射频单元直流掉电告警,射频单元业务不可用告警,小区不可用告警,小区不可用告警(高铁),小区不可用告警(精品网),[衍生告警]S1ap链路故障衍生基站退服,网元连接中断告警,RX-TX [10] MC-RRH-NOT-REACHABLE [39],RX-TX [10] MC-RH-NOT-REACHABLE [39],CELL [43] LOSS-OF-ALL-CHAN [3],NO CONTACT TO BOARD,BCCH MISSING,BCF FAULTY,CELL FAULTY,CELL OPERATION DEGRADED,No connection to unit,NE3SWS AGENT NOT RESPONDING TO REQUESTS,RRU链路断,小区退服,网元链路断,PA去使能,RRU链路断,小区中断告警,RRU链路断,超级小区CP退出服务,超级小区CP关断告警,设备掉电,LTE小区退出服务,LTE小区退出服务(高铁),LTE小区退出服务(精品网),小区关断告警|"   #无线
+  - "specialty:3|alarm_name:ETH_LOS,R_LOS,MUT_LOS,以太网物理接口(ETPI) 信号丢失(LOS),信号丢失(LOS),输入光功率(dBm)越限（告警低门限）,RLOS|"   #传输
+
+
+audit:
+  provinceId: 01-01
+  provinceName: 广东省

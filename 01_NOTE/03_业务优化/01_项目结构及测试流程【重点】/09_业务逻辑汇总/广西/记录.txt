@@ -1,0 +1,24 @@
+1、获取映射关系
+	t_sync_field_config
+
+2、拿到映射关系后
+	先拿表里最新时间，
+	然后根据这个最新时间，到es中找到这个时间段的索引，再回显回来【索引取年月前缀，还要具体到里面的日期】 -- 具体日期day字段要与最新日期一致，才会回显
+
+	站点（索引是按年，具体根据day里面再进行二次匹配）
+	机房
+
+
+
+3、综资相关表
+	设备映射
+		select * from t_device_type_mapped
+		select distinct t.zz_device_type as id, t.zz_device_type as name from t_device_type_mapped t where is_del = 1 and t.zz_device_type is not null
+
+
+ip涉及
+	服务：resource
+
+
+
+
