@@ -1,0 +1,182 @@
+请使用 Python `asyncio` 实现一个高性能 Mock Server,支持TCP和UDP协议
+
+1 配置文件说明: 必须满足：协议定义通过配置实现，目前给出的部分厂商的实现，必须考虑通用实行，根据配置进行,绝对禁止硬编码实现
+1.1 程序启动**：程序启动时读取 系统配置文件`sys_config.json`。log为日志配置，performance为性能模式配置，当启用性能模式，不写设备日志
+1.2 加载配置文件，循环处理fsu_list中的fsu，根据 protocol_type（tcp或udp），每个fsu启动一个服务，根据fsu配置项port监听端口；
+1.3 根据fsu的config_dir，找打fsu的配置目录，加载目录下的“fsu_devices.json”文件
+1.4 循环处理device_list的device，加载protocol_template配置的文件，解析设备协议信息
+1.5 加载加载protocol_template对应的配置的文件，
+    1.5.1 vendor：设备厂商的描述
+    1.5.2 rule_file： 设备的透传数据协议数据帧的应答规则文件,以config\conghua_qinyun_01\bangsun_old\0101.json为例说明：
+        - 108B： 功能位，对应 data_frame_type 的值；
+        - delay_ms： 返回延迟时间，单位毫秒，整型，返回50~配置值之间的随机数，性能模式下无延迟
+        - data， 透传数据协议数据帧的返回规则，key：value形式，key为
+
+    1.5.3 protocol定义了设备 透传数据 协议的组成，
+        1.5.3.1 dynamic_length，是否变长，
+            - 如果是变长，total_length 配置没有意义。
+            - 透传数据 组成: pdu_left + data_frame + pdu_tailer,
+            - 无论是否变长，pdu_left, pdu_tailer 长度是固定的,最终的 透传数据 的长度是pdu_left， data_frame ，pdu_tailer三部分长度之和
+
+        1.5.3.2 pdu_left,data_frame,pdu_tailer说明
+            1.5.3.2.1 pdu_left，data_frame，pdu_tailer：都是数组类型, 分别代表 透传数据 协议的协议数据单元左边，数据帧，尾部。字段定义格式说明如下：
+                - name：字段名或字段标识
+                - length： 字段长度
+                - endian：字节序，如果为little，需要进行字节序处理，默认为大端模式
+                - type： 字段类型，一般为 hex
+                - value： 字段默认值，
+                特殊说明：
+                - 其中name = start， 代表为 透传数据 协议的第一个字段，在pdu_left中定义
+                - 其中name = end， 代表为 透传数据 协议的最后一个字段，在pdu_tailer中定义
+        1.5.3.3 data_frame_type_flag，定义了通过哪个字段识别数据帧的类型
+            1.5.3.3.1 支持通过一个字段来匹配数据类型，实现原则如下：
+                - 根据透传数据协议配置文件protocol.data_fram.data_frame_type_flag来定位命令类型字段，如配置为"data_frame_type_flag": "data_frame_type"，表示需根据字段name为data_frame_type，识别数据帧类型标识。
+                - 优先从protocol.pdu_left查找name为data_frame_type的字段，找不到再从 data_frame查找。 最后从pdu_tailer查找
+            1.5.3.3.1 对于数据类型2级识别模式，支持配置多个字段来拼接来比对匹配。
+                - 透传数据协议配置文件的protocol.data_fram.data_frame_type_flag配置方式："data_frame_type_flag": "{cid2}_{group}_{type}"；
+                - 字段识别通过3个字段组合来识别，例如{cid2}_{group}_{type}组合的值为：48_F0_E1，花括号中的字段名可能配置在pdu_left中，也可能在data_frame中
+
+        1.5.3.4 data_frame 数据帧的详细说明
+            - data_frame_length： 数据帧长度，一般而言，每种类型的数据帧，长度是一定的
+            - data_frame_type： 数据帧的类型
+            - align: 对齐方式，左对齐还是右对齐
+            - padding: 补充方式，配置为或不配置默认补0,
+            - req_data_list:  请求数据帧的字段定义，接收到的数据帧按照这里的进行解码，字段定义参考 1.5.3.2.2
+            - resp_data_list: 应答数据帧的字段定义，应答的数据帧按照这里的规则进行编码，字段定义参考 1.5.3.2.2
+            特殊处理要求：
+            对于haineng.json, jiangsuyao.json配置文件，由于是变长的协议，在pdu_left中配置了
+            {
+                "name": "length",
+                "length": 1,
+                "type": "hex",
+                "value": "{{data_frame_length}}"
+            }
+            先按解析pdu_left，得到数据帧类型（命令类型）data_frame_type（如果是小端模式，需要进行处理），
+            然后根据data_frame_type，找到配置文件中data_frame中对应的data_frame_type，取data_frame_length
+            需要实现通过{{data_frame_length}}的方式读取data_frame中，对应的取data_frame_length，实现代码
+
+            透传数据协议配置文件protocol.data_frame[0].resp_data_list中，返回应答字段默认定义的是data_frame中的字段，若resp_data_list中;但部分厂家，返回码字段可能在protocol.pdu_left中，通过配置支持，如配置resp_data_list中，字段名{pdu_left}_{cid2}，表示写pdu_left中的字段
+
+    1.5.4 rule_file_list： 返回规则文件列表，规则文件匹配顺序是：
+        - 规则文件加载：如果有fsuid.json文件，加载到fsu_rule对象，如果没有fsuid.json，则将default.json，加载到default_rule对象；
+        - 返回规则匹配，根据data_frame_type值，优先先从fsu_rule中匹配，匹配到相同的data_frame_type则返回规则，按照规则生成返回；如果没有，就从default_rule对象中匹配data_frame_type；
+        - 如果data_frame_type没有匹配到，则进行异常处理
+        配置项说明，config\bangsun_old\rules\default.json为例说明：
+        - 108B： 功能位，对应data_frame_type的值；
+        - delay_ms： 返回延迟时间，单位毫秒，整型，返回50~配置值之间的随机数，性能模式开启则不做延迟
+        - data， 透传数据协议数据帧的返回规则，key：value形式，key为resp_data_list中的name，value是返回值；长度不足的，按照data_frame_list中的对齐和补充方式执行
+
+    1.5.5 checksum 校验和的处理规则
+    1.5.5.1 各个厂商 checksum 校验和的规则不同。主要有差异有如下：
+        - checksum长度不同，有2字节的，有1字节的
+        - 计算范围不同，大部分是去掉最前最后一个字段做校验和；
+    1.5.5.2 厂商名定义参考 vendor.json。
+    1.5.5.3 厂商的处理方式
+        vendor	长度	计算范围	是否小端模式
+        邦讯-旧版	2	对star和end之间的字段	是
+        海能	1	data_frame所有字段	否
+        亚奥	1	data_frame所有字段	否
+
+
+
+2 基础框架：使用 `asyncio.DatagramProtocol` 建立服务，满足性能测试需求。
+2.1 udp协议包编解码分三层处理:
+2.1.1 udp server收到sc发送给fsu的udp请求后，handle_datagram的方法调用B接口外层协议编解码器类BInterfaceCodec中的decode方法进行解码；
+2.1.2 BInterfaceCodec中的decode按照B接口规范解码后，调用透传数据编解码类ThroughDataCodec的decode方法进行解码处理，编解码规则参考protocol_template中的protocol节点配置进行解码
+2.1.2 通过 data_frame_type_flag，得到数据帧的类型，再根据数据帧的req_data_list定义得到解码的规则，进行数据帧的规则进行解码；
+2.1.3 udp_server需要主动发送心跳，心跳包编码调用BInterfaceCodec的encode实现，要求如下：
+    - P_dest_addr:目标设备地址, 为SC的地址为0x00，长度8bytes；
+    - P_src_addr：源设备地址，为fsuid， 长度：20bytes
+    - P_subDevType： 子设备类型，填写 01，长度：1 byte
+    - P_pLen： 协议族数据包长度，值为3，长度：2 byte
+    - RtnFlag： 值为 ED， 长度：1byte
+    - CommandType：命令号，为0x0002,长度：2 byte
+    没有透传数据长度和透传数据。
+    发送间隔为：系统配置文件中，fsu配置的heartbeat_interval，默认值120
+
+B接口源地址和目的地址通用原则，必须根据发送方向判断
+1、发送方向是SC发送给fsu(即mock），源地址是SC，8字节，填充 00；目的地址填fusid，20字节，左对齐，右补零；
+2、发送方向是fsu(即mock）发送给SC时，源地址填fusid，20字节，左对齐，右补零；目的地址是SC,8字节，填充 00;
+3、B接口心跳发送方向也是fsu(即mock）发送到SC,源地址填fusid，20字节，左对齐，右补零；目的地址是SC,8字节，填充 00;
+
+
+2.2 tcp协议包直接通过fsu端口透传到设备，不需要经过B接口外层协议解码，2次解码完成。tcp协议，直接通过fsu的端口映射到设备，不走b接口，也无需发送心跳
+2.2.1 tcp server收到sc发送给fsu的tcp请求后， 调用透传数据编解码类ThroughDataCodec的decode方法进行解码处理，编解码规则参考protocol_template中的protocol节点配置进行解码
+2.2.2 通过command_type_flag，得到数据帧的类型，再根据数据帧的req_data_list定义得到解码的规则；
+**编码的过程参加解码过程实现** BInterfaceCodec.encode, ThroughDataCodec.encode
+**必须考虑通用实现** 再次强调，透传数据涉及多个厂商，协议定义通过配置实现，透传数据的编解码绝对禁止硬编码实现，必须考虑通用实行，根据配置进行，
+
+3 协议说明（ 要求：请确保处理过程支持 `bytes` 对象的高效操作，不影响性能。）
+3.1 B接口透传层（外层协议）， 接口协议封装、校验与字节转义解析逻辑说明：
+3.1.1 接口透传层（外层协议）参考docs/fsu-b.md中”# 透传业务协议规范“
+3.1.2 转义逻辑 (核心)：
+   - **接收时**：必须先执行反转义（`0xFD 0x00 -> 0xFF`, `0xFD 0x01 -> 0xFE`, `0xFD 0x02 -> 0xFD`），再进行异或校验和字段解析。
+   - **发送时**：先构造完整包并计算 P_verify（异或校验），然后对包头 (0xFF) 和包尾 (0xFE) 之间的数据进行转义。
+3.1.3 **校验计算**：对不包含包头P_header和包尾P_tailer的数据进行采用异或校验计算，。
+
+
+强制要求： 透传数据涉及多个厂商，协议定义通过配置实现，目前只提供了部分厂商的实现，必须考虑通用实行，根据配置进行,绝对禁止硬编码实现
+3.2 透传数据适配
+3.2.1 从fsu_devices.json中找到设备的配置文件解析模板（protocol_template），根据该模板进行透传数据解析
+3.2.2 提供公共方法，支持：`int_le` (小端整数), `bcd` (时间转换), `hex`, `bit` (位操作)。
+3.2.3 提供校验和方法，不同厂家校验和可能存在差异，比如邦讯校验和是2字节，需要处理L：低位字节；H：高位字节；海能为1字节
+
+4.日志要求：
+-系统日志：记录服务启动日志，端口监听，sc连接fsu日志，编解码日志等；根据系统配置文件`sys_config.json`中的'log'中的配置规则生成
+-设备日志：只记录在SC连接FSU后,mock server接收数据和应答的数据的日志，发送心跳的日志（需要注明是发送心跳），并格式化打印，日志文件名：logs/devices/{fsuname}_{fsu的protocol_type}_{系统时间}.log。日志记录需异步非阻塞。
+对于udp协议，需要先做B接口处理，日志生成先在BInterfaceCodec中实现一个to_str方法，记录接收和发送的格式化协议栈信息，包括：原始HEX，解析后的参数名与值，
+透传数据日志信息生成，在ThroughDataCodec中实现to_str方法生成，记录设备的接收和发送的格式化协议栈信息，包括：原始HEX，解析后的参数名与值，
+对于tcp协议，由于不经过B接口处理，直接调用在ThroughDataCodec的to_str方法生成
+
+设备日志内容参考：
+[2026-01-13 20:12:03.184] [RECV] fsu[conghua_qinyun_01:3230323530313235] 接收到SC数据
+  HEX: FF 32 30 32 35 30 31 32 35 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 01 27 00 EE 01 00 22 00 7E 01 00 8B 10 26 01 12 01 17 30 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0D 10 FE
+  Parsed:
+    P_header: 0xFF
+    P_dest_addr: 3230323530313235000000000000000000000000
+    P_src_addr: 0000000000000000
+    P_subDevType: 0x01
+    P_subDev_addr: 0x01
+    P_pLen: 0x0027
+    RtnFlag: 0xEE
+    CommType: 0x0001
+    透传数据长度: 0x0022
+    透传数据: 7e01008b10260112011730030000000000000000000000000000000000000000000d
+    P_verify: 0x10
+    P_tailer: 0xFE
+    透传数据:
+      start: 7E
+      address: 0001
+      data_frame_type: 108B
+      data: 2601120117300300000000000000000000000000000000000000
+      checksum: 0000
+      end: 0D
+      数据帧：
+          data_year: 26
+          data_month: 01
+          data_day: 12
+          data_week: 01
+          data_hour: 17
+          data_minute: 30
+          data_second: 03
+
+参考文档
+b接口协议： docs/B-interface.txt
+邦讯旧版协议：docs/bangsun_old.txt
+海能协议（非定长）：docs/haineng.txt
+
+
+# send_tcp_test("108B", test_108b_packet, "Test 2: Set Door Access Time (108B) - TCP")
+
+# # 添加1081测试
+# test_1081_data = build_1081_data()
+# print(f"[{get_timestamp()}] 1081 data: {test_1081_data.hex()}")
+
+# test_1081_packet = build_bangsun_packet(0x0001, 0x1081, test_1081_data)
+# print(f"[{get_timestamp()}] 1081 packet: {test_1081_packet.hex()}")
+
+# send_udp_test("1081", test_1081_packet, "Test 3: Access Record Query (1081) - UDP")
+# send_tcp_test("1081", test_1081_packet, "Test 4: Access Record Query (1081) - TCP")
+
+# # 添加心跳测试
+# send_heartbeat_test("Test 5: Send Heartbeat (0x0002) - UDP")

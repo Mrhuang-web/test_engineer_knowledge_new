@@ -1,0 +1,252 @@
+{
+    "log": {
+        "level": "info",
+        "dir": "./logs",
+        "maxSize": 1024000,
+        "maxAge": 7,
+        "async_write": true,
+        "file": "system_%Y%m%d.log"
+    },
+    "performance": {
+        "enabled": false,
+        "skip_delay": false,
+        "skip_device_log": false
+    },
+    "sc_iot_center": {
+        "host": "10.1.4.113",
+        "port": 28086
+    },
+    "fsu_list": [
+        {
+            "fsuname": "bangsun_01",
+            "fsuid": "3230323530313237",
+            "desc": "广州从化青云机楼1F动力01",
+            "port": 10101,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/bangsun_old"
+        },
+        {
+            "fsuname": "bangsun_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力02",
+            "port": 10102,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/bangsun_old"
+        },
+        {
+            "fsuname": "yingjia_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力盈佳01门",
+            "port": 10105,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/yingjia"
+        },
+        {
+            "fsuname": "yingjia_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力盈佳02门",
+            "port": 10106,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/yingjia"
+        },
+        {
+            "fsuname": "haineng_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力海能01",
+            "port": 10113,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/haineng_01"
+        },
+        {
+            "fsuname": "haineng_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力海能01",
+            "port": 10114,
+            "host": "0.0.0.0",
+            "protocol_type": "tcp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/haineng_01"
+        },
+        {
+            "fsuname": "bangsun_new_01",
+            "fsuid": "3230323530313237",
+            "desc": "广州从化青云机楼1F动力邦讯新版udp1门",
+            "port": 10115,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/bangsun_new"
+        },
+        {
+            "fsuname": "bangsun_new_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力邦讯新版udp2门",
+            "port": 10116,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/bangsun_new"
+        },
+        {
+            "fsuname": "gaoxx_01",
+            "fsuid": "3230323530313237",
+            "desc": "广州从化青云机楼1F动力邦讯新版高新兴1门",
+            "port": 10117,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/gaoxx"
+        },
+        {
+            "fsuname": "gaoxx_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力邦讯新版高新兴2门",
+            "port": 10118,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/gaoxx"
+        },
+        {
+            "fsuname": "gaoxxv2_01",
+            "fsuid": "3230323530313237",
+            "desc": "广州从化青云机楼1F动力邦讯新版高新兴v2_1门",
+            "port": 10119,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/gaoxxv2"
+        },
+        {
+            "fsuname": "gaoxxv2_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力邦讯新版高新兴v2_2门",
+            "port": 10120,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/gaoxxv2"
+        },
+        {
+            "fsuname": "jiangsuyao_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力江苏亚奥01",
+            "port": 10111,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/jiangsuyao_01"
+        },
+        {
+            "fsuname": "jiangsuyao_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力江苏亚奥02",
+            "port": 10112,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/jiangsuyao_01"
+        },
+        {
+            "fsuname": "liwei_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力力维01",
+            "port": 10107,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/liwei"
+        },
+        {
+            "fsuname": "liwei_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "广州从化青云机楼1F动力力维02",
+            "port": 10108,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/liwei"
+        },
+        {
+            "fsuname": "UDP-ES1000-01",
+            "fsuid": "313234313233313331323431",
+            "desc": "维帝",
+            "port": 10129,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/UDP-ES1000"
+        },
+        {
+            "fsuname": "zhongda_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "中达门禁控制器",
+            "port": 10123,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/zhongda"
+        },
+        {
+            "fsuname": "liwei_tcp_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "力维",
+            "port": 10125,
+            "host": "0.0.0.0",
+            "protocol_type": "tcp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/liwei"
+        },
+        {
+            "fsuname": "liwei_tcp_02",
+            "fsuid": "313234313233313331323431",
+            "desc": "力维",
+            "port": 10126,
+            "host": "0.0.0.0",
+            "protocol_type": "tcp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/liwei"
+        },
+        {
+            "fsuname": "CH803LM_01",
+            "fsuid": "313234313233313331323431",
+            "desc": "纽贝尔CH803LM门禁控制器",
+            "port": 10127,
+            "host": "0.0.0.0",
+            "protocol_type": "udp",
+            "heartbeat_interval": 120,
+            "heartbeat_enable": false,
+            "config_dir": "./config/CH803LM"
+        }
+    ]
+}

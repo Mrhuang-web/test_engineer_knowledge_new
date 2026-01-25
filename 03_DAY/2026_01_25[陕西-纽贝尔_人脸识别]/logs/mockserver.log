@@ -1,0 +1,12 @@
+2026-01-25 22:27:02,152 - __main__ - INFO - mockserver.py:116 - 启动热启动监控，检测间隔: 2秒
+2026-01-25 22:27:02,152 - __main__ - INFO - mockserver.py:137 - 热启动功能已启用
+2026-01-25 22:27:02,153 - __main__ - INFO - mockserver.py:387 - MockServer running on http://0.0.0.0:8090
+2026-01-25 22:27:02,154 - __main__ - INFO - mockserver.py:388 - Press Ctrl+C to stop the server
+2026-01-25 22:27:42,177 - __main__ - INFO - mockserver.py:286 - Received request: POST /v1/external/ywgl/pushAccessControlInfo from 127.0.0.1
+2026-01-25 22:27:42,539 - __main__ - INFO - mockserver.py:291 - Parsed params for POST /v1/external/ywgl/pushAccessControlInfo: {'workOrdNum': 'JF-20251222-0313', 'room': '?????????????', 'openDoorTime': '2025-12-26 10:38:01', 'openDoorResult': 1, 'personName': '???', 'personId': '1234567890', 'deviceId': 'DEVICE-123456', 'doorNum': 'DOOR-001'}
+2026-01-25 22:27:42,540 - __main__ - INFO - mockserver.py:341 - Request POST /v1/external/ywgl/pushAccessControlInfo processed successfully - Response: {'code': '000000', 'msg': 'Success', 'result': 1, 'success': True}
+2026-01-25 22:27:42,541 - __main__ - INFO - mockserver.py:368 - Request POST /v1/external/ywgl/pushAccessControlInfo processed in 0.3633 seconds
+2026-01-25 22:27:57,888 - __main__ - INFO - mockserver.py:286 - Received request: POST /v1/external/ywgl/syncFaceOperationResult from 127.0.0.1
+2026-01-25 22:27:57,889 - __main__ - INFO - mockserver.py:291 - Parsed params for POST /v1/external/ywgl/syncFaceOperationResult: {'workOrdNum': 'JF-20251222-0313', 'operationResult': 1, 'operationTime': '2025-12-26 10:38:01', 'errorMsg': '', 'deviceId': 'DEVICE-123456', 'personId': '1234567890'}
+2026-01-25 22:27:57,890 - __main__ - INFO - mockserver.py:341 - Request POST /v1/external/ywgl/syncFaceOperationResult processed successfully - Response: {'code': '000000', 'msg': 'Success', 'result': 1, 'success': True}
+2026-01-25 22:27:57,890 - __main__ - INFO - mockserver.py:368 - Request POST /v1/external/ywgl/syncFaceOperationResult processed in 0.0015 seconds

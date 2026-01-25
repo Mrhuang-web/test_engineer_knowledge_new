@@ -1,0 +1,11 @@
+{
+    "device_list": [
+        {
+            "vendor": "力维",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./liwei.json",
+            "rule_file": "./rules/default.json"
+        }
+    ]
+}

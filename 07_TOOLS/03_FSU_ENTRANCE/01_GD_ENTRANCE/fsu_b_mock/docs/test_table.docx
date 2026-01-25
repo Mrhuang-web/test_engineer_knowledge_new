@@ -1,0 +1,23 @@
+This is a test document with table.
+
+# Heading 1
+
+Some text before table.
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+Some text after table.
+
+## Heading 2
+
+Another table:
+
+| Name | Age | Occupation |
+|------|-----|------------|
+| John | 30  | Engineer   |
+| Jane | 25  | Teacher    |
+
+End of document.

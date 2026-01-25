@@ -1,0 +1,77 @@
+{
+    "01": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "01",
+            "subcmd": "00"
+        }
+    },
+    "02": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "02",
+            "subcmd": "00",
+            "datetime": "240119114759"
+        }
+    },
+    "15": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "15",
+            "subcmd": "00",
+            "actual_count": "01"
+        }
+    },
+    "20": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "20",
+            "subcmd": "00"
+        }
+    },
+    "2A": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "2A",
+            "subcmd": "00",
+            "record_count": "01",
+            "number": "01",
+            "start_seq": "00",
+            "end_seq": "01",
+            "year": "${year(yy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$",
+            "event_id": "01",
+            "door_index": "01",
+            "info": "1300000000000000010101"
+        }
+    },
+    "3C": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "3C",
+            "subcmd": "00"
+        }
+    },
+    "42": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "42",
+            "subcmd": "00",
+            "record_count": "00000001",
+            "start_index": "00000000",
+            "end_index": "00000000",
+            "event_detail": "2401191147590101"
+        }
+    },
+    "F0E0": {
+        "delay_ms": 100,
+        "data": {
+            "cmd": "F0",
+            "subcmd": "E0"
+        }
+    }
+}

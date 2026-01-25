@@ -1,0 +1,10 @@
+{
+    "device_list": [
+        {
+            "vendor": "邦讯-新版",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./bangsun_new.json"
+        }
+    ]
+}

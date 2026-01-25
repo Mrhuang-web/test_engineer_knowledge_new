@@ -491,6 +491,15 @@ error: unable to create file 04_项目/038、【上海】——【B接口改造�
         git pull origin master
 ```
 
+## git推送失败问题
+
+```
+git很多时候，push后老是faflt，有可能是传输时文件太大等问题导致，可以在推送前加上下面两句
+
+git config --global http.postBuffer 1048576000
+git config --global lfs.concurrenttransfers 2
+```
+
 
 
 # github
