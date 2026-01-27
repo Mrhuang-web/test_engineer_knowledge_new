@@ -344,3 +344,25 @@
 2026-01-22 00:02:12,044 - INFO - mockserver.py:316 - Parsed params for POST /setPassWord: {'oldPass': '12345678', 'newPass': '12345678'}
 2026-01-22 00:02:12,045 - INFO - mockserver.py:366 - Request POST /setPassWord processed successfully - Response: {'code': 'LAN_EXP-2005', 'msg': '旧密码错误', 'result': 0, 'success': False}
 2026-01-22 00:02:12,047 - INFO - mockserver.py:393 - Request POST /setPassWord processed in 0.0045 seconds
+2026-01-27 10:42:29,858 - INFO - mockserver.py:117 - 启动热启动监控，检测间隔: 2秒
+2026-01-27 10:42:29,859 - INFO - mockserver.py:138 - 热启动功能已启用
+2026-01-27 10:42:29,866 - INFO - mockserver.py:412 - MockServer running on http://0.0.0.0:8090
+2026-01-27 10:42:29,866 - INFO - mockserver.py:413 - Press Ctrl+C to stop the server
+2026-01-27 10:44:09,621 - INFO - mockserver.py:311 - Received request: POST /person/create from 127.0.0.1
+2026-01-27 10:44:09,622 - INFO - mockserver.py:316 - Parsed params for POST /person/create: {'pass': 'Chd#159357rlmj', 'person': {'id': '1234', 'name': '123456', 'idcardNum': '', 'iDNumber': '', 'facePermission': 1}}
+2026-01-27 10:44:09,625 - INFO - mockserver.py:366 - Request POST /person/create processed successfully - Response: {'code': 'LAN_EXP-1001', 'msg': '密码错误，请检查密码正确性', 'result': 0, 'success': False}
+2026-01-27 10:44:09,630 - INFO - mockserver.py:393 - Request POST /person/create processed in 0.0090 seconds
+2026-01-27 10:44:19,721 - INFO - mockserver.py:311 - Received request: POST /setPassWord from 127.0.0.1
+2026-01-27 10:44:19,721 - INFO - mockserver.py:316 - Parsed params for POST /setPassWord: {'oldPass': 'Chd#159357rlmj', 'newPass': 'Chd#159357rlmj'}
+2026-01-27 10:44:19,721 - INFO - mockserver.py:366 - Request POST /setPassWord processed successfully - Response: {'code': 'LAN_SUS-0', 'data': 'password is : Chd#159357rlmj', 'msg': '密码设置成功', 'result': 1, 'success': True}
+2026-01-27 10:44:19,722 - INFO - mockserver.py:393 - Request POST /setPassWord processed in 0.0010 seconds
+2026-01-27 10:44:25,654 - INFO - mockserver.py:311 - Received request: POST /person/create from 127.0.0.1
+2026-01-27 10:44:25,654 - INFO - mockserver.py:316 - Parsed params for POST /person/create: {'pass': 'Chd#159357rlmj', 'person': {'id': '1234', 'name': '123456', 'idcardNum': '', 'iDNumber': '', 'facePermission': 1}}
+2026-01-27 10:44:25,655 - INFO - mockserver.py:366 - Request POST /person/create processed successfully - Response: {'code': 'LAN_SUS-0', 'msg': '人员信息添加成功', 'result': 1, 'success': True}
+2026-01-27 10:44:25,655 - INFO - mockserver.py:393 - Request POST /person/create processed in 0.0010 seconds
+2026-01-27 10:44:42,718 - INFO - mockserver.py:311 - Received request: POST /person/create from 127.0.0.1
+2026-01-27 10:44:42,719 - INFO - mockserver.py:316 - Parsed params for POST /person/create: {'pass': 'Chd#159357rlmj', 'person': {'id': '1234', 'name': '123456', 'idcardNum': '', 'iDNumber': '', 'facePermission': '1'}}
+2026-01-27 10:44:42,719 - INFO - mockserver.py:366 - Request POST /person/create processed successfully - Response: {'code': 'LAN_EXP-3011', 'msg': 'facePermission 参数不合法', 'result': 0, 'success': False}
+2026-01-27 10:44:42,719 - INFO - mockserver.py:393 - Request POST /person/create processed in 0.0010 seconds
+2026-01-27 10:48:04,155 - INFO - mockserver.py:98 - 文件已修改: business_logic\person.py
+2026-01-27 10:48:04,659 - INFO - mockserver.py:123 - 检测到文件变化，重启服务器...

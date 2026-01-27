@@ -2,14 +2,45 @@
 
 ```
 涉及服务：scada-service,  mpp-service 
-
+涉及表：
+	ods_zz_link_pe_in
+	topu_mete_display_config
 查看匹配的设备
 特别说明：
 	只有综资本身的任务，和之前一样，然后建立在mpp的综资数据上
 
-
 1.页面可以手动刷新
 2.每天自动触发 scada抽取任务
-curl --location --request GET 'http://localhost:28020/v1/topuConfig/mappingResourceAll'
+curl --location --request GET 'http://10.1.202.2:30655/v1/topuConfig/mappingResourceAll'
+```
+
+
+
+
+
+```
+补充：
+	前置条件：动环中sync表的批次号要修改成与入库的一致
+	
+	需要先进入纵横（是用补数即可，即选择日期）：
+		工作流中执行（综资匹配-稽核-超期服役），进行站点、机房、设备等的匹配
+		工作流中执行（综资设备总表-机房设备类型）
+		再执行工作流中执行（综资匹配-稽核-超期服役），进行站点、机房、设备等的匹配
+		
+	接着再调用每天自动触发 scada抽取任务 或 手动刷新
+```
+
+
+
+
+
+```
+注意点：
+	dwd_zz_device_total  -- 不要存在重复res的，如果重复跑会出现rescode重复
+		即触发 综资设备总表-机房设备类型 任务
+		
+	一般不会出现重复的（现网一般都是最新批次的）
+	
+	然后分路顺序控制每一条链路
 ```
 
