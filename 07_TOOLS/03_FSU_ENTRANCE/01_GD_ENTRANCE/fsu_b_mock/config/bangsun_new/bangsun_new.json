@@ -7,6 +7,8 @@
     "protocol": {
         "total_length": 34,
         "dynamic_length": false,
+        "dynamic_time_enabled": true,
+        "event_types": ["108D"],
         "checksum_config": {
             "algorithm": "sum",
             "start": 1,

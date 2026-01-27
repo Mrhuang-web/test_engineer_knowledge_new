@@ -1,0 +1,58 @@
+本地没公网 IP，服务器找不到本地ip，用 Cloudflare Tunnel 或 ngrok 把本地端口“暴露”出去，服务器就能连上了
+	
+	ai询问：点击链接查看和 Kimi 的对话 https://www.kimi.com/share/19af77d7-f3b2-841a-8000-00008fac9cf3
+
+	Cloudflare Tunnel方法
+		winget install cloudflare.cloudflared						（windows-需要开Windows（PowerShell）；liunx：sudo apt install cloudflared）
+		cloudflared tunnel --url http://localhost:8011				（每次需要时运行）
+
+
+
+	用 ngrok（免安装，下载即用）方法：
+		去 https://ngrok.com 下载对应系统的小文件（就一个 exe）
+		
+		解压后，在同级目录打开终端，运行：
+			ngrok http 8011
+			也会出来一个公网地址，比如：
+			https://a1b2c3d4.ngrok.io
+		同样把这个地址给服务器即可。
+		⚠️ 注意
+		本地服务必须先跑起来（8011 端口要监听）
+		每次重启工具，地址会变（免费版都这样，调试够用）
+
+		
+		
+------------------------------------------------上面的先不管，直接用下面的先----------------------------------------------------
+需要注意一点：
+	用公司的wifi是无法实现的，必须使用内网开vpn才可以
+
+方式1：
+	关闭防火墙：netsh advfirewall set allprofiles state off
+	测试完成后需要重新开启：netsh advfirewall set allprofiles state on
+	
+方式2：
+	仅开放某个端口：netsh advfirewall firewall add rule name="Open 8011" dir=in action=allow protocol=TCP localport=8011
+	删除开放的端口：netsh advfirewall firewall delete rule name="Open 8011" dir=in
+	
+检测：
+	# 查看防火墙是否开启
+	netsh advfirewall show allprofiles state
+
+	# 查看所有入站规则（确认 8011 是否还在）
+	netsh advfirewall firewall show rule name=all dir=in | findstr "8011"
+	
+	
+	
+
+
+
+	
+------------------------------------------------调试配置----------------------------------------------------
+1、汕头-濠江-test-test20251206_本地
+2、已添加不同设备延时处理
+
+
+
+
+
+

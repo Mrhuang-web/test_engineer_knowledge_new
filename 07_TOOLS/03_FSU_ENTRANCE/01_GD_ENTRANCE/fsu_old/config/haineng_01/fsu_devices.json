@@ -1,0 +1,10 @@
+{
+    "device_list": [
+    {
+      "vendor": "海能",
+      "sub_dev_type": "01",
+      "sub_dev_addr": "00",
+      "protocol_template": "./haineng.json"
+    }
+  ]
+}

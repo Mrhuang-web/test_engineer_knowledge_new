@@ -58,11 +58,14 @@ class BaseProtocol:
                         full_rule_file = os.path.normpath(full_rule_file)
                     else:
                         full_rule_file = rule_file
-                    rules_obj = self.device_config.load_rules_with_separate_objects(full_rule_file, self.fsu_config.get("fsuid", ""))
+                    # 从协议配置中获取dynamic_time_enabled配置
+                    protocol = protocol_config.get("protocol", {})
+                    dynamic_time_enabled = protocol.get("dynamic_time_enabled", False)
+                    rules_obj = self.device_config.load_rules_with_separate_objects(full_rule_file, self.fsu_config.get("fsuid", ""), dynamic_time_enabled)
                     # 合并规则对象
                     all_rules_obj["fsu_rule"].update(rules_obj["fsu_rule"])
                     all_rules_obj["default_rule"].update(rules_obj["default_rule"])
-                
+                    
                 if all_rules_obj["fsu_rule"] or all_rules_obj["default_rule"]:
                     protocol_config["rules_obj"] = all_rules_obj
                 # 使用设备索引作为键，确保至少有一个有效的键
@@ -228,7 +231,34 @@ class BaseProtocol:
             # 根据data_frame_type匹配规则
             frame_rule = self.device_config.match_rule_by_data_frame_type(rules_obj, actual_type)
             if isinstance(frame_rule, dict):
-                return self._render_rule_data_placeholders(frame_rule, parsed_result)
+                # 渲染请求字段占位符
+                rendered_rule = self._render_rule_data_placeholders(frame_rule, parsed_result)
+                
+                # 检查是否需要动态评估时间函数
+                # 1. 检查性能模式，性能模式下关闭动态时间评估
+                performance_mode = getattr(self, 'performance_mode', False)
+                
+                # 2. 检查协议配置中的动态时间开关
+                dynamic_time_enabled = protocol_config.get("protocol", {}).get("dynamic_time_enabled", False)
+                
+                # 3. 综合判断是否需要动态评估
+                should_evaluate_time = dynamic_time_enabled and not performance_mode
+                
+                if should_evaluate_time:
+                    # 评估时间函数
+                    from utils.time_utils import TimeFunctionUtils
+                    time_utils = TimeFunctionUtils()
+                    data = rendered_rule.get("data", {})
+                    if data:
+                        rendered_rule["data"] = time_utils.evaluate(data)
+                        # 检查logger是否存在
+                        if hasattr(self, 'logger') and self.logger is not None and hasattr(self.logger, 'debug'):
+                            self.logger.debug(f"动态评估时间函数，data_frame_type={actual_type}, 结果={rendered_rule['data']}")
+                else:
+                    # 检查logger是否存在
+                    if hasattr(self, 'logger') and self.logger is not None and hasattr(self.logger, 'debug'):
+                        self.logger.debug(f"跳过动态评估时间函数，data_frame_type={actual_type}, performance_mode={performance_mode}, is_event_type={is_event_type}, dynamic_time_enabled={dynamic_time_enabled}")
+                return rendered_rule
             return frame_rule
         except Exception as e:
             # 异常处理，使用空规则

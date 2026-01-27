@@ -3,10 +3,12 @@
     "rule_file_list": [
         "./rules/0101.json",
         "./rules/313234313233313331323431.json",
+        "./rules/default.json"
     ],
     "protocol": {
         "dynamic_length": false,
         "total_length": 34,
+        "dynamic_time_enabled": true,
         "checksum_config": {
             "algorithm": "sum",
             "start": 1,
@@ -721,4 +723,4 @@
             }
         ]
     }
-}
+}    

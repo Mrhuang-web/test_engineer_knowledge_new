@@ -1,0 +1,304 @@
+{
+    "48": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "48F0E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "48F0E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "48F0E2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E4": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E5": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E6": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1E7": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1EA": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1EB": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1EC": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1ED": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1EF": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F6": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F7": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1F8": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1FB": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1FC": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "49F1FE": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "4A": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00"
+        }
+    },
+    "4AF2E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0010",
+            "data_info": "1A011614304500"
+        }
+    },
+    "4AF2E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0012",
+            "data_info": "000000000000000000000000"
+        }
+    },
+    "4AF2E2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "001C",
+            "data_info": "0100011A01161430450000000000000000000000"
+        }
+    },
+    "4AF2E3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0020",
+            "data_info": "0000000000000000000000000000000000000000"
+        }
+    },
+    "4AF2E4": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0010",
+            "data_info": "0000000000000000"
+        }
+    },
+    "4AF2E5": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0002",
+            "data_info": "0000"
+        }
+    },
+    "4AF2E6": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0010",
+            "data_info": "00000000000000000000000000000000"
+        }
+    },
+    "4AF2E7": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0004",
+            "data_info": "00000000"
+        }
+    },
+    "4AF2E8": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "000A",
+            "data_info": "00000000000000000000"
+        }
+    },
+    "4AF2E9": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0004",
+            "data_info": "00010000"
+        }
+    },
+    "4AF2EA": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0004",
+            "data_info": "07FF"
+        }
+    },
+    "4AF2EB": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0004",
+            "data_info": "0000"
+        }
+    },
+    "4AF2EC": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0004",
+            "data_info": "000000"
+        }
+    },
+    "4AF2ED": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0012",
+            "data_info": "000000000000000000000000"
+        }
+    },
+    "4AF2EE": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0012",
+            "data_info": "000000000000000000000000"
+        }
+    },
+    "4AF2EF": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "0024",
+            "data_info": "4553323030302C564552352E303120202020202020202020"
+        }
+    }
+}

@@ -1,0 +1,138 @@
+{
+    "48F0E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F0E0"
+        }
+    },
+    "48F0E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F0E1"
+        }
+    },
+    "48F0E2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F0E2"
+        }
+    },
+    "48F0E3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F0E3"
+        }
+    },
+    "49F1E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F1E0"
+        }
+    },
+    "49F1E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F1E1"
+        }
+    },
+    "49E1F2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "E1F2"
+        }
+    },
+    "49F1E3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F1E3"
+        }
+    },
+    "49F1E4": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F1E4"
+        }
+    },
+    "4AF2E0": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "28",
+            "data_info": "5347323030307631302D53797353577631302D6635643320202020"
+        }
+    },
+    "4AF2E1": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "6",
+            "data_info": "1A0116143045"
+        }
+    },
+    "4AF2E2": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "11",
+            "data_info": "0100010001000000000000"
+        }
+    },
+    "4AF2E3": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "04D2"
+        }
+    },
+    "4AF2E4": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "05DB"
+        }
+    },
+    "4AF2E5": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "16",
+            "data_info": "01000100011A011614304100"
+        }
+    },
+    "4AF2E6": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "0000"
+        }
+    },
+    "49F1E6": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "length": "2",
+            "data_info": "F1E6"
+        }
+    }
+}

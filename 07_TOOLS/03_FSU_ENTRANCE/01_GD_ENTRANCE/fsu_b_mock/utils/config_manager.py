@@ -256,12 +256,13 @@ class DeviceConfig:
             logging.error(f"加载协议模板失败: {e}")
             return {}
     
-    def load_rules_with_separate_objects(self, rule_path: str, fsuid: str = "") -> Dict[str, Dict[str, Any]]:
+    def load_rules_with_separate_objects(self, rule_path: str, fsuid: str = "", dynamic_time_enabled: bool = False) -> Dict[str, Dict[str, Any]]:
         """加载规则文件，分别存储到fsu_rule和default_rule对象
         
         Args:
             rule_path: 规则文件路径
             fsuid: FSU设备ID
+            dynamic_time_enabled: 是否启用动态时间评估
         
         Returns:
             包含fsu_rule和default_rule的字典
@@ -286,8 +287,9 @@ class DeviceConfig:
             try:
                 with open(fsuid_rule_path, "r", encoding="utf-8") as f:
                     fsu_rule = json.load(f)
-                    # 评估时间函数
-                    fsu_rule = time_utils.evaluate(fsu_rule)
+                    # 根据dynamic_time_enabled决定是否评估时间函数
+                    if not dynamic_time_enabled:
+                        fsu_rule = time_utils.evaluate(fsu_rule)
                     logging.debug(f"通过fsuid: {fsuid}，匹配到{fsuid_rule_path}文件，加载到fsu_rule对象")
             except Exception:
                 logging.debug(f"未找到fsuid: {fsuid}对应的规则文件，跳过加载fsu_rule对象")
@@ -297,11 +299,26 @@ class DeviceConfig:
         try:
             with open(default_rule_path, "r", encoding="utf-8") as f:
                 default_rule = json.load(f)
-                # 评估时间函数
-                default_rule = time_utils.evaluate(default_rule)
+                # 根据dynamic_time_enabled决定是否评估时间函数
+                if not dynamic_time_enabled:
+                    default_rule = time_utils.evaluate(default_rule)
                 logging.debug(f"加载{default_rule_path}文件到default_rule对象")
         except Exception:
             logging.error(f"未找到{default_rule_path}文件，default_rule对象为空")
+        
+        # 3. 尝试加载event.json到default_rule对象
+        event_rule_path = os.path.join(rule_dir, "event.json")
+        try:
+            with open(event_rule_path, "r", encoding="utf-8") as f:
+                event_rule = json.load(f)
+                # 根据dynamic_time_enabled决定是否评估时间函数
+                if not dynamic_time_enabled:
+                    event_rule = time_utils.evaluate(event_rule)
+                # 合并event.json到default_rule，event配置优先级高于default
+                default_rule.update(event_rule)
+                logging.debug(f"加载{event_rule_path}文件，合并到default_rule对象")
+        except Exception:
+            logging.debug(f"未找到{event_rule_path}文件，跳过加载event_rule对象")
         
         return {
             "fsu_rule": fsu_rule,

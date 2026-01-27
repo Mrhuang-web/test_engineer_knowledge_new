@@ -1,0 +1,15 @@
+2026-01-28 00:40:58,898 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 00:41:21,750 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 00:41:26,684 root INFO config_manager.py:228 设备配置已更新: ./config/bangsun_old
+2026-01-28 00:41:26,691 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:27,445 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:28,265 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:28,989 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:29,747 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:39,909 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 1081的规则
+2026-01-28 00:41:47,123 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 1081的规则
+2026-01-28 00:41:48,463 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 1081的规则
+2026-01-28 00:41:49,702 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:59,221 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:41:59,979 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 00:42:00,654 root INFO config_manager.py:344 从fsu_rule中匹配到data_frame_type: 108D的规则

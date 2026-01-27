@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body %}
+<h3>FSUID:{{fsuid}}</h3>
+<hr/>
+<h3>Device 列表</h3>
+  <table>
+  <tr>
+    <th>设备名称</th>
+    <th>设备类型</th>
+    <th>设备ID</th>
+  </tr>
+  {% for device in devices %}
+    <tr>
+      <td>{{device.devicename}}</td>
+      <td>{{device.devicetype}}</td>
+      <td><a href="/signal/{{ device.deviceid }}?fsuid={{fsuid}}">{{ device.deviceid }}</a></td>
+    </tr>
+
+  {% end %}
+</table>
+  
+{% end %}
