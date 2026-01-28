@@ -47,6 +47,9 @@ class EventManager:
         # 设备协议模板
         self.device_protocols = {}
         
+        # 当前协议配置
+        self.current_protocol_config = None
+        
         # 加载配置
         self._load_config()
     
@@ -158,6 +161,9 @@ class EventManager:
             protocol_config: 协议配置
         """
         if self.event_polling_enable:
+            # 保存当前协议配置，以便在send_event中使用
+            self.current_protocol_config = protocol_config
+            
             if self.event_mode == "batch":
                 # 模式1：接收到1条请求后就轮询发送所有事件
                 await self._handle_batch_mode(addr, protocol_config)
@@ -226,17 +232,39 @@ class EventManager:
         # 从SC IoT中心配置获取目标地址
         sc_target_addr = (self.sc_iot_config["host"], self.sc_iot_config["port"])
         
-        # 使用第一个设备的协议模板
-        device_id, protocol_config = next(iter(self.device_protocols.items()), ("", {}))
-        if not protocol_config:
-            self.logger.error("没有可用的设备协议模板，无法发送事件")
-            return
+        # 使用当前协议配置或默认协议模板
+        if hasattr(self, 'current_protocol_config') and self.current_protocol_config:
+            protocol_config = self.current_protocol_config
+        else:
+            # 使用第一个设备的协议模板作为默认
+            device_id, protocol_config = next(iter(self.device_protocols.items()), ("", {}))
+            if not protocol_config:
+                self.logger.error("没有可用的设备协议模板，无法发送事件")
+                return
         
         # 创建透传数据编解码器
         through_codec = ThroughDataCodec(protocol_config)
         
         # 从配置文件中获取事件规则配置
-        event_rules = self.event_rules_config.get("108D", {})
+        # 根据协议类型自动选择事件规则配置
+        protocol_name = protocol_config.get("protocol", {}).get("name", "")
+        vendor = protocol_config.get("vendor", "")
+        
+        # 优先使用协议特定的事件规则配置
+        event_rules = {}
+        
+        # 尝试按协议名称和厂商获取配置
+        if protocol_name:
+            event_rules = self.event_rules_config.get(protocol_name, {})
+        if not event_rules and vendor:
+            event_rules = self.event_rules_config.get(vendor, {})
+        if not event_rules:
+            # 尝试使用通用事件配置
+            event_rules = self.event_rules_config.get("event", {})
+        if not event_rules:
+            # 最后使用默认配置
+            event_rules = {"data": {}}
+        
         event_data = event_rules.get("data", {})
         
         # 构建事件数据包

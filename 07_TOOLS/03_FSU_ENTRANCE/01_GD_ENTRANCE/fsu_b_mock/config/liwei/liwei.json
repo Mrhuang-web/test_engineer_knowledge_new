@@ -673,6 +673,61 @@
                         "value": ""
                     }
                 ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EE"
+                ],
+                "description": "查询控制器的最新事件记录",
+                "data_frame_length": 3,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EE"
+                    },
+                    {
+                        "name": "dataf",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "event_source",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "date_time",
+                        "length": 7,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "status",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "remark",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
             }
         ]
     }

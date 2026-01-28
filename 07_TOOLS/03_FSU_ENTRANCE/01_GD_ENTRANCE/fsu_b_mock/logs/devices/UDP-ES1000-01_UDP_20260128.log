@@ -33,3 +33,4 @@
 2026-01-28 18:52:11,137 event_manager.py:143 事件规则配置文件不存在: ./config/UDP-ES1000\rules\event.json
 2026-01-28 18:52:11,139 udp_protocol.py:61 UDP服务已启动，监听端口: 10129
 2026-01-28 19:15:59,693 udp_protocol.py:61 UDP服务已启动，监听端口: 10129
+2026-01-28 20:26:18,385 udp_protocol.py:61 UDP服务已启动，监听端口: 10129

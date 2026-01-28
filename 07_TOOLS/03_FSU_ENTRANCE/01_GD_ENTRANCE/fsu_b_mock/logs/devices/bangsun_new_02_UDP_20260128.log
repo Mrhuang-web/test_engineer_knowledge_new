@@ -33,3 +33,4 @@
 2026-01-28 18:52:10,832 event_manager.py:143 事件规则配置文件不存在: ./config/bangsun_new\rules\event.json
 2026-01-28 18:52:10,834 udp_protocol.py:61 UDP服务已启动，监听端口: 10116
 2026-01-28 19:15:59,379 udp_protocol.py:61 UDP服务已启动，监听端口: 10116
+2026-01-28 20:26:18,065 udp_protocol.py:61 UDP服务已启动，监听端口: 10116

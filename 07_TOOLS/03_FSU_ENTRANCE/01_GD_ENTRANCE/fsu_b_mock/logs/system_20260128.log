@@ -133,3 +133,15 @@
 2026-01-28 19:16:18,547 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
 2026-01-28 19:16:18,553 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
 2026-01-28 19:16:20,193 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 20:01:46,299 root ERROR config_manager.py:355 未找到data_frame_type: 100000的规则
+2026-01-28 20:26:17,862 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 20:26:22,493 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-28 20:26:22,502 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 20:26:35,347 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-28 20:26:38,280 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-28 20:26:44,887 codec.through_data ERROR through_data_codec.py:347 字段 length 数据不足: 需要 2 字节, 剩余 1 字节
+2026-01-28 20:26:44,888 root ERROR config_manager.py:355 未找到data_frame_type: 02AA的规则
+2026-01-28 20:26:46,435 codec.through_data ERROR through_data_codec.py:347 字段 length 数据不足: 需要 2 字节, 剩余 1 字节
+2026-01-28 20:26:46,437 root ERROR config_manager.py:355 未找到data_frame_type: 02AA的规则
+2026-01-28 20:26:51,764 root ERROR config_manager.py:355 未找到data_frame_type: 100000的规则
+2026-01-28 20:26:53,680 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则

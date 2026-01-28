@@ -33,3 +33,4 @@
 2026-01-28 18:52:10,870 event_manager.py:143 事件规则配置文件不存在: ./config/gaoxx\rules\event.json
 2026-01-28 18:52:10,872 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
 2026-01-28 19:15:59,419 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-28 20:26:18,104 udp_protocol.py:61 UDP服务已启动，监听端口: 10117

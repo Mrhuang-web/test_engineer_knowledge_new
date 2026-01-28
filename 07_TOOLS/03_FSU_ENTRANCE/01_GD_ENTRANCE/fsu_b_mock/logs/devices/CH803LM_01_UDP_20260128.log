@@ -33,3 +33,4 @@
 2026-01-28 18:52:11,287 event_manager.py:143 事件规则配置文件不存在: ./config/CH803LM\rules\event.json
 2026-01-28 18:52:11,288 udp_protocol.py:61 UDP服务已启动，监听端口: 10127
 2026-01-28 19:15:59,844 udp_protocol.py:61 UDP服务已启动，监听端口: 10127
+2026-01-28 20:26:18,532 udp_protocol.py:61 UDP服务已启动，监听端口: 10127

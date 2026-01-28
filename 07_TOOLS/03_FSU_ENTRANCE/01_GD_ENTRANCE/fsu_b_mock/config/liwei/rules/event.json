@@ -10,5 +10,21 @@
             "minute": "${minute()}$",
             "second": "${second()}$"
         }
+    },
+    "4AF2EE": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "year": "${year(yyyy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "week": "${week()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$",
+            "event_source": "0000000000",
+            "status": "00",
+            "remark": "00"
+        }
     }
 }
