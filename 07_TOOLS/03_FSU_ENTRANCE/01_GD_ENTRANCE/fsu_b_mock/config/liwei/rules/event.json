@@ -1,0 +1,118 @@
+{
+    "response": {
+        "4A": {
+            "delay_ms": 100,
+            "data": {
+                "rtn": "00",
+                "info": {
+                    "event_source": "0000000000",
+                    "datetime": "${year(yy)}${month()}${day()}${hour()}${minute()}${second()}",
+                    "status": "00",
+                    "remark": "00"
+                }
+            }
+        }
+    },
+    "event": {
+        "types": [
+            {
+                "code": "00",
+                "name": "刷卡开门",
+                "level": "info",
+                "source": "5字节卡号",
+                "status_desc": "D7=0（未验密码）/1（已验），D6=门原状态，D5=是否进入，D4=是否关门"
+            },
+            {
+                "code": "01",
+                "name": "ID+密码开门",
+                "level": "info",
+                "source": "00H+4字节ID",
+                "status_desc": "D7=1（已验密码），其余同REMARK=0"
+            },
+            {
+                "code": "02",
+                "name": "远程开门",
+                "level": "info",
+                "source": "5字节全0",
+                "status_desc": "同REMARK=0（D1=0）"
+            },
+            {
+                "code": "03",
+                "name": "手动开门",
+                "level": "info",
+                "source": "5字节全0",
+                "status_desc": "同REMARK=0（D1=0）"
+            },
+            {
+                "code": "04",
+                "name": "联动开门",
+                "level": "info",
+                "source": "5字节全0",
+                "status_desc": "同REMARK=0"
+            },
+            {
+                "code": "05",
+                "name": "报警/取消",
+                "level": "warning",
+                "source": "4字节全0+1字节报警源",
+                "status_desc": "AS=0（红外报警开始）/1（停止），2（非正常开门）等"
+            },
+            {
+                "code": "06",
+                "name": "掉电记录",
+                "level": "warning",
+                "source": "重新上电时间（月/日/时/分/秒）",
+                "status_desc": "上电时输入线状态"
+            },
+            {
+                "code": "07",
+                "name": "参数修改",
+                "level": "info",
+                "source": "4字节全0+1字节修改标记",
+                "status_desc": "D0=改密码，D1=改门参数，D2=加用户等"
+            },
+            {
+                "code": "08",
+                "name": "无效卡刷卡",
+                "level": "warning",
+                "source": "5字节卡号",
+                "status_desc": "同报警记录状态"
+            },
+            {
+                "code": "09",
+                "name": "卡过期",
+                "level": "warning",
+                "source": "5字节卡号",
+                "status_desc": "同报警记录状态"
+            },
+            {
+                "code": "0A",
+                "name": "无进权限",
+                "level": "warning",
+                "source": "5字节卡号",
+                "status_desc": "同报警记录状态"
+            },
+            {
+                "code": "0B",
+                "name": "密码三次错误",
+                "level": "warning",
+                "source": "5字节卡号",
+                "status_desc": "同报警记录状态"
+            },
+            {
+                "code": "22",
+                "name": "消防联动开始/结束",
+                "level": "warning",
+                "source": "5字节全0/00001",
+                "status_desc": "同报警记录状态"
+            },
+            {
+                "code": "30",
+                "name": "钥匙开门",
+                "level": "info",
+                "source": "5字节全0",
+                "status_desc": "D6=门原状态，D5=是否进入，D4=是否关门"
+            }
+        ]
+    }
+}

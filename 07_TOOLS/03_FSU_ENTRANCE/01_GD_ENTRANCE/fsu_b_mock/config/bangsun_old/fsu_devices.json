@@ -4,7 +4,10 @@
             "vendor": "邦讯-旧版",
             "sub_dev_type": "01",
             "sub_dev_addr": "01",
-            "protocol_template": "./bangsun_old.json"
+            "protocol_template": "./bangsun_old.json",
+            "event_polling_enable": true,
+            "event_polling_interval": 5,
+            "event_mode": "single"
         }
     ]
 }

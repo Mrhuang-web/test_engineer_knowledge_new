@@ -39,6 +39,23 @@ async def run_udp_server(fsu_config: Dict[str, Any], device_config: Any, log_con
         heartbeat_interval = fsu_config.get("heartbeat_interval", 120)
         asyncio.create_task(heartbeat_task(udp_protocol, heartbeat_interval))
     
+    # 启动事件轮询任务（仅当event_polling_enable为true时）
+    # 从设备配置中读取事件轮询配置
+    device_list = device_config.get_device_list()
+    event_polling_enable = False
+    event_polling_interval = 5
+    
+    if device_list:
+        # 使用第一个设备的配置
+        device_config_item = device_list[0]
+        event_polling_enable = device_config_item.get("event_polling_enable", False)
+        event_polling_interval = device_config_item.get("event_polling_interval", 5)
+    
+    if event_polling_enable:
+        asyncio.create_task(udp_protocol.event_polling_task())
+        logger = LogManager.get_device_logger(fsu_config["fsuname"], log_config, "UDP")
+        logger.info(f"事件轮询任务已启动，轮询间隔: {event_polling_interval}秒")
+    
     return transport, protocol
 
 async def run_tcp_server(fsu_config: Dict[str, Any], device_config: Any, log_config: Dict[str, Any], performance_mode: bool):

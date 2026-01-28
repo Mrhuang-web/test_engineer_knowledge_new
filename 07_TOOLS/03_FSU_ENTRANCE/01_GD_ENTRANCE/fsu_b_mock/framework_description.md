@@ -996,3 +996,53 @@ B接口使用异或校验，计算范围为转义前的数据（不包括包头�
    - TCP协议建议设置合理的超时时间
 
 通过以上详细流程和最佳实践，您可以高效地新增和维护各种厂商的协议配置，确保FSU Mock Server能够准确模拟各种设备的行为，满足测试需求。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 修改了config/bangsun_old/fsu_devices.json文件 ：
+
+- 添加了 command_configs 配置列表，用于管理不同指令的配置
+- 每个指令配置包含以下字段：
+  - data_frame_type ：指令类型（如"108D"）
+  - rule_file ：该指令对应的规则文件路径
+  - need_event_polling ：是否需要为该指令执行事件轮询逻辑
+- 修改了server/udp_protocol.py文件 ：
+
+- 添加了 command_configs 属性，用于存储指令配置列表
+- 修改了事件轮询配置的读取逻辑，从指令配置中提取需要事件轮询的指令
+- 在 _handle_through_data 方法中添加了指令识别逻辑，为每个指令加载对应的规则文件
+- 如何新增指令 ：
+当需要新增指令时，只需在 command_configs 列表中添加一个新的指令配置项即可，例如：
+
+```
+{
+    "data_frame_type": 
+    "108E",  // 新指令类型
+    "rule_file": "./rules/
+    new_command.json",  // 新指令对
+    应的规则文件
+    "need_event_polling": 
+    false  // 是否需要事件轮询
+}
+```
+然后创建对应的规则文件（如 config/bangsun_old/rules/new_command.json ），在其中定义该指令的响应结构和逻辑。
+- 支持不同结构的指令 ：
+由于每个指令都有自己的规则文件，因此不同指令可以有完全不同的结构。例如：
+
+- 108D 指令可能包含 card_id 、 vendor_id 、 status 等字段
+- 新的 108E 指令可能包含完全不同的字段，如 device_id 、 action 、 result 等
+系统会根据指令类型自动加载对应的规则文件，处理不同结构的指令。
+- 保持了向后兼容性 ：
+系统仍然支持旧的配置方式，确保现有功能不受影响。

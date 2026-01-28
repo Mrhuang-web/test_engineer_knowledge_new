@@ -1,0 +1,60 @@
+{
+  "event_types": [
+    {
+      "status": "00",
+      "description": "刷卡开门"
+    },
+    {
+      "status": "01",
+      "description": "ID+密码开门"
+    },
+    {
+      "status": "02",
+      "description": "远程开门"
+    },
+    {
+      "status": "03",
+      "description": "手动开门"
+    },
+    {
+      "status": "04",
+      "description": "联动开门"
+    },
+    {
+      "status": "05",
+      "description": "报警/取消"
+    },
+    {
+      "status": "06",
+      "description": "掉电记录"
+    },
+    {
+      "status": "07",
+      "description": "参数修改"
+    },
+    {
+      "status": "08",
+      "description": "无效卡刷卡"
+    },
+    {
+      "status": "09",
+      "description": "卡过期"
+    },
+    {
+      "status": "0A",
+      "description": "无进权限"
+    },
+    {
+      "status": "0B",
+      "description": "密码三次错误"
+    },
+    {
+      "status": "22",
+      "description": "消防联动开始/结束"
+    },
+    {
+      "status": "30",
+      "description": "钥匙开门"
+    }
+  ]
+}

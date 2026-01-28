@@ -257,7 +257,7 @@ class BaseProtocol:
                 else:
                     # 检查logger是否存在
                     if hasattr(self, 'logger') and self.logger is not None and hasattr(self.logger, 'debug'):
-                        self.logger.debug(f"跳过动态评估时间函数，data_frame_type={actual_type}, performance_mode={performance_mode}, is_event_type={is_event_type}, dynamic_time_enabled={dynamic_time_enabled}")
+                        self.logger.debug(f"跳过动态评估时间函数，data_frame_type={actual_type}, performance_mode={performance_mode}, dynamic_time_enabled={dynamic_time_enabled}")
                 return rendered_rule
             return frame_rule
         except Exception as e:

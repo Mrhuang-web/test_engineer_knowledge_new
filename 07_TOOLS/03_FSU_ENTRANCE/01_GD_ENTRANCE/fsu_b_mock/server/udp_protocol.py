@@ -5,11 +5,14 @@ UDP协议处理类
 """
 
 import asyncio
+import os
+import json
 from typing import Dict, Any, Tuple
 from codec.b_interface_codec import BInterfaceCodec
 from codec.through_data_codec import ThroughDataCodec
 from .base_protocol import BaseProtocol
 from utils.log_manager import LogManager
+from event.event_manager import EventManager
 
 class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
     """UDP协议处理类"""
@@ -37,8 +40,13 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
         # 被规则标记为关闭的SC地址集合（timeout=true）
         self.closed_sc_addrs = set()
 
+        # 创建事件管理器
+        self.event_manager = EventManager(fsu_config, device_config, b_interface_codec, self.logger)
+        self.event_manager.set_sc_iot_config(sc_iot_config)
+
         # 加载设备协议模板和规则
         self.device_protocols = self.load_protocols()
+        self.event_manager.set_device_protocols(self.device_protocols)
         
 
     
@@ -49,6 +57,7 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
             transport: UDP传输对象
         """
         self.transport = transport
+        self.event_manager.set_transport(transport)
         self.logger.info(f"UDP服务已启动，监听端口: {self.fsu_config['port']}")
     
     def datagram_received(self, data: bytes, addr: tuple):
@@ -131,6 +140,7 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
         
         # 获取响应数据
         response_data = rule_response.get("data", {})
+        
         if not response_data:
             return
         
@@ -198,6 +208,11 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
             }
         }
         self.logger.info(through_codec.to_str(resp_through_result))
+        
+        # 使用事件管理器处理事件轮询
+        await self.event_manager.handle_event_polling(addr, protocol_config)
+    
+
     
 
     
@@ -246,3 +261,25 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
         self.logger.debug(f"[SEND] fsu[{self.fsu_config['fsuname']}:{self.fsu_config['fsuid']}] 发送心跳包到SC IoT中心: {sc_target_addr}")
         # 使用构建的解析结果记录日志
         self.logger.debug(self.b_interface_codec.to_str({"raw_data": heartbeat_packet.hex().upper(), "parsed": parsed_data}))
+    
+
+    
+
+    
+    async def event_polling_task(self):
+        """事件轮询任务
+        
+        注意：根据新的需求，轮询逻辑已经移到了事件管理器中，
+        该方法现在主要用于保持兼容性，实际的轮询逻辑由请求触发。
+        """
+        while True:
+            # 检查事件轮询开关
+            if not getattr(self.event_manager, 'event_polling_enable', False):
+                await asyncio.sleep(getattr(self.event_manager, 'event_polling_interval', 5))
+                continue
+            
+            # 新的轮询逻辑由请求触发，这里保持兼容性
+            # 可以根据需要添加其他定期任务
+            
+            # 等待下一次轮询
+            await asyncio.sleep(getattr(self.event_manager, 'event_polling_interval', 5))
