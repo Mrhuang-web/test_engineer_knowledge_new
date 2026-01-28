@@ -366,3 +366,7 @@
 2026-01-27 10:44:42,719 - INFO - mockserver.py:393 - Request POST /person/create processed in 0.0010 seconds
 2026-01-27 10:48:04,155 - INFO - mockserver.py:98 - 文件已修改: business_logic\person.py
 2026-01-27 10:48:04,659 - INFO - mockserver.py:123 - 检测到文件变化，重启服务器...
+2026-01-27 10:48:05,069 - INFO - mockserver.py:117 - 启动热启动监控，检测间隔: 2秒
+2026-01-27 10:48:05,069 - INFO - mockserver.py:138 - 热启动功能已启用
+2026-01-27 10:48:05,072 - INFO - mockserver.py:412 - MockServer running on http://0.0.0.0:8090
+2026-01-27 10:48:05,072 - INFO - mockserver.py:413 - Press Ctrl+C to stop the server

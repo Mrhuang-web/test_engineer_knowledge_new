@@ -139,3 +139,7 @@ ai自动化
 渗透申诉：
 	资管平台地址：http://10.2.5.65:31614 
 	用户名chenzhiyong_a，密码：iznVt%sq%7dG
+
+
+广西现网问题：
+	【金山文档 | WPS云文档】 2026年广西现网问题修复记录https://www.kdocs.cn/l/crsfamuzfEKW
