@@ -1,0 +1,31 @@
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["t_cfg_precinct<br>机房主数据"] -- 匹配路径1精确 --> B["province_ne_relation"] & C["ods_zz_irms_site_map<br>映射表"]
+    C -- dh_id到zg_id核心关联 --> D["ods_zz_site<br>站点表"]
+    B --> D
+    D --> E["temp_dws_zz_dh_site_1<br>已精确匹配的"]
+    E --> F["NOT EXISTS<br>剩余未匹配"] & G["UNION ALL<br>已匹配的直接用"]
+    F --> H["province+name<br>模糊匹配"]
+    H --> I["dws_zz_dh_site<br>最终表"]
+    G --> I
+
+     A:::table
+     B:::table
+     C:::table
+     D:::table
+     E:::table
+     F:::op
+     G:::op
+     H:::op
+     I:::table
+    classDef table fill:#e8f4f8,stroke:#2c7fb8,stroke-width:2px,rx:8px,ry:8px
+    classDef op fill:#fff2e8,stroke:#f57c00,stroke-width:2px,rx:8px,ry:8px
+    classDef relation fill:#f0f8ff,stroke:#4682b4,stroke-width:1px,rx:4px,ry:4px
+    linkStyle 0 stroke:#2c7fb8,stroke-width:2px,fill:none
+    linkStyle 1 stroke:#2c7fb8,stroke-width:2px,fill:none
+    linkStyle 2 stroke:#d63031,stroke-width:2px,fill:none
+    linkStyle 8 stroke:#27ae60,stroke-width:2px,fill:none
+    linkStyle 9 stroke:#27ae60,stroke-width:2px,fill:none

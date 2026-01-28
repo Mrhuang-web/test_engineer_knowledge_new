@@ -64,5 +64,15 @@
             "status": "87",
             "description": "门未关报警"
         }
+    ],
+    "event_commands": [
+        {
+            "command": "F0EE",
+            "description": "查询控制器的最新事件记录"
+        },
+        {
+            "command": "4AF2EE",
+            "description": "查询事件"
+        }
     ]
 }

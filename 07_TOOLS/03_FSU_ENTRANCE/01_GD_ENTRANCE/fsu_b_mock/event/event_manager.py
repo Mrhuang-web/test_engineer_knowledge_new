@@ -38,6 +38,9 @@ class EventManager:
         # 事件类型列表
         self.event_types = []
         
+        # 事件指令列表
+        self.event_commands = []
+        
         # 事件规则配置
         self.event_rules_config = {}
         
@@ -99,7 +102,7 @@ class EventManager:
             self.logger.debug("事件轮询未启用，跳过加载事件配置文件")
     
     def _load_event_types(self):
-        """从配置文件中读取事件类型
+        """从配置文件中读取事件类型和事件指令
         
         Returns:
             事件类型列表
@@ -118,7 +121,8 @@ class EventManager:
                     with open(event_types_path, "r", encoding="utf-8") as f:
                         event_config = json.load(f)
                         event_types = event_config.get("event_types", [])
-                        self.logger.info(f"从配置文件加载了 {len(event_types)} 个事件类型")
+                        self.event_commands = event_config.get("event_commands", [])
+                        self.logger.info(f"从配置文件加载了 {len(event_types)} 个事件类型和 {len(self.event_commands)} 个事件指令")
                 else:
                     self.logger.warning(f"事件类型配置文件不存在: {event_types_path}")
         except Exception as e:
@@ -182,7 +186,7 @@ class EventManager:
         
         # 发送所有事件类型
         for event_type in self.event_types:
-            await self.send_event(event_type)
+            await self.send_event(event_type, addr)
             # 添加小延迟，避免发送过快
             await asyncio.sleep(0.1)
         
@@ -203,7 +207,7 @@ class EventManager:
             self.logger.info(f"[SINGLE MODE] 接收到请求，返回事件类型: {event_type['description']} (状态码: {event_type['status']})")
             
             # 发送事件
-            await self.send_event(event_type)
+            await self.send_event(event_type, addr)
             
             # 移动到下一个事件类型
             self.current_event_index += 1
@@ -216,21 +220,18 @@ class EventManager:
             self.current_event_index = 0
             self.logger.info(f"[SINGLE MODE] 事件索引超出范围，重置索引")
     
-    async def send_event(self, event_type):
+    async def send_event(self, event_type, addr):
         """发送事件数据包
         
         Args:
             event_type: 事件类型字典，包含status和description
+            addr: 发送方地址，事件将发送回此地址
         """
         if not self.transport:
             return
         
-        if not self.sc_iot_config:
-            self.logger.error("SC IoT中心配置未设置，无法发送事件")
-            return
-        
-        # 从SC IoT中心配置获取目标地址
-        sc_target_addr = (self.sc_iot_config["host"], self.sc_iot_config["port"])
+        # 使用原始发送方地址作为目标地址
+        target_addr = addr
         
         # 使用当前协议配置或默认协议模板
         if hasattr(self, 'current_protocol_config') and self.current_protocol_config:
@@ -286,18 +287,42 @@ class EventManager:
         })
         
         # 编码透传数据
-        # 使用默认的基础PDU结构
+        # 根据协议类型构建正确的基础PDU结构
         base_pdu = {
             "through_pdu": {
                 "start": "7E",
-                "address": "01",
-                "data_frame_type": "108D",
+                "ver": "10",
+                "adr": "01",
+                "cid1": "80",
+                "cid2": "4A",  # 力维事件响应使用4A
+                "length": "20",  # 固定长度
                 "checksum": "00",
                 "end": "0D"
             }
         }
         
-        encoded_response = through_codec.encode(base_pdu, event_data)
+        # 力维协议特殊处理：构建正确的事件数据结构
+        if protocol_config.get("vendor_type") == "liwei":
+            # 力维协议事件数据结构
+            liwei_event_data = {
+                "group": "F2",
+                "type": "EE",
+                "dataf": "00",
+                "event_source": event_data.get("event_source", "0000000000"),
+                "year": event_data.get("year", time.strftime("%y")),
+                "month": event_data.get("month", time.strftime("%m")),
+                "day": event_data.get("day", time.strftime("%d")),
+                "hour": event_data.get("hour", time.strftime("%H")),
+                "minute": event_data.get("minute", time.strftime("%M")),
+                "second": event_data.get("second", time.strftime("%S")),
+                "status": event_type["status"],
+                "remark": event_data.get("remark", "00")
+            }
+            encoded_response = through_codec.encode(base_pdu, liwei_event_data)
+        else:
+            # 其他协议使用默认结构
+            base_pdu["through_pdu"]["data_frame_type"] = "108D"
+            encoded_response = through_codec.encode(base_pdu, event_data)
         if not encoded_response:
             self.logger.error("事件数据编码失败")
             return
@@ -313,11 +338,11 @@ class EventManager:
             rtn_flag=0x00  # 返回标志
         )
         
-        # 发送事件包到SC IoT中心
-        self.transport.sendto(event_packet, sc_target_addr)
+        # 发送事件包到原始发送方地址
+        self.transport.sendto(event_packet, target_addr)
         
         # 记录事件包
-        self.logger.info(f"[SEND] fsu[{self.fsu_config['fsuname']}:{self.fsu_config['fsuid']}] 发送事件: {event_type['description']} (状态码: {event_type['status']}) 到SC IoT中心: {sc_target_addr}")
+        self.logger.info(f"[SEND] fsu[{self.fsu_config['fsuname']}:{self.fsu_config['fsuid']}] 发送事件: {event_type['description']} (状态码: {event_type['status']}) 到原始发送方: {target_addr}")
         
         # 记录B接口解析结果
         event_parsed = {
@@ -333,6 +358,22 @@ class EventManager:
             "event_info": event_type
         }
         self.logger.debug(self.b_interface_codec.to_str({"raw_data": event_packet.hex().upper(), "parsed": event_parsed}))
+    
+    def is_event_command(self, command):
+        """检查某个指令是否是事件指令
+        
+        Args:
+            command: 指令类型，如 "F0EE" 或 "EE"
+            
+        Returns:
+            bool: 是否是事件指令
+        """
+        # 只检查完整指令匹配，避免后缀匹配导致的误判
+        for event_cmd in self.event_commands:
+            if event_cmd.get("command") == command:
+                return True
+        
+        return False
     
     async def event_polling_task(self):
         """事件轮询任务"""

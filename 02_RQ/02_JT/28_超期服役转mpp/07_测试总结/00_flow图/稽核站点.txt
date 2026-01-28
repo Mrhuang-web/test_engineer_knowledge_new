@@ -1,0 +1,27 @@
+flowchart TD
+    %% 样式定义：源表/维表(浅蓝)、过滤/操作(浅橙)、子查询/目标表(浅绿)
+    classDef table fill:#e8f4f8,stroke:#2c7fb8,stroke-width:2px,rx:8px,ry:8px
+    classDef op fill:#fff2e8,stroke:#f57c00,stroke-width:2px,rx:8px,ry:8px
+    classDef query fill:#e8fdf0,stroke:#2ecc71,stroke-width:2px,rx:8px,ry:8px
+
+    %% 源表：站点楼宇明细
+    A[dwd_site_building_detail_v a - 站点楼宇明细]:::table
+
+    %% 第一步：源表过滤条件 + 站点维表关联（核心关联字段+过滤规则）
+    A -->|"precinct_id (站点唯一ID) 过滤：precinct_kind=3 或 (precinct_kind=2且site_type<>1)"| B[dws_zz_dh_site b - 站点维表]:::table
+
+    %% 第二步：匹配检查生成站点匹配标志
+    A & B --> C[匹配检查：CASE WHEN b.precinct_id IS NOT NULL THEN 1 ELSE 0 END]:::op
+    C --> D[site_matched - 站点匹配标志]:::op
+
+    %% 第三步：双聚合子查询（机房统计+关键设备统计）
+    A --> E[子查询c - 机房统计聚合]:::query
+    A --> F[子查询d - 关键设备统计聚合]:::query
+
+    %% 最终合并：匹配标志+双生子查询→站点审计宽表
+    D & E & F --> G[dws_zz_audit_site - 站点审计宽表]:::query
+
+    %% 补充：源表直接关联双生子查询，贴合原流程逻辑
+    linkStyle 0 textcolor:#2c7fb8,font-weight:500
+    linkStyle 3 textcolor:#d63031,font-weight:500
+    linkStyle 4 textcolor:#d63031,font-weight:500

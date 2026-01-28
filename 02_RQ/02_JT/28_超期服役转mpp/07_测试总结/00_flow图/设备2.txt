@@ -1,0 +1,24 @@
+flowchart TD
+    %% 样式定义：数据表(浅蓝)、校验/筛选操作(浅橙)，视觉区分清晰
+    classDef table fill:#e8f4f8,stroke:#2c7fb8,stroke-width:2px,rx:8px,ry:8px
+    classDef check fill:#fff2e8,stroke:#f57c00,stroke-width:2px,rx:8px,ry:8px
+
+    %% 核心表关联：设备明细主表 → 设备配置表（唯一标识关联）
+    A["dwd_zz_device_total a - 设备明细主表"]:::table -->|power_device_id| B["t_cfg_device b - 设备配置表"]:::table
+
+    %% 设备配置表双字段校验分支
+    B --> C["power_device_id 非空校验"]:::check
+    B --> D["precinct_id - 区县ID"]:::table
+
+    %% 双校验结果合并后进入空间归属双重校验
+    C & D --> E["空间归属双重校验"]:::check
+    %% 标注双重校验核心规则（嵌套说明，清晰直观）
+    E --> E1["1. related_room = c.int_id"]:::check
+    E --> E2["2. precinct_id = c.precinct_id"]:::check
+
+    %% 校验规则关联至机房维表，再筛选有效数据
+    E1 & E2 --> F["dws_zz_dh_room c - 机房维表"]:::table
+    F --> G["筛选有效空间关联数据"]:::check
+
+    %% 最终生成目标宽表
+    G --> H["dws_zz_dh_device - 目标宽表"]:::table

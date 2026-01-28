@@ -64,5 +64,15 @@
             "status": "87",
             "description": "门未关报警"
         }
+    ],
+    "event_commands": [
+        {
+            "command": "108D",
+            "description": "查询事件记录"
+        },
+        {
+            "command": "108E",
+            "description": "查询记录数量"
+        }
     ]
 }

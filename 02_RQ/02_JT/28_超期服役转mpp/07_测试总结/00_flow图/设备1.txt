@@ -1,0 +1,57 @@
+flowchart TD
+    %% 样式定义：聚合框(浅蓝虚线)、操作/处理(浅橙)、中间/目标表(浅绿)
+    classDef group fill:#e8f4f8,stroke:#2c7fb8,stroke-width:2px,rx:8px,ry:8px,stroke-dasharray:3 3
+    classDef op fill:#fff2e8,stroke:#f57c00,stroke-width:2px,rx:8px,ry:8px
+    classDef midTable fill:#e8fdf0,stroke:#2ecc71,stroke-width:2px,rx:8px,ry:8px
+
+    %% 第1组（4张表，完整表名）
+    subgraph group1[设备源表组1]
+    direction LR
+    A1[ods_zz_device_air]
+    A2[ods_zz_device_high_power]
+    A3[ods_zz_device_ups]
+    A4[ods_zz_device_transform_device]
+    end
+    class group1 group
+
+    %% 第2组（4张表，完整表名）
+    subgraph group2[设备源表组2]
+    direction LR
+    A5[ods_zz_device_power_monitor]
+    A6[ods_zz_device_high_dc_distribution]
+    A7[ods_zz_device_switch_power]
+    A8[ods_zz_device_energy_save]
+    end
+    class group2 group
+
+    %% 第3组（4张表，完整表名）
+    subgraph group3[设备源表组3]
+    direction LR
+    A9[ods_zz_device_low_dc_distribution]
+    A10[ods_zz_device_high_distribution]
+    A11[ods_zz_device_other]
+    A12[ods_zz_device_power_generation]
+    end
+    class group3 group
+
+    %% 第4组（4张表，完整表名）
+    subgraph group4[设备源表组4]
+    direction LR
+    B1[ods_zz_device_battery]
+    B2[ods_zz_device_transform]
+    B3[ods_zz_device_smart_meter]
+    B4[ods_zz_device_low_ac_distribution]
+    end
+    class group4 group
+
+    %% 所有分组统一指向合并操作（紧凑布局，无多余线条）
+    group1 --> M["UNION ALL 垂直堆叠<br/>取各表最新快照: stat_time=max"]:::op
+    group2 --> M
+    group3 --> M
+    group4 --> M
+
+    %% 后续核心流程（与原逻辑一致，无删减）
+    M --> X["临时数据集 x"]:::midTable
+    X --> N["标准化映射关联<br/>LEFT JOIN dim_zz_data_sync_info y<br/>ON x.table_name = y.table_name"]:::op
+    N --> P["字段标准化处理<br/>• table_name→硬编码（血缘标识）<br/>• device_type_standard←y.device_type<br/>• flow_time←当前时间"]:::op
+    P --> T["dwd_zz_device_total - 设备总表"]:::midTable

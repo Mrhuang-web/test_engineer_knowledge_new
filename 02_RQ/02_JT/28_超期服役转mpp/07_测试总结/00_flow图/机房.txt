@@ -1,0 +1,33 @@
+flowchart TD
+    %% 样式定义：数据表(浅蓝)、操作/逻辑(浅橙)，视觉区分清晰
+    classDef table fill:#e8f4f8,stroke:#2c7fb8,stroke-width:2px,rx:8px,ry:8px
+    classDef op fill:#fff2e8,stroke:#f57c00,stroke-width:2px,rx:8px,ry:8px
+
+    %% 顶层主数据
+    A["t_cfg_precinct - 机房主数据"]:::table -->|"匹配路径1(精确)"| B["province_ne_relation"]:::table
+    A -->|"匹配路径1(精确)"| C["ods_zz_irms_rom_map - 映射表"]:::table
+
+    %% 映射表核心处理：dh_id→zg_id关联 + 去重规则
+    C -->|"dh_id→zg_id 关联"| D["row_number去重-同名优先rn=1"]:::op
+    D --> E["ods_zz_room - 机房表"]:::table
+    B --> E
+    %% province_ne_relation关联至机房表
+    C --> F["ods_zz_room - 机房表"]:::table
+    %% 映射表直接关联机房表分支
+
+    %% 双分支处理：精确匹配结果 + 站点检查
+    E --> G["tmp_dws_zz_dh_room_1 - 已精确匹配"]:::table
+    F --> H["exists检查站点"]:::op
+
+    %% 分支分流：未匹配筛选 + 已匹配复用
+    G --> I["NOT EXISTS - 剩余未匹配"]:::op
+    G --> J["UNION ALL - 已匹配的直接用"]:::op
+    H --> J
+    %% 站点检查结果并入已匹配分支
+
+    %% 模糊匹配环节：纯名称匹配+有效站点关联
+    I --> K["纯名称模糊匹配(room_name=zh_label) - 必须关联有效站点"]:::op
+
+    %% 最终合并至结果表
+    K --> L["dws_zz_dh_room - 最终表"]:::table
+    J --> L

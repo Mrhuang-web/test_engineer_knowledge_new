@@ -174,5 +174,12 @@
             "status": "00",
             "remark": "00"
         }
+    },
+    "48F0EE": {
+        "delay_ms": 100,
+        "data": {
+            "cid2": "00",
+            "data_info": "F0EE"
+        }
     }
 }

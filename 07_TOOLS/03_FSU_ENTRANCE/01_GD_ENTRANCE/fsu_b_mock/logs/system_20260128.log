@@ -145,3 +145,16 @@
 2026-01-28 20:26:46,437 root ERROR config_manager.py:355 未找到data_frame_type: 02AA的规则
 2026-01-28 20:26:51,764 root ERROR config_manager.py:355 未找到data_frame_type: 100000的规则
 2026-01-28 20:26:53,680 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-28 21:06:38,980 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 22:33:33,348 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 22:33:37,713 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-28 22:33:37,719 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-28 22:51:56,171 root INFO config_manager.py:228 设备配置已更新: ./config/bangsun_old
+2026-01-28 22:51:56,175 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 22:52:02,883 codec.through_data ERROR through_data_codec.py:87 数据长度错误: 期望 34, 实际 6
+2026-01-28 22:56:54,343 codec.through_data ERROR through_data_codec.py:87 数据长度错误: 期望 34, 实际 32
+2026-01-28 22:57:07,400 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 23:34:34,267 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 23:34:43,420 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-28 23:34:43,426 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 23:35:18,080 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则

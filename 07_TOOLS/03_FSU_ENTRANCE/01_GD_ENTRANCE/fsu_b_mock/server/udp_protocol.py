@@ -209,8 +209,16 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
         }
         self.logger.info(through_codec.to_str(resp_through_result))
         
-        # 使用事件管理器处理事件轮询
-        await self.event_manager.handle_event_polling(addr, protocol_config)
+        # 只有当收到事件查询指令时才触发事件轮询
+        # 构建完整的指令类型（如 F0EE）
+        group = parsed_data.get("through_pdu", {}).get("group", "")
+        current_type = parsed_data.get("through_pdu", {}).get("type", "")
+        full_command = f"{group}{current_type}" if group else current_type
+        
+        # 检查是否是事件查询指令（只检查完整命令）
+        if self.event_manager.is_event_command(full_command):
+            # 使用事件管理器处理事件轮询
+            await self.event_manager.handle_event_polling(addr, protocol_config)
     
 
     
