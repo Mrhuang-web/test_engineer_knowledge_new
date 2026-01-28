@@ -106,3 +106,30 @@
 2026-01-28 14:55:28,612 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
 2026-01-28 14:55:29,653 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
 2026-01-28 14:55:30,515 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 17:41:13,152 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 17:41:18,790 root INFO config_manager.py:228 设备配置已更新: ./config/bangsun_old
+2026-01-28 17:41:18,798 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 17:41:20,521 root INFO config_manager.py:346 从fsu_rule中匹配到data_frame_type: 108D的规则
+2026-01-28 17:42:13,871 codec.through_data ERROR through_data_codec.py:87 数据长度错误: 期望 34, 实际 6
+2026-01-28 17:42:52,783 codec.through_data ERROR through_data_codec.py:87 数据长度错误: 期望 34, 实际 6
+2026-01-28 17:43:57,191 codec.through_data ERROR through_data_codec.py:87 数据长度错误: 期望 34, 实际 24
+2026-01-28 18:52:10,633 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 18:52:37,829 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-28 18:52:37,839 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:52:49,507 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:52:50,750 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:52:51,937 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:52:57,648 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:52:59,210 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:02,175 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:05,202 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:05,886 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:06,487 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:07,240 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:09,396 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 18:53:11,645 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 19:00:07,482 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 19:15:59,179 root INFO main.py:102 系统CPU核心数: 16
+2026-01-28 19:16:18,547 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-28 19:16:18,553 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-28 19:16:20,193 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则

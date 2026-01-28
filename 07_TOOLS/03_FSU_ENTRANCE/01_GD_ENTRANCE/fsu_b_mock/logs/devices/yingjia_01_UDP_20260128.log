@@ -26,3 +26,10 @@
 2026-01-28 14:54:25,712 udp_protocol.py:445 事件类型配置文件不存在: ./config/yingjia\event_types.json
 2026-01-28 14:54:25,712 udp_protocol.py:472 事件规则配置文件不存在: ./config/yingjia\rules\event.json
 2026-01-28 14:54:25,715 udp_protocol.py:77 UDP服务已启动，监听端口: 10105
+2026-01-28 17:41:13,283 event_manager.py:116 事件类型配置文件不存在: ./config/yingjia\event_types.json
+2026-01-28 17:41:13,284 event_manager.py:143 事件规则配置文件不存在: ./config/yingjia\rules\event.json
+2026-01-28 17:41:13,296 udp_protocol.py:61 UDP服务已启动，监听端口: 10105
+2026-01-28 18:52:10,753 event_manager.py:116 事件类型配置文件不存在: ./config/yingjia\event_types.json
+2026-01-28 18:52:10,753 event_manager.py:143 事件规则配置文件不存在: ./config/yingjia\rules\event.json
+2026-01-28 18:52:10,756 udp_protocol.py:61 UDP服务已启动，监听端口: 10105
+2026-01-28 19:15:59,300 udp_protocol.py:61 UDP服务已启动，监听端口: 10105

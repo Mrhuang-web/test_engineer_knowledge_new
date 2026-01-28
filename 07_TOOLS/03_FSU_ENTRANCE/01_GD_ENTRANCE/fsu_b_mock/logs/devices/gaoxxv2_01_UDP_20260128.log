@@ -26,3 +26,10 @@
 2026-01-28 14:54:25,871 udp_protocol.py:445 事件类型配置文件不存在: ./config/gaoxxv2\event_types.json
 2026-01-28 14:54:25,871 udp_protocol.py:472 事件规则配置文件不存在: ./config/gaoxxv2\rules\event.json
 2026-01-28 14:54:25,873 udp_protocol.py:77 UDP服务已启动，监听端口: 10119
+2026-01-28 17:41:13,449 event_manager.py:116 事件类型配置文件不存在: ./config/gaoxxv2\event_types.json
+2026-01-28 17:41:13,450 event_manager.py:143 事件规则配置文件不存在: ./config/gaoxxv2\rules\event.json
+2026-01-28 17:41:13,468 udp_protocol.py:61 UDP服务已启动，监听端口: 10119
+2026-01-28 18:52:10,910 event_manager.py:116 事件类型配置文件不存在: ./config/gaoxxv2\event_types.json
+2026-01-28 18:52:10,910 event_manager.py:143 事件规则配置文件不存在: ./config/gaoxxv2\rules\event.json
+2026-01-28 18:52:10,912 udp_protocol.py:61 UDP服务已启动，监听端口: 10119
+2026-01-28 19:15:59,455 udp_protocol.py:61 UDP服务已启动，监听端口: 10119

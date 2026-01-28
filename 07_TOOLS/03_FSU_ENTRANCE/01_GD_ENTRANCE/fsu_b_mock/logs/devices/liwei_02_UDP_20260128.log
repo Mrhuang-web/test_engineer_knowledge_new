@@ -26,3 +26,17 @@
 2026-01-28 14:54:26,055 udp_protocol.py:445 事件类型配置文件不存在: ./config/liwei\event_types.json
 2026-01-28 14:54:26,056 udp_protocol.py:472 事件规则配置文件不存在: ./config/liwei\rules\event.json
 2026-01-28 14:54:26,056 udp_protocol.py:77 UDP服务已启动，监听端口: 10108
+2026-01-28 17:41:13,644 event_manager.py:116 事件类型配置文件不存在: ./config/liwei\event_types.json
+2026-01-28 17:41:13,644 event_manager.py:143 事件规则配置文件不存在: ./config/liwei\rules\event.json
+2026-01-28 17:41:13,645 udp_protocol.py:61 UDP服务已启动，监听端口: 10108
+2026-01-28 17:41:13,646 server_manager.py:57 事件轮询任务已启动，轮询间隔: 5秒
+2026-01-28 18:52:11,099 event_manager.py:114 从配置文件加载了 16 个事件类型
+2026-01-28 18:52:11,099 event_manager.py:141 从配置文件加载了事件规则配置
+2026-01-28 18:52:11,100 udp_protocol.py:61 UDP服务已启动，监听端口: 10108
+2026-01-28 18:52:11,101 server_manager.py:57 事件轮询任务已启动，轮询间隔: 5秒
+2026-01-28 19:00:07,985 event_manager.py:118 从配置文件加载了 16 个事件类型
+2026-01-28 19:00:07,986 event_manager.py:145 从配置文件加载了事件规则配置
+2026-01-28 19:15:59,647 event_manager.py:118 从配置文件加载了 16 个事件类型
+2026-01-28 19:15:59,647 event_manager.py:145 从配置文件加载了事件规则配置
+2026-01-28 19:15:59,648 udp_protocol.py:61 UDP服务已启动，监听端口: 10108
+2026-01-28 19:15:59,649 server_manager.py:57 事件轮询任务已启动，轮询间隔: 5秒

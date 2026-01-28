@@ -26,3 +26,10 @@
 2026-01-28 14:54:26,093 udp_protocol.py:445 事件类型配置文件不存在: ./config/UDP-ES1000\event_types.json
 2026-01-28 14:54:26,094 udp_protocol.py:472 事件规则配置文件不存在: ./config/UDP-ES1000\rules\event.json
 2026-01-28 14:54:26,095 udp_protocol.py:77 UDP服务已启动，监听端口: 10129
+2026-01-28 17:41:13,684 event_manager.py:116 事件类型配置文件不存在: ./config/UDP-ES1000\event_types.json
+2026-01-28 17:41:13,684 event_manager.py:143 事件规则配置文件不存在: ./config/UDP-ES1000\rules\event.json
+2026-01-28 17:41:13,701 udp_protocol.py:61 UDP服务已启动，监听端口: 10129
+2026-01-28 18:52:11,137 event_manager.py:116 事件类型配置文件不存在: ./config/UDP-ES1000\event_types.json
+2026-01-28 18:52:11,137 event_manager.py:143 事件规则配置文件不存在: ./config/UDP-ES1000\rules\event.json
+2026-01-28 18:52:11,139 udp_protocol.py:61 UDP服务已启动，监听端口: 10129
+2026-01-28 19:15:59,693 udp_protocol.py:61 UDP服务已启动，监听端口: 10129

@@ -85,11 +85,15 @@ class EventManager:
             self.event_polling_interval = device_config.get("event_polling_interval", 5)
             self.event_mode = device_config.get("event_mode", "single")  # 事件模式：single或batch
         
-        # 从配置文件中读取事件类型
-        self.event_types = self._load_event_types()
-        
-        # 从配置文件中读取事件规则配置
-        self.event_rules_config = self._load_event_rules_config()
+        # 只有当event_polling_enable为true时，才加载事件配置文件
+        if self.event_polling_enable:
+            # 从配置文件中读取事件类型
+            self.event_types = self._load_event_types()
+            
+            # 从配置文件中读取事件规则配置
+            self.event_rules_config = self._load_event_rules_config()
+        else:
+            self.logger.debug("事件轮询未启用，跳过加载事件配置文件")
     
     def _load_event_types(self):
         """从配置文件中读取事件类型
@@ -232,35 +236,35 @@ class EventManager:
         through_codec = ThroughDataCodec(protocol_config)
         
         # 从配置文件中获取事件规则配置
-        # 力维协议使用 4A 作为读取信息命令
-        event_rules = self.event_rules_config.get("4A", {})
+        event_rules = self.event_rules_config.get("108D", {})
         event_data = event_rules.get("data", {})
         
-        # 构建事件数据包 - 按照力维协议的格式
-        import time
-        current_time = time.strftime("%y%m%d%H%M%S")
-        
+        # 构建事件数据包
         event_data = {
-            "rtn": "00",
-            "info": {
-                "event_source": "0000000000",  # 5字节全0
-                "datetime": current_time,  # 7字节日期时间
-                "status": event_type["status"],  # 1字节状态
-                "remark": "00"  # 1字节备注
-            }
+            "card_id": event_data.get("card_id", "7152"),
+            "vendor_id": event_data.get("vendor_id", "B3"),
+            "status": event_type["status"]
         }
         
+        # 添加时间配置
+        import time
+        event_data.update({
+            "year": time.strftime("%y"),
+            "month": time.strftime("%m"),
+            "day": time.strftime("%d"),
+            "hour": time.strftime("%H"),
+            "minute": time.strftime("%M"),
+            "second": time.strftime("%S")
+        })
+        
         # 编码透传数据
-        # 使用默认的基础PDU结构 - 按照力维协议的格式
+        # 使用默认的基础PDU结构
         base_pdu = {
             "through_pdu": {
                 "start": "7E",
-                "version": "10",
                 "address": "01",
-                "cid1": "80",
-                "cid2": "4A",
-                "length": "0010",  # 数据长度
-                "checksum": "0000",
+                "data_frame_type": "108D",
+                "checksum": "00",
                 "end": "0D"
             }
         }

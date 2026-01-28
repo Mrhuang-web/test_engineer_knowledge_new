@@ -26,3 +26,10 @@
 2026-01-28 14:54:26,127 udp_protocol.py:445 事件类型配置文件不存在: ./config/zhongda\event_types.json
 2026-01-28 14:54:26,127 udp_protocol.py:472 事件规则配置文件不存在: ./config/zhongda\rules\event.json
 2026-01-28 14:54:26,129 udp_protocol.py:77 UDP服务已启动，监听端口: 10123
+2026-01-28 17:41:13,729 event_manager.py:116 事件类型配置文件不存在: ./config/zhongda\event_types.json
+2026-01-28 17:41:13,730 event_manager.py:143 事件规则配置文件不存在: ./config/zhongda\rules\event.json
+2026-01-28 17:41:13,740 udp_protocol.py:61 UDP服务已启动，监听端口: 10123
+2026-01-28 18:52:11,178 event_manager.py:116 事件类型配置文件不存在: ./config/zhongda\event_types.json
+2026-01-28 18:52:11,178 event_manager.py:143 事件规则配置文件不存在: ./config/zhongda\rules\event.json
+2026-01-28 18:52:11,179 udp_protocol.py:61 UDP服务已启动，监听端口: 10123
+2026-01-28 19:15:59,735 udp_protocol.py:61 UDP服务已启动，监听端口: 10123

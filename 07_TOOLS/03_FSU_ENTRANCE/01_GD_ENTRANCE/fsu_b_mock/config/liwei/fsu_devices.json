@@ -1,14 +1,11 @@
 {
-    "devices": [
+    "device_list": [
         {
-            "device_id": "liwei_001",
             "vendor": "力维",
-            "model": "ACUC3.0",
-            "version": "V3.0",
-            "address": "01",
-            "port": 8080,
-            "status": "online",
-            "description": "力维ACUC3.0门禁控制器",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./liwei.json",
+            "rule_file": "./rules/default.json",
             "event_polling_enable": true,
             "event_polling_interval": 5,
             "event_mode": "single"
