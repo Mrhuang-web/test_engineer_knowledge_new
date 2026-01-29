@@ -2,67 +2,59 @@
     "event_types": [
         {
             "status": "00",
-            "description": "正常开门"
+            "description": "刷卡开门"
         },
         {
             "status": "01",
-            "description": "密码开门"
+            "description": "ID+密码开门"
         },
         {
             "status": "02",
-            "description": "卡开门"
-        },
-        {
-            "status": "03",
             "description": "远程开门"
         },
         {
+            "status": "03",
+            "description": "手动开门"
+        },
+        {
             "status": "04",
-            "description": "按钮开门"
+            "description": "联动开门"
         },
         {
             "status": "05",
-            "description": "多卡开门"
+            "description": "报警（红外/门磁等）"
         },
         {
             "status": "06",
-            "description": "首卡开门"
+            "description": "SM掉电记录"
         },
         {
             "status": "07",
-            "description": "紧急开门"
+            "description": "内部控制参数修改"
         },
         {
-            "status": "80",
-            "description": "门磁报警"
+            "status": "08",
+            "description": "无效卡刷卡"
         },
         {
-            "status": "81",
-            "description": "防拆报警"
+            "status": "09",
+            "description": "卡片过期"
         },
         {
-            "status": "82",
-            "description": "胁迫报警"
+            "status": "0A",
+            "description": "无进入权限"
         },
         {
-            "status": "83",
-            "description": "密码错误"
+            "status": "0B",
+            "description": "密码三次错误"
         },
         {
-            "status": "84",
-            "description": "卡无效"
+            "status": "22",
+            "description": "消防联动输入"
         },
         {
-            "status": "85",
-            "description": "时间无效"
-        },
-        {
-            "status": "86",
-            "description": "权限无效"
-        },
-        {
-            "status": "87",
-            "description": "门未关报警"
+            "status": "30",
+            "description": "钥匙开门"
         }
     ],
     "event_commands": [
@@ -71,7 +63,7 @@
             "description": "查询控制器的最新事件记录"
         },
         {
-            "command": "4AF2EE",
+            "command": "4AF2E2",
             "description": "查询事件"
         }
     ]

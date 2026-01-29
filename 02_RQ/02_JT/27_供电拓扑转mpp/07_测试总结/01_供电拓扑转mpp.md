@@ -9,9 +9,7 @@
 特别说明：
 	只有综资本身的任务，和之前一样，然后建立在mpp的综资数据上
 
-1.页面可以手动刷新
-2.每天自动触发 scada抽取任务
-curl --location --request GET 'http://10.1.202.2:30655/v1/topuConfig/mappingResourceAll'
+说明：好像是stat_time即可
 ```
 
 
@@ -36,11 +34,23 @@ curl --location --request GET 'http://10.1.202.2:30655/v1/topuConfig/mappingReso
 
 ```
 注意点：
-	dwd_zz_device_total  -- 不要存在重复res的，如果重复跑会出现rescode重复
+	dwd_zz_device_total  -- 不要存在重复res的，如果重复跑会出现rescode重复（目前是没有主键限制的）
+		即所有的综资设备表里面如果有重复的，都会被写进来（相同或不同批次都会有）
 		即触发 综资设备总表-机房设备类型 任务
 		
 	一般不会出现重复的（现网一般都是最新批次的）
 	
 	然后分路顺序控制每一条链路
+```
+
+
+
+
+
+```
+供电生成方式:
+	1.页面可以手动刷新
+	2.每天自动触发 scada抽取任务
+	curl --location --request GET 'http://10.1.202.2:30655/v1/topuConfig/mappingResourceAll'
 ```
 

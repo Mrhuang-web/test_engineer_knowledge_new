@@ -340,7 +340,7 @@ class DeviceConfig:
         """
         fsu_rule = rules_obj.get("fsu_rule", {})
         default_rule = rules_obj.get("default_rule", {})
-        
+
         # 1. 优先从fsu_rule中匹配
         if data_frame_type in fsu_rule:
             logging.info(f"从fsu_rule中匹配到data_frame_type: {data_frame_type}的规则")

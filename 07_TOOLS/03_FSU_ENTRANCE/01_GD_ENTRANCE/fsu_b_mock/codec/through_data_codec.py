@@ -237,9 +237,67 @@ class ThroughDataCodec:
             # 编码 DATA_FRAME
             resp_fields = data_frame_config.get("resp_data_list", [])
             data_frame_data = b""
+            
+            # 力维协议特殊处理：优先使用用户传入的response_data
+            if self.vendor_type == "liwei" and response_data:
+                # 如果用户传入了response_data，根据用户数据构建响应
+                self.logger.debug(f"力维协议：优先使用用户传入的response_data构建响应")
+
+                # 构建力维协议INFO部分数据
+                info_data = b""
+
+                # 按照力维协议格式顺序添加字段
+                field_order = ["year", "month", "day", "week", "hour", "minute", "second", "event_source", "status", "remark"]
+
+                for field_name in field_order:
+                    if field_name in response_data:
+                        value = response_data[field_name]
+                        # 根据字段名确定长度
+                        if field_name == "year":
+                            # 年份：2字节BCD格式
+                            year_str = str(value)
+                            if len(year_str) == 4:
+                                # 转换为BCD格式
+                                bcd_year = ((int(year_str[0]) << 12) | (int(year_str[1]) << 8) | (int(year_str[2]) << 4) | int(year_str[3]))
+                                info_data += bcd_year.to_bytes(2, byteorder='big')
+                        elif field_name == "month" or field_name == "day" or field_name == "week" or field_name == "hour" or field_name == "minute" or field_name == "second":
+                            # 月、日、周、时、分、秒：1字节BCD格式
+                            num = int(value)
+                            bcd_value = ((num // 10) << 4) | (num % 10)
+                            info_data += bytes([bcd_value])
+                        elif field_name == "event_source":
+                            # 事件源：5字节
+                            if len(value) >= 10:
+                                info_data += bytes.fromhex(value[:10])
+                            else:
+                                info_data += bytes.fromhex(value.ljust(10, '0'))
+                        elif field_name == "status" or field_name == "remark":
+                            # 状态、备注：1字节
+                            if isinstance(value, str) and len(value) >= 2:
+                                info_data += bytes.fromhex(value[:2])
+                            else:
+                                info_data += bytes([0x00])
+
+                # 保存INFO数据，供后续校验和计算使用
+                self._liwei_info_data = info_data
+
+                # 处理resp_fields中的字段（主要是cid2）
+                for field in resp_fields:
+                    field_data = self._encode_field(field, parsed_data, response_data)
+                    data_frame_data += field_data
+
+                # 添加INFO数据
+                data_frame_data += info_data
+            else:
+                # 否则按照配置文件构建响应
+                for field in resp_fields:
+                    field_data = self._encode_field(field, parsed_data, response_data)
+                    data_frame_data += field_data
+
             for field in resp_fields:
                 field_data = self._encode_field(field, parsed_data, response_data)
                 data_frame_data += field_data
+            
             self.logger.debug(f"DATA_FRAME编码结果: {data_frame_data.hex().upper()}, 长度={len(data_frame_data)}, 字段数={len(resp_fields)}")
             
             # 添加填充数据
@@ -416,10 +474,10 @@ class ThroughDataCodec:
         if pdu_left_match:
             # 提取实际字段名
             actual_field = pdu_left_match.group(1)
-            # 从透传数据中获取对应的值
-            through_data = parsed_data.get("透传数据", {})
-            if actual_field in through_data:
-                value = through_data[actual_field]
+            # 从透传数据PDU中获取对应的值
+            through_pdu = parsed_data.get("through_pdu", {})
+            if actual_field in through_pdu:
+                value = through_pdu[actual_field]
             else:
                 value = field_value
         else:
@@ -427,8 +485,8 @@ class ThroughDataCodec:
             if field_name in response_data:
                 value = response_data[field_name]
             # 其次从解析数据中获取值（透传字段）
-            elif field_name in parsed_data.get("透传数据", {}):
-                value = parsed_data["透传数据"][field_name]
+            elif field_name in parsed_data.get("through_sdu", {}):
+                value = parsed_data["through_sdu"][field_name]
             # 最后使用默认值
             else:
                 value = field_value
@@ -792,7 +850,14 @@ class ThroughDataCodec:
         
         soi = data[0:1]  # SOI: 7EH
         ver_adr_cid1_cid2 = data[1:5]  # VER(1) + ADR(1) + CID1(1) + CID2/RTN(1)
-        info = data[7:-3]  # INFO部分：跳过前7字节（SOI+VER+ADR+CID1+CID2+L.TH），跳过最后3字节（CHK-SUM+EOI）
+        
+        # 优先使用保存的INFO数据（来自用户传入的response_data）
+        if hasattr(self, '_liwei_info_data') and self._liwei_info_data:
+            info = self._liwei_info_data
+            self.logger.debug(f"使用保存的INFO数据: {info.hex().upper()}")
+        else:
+            info = data[7:-3]  # INFO部分：跳过前7字节（SOI+VER+ADR+CID1+CID2+L.TH），跳过最后3字节（CHK-SUM+EOI）
+        
         eoi = bytes.fromhex("0D")  # EOI: 0DH，直接使用配置中定义的值
         
         # 1. 计算L.TH（参数长度校验）

@@ -1,0 +1,149 @@
+2026-01-30 01:35:24,341 - kafka_monitor - ERROR - Topic 名称不能为空
+2026-01-30 01:36:09,159 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:36:11,162 - kafka_monitor - ERROR - 创建 Kafka 消费者失败: NoBrokersAvailable
+2026-01-30 01:37:19,721 - kafka_monitor - ERROR - Topic 名称不能为空
+2026-01-30 01:39:30,459 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:40:00,461 - kafka_monitor - ERROR - 创建 Kafka 消费者失败: NoBrokersAvailable
+2026-01-30 01:40:00,462 - kafka_monitor - ERROR - 请检查以下几点:
+2026-01-30 01:40:00,463 - kafka_monitor - ERROR - 1. Kafka 服务器是否运行在 10.1.203.120:9095
+2026-01-30 01:40:00,463 - kafka_monitor - ERROR - 2. 网络连接是否正常
+2026-01-30 01:40:00,464 - kafka_monitor - ERROR - 3. Topic 是否存在
+2026-01-30 01:40:00,464 - kafka_monitor - ERROR - 4. 防火墙是否允许连接
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 创建 Kafka 消费者失败: KafkaConfigurationError: Request timeout (30000) must be larger than session timeout (30000)
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 请检查以下几点:
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 1. Kafka 服务器是否运行在 10.1.203.120:9095
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 2. 网络连接是否正常
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 3. Topic 是否存在
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 4. 防火墙是否允许连接
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 5. Kafka 服务是否正常运行
+2026-01-30 01:41:45,346 - kafka_monitor - ERROR - 无法创建 Kafka 消费者，退出程序
+2026-01-30 01:42:22,352 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:42:22,352 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:42:22,352 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:42:22,352 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:42:22,354 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:42:41,942 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:42:41,943 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:42:47,704 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:42:47,704 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:42:47,704 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:42:47,704 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:42:47,706 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:43:20,858 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:43:20,859 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:43:20,859 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:43:20,859 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:43:20,861 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:43:29,527 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:43:29,527 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:43:29,528 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:44:02,565 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:44:02,566 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:44:02,567 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:44:11,160 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:44:11,160 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:44:11,161 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:44:40,542 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:44:40,543 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:44:42,917 - kafka_monitor - ERROR - 创建 Kafka 消费者失败: KafkaConfigurationError: Unrecognized configs: {'socket_connect_timeout_ms', 'socket_timeout_ms'}
+2026-01-30 01:44:42,917 - kafka_monitor - ERROR - 请检查以下几点:
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 1. Kafka 服务器是否运行在 10.1.203.120:9095
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 2. 网络连接是否正常
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 3. Topic 是否存在
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 4. 防火墙是否允许连接
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 5. Kafka 服务是否正常运行
+2026-01-30 01:44:42,918 - kafka_monitor - ERROR - 无法创建 Kafka 消费者，退出程序
+2026-01-30 01:44:44,200 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:44:44,200 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:44:44,200 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:45:18,393 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:45:18,394 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:45:18,394 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:45:18,394 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:45:18,396 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:45:25,848 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:45:25,848 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:45:25,849 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:46:07,451 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:46:07,452 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:46:07,482 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:46:07,482 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:46:07,483 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:46:09,944 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:46:09,945 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:46:09,945 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:46:09,945 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:46:09,946 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:46:09,947 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:46:49,179 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:46:49,180 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:46:49,180 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:46:58,950 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:46:58,951 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:47:01,448 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:47:01,449 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:47:01,449 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:47:01,450 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:47:01,450 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:47:01,452 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:47:30,864 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:47:30,865 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:47:30,866 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:47:53,017 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:47:53,018 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:47:55,500 - kafka_monitor - INFO - 进入 start_monitoring 方法
+2026-01-30 01:47:55,500 - kafka_monitor - INFO - 当前 consumer 状态: None
+2026-01-30 01:47:55,500 - kafka_monitor - INFO - 消费者不存在，尝试创建...
+2026-01-30 01:47:55,500 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:47:55,502 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:47:55,502 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:47:55,502 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:47:55,502 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:47:55,504 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:48:12,610 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:48:12,610 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:48:12,611 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:48:29,819 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:48:29,820 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:48:32,320 - kafka_monitor - INFO - 进入 start_monitoring 方法
+2026-01-30 01:48:32,320 - kafka_monitor - INFO - 当前 consumer 状态: None
+2026-01-30 01:48:32,320 - kafka_monitor - INFO - 消费者不存在，尝试创建...
+2026-01-30 01:48:32,320 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:48:32,322 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:48:32,322 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:48:32,322 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:48:32,322 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:48:32,324 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:48:54,320 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:48:54,321 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:48:54,322 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:49:28,745 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:49:28,745 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:49:31,202 - kafka_monitor - INFO - 进入 start_monitoring 方法
+2026-01-30 01:49:31,202 - kafka_monitor - INFO - 当前 consumer 状态: None
+2026-01-30 01:49:31,203 - kafka_monitor - INFO - 消费者不存在，尝试创建...
+2026-01-30 01:49:31,203 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:49:31,205 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:49:31,205 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:49:31,205 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:49:31,205 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:49:31,207 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:49:35,962 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:49:35,962 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:49:35,963 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:50:17,642 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Connection attempt timed out
+2026-01-30 01:50:17,643 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. KafkaConnectionError: timeout
+2026-01-30 01:50:17,644 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:50:17,750 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:50:17,751 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
+2026-01-30 01:51:08,519 - kafka_monitor - INFO - 进入 start_monitoring 方法
+2026-01-30 01:51:08,519 - kafka_monitor - INFO - 当前 consumer 状态: None
+2026-01-30 01:51:08,520 - kafka_monitor - INFO - 消费者不存在，尝试创建...
+2026-01-30 01:51:08,520 - kafka_monitor - INFO - 尝试连接 Kafka 服务器 (第 1/3 次): 10.1.203.120:9095
+2026-01-30 01:51:08,521 - kafka.consumer.subscription_state - INFO - Updating subscribed topics to: ('entrance_raw_data',)
+2026-01-30 01:51:08,521 - kafka_monitor - INFO - 成功连接到 Kafka 服务器: 10.1.203.120:9095
+2026-01-30 01:51:08,522 - kafka_monitor - INFO - 成功订阅 topic: entrance_raw_data
+2026-01-30 01:51:08,522 - kafka_monitor - INFO - 消费者组: kafka_monitor_group
+2026-01-30 01:51:08,524 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: connecting to 10.1.203.120:9095 [('10.1.203.120', 9095) IPv4]
+2026-01-30 01:51:40,379 - kafka_monitor - INFO - 接收到退出信号，正在关闭消费者...
+2026-01-30 01:51:40,380 - kafka.conn - INFO - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=10.1.203.120:9095 <connecting> [IPv4 ('10.1.203.120', 9095)]>: Closing connection. 
