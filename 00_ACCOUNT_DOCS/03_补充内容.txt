@@ -3464,37 +3464,11 @@ curl --location --request GET 'http://10.188.99.5:21530/v1/monitorapi/curlApi'
 
 
 
-各位好：
-          本次升级成功，计划升级3个服务 ，实际成功3个，失败0个。现网功能测试已验证。
-          其中新增0个服务，更新3个服务，下线0个服务，上线后业务测试完成3个；回滚0个;失败0个;
-
-          验证执行测试用例结果如下链接：
-          https://docs.qq.com/sheet/DYVN2Z2JvWm5hWWpC?nlc=1&tab=rqjkvp&_t=1757294245946
-
-          本次上线部署一小时后服务正常无异常，相关服务日志如下链接：
-          https://docs.qq.com/doc/DVmFYSnRZR1Roc0xL
-
-    1、更新服务清单：
-             external-service、web前端、capacity
-    2、升级内容：
-            优化/需求：
-
-            1、综资数据同步oom问题修复
-
-            2、external服务补充服务监控接口
-
-            3、动环通过单点登录对接汇聚机房
-
-            4、用电评估-开关电源系统的系统额定容量算法屏蔽
+人脸门禁
+	新的：大华门禁（一条先连交换机，一条线电源的）
+	旧的：目前是力维门禁（之前是海康威视的）
 
 
 
-    3、回滚服务清单
-         无
-    4、失败服务清单
-         无 
-
-
-
-
-sunke <sunke@aspirecn.com>, xushujie@aspirecn.com <xushujie@aspirecn.com>, huangjiajie@aspirecn.com <huangjiajie@aspirecn.com>, zengxianji@aspirecn.com <zengxianji@aspirecn.com>, guozhen <guozhen@aspirecn.com>, yinguirong <yinguirong@aspirecn.com>, likehuai <likehuai@aspirecn.com>, sunzhonghua <sunzhonghua@aspirecn.com>, caihongsheng <caihongsheng@aspirecn.com>, geminglin@aspirecn.com <geminglin@aspirecn.com>, jiangyanlun <jiangyanlun@aspirecn.com>, xuguangchun <xuguangchun@aspirecn.com>, 周健胜 <zhoujiansheng@aspirecn.com>, lixf@aspirecn.com <lixf@aspirecn.com>, 刘岂宇 <liuqiyu@aspirecn.com>, liliwei_a@aspirecn.com <liliwei_a@aspirecn.com>, liuxiaoning <liuxiaoning@aspirecn.com>, luoqiang <luoqiang@aspirecn.com>
+录bug
+	用户配置工程数据权限，但是监控视图没有做权限，导致设备返回的是全部类型的（即工程和非工程的）

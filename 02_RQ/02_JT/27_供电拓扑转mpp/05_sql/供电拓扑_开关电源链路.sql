@@ -18,7 +18,7 @@ SELECT * FROM ods_zz_link_pe_in WHERE res_code = '441100111000068928044111'
 SELECT * FROM ods_zz_link_pe_in where down_device_type = '低压交流配电' LIMIT 10;
 
 INSERT INTO `ods_zz_link_pe_in` (`stat_time`, `res_code`, `batch_num`, `collect_time`, `irms_province_code`, `province_id`, `city_id`, `county_id`, `related_site`, `related_room`, `related_device_type`, `related_device`, `branch_type`, `branch_type_abbreviation`, `branch_number`, `branch_active_standby`, `branch_rated_capacity`, `lifecycle_status`, `branch_name`, `down_device_ralated_room`, `down_device_name`, `down_branch_name`, `down_device_type`, `down_branch_type`, `down_branch_type_abbreviation`, `down_branch_number`, `down_branch_rated_capacity`, `down_branch_active_standby`, `down_use_status`, `qr_code_no`, `qualitor`, `flow_time`) 
-VALUES ('2026-01-26', '441100111000068928044111', '20260126', '2026-01-26 15:25:44', 'GZ', '520000', '520400', '520404', '2026012601', '2026012602', '开关电源', '44100000000000808901111', '设备', 'TOUT', '1', '主用', '2000', '在用', '广州从化青云四楼机房交换1-TOUT2-2000-主用-在用-REC-4F-6-1', '2026012602', '441000000000008088644213', '广州从化青云四楼机房动力3-REC/Q-4F-6-2--2000--', '低压直流配电', '微型断路器', 'KIN', NULL, NULL, '主用', '在用', NULL, '徐恒辉', '2026-01-13 15:32:14');
+VALUES ('2025-01-26', '441100111000068928044111', '20260126', '2026-01-26 15:25:44', 'GZ', '520000', '520400', '520404', '2026012601', '2026012602', '开关电源', '44100000000000808901111', '设备', 'TOUT', '1', '主用', '2000', '在用', '广州从化青云四楼机房交换1-TOUT2-2000-主用-在用-REC-4F-6-1', '2026012602', '441000000000008088644213', '广州从化青云四楼机房动力3-REC/Q-4F-6-2--2000--', '低压直流配电', '微型断路器', 'KIN', NULL, NULL, '主用', '在用', NULL, '徐恒辉', '2026-01-13 15:32:14');
 
 INSERT INTO `ods_zz_link_pe_in` (`stat_time`, `res_code`, `batch_num`, `collect_time`, `irms_province_code`, `province_id`, `city_id`, `county_id`, `related_site`, `related_room`, `related_device_type`, `related_device`, `branch_type`, `branch_type_abbreviation`, `branch_number`, `branch_active_standby`, `branch_rated_capacity`, `lifecycle_status`, `branch_name`, `down_device_ralated_room`, `down_device_name`, `down_branch_name`, `down_device_type`, `down_branch_type`, `down_branch_type_abbreviation`, `down_branch_number`, `down_branch_rated_capacity`, `down_branch_active_standby`, `down_use_status`, `qr_code_no`, `qualitor`, `flow_time`) 
 VALUES ('2026-01-26', '441100011100068928044111', '20260126', '2026-01-26 15:25:44', 'GZ', '520000', '520400', '520404', '2026012601', '2026012602', '开关电源', '44100000000000808901111', '设备', 'TOUT', '1', '主用', '2000', '在用', '广州从化青云四楼机房交换1-TOUT1-2000-主用-在用-REC-4F-6-1', '2026012602', '441000000000008088441231', '广州从化青云四楼机房动力3-REC/Q-4F-6-1--2000--', '低压直流配电', '微型断路器', 'KIN', NULL, NULL, '主用', '在用', NULL, '徐恒辉', '2026-01-13 15:32:14');
@@ -97,3 +97,21 @@ SELECT * FROM dws_zz_dh_device  where precinct_id = '01-08-08-01-11-02-01' LIMIT
 
 SELECT * FROM dwd_zz_device_total LIMIT 10;
 SELECT * FROM dwd_zz_device_total where related_room = '2026012602' LIMIT 10;
+
+
+
+
+SELECT * FROM 
+	ods_zz_link_pe_in 
+where 
+	AND province_id = '360000'
+	LIMIT 10;
+	
+	
+SELECT b.zh_label,a.* FROM 
+	ods_zz_link_pe_in a
+left join
+	ods_zz_site b on a.related_site = b.int_id
+where 
+	batch_num = '20260128'
+	LIMIT 10;
