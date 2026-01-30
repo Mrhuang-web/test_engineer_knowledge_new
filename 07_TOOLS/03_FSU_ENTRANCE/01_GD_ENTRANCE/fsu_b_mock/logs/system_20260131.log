@@ -1,0 +1,57 @@
+2026-01-31 02:01:44,692 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:01:52,241 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 02:01:52,249 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 02:02:07,555 root INFO main.py:141 服务已停止
+2026-01-31 02:20:32,500 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:20:40,949 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 02:20:40,952 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 02:20:48,047 root INFO main.py:141 服务已停止
+2026-01-31 02:20:52,215 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:21:22,843 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:21:43,164 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:21:53,156 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:22:10,605 root INFO main.py:141 服务已停止
+2026-01-31 02:22:10,792 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 02:22:14,446 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:22:18,970 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 02:22:18,971 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 02:40:09,756 root INFO main.py:141 服务已停止
+2026-01-31 02:40:10,023 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:40:30,343 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 02:40:30,344 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E0的规则
+2026-01-31 02:40:42,076 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 02:54:13,567 root INFO main.py:141 服务已停止
+2026-01-31 02:54:32,486 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 02:54:38,861 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 02:54:38,865 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 03:02:05,353 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:02:11,623 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:02:11,629 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E0的规则
+2026-01-31 03:02:18,597 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 03:02:32,822 root INFO main.py:141 服务已停止
+2026-01-31 03:08:30,533 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:08:39,508 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:08:39,511 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则

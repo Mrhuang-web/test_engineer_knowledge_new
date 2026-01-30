@@ -1,0 +1,188 @@
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@47fd5cae]
+2026-01-30 22:39:00.018 ERROR 7 --- [code-Message-30] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:null
+java.lang.NullPointerException: null
+2026-01-30 22:39:00.019  INFO 7 --- [code-Message-39] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10101,"request":"{\"fsuId\":\"124123131241\",\"taskId\":\"310f859c-2a82-43e7-944a-010be0ce64f8\",\"protocolType\":\"bxOldUdp\",\"ip\":\"10.12.5.142\",\"port\":10101,\"deviceId\":\"24537e2c-d925-47a7-bcb3-5d232002c455\",\"protocolCommon\":{\"commAdr\":\"01\",\"ver\":\"17511\",\"soi\":\"7E\",\"eoi\":\"0D\"},\"commands\":{\"loginCmd\":null,\"executeCmd\":{\"cid1\":null,\"cid2\":null,\"comd_group\":\"81\",\"comd_type\":\"10\",\"dataf\":\"0000000000000000000000000000000000000000000000000000\"}},\"requestType\":null,\"comPort\":1,\"methodType\":null,\"partition\":\"10.1.4.113\",\"cardNo\":null,\"requestCommand\":null}","response":null,"taskId":"310f859c-2a82-43e7-944a-010be0ce64f8","deviceId":"24537e2c-d925-47a7-bcb3-5d232002c455","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58ee0f65] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: f1cf14c8-e2c0-4236-86b6-4858a14c326d(String)
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+Creating a new SqlSession
+<==        Row: 8611, f1cf14c8-e2c0-4236-86b6-4858a14c326d, 0, 0, 01-01-17-02-05-01, 9bb76643-0ef8-481b-85d2-ad9fdcef7f09, TCP-??-??2?, 2, 17, 00, 01, 10.12.5.142, 10104, 63353, 7E, 0D, TCP-??-??2, TCP-??-??2auto?, 2026-01-12, null, a5008, 10.1.4.113
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d1e293] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: 24537e2c-d925-47a7-bcb3-5d232002c455(String)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58ee0f65]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5899fd21] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: select device_code from t_cfg_device where device_id in (select device_id from t_cfg_fsu where address = ?) limit 1
+==> Parameters: 10.12.5.142(String)
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==        Row: 8739, 24537e2c-d925-47a7-bcb3-5d232002c455, 0, 0, 01-01-17-02-05-01, bcacf10f-3976-4040-8f06-9e50e91d514e, UDP-??-??1auto?, 2, 16, 01, 01, 10.12.5.142, 10101, 17511, 7E, 0D, UDP-??-??1, UDP-??-??1auto?, 2026-01-12, 0021, a5008, 10.1.4.113
+<==    Columns: device_code
+<==        Row: 124123131241
+<==      Total: 1
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5899fd21]
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@42d1e293]
+2026-01-30 22:39:00.021 ERROR 7 --- [code-Message-39] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:null
+java.lang.NullPointerException: null
+2026-01-30 22:39:00.021  INFO 7 --- [ce-Schedule-106] c.a.m.e.s.schedule.BxEventIndexSchedule  : 邦讯状态采集定时任务结束
+2026-01-30 22:39:00.117  INFO 7 --- [ecode-Message-5] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10115,"request":"FF3132343132333133313234310000000000000000000000000000000001002700EE010022007E79F78110000000000000000000000000000000000000000000000000000001020D87FE","response":"7E000081108110070803051408220000000000FD00FD00FD00FD00FD00FD00FD00000000000049000D","taskId":"c834b00d-3fcf-44d5-b36b-2548b87c88ce","deviceId":"59cedbb5-be14-44e6-ba46-3adb6e13bb82","status":"200","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+2026-01-30 22:39:00.118  INFO 7 --- [ecode-Message-4] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10116,"request":"FF3132343132333133313234310000000000000000000000000000000001002700EE010022007E79F78110000000000000000000000000000000000000000000000000000001020D87FE","response":"7E000081108110070803051408220000000000FD00FD00FD00FD00FD00FD00FD00000000000049000D","taskId":"3eeab017-0960-44ea-a746-531dea8b5f9f","deviceId":"9f4f460f-d6f0-45fd-97e3-e2a390eed5fc","status":"200","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46385d46] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: 59cedbb5-be14-44e6-ba46-3adb6e13bb82(String)
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12316d46] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: 9f4f460f-d6f0-45fd-97e3-e2a390eed5fc(String)
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==        Row: 8583, 59cedbb5-be14-44e6-ba46-3adb6e13bb82, 1, 0, 01-01-17-02-05-01, 06c4adcf-9774-41b6-ad28-9a656a3021ea, UDP-??-??1?, 2, 5, 00, 40, 10.12.5.142, 10115, 63353, 7E, 0D, UDP-??-??1, UDP-??-??1auto?, 2026-01-13, 0822, TEST, 10.1.4.113
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@46385d46]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b015] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+==>  Preparing: select device_id as deviceId, raw_mete_code as meteCode, mete_id as meteId from alert_alerts where device_id = ?
+==> Parameters: 59cedbb5-be14-44e6-ba46-3adb6e13bb82(String)
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==        Row: 8587, 9f4f460f-d6f0-45fd-97e3-e2a390eed5fc, 1, 0, 01-01-17-02-05-01, 0eb9f227-ad68-4a31-8032-f5f5263a75fe, UDP-??-??2?, 2, 5, 00, 40, 10.12.5.142, 10116, 63353, 7E, 0D, UDP-??-??2, UDP-??-??2auto?, 2026-01-13, 0822, TEST, 10.1.4.113
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12316d46]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de33387] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: select device_id as deviceId, raw_mete_code as meteCode, mete_id as meteId from alert_alerts where device_id = ?
+==> Parameters: 9f4f460f-d6f0-45fd-97e3-e2a390eed5fc(String)
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b015]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14a35b18] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+==>  Preparing: update access_control_device set door_status = ? where device_id = ?
+==> Parameters: 0(Integer), 59cedbb5-be14-44e6-ba46-3adb6e13bb82(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@14a35b18]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56bc59d5] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+==>  Preparing: update access_control_device set flag = ?,device_status = 1 where ip_address = ? and port = ?
+==> Parameters: 0822(String), 10.12.5.142(String), 10115(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56bc59d5]
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3de33387]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@372b587a] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: update access_control_device set door_status = ? where device_id = ?
+==> Parameters: 0(Integer), 9f4f460f-d6f0-45fd-97e3-e2a390eed5fc(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@372b587a]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28628925] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: update access_control_device set flag = ?,device_status = 1 where ip_address = ? and port = ?
+==> Parameters: 0822(String), 10.12.5.142(String), 10116(String)
+<==    Updates: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@28628925]
+2026-01-30 22:39:31.085  INFO 7 --- [ecode-Message-9] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10104,"request":"{\"fsuId\":\"124123131241\",\"taskId\":\"3ff2b98f-9a18-4f27-b6ea-7623146d4d55\",\"protocolType\":\"bxOldTcp\",\"ip\":\"10.12.5.142\",\"port\":10104,\"deviceId\":\"f1cf14c8-e2c0-4236-86b6-4858a14c326d\",\"protocolCommon\":{\"commAdr\":\"01\",\"ver\":\"63353\",\"soi\":\"7E\",\"eoi\":\"0D\"},\"commands\":{\"loginCmd\":null,\"executeCmd\":{\"cid1\":null,\"cid2\":null,\"comd_group\":\"81\",\"comd_type\":\"10\",\"dataf\":\"0000000000000000000000000000000000000000000000000000\"}},\"requestType\":null,\"comPort\":0,\"methodType\":null,\"partition\":\"10.1.4.113\",\"cardNo\":null,\"requestCommand\":\"7E79F78110000000000000000000000000000000000000000000000000000001020D\"}","response":"device get response overtime","taskId":"3ff2b98f-9a18-4f27-b6ea-7623146d4d55","deviceId":"f1cf14c8-e2c0-4236-86b6-4858a14c326d","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+2026-01-30 22:39:31.085  INFO 7 --- [code-Message-49] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10103,"request":"{\"fsuId\":\"124123131241\",\"taskId\":\"b6b73ddf-697f-4502-82ce-024a88533133\",\"protocolType\":\"bxOldTcp\",\"ip\":\"10.12.5.142\",\"port\":10103,\"deviceId\":\"802bf6d1-7c9c-42af-a4a6-c20e1177e980\",\"protocolCommon\":{\"commAdr\":\"01\",\"ver\":\"63353\",\"soi\":\"7E\",\"eoi\":\"0D\"},\"commands\":{\"loginCmd\":null,\"executeCmd\":{\"cid1\":null,\"cid2\":null,\"comd_group\":\"81\",\"comd_type\":\"10\",\"dataf\":\"0000000000000000000000000000000000000000000000000000\"}},\"requestType\":null,\"comPort\":0,\"methodType\":null,\"partition\":\"10.1.4.113\",\"cardNo\":null,\"requestCommand\":\"7E79F78110000000000000000000000000000000000000000000000000000001020D\"}","response":"device get response overtime","taskId":"b6b73ddf-697f-4502-82ce-024a88533133","deviceId":"802bf6d1-7c9c-42af-a4a6-c20e1177e980","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+2026-01-30 22:39:31.085  INFO 7 --- [ecode-Message-3] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10101,"request":"{\n  \"deviceId\": \"24537e2c-d925-47a7-bcb3-5d232002c455\",\n  \"protocolType\": \"bxOldUdp\",\n  \"ip\": \"10.12.5.142\",\n  \"requestType\": null,\n  \"port\": \"10101\",\n  \"comPort\": 1,\n  \"fsuId\": \"124123131241\",\n  \"commands\": {\n    \"executeCmd\": {\n      \"cid1\": null,\n      \"cid2\": null,\n      \"comd_group\": \"81\",\n      \"comd_type\": \"10\",\n      \"dataf\": \"0000000000000000000000000000000000000000000000000000\"\n    }\n  },\n  \"protocolCommon\": {\n    \"commAdr\": \"01\",\n    \"ver\": \"17511\",\n    \"soi\": \"7E\",\n    \"eoi\": \"0D\"\n  },\n  \"username\": null,\n  \"operateType\": null,\n  \"partition\": \"10.1.4.113\",\n  \"type\": null,\n  \"taskId\": \"310f859c-2a82-43e7-944a-010be0ce64f8\",\n  \"cardNo\": null\n}","response":"device get response overtime","taskId":"310f859c-2a82-43e7-944a-010be0ce64f8","deviceId":"24537e2c-d925-47a7-bcb3-5d232002c455","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+2026-01-30 22:39:31.085  INFO 7 --- [code-Message-50] c.a.m.e.server.handler.ResponseHandler   : 获取到响应{"ip":"10.12.5.142","port":10102,"request":"{\n  \"deviceId\": \"250ecc4d-3772-49f8-b5e8-1250ca25a976\",\n  \"protocolType\": \"bxOldUdp\",\n  \"ip\": \"10.12.5.142\",\n  \"requestType\": null,\n  \"port\": \"10102\",\n  \"comPort\": 1,\n  \"fsuId\": \"124123131241\",\n  \"commands\": {\n    \"executeCmd\": {\n      \"cid1\": null,\n      \"cid2\": null,\n      \"comd_group\": \"81\",\n      \"comd_type\": \"10\",\n      \"dataf\": \"0000000000000000000000000000000000000000000000000000\"\n    }\n  },\n  \"protocolCommon\": {\n    \"commAdr\": \"01\",\n    \"ver\": \"17511\",\n    \"soi\": \"7E\",\n    \"eoi\": \"0D\"\n  },\n  \"username\": null,\n  \"operateType\": null,\n  \"partition\": \"10.1.4.113\",\n  \"type\": null,\n  \"taskId\": \"431d3e9b-f411-448f-b19b-ab2c8ae4ddcd\",\n  \"cardNo\": null\n}","response":"device get response overtime","taskId":"431d3e9b-f411-448f-b19b-ab2c8ae4ddcd","deviceId":"250ecc4d-3772-49f8-b5e8-1250ca25a976","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}，开始处理
+Creating a new SqlSession
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cda0e77] was not registered for synchronization because synchronization is not active
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58959c96] was not registered for synchronization because synchronization is not active
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64405618] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4ff55bec] will not be managed by Spring
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@f3efab5] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: f1cf14c8-e2c0-4236-86b6-4858a14c326d(String)
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1b80aa10] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: 250ecc4d-3772-49f8-b5e8-1250ca25a976(String)
+Creating a new SqlSession
+==> Parameters: 802bf6d1-7c9c-42af-a4a6-c20e1177e980(String)
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75f5fa32] was not registered for synchronization because synchronization is not active
+JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@7eb13e44] will not be managed by Spring
+==>  Preparing: select * from access_control_device where device_id = ?
+==> Parameters: 24537e2c-d925-47a7-bcb3-5d232002c455(String)
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==        Row: 8611, f1cf14c8-e2c0-4236-86b6-4858a14c326d, 0, 0, 01-01-17-02-05-01, 9bb76643-0ef8-481b-85d2-ad9fdcef7f09, TCP-??-??2?, 2, 17, 00, 01, 10.12.5.142, 10104, 63353, 7E, 0D, TCP-??-??2, TCP-??-??2auto?, 2026-01-12, null, a5008, 10.1.4.113
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==        Row: 8607, 802bf6d1-7c9c-42af-a4a6-c20e1177e980, 0, 0, 01-01-17-02-05-01, fd91fd7e-cc96-4eaf-bedf-074f16d8f502, TCP-??-??1?, 2, 17, 00, 01, 10.12.5.142, 10103, 63353, 7E, 0D, TCP-??-??1, TCP-??-??1auto?, 2026-01-12, null, a5008, 10.1.4.113
+<==      Total: 1
+<==        Row: 8739, 24537e2c-d925-47a7-bcb3-5d232002c455, 0, 0, 01-01-17-02-05-01, bcacf10f-3976-4040-8f06-9e50e91d514e, UDP-??-??1auto?, 2, 16, 01, 01, 10.12.5.142, 10101, 17511, 7E, 0D, UDP-??-??1, UDP-??-??1auto?, 2026-01-12, 0021, a5008, 10.1.4.113
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@64405618]
+<==    Columns: id, device_id, device_status, door_status, room_id, parent_id, device_name, device_type, access_mode, group_no, com_port, ip_address, port, protocol_version, protocol_start, protocol_end, controller_name, door_name, time, flag, device_code, partition
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cda0e77]
+<==        Row: 8735, 250ecc4d-3772-49f8-b5e8-1250ca25a976, 0, 0, 01-01-17-02-05-01, 5e8d7210-c31f-4f7c-aeeb-5e99ece25eb1, UDP-??-??2auto?, 2, 16, 01, 01, 10.12.5.142, 10102, 17511, 7E, 0D, UDP-??-??2, UDP-??-??2auto?, 2026-01-12, 0000, a5008, 10.1.4.113
+2026-01-30 22:39:31.089 ERROR 7 --- [ecode-Message-9] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:begin 52, end 54, length 28
+java.lang.StringIndexOutOfBoundsException: begin 52, end 54, length 28
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.isDoorSensor1Open(BxTcpOldStrategy.java:460)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.handleStatus(BxTcpOldStrategy.java:359)
+	at com.aspire.mirror.entrance.server.handler.ResponseHandler.handle(ResponseHandler.java:206)
+	at com.aspire.mirror.entrance.server.listener.DecodeMessageListener.lambda$listen$0(DecodeMessageListener.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-01-30 22:39:31.089 ERROR 7 --- [code-Message-49] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:begin 52, end 54, length 28
+java.lang.StringIndexOutOfBoundsException: begin 52, end 54, length 28
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.isDoorSensor1Open(BxTcpOldStrategy.java:460)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.handleStatus(BxTcpOldStrategy.java:359)
+	at com.aspire.mirror.entrance.server.handler.ResponseHandler.handle(ResponseHandler.java:206)
+	at com.aspire.mirror.entrance.server.listener.DecodeMessageListener.lambda$listen$0(DecodeMessageListener.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@75f5fa32]
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58959c96]
+2026-01-30 22:39:31.090 ERROR 7 --- [ecode-Message-3] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:begin 52, end 54, length 28
+java.lang.StringIndexOutOfBoundsException: begin 52, end 54, length 28
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxUdpOldStrategy.isDoorSensor1Open(BxUdpOldStrategy.java:490)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxUdpOldStrategy.handleStatus(BxUdpOldStrategy.java:389)
+	at com.aspire.mirror.entrance.server.handler.ResponseHandler.handle(ResponseHandler.java:206)
+	at com.aspire.mirror.entrance.server.listener.DecodeMessageListener.lambda$listen$0(DecodeMessageListener.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-01-30 22:39:31.090 ERROR 7 --- [code-Message-50] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:begin 52, end 54, length 28
+java.lang.StringIndexOutOfBoundsException: begin 52, end 54, length 28
+	at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+	at java.base/java.lang.String.substring(String.java:2709)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxUdpOldStrategy.isDoorSensor1Open(BxUdpOldStrategy.java:490)
+	at com.aspire.mirror.entrance.server.strategy.impl.BxUdpOldStrategy.handleStatus(BxUdpOldStrategy.java:389)
+	at com.aspire.mirror.entrance.server.handler.ResponseHandler.handle(ResponseHandler.java:206)
+	at com.aspire.mirror.entrance.server.listener.DecodeMessageListener.lambda$listen$0(DecodeMessageListener.java:100)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)

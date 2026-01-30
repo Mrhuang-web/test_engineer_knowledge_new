@@ -123,7 +123,8 @@
     "delay_ms": 100,
     "data": {
       "cid2": "00",
-      "data_info": "00000000"
+      "work_status": "00",
+      "line_status": "00"
     }
   },
   "4AF2E8": {

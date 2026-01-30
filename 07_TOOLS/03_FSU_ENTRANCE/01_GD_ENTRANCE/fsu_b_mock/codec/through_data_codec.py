@@ -35,6 +35,12 @@ class ThroughDataCodec:
         self.dynamic_length = self.protocol.get("dynamic_length", False)
         self.total_length = self.protocol.get("total_length", 0)
         self.data_frame_type_flag = self.protocol.get("data_frame_type_flag", "data_frame_type")
+        
+        # 打印初始化信息
+        self.logger.debug("透传数据编解码器初始化完成")
+        self.logger.debug(f"协议配置: {self.protocol_config}")
+        self.logger.debug(f"厂商: {self.vendor}")
+        self.logger.debug(f"厂商类型: {self.vendor_type}")
     
     def decode(self, data: bytes) -> Tuple[bool, Dict[str, Any]]:
         """解码透传数据
@@ -243,60 +249,134 @@ class ThroughDataCodec:
                 # 如果用户传入了response_data，根据用户数据构建响应
                 self.logger.debug(f"力维协议：优先使用用户传入的response_data构建响应")
 
-                # 构建力维协议INFO部分数据
-                info_data = b""
+                # 检查是否是远程监控请求
+                group = response_data.get("group", "")
+                type_code = response_data.get("type", "")
+                dataf = response_data.get("dataf", "00")
+                
+                # 处理远程监控(0XE7)请求
+                if group == "F2" and type_code == "E7" and dataf == "00":
+                    self.logger.debug("力维协议：处理远程监控(0XE7)请求")
+                    
+                    # 从配置或response_data中获取工作状态和线路状态
+                    work_status = 0x00
+                    line_status = 0x00
+                    
+                    # 尝试从response_data中获取
+                    if "work_status" in response_data:
+                        work_status = int(response_data["work_status"], 16) if isinstance(response_data["work_status"], str) else response_data["work_status"]
+                    if "line_status" in response_data:
+                        line_status = int(response_data["line_status"], 16) if isinstance(response_data["line_status"], str) else response_data["line_status"]
+                    
+                    # 构建INFO数据：工作状态 + 线路状态
+                    info_data = bytes([work_status, line_status])
+                    
+                    # 保存INFO数据，供后续校验和计算使用
+                    self._liwei_info_data = info_data
+                    
+                    # 构建data_frame_data：group + type + dataf + 工作状态 + 线路状态
+                    data_frame_data = bytes.fromhex(group + type_code + dataf) + info_data
+                    
+                    # 确保响应格式与f0,e0不同，根据协议返回正确的响应
+                    self.logger.debug(f"远程监控(0XE7)响应: 工作状态=0x{work_status:02X}, 线路状态=0x{line_status:02X}")
+                    self.logger.debug(f"构建的data_frame_data: {data_frame_data.hex().upper()}")
+                    self.logger.debug(f"保存的INFO数据: {self._liwei_info_data.hex().upper()}")
+                
+                # 处理远程监控(0XED)请求
+                elif group == "F1" and type_code == "ED" and dataf == "00":
+                    self.logger.debug("力维协议：处理远程监控(0XED)请求")
+                    
+                    # 构建控制状态字节 (第1字节)
+                    # D7=0: 门常开无效
+                    # D6=0: 门常闭无效
+                    # D5=0: 第2继电器未动作
+                    # D4=0: 紧急输入无效
+                    # D3=0: 门磁不监控
+                    # D2=0: 红外感应器不监控
+                    # D1=0: 门控继电器未动作
+                    # D0=0: 正常，无报警输出
+                    control_status = 0x00
+                    
+                    # 构建感应头状态字节 (第2字节)
+                    # D7=0: 第二感应头对应控制(门)的状态
+                    # D6=0: IR/ID或联动
+                    # D5=0: HANDLE或联动
+                    # D4=0:
+                    # D3=0: 第一感应头对应控制(门)的状态
+                    # D2=0: IR/ID
+                    # D1=0: HANDLE
+                    # D0=0:
+                    sensor_status = 0x00
+                    
+                    # 获取SAVEP、LOADP、MF（从记录区管理器）
+                    savep = response_data.get("savep", 0)
+                    loadp = response_data.get("loadp", 0)
+                    mf = response_data.get("mf", 0)
+                    
+                    # 直接构建响应数据
+                    # 格式：group + type + dataf + 控制状态 + 感应头状态 + SAVEP(2字节) + LOADP(2字节) + MF(1字节)
+                    data_frame_data = bytes.fromhex(group + type_code + dataf) + bytes([
+                        control_status,
+                        sensor_status,
+                        (savep >> 8) & 0xFF,  # SAVEP高字节
+                        savep & 0xFF,          # SAVEP低字节
+                        (loadp >> 8) & 0xFF,   # LOADP高字节
+                        loadp & 0xFF,          # LOADP低字节
+                        mf                     # MF
+                    ])
+                
+                # 处理其他力维协议请求
+                else:
+                    # 构建力维协议INFO部分数据
+                    info_data = b""
 
-                # 按照力维协议格式顺序添加字段
-                field_order = ["year", "month", "day", "week", "hour", "minute", "second", "event_source", "status", "remark"]
+                    # 按照力维协议格式顺序添加字段
+                    field_order = ["year", "month", "day", "week", "hour", "minute", "second", "event_source", "status", "remark"]
 
-                for field_name in field_order:
-                    if field_name in response_data:
-                        value = response_data[field_name]
-                        # 根据字段名确定长度
-                        if field_name == "year":
-                            # 年份：2字节BCD格式
-                            year_str = str(value)
-                            if len(year_str) == 4:
-                                # 转换为BCD格式
-                                bcd_year = ((int(year_str[0]) << 12) | (int(year_str[1]) << 8) | (int(year_str[2]) << 4) | int(year_str[3]))
-                                info_data += bcd_year.to_bytes(2, byteorder='big')
-                        elif field_name == "month" or field_name == "day" or field_name == "week" or field_name == "hour" or field_name == "minute" or field_name == "second":
-                            # 月、日、周、时、分、秒：1字节BCD格式
-                            num = int(value)
-                            bcd_value = ((num // 10) << 4) | (num % 10)
-                            info_data += bytes([bcd_value])
-                        elif field_name == "event_source":
-                            # 事件源：5字节
-                            if len(value) >= 10:
-                                info_data += bytes.fromhex(value[:10])
-                            else:
-                                info_data += bytes.fromhex(value.ljust(10, '0'))
-                        elif field_name == "status" or field_name == "remark":
-                            # 状态、备注：1字节
-                            if isinstance(value, str) and len(value) >= 2:
-                                info_data += bytes.fromhex(value[:2])
-                            else:
-                                info_data += bytes([0x00])
+                    for field_name in field_order:
+                        if field_name in response_data:
+                            value = response_data[field_name]
+                            # 根据字段名确定长度
+                            if field_name == "year":
+                                # 年份：2字节BCD格式
+                                year_str = str(value)
+                                if len(year_str) == 4:
+                                    # 转换为BCD格式
+                                    bcd_year = ((int(year_str[0]) << 12) | (int(year_str[1]) << 8) | (int(year_str[2]) << 4) | int(year_str[3]))
+                                    info_data += bcd_year.to_bytes(2, byteorder='big')
+                            elif field_name == "month" or field_name == "day" or field_name == "week" or field_name == "hour" or field_name == "minute" or field_name == "second":
+                                # 月、日、周、时、分、秒：1字节BCD格式
+                                num = int(value)
+                                bcd_value = ((num // 10) << 4) | (num % 10)
+                                info_data += bytes([bcd_value])
+                            elif field_name == "event_source":
+                                # 事件源：5字节
+                                if len(value) >= 10:
+                                    info_data += bytes.fromhex(value[:10])
+                                else:
+                                    info_data += bytes.fromhex(value.ljust(10, '0'))
+                            elif field_name == "status" or field_name == "remark":
+                                # 状态、备注：1字节
+                                if isinstance(value, str) and len(value) >= 2:
+                                    info_data += bytes.fromhex(value[:2])
+                                else:
+                                    info_data += bytes([0x00])
 
-                # 保存INFO数据，供后续校验和计算使用
-                self._liwei_info_data = info_data
+                    # 保存INFO数据，供后续校验和计算使用
+                    self._liwei_info_data = info_data
 
-                # 处理resp_fields中的字段（主要是cid2）
-                for field in resp_fields:
-                    field_data = self._encode_field(field, parsed_data, response_data)
-                    data_frame_data += field_data
+                    # 处理resp_fields中的字段（主要是cid2）
+                    for field in resp_fields:
+                        field_data = self._encode_field(field, parsed_data, response_data)
+                        data_frame_data += field_data
 
-                # 添加INFO数据
-                data_frame_data += info_data
+                    # 添加INFO数据
+                    data_frame_data += info_data
             else:
                 # 否则按照配置文件构建响应
                 for field in resp_fields:
                     field_data = self._encode_field(field, parsed_data, response_data)
                     data_frame_data += field_data
-
-            for field in resp_fields:
-                field_data = self._encode_field(field, parsed_data, response_data)
-                data_frame_data += field_data
             
             self.logger.debug(f"DATA_FRAME编码结果: {data_frame_data.hex().upper()}, 长度={len(data_frame_data)}, 字段数={len(resp_fields)}")
             

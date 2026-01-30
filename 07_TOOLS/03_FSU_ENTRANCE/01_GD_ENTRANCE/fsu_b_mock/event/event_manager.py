@@ -10,6 +10,7 @@ import json
 from typing import Dict, Any, List
 from codec.b_interface_codec import BInterfaceCodec
 from codec.through_data_codec import ThroughDataCodec
+from event.record_manager import RecordManager
 
 class EventManager:
     """事件管理类"""
@@ -52,6 +53,9 @@ class EventManager:
         
         # 当前协议配置
         self.current_protocol_config = None
+        
+        # 记录区管理器，用于力维协议时间类型事件的记录管理
+        self.record_manager = RecordManager(max_len=100)
         
         # 加载配置
         self._load_config()
@@ -295,7 +299,7 @@ class EventManager:
                 "adr": "01",
                 "cid1": "80",
                 "cid2": "4A",  # 力维事件响应使用4A
-                "length": "20",  # 固定长度
+                "length": "00",  # 长度会在编码时自动计算
                 "checksum": "00",
                 "end": "0D"
             }
@@ -303,21 +307,94 @@ class EventManager:
         
         # 力维协议特殊处理：构建正确的事件数据结构
         if protocol_config.get("vendor_type") == "liwei":
-            # 力维协议事件数据结构
-            liwei_event_data = {
-                "group": "F2",
-                "type": "EE",
-                "dataf": "00",
-                "event_source": event_data.get("event_source", "0000000000"),
+            # 构建事件记录
+            event_record = {
+                "status": event_type["status"],
+                "description": event_type["description"],
                 "year": event_data.get("year", time.strftime("%y")),
                 "month": event_data.get("month", time.strftime("%m")),
                 "day": event_data.get("day", time.strftime("%d")),
                 "hour": event_data.get("hour", time.strftime("%H")),
                 "minute": event_data.get("minute", time.strftime("%M")),
                 "second": event_data.get("second", time.strftime("%S")),
-                "status": event_type["status"],
-                "remark": event_data.get("remark", "00")
+                "event_source": event_data.get("event_source", "0000000000"),
+                "remark": event_data.get("remark", "00"),
+                "timestamp": time.time()
             }
+            
+            # 添加记录到记录区管理器
+            self.record_manager.add_record(event_record)
+            
+            # 获取记录区信息
+            record_info = self.record_manager.get_record_info()
+            
+            # 检查是否是远程监控(0XE7)请求
+            is_remote_monitoring = event_type.get("type") == "E7" and event_type.get("group") == "F2"
+            
+            # 力维协议事件数据结构
+            liwei_event_data = {
+                "group": event_type.get("group", "F2"),
+                "type": event_type.get("type", "EE"),
+                "dataf": "00"
+            }
+            
+            # 如果不是远程监控请求，添加记录区信息
+            if not is_remote_monitoring:
+                liwei_event_data.update({
+                    "savep": record_info["SAVEP"],
+                    "loadp": record_info["LOADP"],
+                    "mf": record_info["MF"]
+                })
+            
+            # 如果不是远程监控请求，添加时间相关字段
+            if not is_remote_monitoring:
+                liwei_event_data.update({
+                    "event_source": event_data.get("event_source", "0000000000"),
+                    "year": event_data.get("year", time.strftime("%y")),
+                    "month": event_data.get("month", time.strftime("%m")),
+                    "day": event_data.get("day", time.strftime("%d")),
+                    "hour": event_data.get("hour", time.strftime("%H")),
+                    "minute": event_data.get("minute", time.strftime("%M")),
+                    "second": event_data.get("second", time.strftime("%S")),
+                    "status": event_type["status"],
+                    "remark": event_data.get("remark", "00")
+                })
+            
+            # 处理远程监控(0XE7)请求
+            if is_remote_monitoring:
+                # 从配置文件中直接加载4AF2E7的配置
+                import os
+                config_dir = self.fsu_config.get("config_dir", "./config/bangsun_old")
+                # 力维协议的配置文件路径
+                liwei_rules_path = os.path.join(config_dir, "liwei", "rules", "default.json")
+                
+                # 打印调试信息
+                self.logger.debug(f"配置目录: {config_dir}")
+                self.logger.debug(f"力维协议规则配置文件路径: {liwei_rules_path}")
+                self.logger.debug(f"文件是否存在: {os.path.exists(liwei_rules_path)}")
+                
+                # 读取力维协议规则配置
+                if os.path.exists(liwei_rules_path):
+                    try:
+                        with open(liwei_rules_path, "r", encoding="utf-8") as f:
+                            liwei_rules = json.load(f)
+                            self.logger.debug(f"读取到的配置: {liwei_rules}")
+                            if "4AF2E7" in liwei_rules:
+                                e7_config = liwei_rules["4AF2E7"].get("data", {})
+                                self.logger.debug(f"4AF2E7配置: {e7_config}")
+                                if "work_status" in e7_config:
+                                    liwei_event_data["work_status"] = e7_config["work_status"]
+                                    self.logger.debug(f"设置work_status: {e7_config['work_status']}")
+                                if "line_status" in e7_config:
+                                    liwei_event_data["line_status"] = e7_config["line_status"]
+                                    self.logger.debug(f"设置line_status: {e7_config['line_status']}")
+                            else:
+                                self.logger.warning(f"配置文件中没有4AF2E7配置")
+                    except Exception as e:
+                        self.logger.error(f"读取力维协议规则配置失败: {e}")
+                else:
+                    self.logger.error(f"力维协议规则配置文件不存在: {liwei_rules_path}")
+            
             encoded_response = through_codec.encode(base_pdu, liwei_event_data)
         else:
             # 其他协议使用默认结构
