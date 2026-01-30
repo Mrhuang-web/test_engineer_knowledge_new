@@ -1,0 +1,58 @@
+flowchart TB
+    subgraph Business["业务系统 Entrance Service"]
+        BS_Start[下发指令] 
+        BS_End[接收响应]
+    end
+
+    subgraph KafkaLayer["Kafka消息层"]
+        TOPIC_SERVER[("SERVER_KAFKA_TOPIC<br/>entrance_command<br/>BaseRequest JSON")]
+        TOPIC_ENCODE[("ENCODE_KAFKA_TOPIC<br/>entrance_encode_command<br/>DeviceInfoDTO")]
+        TOPIC_RAW[("RAW_KAFKA_TOPIC<br/>entrance_raw_data<br/>原始响应")]
+        TOPIC_DECODE[("DECODE_KAFKA_TOPIC<br/>entrance_decode_command<br/>解码后响应")]
+    end
+
+    subgraph Decoder["编码模组 Decoder"]
+        direction TB
+        SML[ServerMessageListener<br/>接收&编码指令]
+        APQ[(AckPendingQueue<br/>指令队列管理)]
+        RML[RawMessageListener<br/>解码&应答]
+        
+        SML -->|更新队列| APQ
+        RML -->|确认应答| APQ
+    end
+
+    subgraph Gateway["通信模组 Gateway"]
+        direction TB
+        G_Consume[消费编码指令]
+        G_Send[UDP/TCP/MQTT<br/>发送给设备]
+        G_Recv[接收设备响应<br/>Netty/MQTT]
+        G_Produce[发送原始数据]
+        
+        G_Consume --> G_Send
+        G_Recv --> G_Produce
+    end
+
+    Device[("门禁设备<br/>Device")]
+
+    %% 下行链路
+    BS_Start --> TOPIC_SERVER
+    TOPIC_SERVER -->|消费| SML
+    SML --> TOPIC_ENCODE
+    TOPIC_ENCODE -->|消费| G_Consume
+    G_Send --> Device
+
+    %% 上行链路
+    Device -->|响应| G_Recv
+    G_Produce --> TOPIC_RAW
+    TOPIC_RAW -->|消费| RML
+    RML --> TOPIC_DECODE
+    TOPIC_DECODE -->|消费| BS_End
+
+    %% 样式定义
+    classDef kafka fill:#ff9,stroke:#333,stroke-width:2px;
+    classDef module fill:#9cf,stroke:#333,stroke-width:2px;
+    classDef device fill:#c9f,stroke:#333,stroke-width:2px;
+    
+    class TOPIC_SERVER,TOPIC_ENCODE,TOPIC_RAW,TOPIC_DECODE kafka;
+    class Decoder,Gateway module;
+    class Device device;

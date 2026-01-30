@@ -1,0 +1,38 @@
+flowchart TB
+ subgraph Business["业务系统 Entrance (entance.yml)"]
+    direction TD
+        B1["业务系统 Entrance (entance.yml)<br>HTTP接口:16666<br>/remoteOpenDoor"]
+        B2["Producer<br>下发指令"]
+  end
+ subgraph Kafka1["Kafka Cluster: 10.1.203.121:9095"]
+        T1[("Kafka Cluster: 10.1.203.121:9095  entrance_command<br>SERVER_KAFKA_TOPIC")]
+  end
+ subgraph Decoder["编码模组 Decoder (decode.yml)<br>Port:28089"]
+    direction TD
+        D1["编码模组 Decoder (decode.yml)<br>Port:28089<br><br>@KafkaListener<br>group-id: consumer-iot-decoder<br>Threads: 3个分区并发"]
+        D2["ThreadPool: server<br>core:20 | max:40 | queue:2000<br>【编码+写Redis队列】"]
+        D3["Producer"]
+  end
+ subgraph Kafka2["Kafka Cluster: 10.1.203.121:9095"]
+        T2[("Kafka Cluster: 10.1.203.121:9095 entrance_encode_command<br>ENCODE_KAFKA_TOPIC")]
+  end
+ subgraph Gateway["通信模组 Gateway (center.yml)<br>Port:28084"]
+    direction TD
+        G1["通信模组 Gateway (center.yml)<br>Port:28084   @KafkaListener<br>group-id: consumer-iot-center-x-4113<br>Threads: 3个分区并发"]
+        G2["Netty Server<br>Port:28090<br>UDP/TCP发送"]
+  end
+    B1 --> B2
+    B2 --> T1
+    T1 --> D1
+    D1 --> D2
+    D2 --> D3
+    D3 --> T2
+    T2 --> G1
+    G1 --> G2
+    G2 --> Device(("门禁设备<br>接收指令"))
+
+     T1:::kafkaCircle
+     T2:::kafkaCircle
+     Device:::kafkaCircle
+    classDef allSubgraph width:500px, padding:20px
+    classDef kafkaCircle text-align:center

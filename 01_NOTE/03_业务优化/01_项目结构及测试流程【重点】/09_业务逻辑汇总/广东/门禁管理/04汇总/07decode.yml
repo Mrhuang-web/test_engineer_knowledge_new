@@ -1,0 +1,68 @@
+server:
+  port: 28089
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+netty:
+  port: 28090
+
+local:
+  kafka:
+    enable: true
+#    bootstrap_servers: 10.206.156.68:9092,10.206.156.69:9092,10.206.156.70:9092,10.206.156.71:9092,10.206.156.72:9092
+    bootstrap_servers: 10.1.203.121:9095
+#    bootstrap_servers: 192.180.89.231:9092,192.180.89.232:9092,192.180.89.233:9092
+    producer:
+      retries: 0
+      batch-size: 5
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: consumer-iot-decoder
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      session.timeout.ms: 60000
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      concurrency: 3    # 配置partions分区数, 保证每个分区一个消费线程
+      # ack-mode: manual
+    properties:
+      session.timeout.ms: 60000
+
+logging:
+  level:
+    root: info
+  file: /opt/data/logs/entrance.log
+#节点报文过滤配置是否开启
+node:
+  filter:
+    enable: true
+# 登录响应时长 正式环境需注释
+default:
+  time:
+    wait: 500
+
+# 内存监控配置
+memory:
+  monitor:
+    enabled: true
+    threshold: 0.8
+
+# 线程池配置
+thread:
+  pool:
+    # 业务端消费者线程池配置
+    server:
+      core-size: 20
+      max-size: 40
+      queue-capacity: 2000
+    # 通信端消费者线程池配置
+    raw:
+      core-size: 10
+      max-size: 20
+      queue-capacity: 1000
+    keep-alive-seconds: 3600

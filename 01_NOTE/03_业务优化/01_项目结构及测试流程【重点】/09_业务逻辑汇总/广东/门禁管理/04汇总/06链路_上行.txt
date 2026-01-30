@@ -1,0 +1,39 @@
+flowchart TB
+    subgraph Gateway["通信模组 Gateway"]
+        G_Recv["接收设备响应<br/>提取 deviceId + SEQ"]
+        G_Send["发送到 RAW_KAFKA_TOPIC"]
+        G_Recv --> G_Send
+    end
+
+    subgraph Kafka["Kafka 中间件"]
+        RAW_TOPIC[("RAW_KAFKA_TOPIC<br/>entrance_raw_data")]
+    end
+
+    subgraph Decoder["编码模组 Decoder"]
+        RML["RawMessageListener<br/>消费响应"]
+        
+        subgraph RedisOps["Redis 查询操作"]
+            direction TB
+            R_GET["从设备响应解析 SEQ<br/>构建 Key: ack:pending:deviceId"]
+            R_HGET["HGET ack:pending:deviceId seq<br/>获取原请求"]
+            R_HDEL["HDEL ack:pending:deviceId seq<br/>确认删除队列"]
+        end
+        
+        R_Decode["解码 rawData"]
+        R_Produce["发送到 DECODE_KAFKA_TOPIC"]
+        
+        RML --> R_GET --> R_HGET --> R_HDEL --> R_Decode --> R_Produce
+    end
+
+    subgraph Business["业务系统"]
+        B_End["接收解码后响应"]
+    end
+
+    Device[("门禁设备<br/>返回 SEQ=10086")] -->|响应报文| G_Recv
+    G_Send --> RAW_TOPIC --> RML
+    R_Produce --> B_End
+
+    style RedisOps fill:#ff9999,stroke:#333,stroke-width:2px
+    style R_GET fill:#ffcccc
+    style R_HGET fill:#ffcccc
+    style R_HDEL fill:#ffcccc

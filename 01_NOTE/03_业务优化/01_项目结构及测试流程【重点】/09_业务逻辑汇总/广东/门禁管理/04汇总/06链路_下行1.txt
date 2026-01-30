@@ -1,0 +1,40 @@
+flowchart TB
+    subgraph Business["业务系统 Entrance Service"]
+        B_Send["下发指令<br/>BaseRequest JSON<br/>包含: deviceId, cmdType, params"]
+    end
+
+    subgraph Kafka1["Kafka"]
+        SERVER_TOPIC[("SERVER_KAFKA_TOPIC<br/>entrance_command")]
+    end
+
+    subgraph Decoder["编码模组 Decoder"]
+        SML["ServerMessageListener<br/>消费 BaseRequest"]
+        
+        subgraph EncodeLogic["编码处理逻辑"]
+            E_Parse["解析业务指令<br/>提取deviceId/cmd/seq"]
+            E_Protocol["协议编码<br/>BaseRequest → 字节流<br/>按设备协议封装"]
+            E_Queue["写入AckPendingQueue<br/>Redis: HSET ack:pending deviceId seq 请求元数据"]
+            E_Login["处理登录指令<br/>特殊逻辑:注册设备会话"]
+            E_Build["构建DeviceInfoDTO<br/>包含: deviceId, encodedData, seq, protocolType"]
+        end
+        
+        SML --> E_Parse --> E_Protocol --> E_Queue --> E_Login --> E_Build
+    end
+
+    subgraph Kafka2["Kafka"]
+        ENCODE_TOPIC[("ENCODE_KAFKA_TOPIC<br/>entrance_encode_command")]
+    end
+
+    subgraph Gateway["通信模组 Gateway"]
+        G_Consume["消费DeviceInfoDTO"]
+        G_Send["UDP/TCP/MQTT发送<br/>encodedData字节流"]
+        G_Consume --> G_Send
+    end
+
+    Device[("门禁设备<br/>接收指令")]
+
+    B_Send --> SERVER_TOPIC --> SML
+    E_Build --> ENCODE_TOPIC --> G_Consume
+    G_Send --> Device
+
+    style E_Queue fill:#ff9999,stroke:#333,stroke-width:3px

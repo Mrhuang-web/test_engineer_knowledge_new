@@ -1,0 +1,6 @@
+2026-01-30 12:37:34,477 root INFO main.py:102 系统CPU核心数: 16
+2026-01-30 12:38:55,622 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-30 12:38:55,630 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-30 15:12:07,748 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E0的规则
+2026-01-30 15:16:50,273 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E0的规则
+2026-01-30 15:20:44,057 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则

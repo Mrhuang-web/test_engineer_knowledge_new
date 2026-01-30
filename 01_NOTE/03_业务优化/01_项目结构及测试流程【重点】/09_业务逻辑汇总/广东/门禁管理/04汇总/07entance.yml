@@ -1,0 +1,67 @@
+server:
+  port: 16666
+  tomcat:
+    uri-encoding: UTF-8
+    max-http-post-size: -1
+
+mybatis:
+  mapperLocations:
+    - classpath*:sqlmap/*Mapper.xml
+  type-aliases-package:
+    org.springboot.sample.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+#门禁暂时统一远程开门密码
+entranceGuard:
+  openDoor:
+    # passWord: e10adc3949ba59abbe56e057f20f883e
+    passWord: 690945755927fe63488097e1b6d760a3
+    meteId: '093101'
+    
+#entrance.config.testApiStr: http://10.9.128.76:28083/v2/iotGateway/northInterface/connectionTest  
+entrance.config.testApiStr: http://10.12.12.186:28083/v2/iotGateway/northInterface/connectionTest
+entrance.config.openApiStr: http://10.12.12.186:28083/v2/iotGateway/northInterface/doorRemoteOpen
+# entrance.config.testApiStr: http://10.9.128.76:28084/test
+# entrance.config.openApiStr: http://10.9.128.76:28084/remoteOpenDoor
+#entrance.config.openApiStr: http://10.9.128.76:28083/v2/iotGateway/northInterface/doorRemoteOpen
+
+entrance.config.externalUrl: http://10.12.12.186:28083/v1/ywgl/accessControl/event/upload
+
+entrance.auth.mock: false
+
+video.event.enable: true
+
+device.default.modelId: 00001008000000003572
+
+spring:
+  fox:
+    documentation:
+      enabled: false
+#  cloud.nacos.discovery:
+#    ip: 10.9.128.76
+#    port: 16666
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: false
+  swagger-ui: 
+    enabled: false
+
+# device.sync.cron: 0 0 0 30 2 *
+# entrance.status.taskCron: 0 0 0 30 2 *
+entrance.config.failQueueCron: 0 0 0 30 2 *
+#默认0 0/2 * * * ?
+
+# entrance.doorStatus.taskCron: 0 0 1 * * ?
+#默认0 0/2 * * * ?
+# entrance.event.taskCron: 0 0 0 30 2 *
+entranceDevice.sync.cron: 0 0 0 30 2 *
+# entrance.bxStatus.taskCron: 0 0 0 30 2 *
+entrance.dhEvent.taskCron: 0 0 0 30 2 *
+#0 0/2 * * * ?  门禁设备状态（获取时间或者刷新状态）
+# entrance.status.taskCron:  0 0 0 30 2 *
+# 0 */2 * * * ?  #海康威视-门禁事件获取
+entrance.hcEvent.taskCron: 0 0 0 30 2 *
