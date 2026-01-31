@@ -1,0 +1,19 @@
+{
+    "protocol_configs": {
+        "liwei_udp": {
+            "command_key": "4AF2E2",
+            "event_file": "events.json",
+            "enabled": true
+        },
+        "liwei_tcp": {
+            "command_key": "4AF2E3",
+            "event_file": "events.json",
+            "enabled": false
+        },
+        "other_protocol": {
+            "command_key": "4AF2E4",
+            "event_file": "events.json",
+            "enabled": false
+        }
+    }
+}

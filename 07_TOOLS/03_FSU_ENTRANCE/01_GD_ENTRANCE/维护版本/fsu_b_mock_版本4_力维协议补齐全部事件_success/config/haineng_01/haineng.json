@@ -1,0 +1,950 @@
+{
+    "vendor": "海能",
+    "sub_dev_type": "01",
+    "sub_dev_addr": "00",
+    "rule_file_list": [
+        "./rules/313234313233313331323431.json",
+        "./rules/default.json"
+    ],
+    "protocol": {
+        "total_length": 0,
+        "dynamic_length": true,
+        "checksum_config": {
+            "algorithm": "sum",
+            "start": 3,
+            "end": -2
+        },
+        "pdu_left": [
+            {
+                "name": "start",
+                "length": 1,
+                "type": "hex",
+                "value": "68"
+            },
+            {
+                "name": "address",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "length",
+                "length": 1,
+                "type": "hex",
+                "value": "{{data_frame_length}}"
+            },
+            {
+                "name": "data_frame_type",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            }
+        ],
+        "pdu_tailer": [
+            {
+                "name": "data",
+                "length": 0,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "checksum",
+                "length": 1,
+                "endian": "little",
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "end",
+                "length": 1,
+                "type": "hex",
+                "value": "0D"
+            }
+        ],
+        "data_frame_type_flag": "data_frame_type",
+        "data_frame": [
+            {
+                "data_frame_type": "81",
+                "description": "海能设备分组类型查询命令",
+                "data_frame_length": 10,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "81"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "81"
+                    },
+                    {
+                        "name": "group_type",
+                        "type": "hex",
+                        "length": 8,
+                        "value": "020406FFFF"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "82",
+                "description": "海能设备信息查询命令",
+                "data_frame_length": 18,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "82"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "82"
+                    },
+                    {
+                        "name": "board_id",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "data",
+                        "type": "hex",
+                        "length": 16,
+                        "value": "00000000000000000000000000000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "83",
+                "description": "海能设备控制命令",
+                "data_frame_length": 4,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "83"
+                    },
+                    {
+                        "name": "group_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "channel_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "action",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "83"
+                    },
+                    {
+                        "name": "group_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "channel_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "action",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "89",
+                "description": "海能设备时间获取命令",
+                "data_frame_length": 8,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "89"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "89"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "90",
+                "description": "海能设备时间设置命令",
+                "data_frame_length": 8,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "90"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "90"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "91",
+                "description": "海能设备读取单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "91"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "91"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "92",
+                "description": "海能设备写入单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "92"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "92"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "93",
+                "description": "海能设备写入带有效期的卡权限命令",
+                "data_frame_length": 14,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "93"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    },
+                    {
+                        "name": "validity",
+                        "type": "hex",
+                        "length": 8,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "93"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "94",
+                "description": "海能设备删除单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "94"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "94"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "95",
+                "description": "海能设备清除所有卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "95"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "95"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "reserved",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "96",
+                "description": "海能设备恢复出厂设置命令",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "96"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "96"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "97",
+                "description": "海能设备重启命令",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "97"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "97"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "98",
+                "description": "海能设备自检命令",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "98"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "98"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "A1",
+                "description": "海能设备记录统计查询命令",
+                "data_frame_length": 12,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A1"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A1"
+                    },
+                    {
+                        "name": "latest_record",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "valid_record",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "unread_record",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "long_card",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "short_card",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "A2",
+                "description": "海能设备读取单条刷卡记录命令",
+                "data_frame_length": 12,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A2"
+                    },
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A2"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "card_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "A3",
+                "description": "海能设备读取单条权限记录命令",
+                "data_frame_length": 18,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A3"
+                    },
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A3"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "card_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "validity",
+                        "type": "hex",
+                        "length": 8,
+                        "value": "3238012132381231"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "A6",
+                "description": "海能设备读取单条事件记录命令",
+                "data_frame_length": 22,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A6"
+                    },
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A6"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "record_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "record_reason",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${year(yy)}$"
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${month()}$"
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${day()}$"
+                    },
+                    {
+                        "name": "week",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${week()}$"
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${hour()}$"
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${minute()}$"
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${second()}$"
+                    },
+                    {
+                        "name": "door_index",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "reserved",
+                        "type": "hex",
+                        "length": 3,
+                        "value": "000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "A7",
+                "description": "海能设备实时上传记录命令",
+                "data_frame_length": 20,
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A7"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "A7"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "record_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "record_reason",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${year(yy)}$"
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${month()}$"
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${day()}$"
+                    },
+                    {
+                        "name": "week",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${week()}$"
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${hour()}$"
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${minute()}$"
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "${second()}$"
+                    },
+                    {
+                        "name": "door_index",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "reserved",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ]
+            }
+        ]
+    }
+}

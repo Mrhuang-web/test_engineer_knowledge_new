@@ -1,0 +1,2 @@
+1、data_frame_type_flag只能配置为data_frame_type
+2 、vendor按照vendor.json匹配不同的协议

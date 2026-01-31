@@ -1,0 +1,1820 @@
+{
+    "vendor": "ES1000",
+    "sub_dev_type": "01",
+    "sub_dev_addr": "00",
+    "vendor_type": "liwei",
+    "rule_file_list": [
+        "./rules/313234313233313331323431.json",
+        "./rules/default.json"
+    ],
+    "protocol": {
+        "total_length": 0,
+        "dynamic_length": true,
+        "checksum_config": {
+            "algorithm": "sum",
+            "start": 1,
+            "end": -3
+        },
+        "pdu_left": [
+            {
+                "name": "start",
+                "length": 1,
+                "type": "hex",
+                "value": "7E"
+            },
+            {
+                "name": "ver",
+                "length": 1,
+                "type": "hex",
+                "value": "10"
+            },
+            {
+                "name": "adr",
+                "length": 1,
+                "type": "hex",
+                "value": "01"
+            },
+            {
+                "name": "cid1",
+                "length": 1,
+                "type": "hex",
+                "value": "80"
+            },
+            {
+                "name": "cid2",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "length",
+                "length": 2,
+                "type": "hex",
+                "value": ""
+            }
+        ],
+        "pdu_tailer": [
+            {
+                "name": "checksum",
+                "length": 2,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "end",
+                "length": 1,
+                "type": "hex",
+                "value": "0D"
+            }
+        ],
+        "data_frame_type_flag": [
+            "cid2",
+            "group",
+            "type"
+        ],
+        "data_frame": [
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E0"
+                ],
+                "description": "访问权限确认",
+                "data_frame_length": 0,
+                "req_data": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    },
+                    {
+                        "name": "password",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E1"
+                ],
+                "description": "访问权限的取消",
+                "data_frame_length": 0,
+                "req_data": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ],
+                "resp_data": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F0",
+                    "E2"
+                ],
+                "description": "修改ES2000的访问密码",
+                "data_frame_length": 0,
+                "req_data": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    },
+                    {
+                        "name": "new_password",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "password_check",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data": [
+                    {
+                        "name": "rtn",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E0"
+                ],
+                "description": "设置日期时间",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    },
+                    {
+                        "name": "year",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "week",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E1"
+                ],
+                "description": "设置工作日准进时段",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    },
+                    {
+                        "name": "group_no",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 16,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E2"
+                ],
+                "description": "设置非工作日准进时段",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    },
+                    {
+                        "name": "group_no",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "1"
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 16,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E3"
+                ],
+                "description": "增加用户",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E3"
+                    },
+                    {
+                        "name": "card_no",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "length": 4,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "password",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": "1234"
+                    },
+                    {
+                        "name": "expiry_date",
+                        "length": 4,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "permission",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E4"
+                ],
+                "description": "删除用户",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E4"
+                    },
+                    {
+                        "name": "guide",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "data",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E5"
+                ],
+                "description": "设定门磁、开门按钮等感应器特性",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E5"
+                    },
+                    {
+                        "name": "control_word",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E6"
+                ],
+                "description": "门锁继电器执行时间",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E6"
+                    },
+                    {
+                        "name": "time",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E7"
+                ],
+                "description": "开门后等待进入的延时时间",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E7"
+                    },
+                    {
+                        "name": "time",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "EA"
+                ],
+                "description": "设定星期内的休息日",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EA"
+                    },
+                    {
+                        "name": "days",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "EB"
+                ],
+                "description": "设定国家法定节假日",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EB"
+                    },
+                    {
+                        "name": "date",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "EC"
+                ],
+                "description": "删除一组节假日",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EC"
+                    },
+                    {
+                        "name": "date",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "ED"
+                ],
+                "description": "远程开关门",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "ED"
+                    },
+                    {
+                        "name": "open_door",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "EE"
+                ],
+                "description": "设置系统支持维根感应头种类",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EE"
+                    },
+                    {
+                        "name": "config",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "F0"
+                ],
+                "description": "初始化记录区",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 5,
+                        "type": "hex",
+                        "value": "0000000000"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "F1"
+                ],
+                "description": "设定星期准进时间段列表",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "table_week",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 24,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "F3"
+                ],
+                "description": "设定系统感应卡编号获取方法",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F3"
+                    },
+                    {
+                        "name": "method",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "F7"
+                ],
+                "description": "设定门开关感应器有效电平",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F7"
+                    },
+                    {
+                        "name": "level",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "F8"
+                ],
+                "description": "启用或关闭手动开门按键",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F8"
+                    },
+                    {
+                        "name": "enable",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "FB"
+                ],
+                "description": "门开关状态监控布防与撤防",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "FB"
+                    },
+                    {
+                        "name": "enable",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "FC"
+                ],
+                "description": "紧急联动及报警输出特性",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "FC"
+                    },
+                    {
+                        "name": "control_word",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E0"
+                ],
+                "description": "读取实时钟",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "year",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "week",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "length": 1,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E1"
+                ],
+                "description": "读取记录柜桶参数",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "bottom",
+                        "length": 2,
+                        "type": "hex",
+                        "value": "0000"
+                    },
+                    {
+                        "name": "savep",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "loadp",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "mf",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "maxlen",
+                        "length": 2,
+                        "type": "hex",
+                        "value": "4000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E2"
+                ],
+                "description": "读取历史记录",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "event_source",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "date_time",
+                        "length": 7,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "status",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "remark",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E5"
+                ],
+                "description": "读取已存储用户数目",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E5"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "user_count",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E3"
+                ],
+                "description": "读取工作日准进时段",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E3"
+                    },
+                    {
+                        "name": "group_no",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 16,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E4"
+                ],
+                "description": "读取非工作日准进时段",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E4"
+                    },
+                    {
+                        "name": "group_no",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "1"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 16,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E6"
+                ],
+                "description": "读取指定存储位置用户资料",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E6"
+                    },
+                    {
+                        "name": "user_pos",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "card_no",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "user_id",
+                        "length": 4,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "password",
+                        "length": 2,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "expiry_date",
+                        "length": 4,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "permission",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E7"
+                ],
+                "description": "远程监控",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E7"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "status1",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "status2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E8"
+                ],
+                "description": "读取控制信息",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E8"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "control_word1",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "relay_time",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "delay_time",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "card_method",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E9"
+                ],
+                "description": "读取星期内休息日",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E9"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "days",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EA"
+                ],
+                "description": "读取节假日",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EA"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "count",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "holidays",
+                        "length": 80,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EB"
+                ],
+                "description": "读取星期一至星期日准进时间表",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EB"
+                    },
+                    {
+                        "name": "table_week",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "time_periods",
+                        "length": 24,
+                        "type": "bcd",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EC"
+                ],
+                "description": "读取第二控制字节",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EC"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "control_word2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EE"
+                ],
+                "description": "附带顺序号读取记录",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EE"
+                    },
+                    {
+                        "name": "flag",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "loadp",
+                        "length": 2,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "event_source",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "date_time",
+                        "length": 7,
+                        "type": "bcd",
+                        "value": ""
+                    },
+                    {
+                        "name": "status",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "remark",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "EF"
+                ],
+                "description": "读取设备名称及版本号",
+                "data_frame_length": 0,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "EF"
+                    },
+                    {
+                        "name": "reserved",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "cid2",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "00"
+                    },
+                    {
+                        "name": "device_info",
+                        "length": 18,
+                        "type": "ascii",
+                        "value": ""
+                    }
+                ]
+            }
+        ]
+    }
+}

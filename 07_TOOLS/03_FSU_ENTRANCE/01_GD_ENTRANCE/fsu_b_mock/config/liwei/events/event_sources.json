@@ -1,0 +1,62 @@
+{
+    "event_sources": {
+        "00": {
+            "description": "刷卡开门",
+            "source": "1234567890"
+        },
+        "01": {
+            "description": "ID+密码开门",
+            "source": "0012345678"
+        },
+        "02": {
+            "description": "远程开门",
+            "source": "0000000000"
+        },
+        "03": {
+            "description": "手动开门",
+            "source": "0000000000"
+        },
+        "04": {
+            "description": "联动开门",
+            "source": "0000000000"
+        },
+        "05": {
+            "description": "报警（红外/门磁等）",
+            "source": "0000000001"
+        },
+        "06": {
+            "description": "SM掉电记录",
+            "source": "time_based",
+            "format": "%m%d%H%M%S"
+        },
+        "07": {
+            "description": "内部控制参数修改",
+            "source": "0000000002"
+        },
+        "08": {
+            "description": "无效卡刷卡",
+            "source": "1234567890"
+        },
+        "09": {
+            "description": "卡片过期",
+            "source": "1234567890"
+        },
+        "0A": {
+            "description": "无进入权限",
+            "source": "1234567890"
+        },
+        "0B": {
+            "description": "密码三次错误",
+            "source": "1234567890"
+        },
+        "22": {
+            "description": "消防联动输入",
+            "source": "0000000001"
+        },
+        "30": {
+            "description": "钥匙开门",
+            "source": "0000000000"
+        }
+    },
+    "default_source": "0000000000"
+}

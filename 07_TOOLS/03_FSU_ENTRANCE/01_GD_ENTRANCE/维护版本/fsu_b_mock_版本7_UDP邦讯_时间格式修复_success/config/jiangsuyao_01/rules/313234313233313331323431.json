@@ -1,0 +1,162 @@
+{
+    "01": {
+        "delay_ms": 100,
+        "data": {
+            "group_type": "020406FFFF"
+        }
+    },
+    "02": {
+        "delay_ms": 100,
+        "data": {
+            "board_id": "02",
+            "data": "00000000000000000000000000000000"
+        }
+    },
+    "03": {
+        "delay_ms": 100,
+        "data": {
+            "group_no": "02",
+            "channel_no": "01",
+            "action": "01"
+        }
+    },
+    "09": {
+        "delay_ms": 100,
+        "data": {
+            "year": "${year()}",
+            "month": "${month()}",
+            "day": "${day()}",
+            "hour": "${hour()}",
+            "minute": "${minute()}",
+            "second": "${second()}"
+        }
+    },
+    "10": {
+        "delay_ms": 100,
+        "data": {
+            "year": "${year()}",
+            "month": "${month()}",
+            "day": "${day()}",
+            "hour": "${hour()}",
+            "minute": "${minute()}",
+            "second": "${second()}"
+        }
+    },
+    "11": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "12": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "13": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "14": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "15": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01"
+        }
+    },
+    "16": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01"
+        }
+    },
+    "17": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01"
+        }
+    },
+    "18": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01"
+        }
+    },
+    "21": {
+        "delay_ms": 100,
+        "data": {
+            "latest_record": "0000",
+            "valid_record": "0000",
+            "unread_record": "0000",
+            "long_card": "0000",
+            "short_card": "0000"
+        }
+    },
+    "22": {
+        "delay_ms": 100,
+        "data": {
+            "result": "02",
+            "card_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000"
+        }
+    },
+    "23": {
+        "delay_ms": 100,
+        "data": {
+            "result": "02",
+            "card_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "validity": "3238012132381231"
+        }
+    },
+    "26": {
+        "delay_ms": 100,
+        "data": {
+            "result": "02",
+            "record_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "record_reason": "01",
+            "year": "${year()}",
+            "month": "${month()}",
+            "day": "${day()}",
+            "hour": "${hour()}",
+            "minute": "${minute()}",
+            "second": "${second()}",
+            "door_index": "00",
+            "reserved": "000000"
+        }
+    },
+    "27": {
+        "delay_ms": 100,
+        "data": {
+            "result": "01",
+            "record_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "record_reason": "01",
+            "year": "${year()}",
+            "month": "${month()}",
+            "day": "${day()}",
+            "hour": "${hour()}",
+            "minute": "${minute()}",
+            "second": "${second()}",
+            "door_index": "00",
+            "reserved": "00"
+        }
+    }
+}

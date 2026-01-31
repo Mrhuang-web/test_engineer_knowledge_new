@@ -1,0 +1,43 @@
+{
+    "protocols": {
+        "liwei": {
+            "name": "力维",
+            "event_config": {
+                "event_types_file": "config/liwei/event_types.json",
+                "event_sources_file": "config/liwei/events/event_sources.json"
+            }
+        },
+        "haineng": {
+            "name": "海能",
+            "event_config": {
+                "event_types_file": "config/haineng_01/event_types.json",
+                "event_sources_file": "config/haineng_01/events/event_sources.json"
+            }
+        },
+        "zhongyi": {
+            "name": "中一",
+            "event_config": {
+                "event_types_file": "config/zhongda/event_types.json",
+                "event_sources_file": "config/zhongda/events/event_sources.json"
+            }
+        },
+        "jiangsu": {
+            "name": "江苏耀德",
+            "event_config": {
+                "event_types_file": "config/jiangsuyao_01/event_types.json",
+                "event_sources_file": "config/jiangsuyao_01/events/event_sources.json"
+            }
+        },
+        "default": {
+            "name": "默认协议",
+            "event_config": {
+                "event_types_file": "config/bangsun_old/event_types.json",
+                "event_sources_file": "config/bangsun_old/events/event_sources.json"
+            }
+        }
+    },
+    "event_polling_config": {
+        "default_mode": "single",
+        "default_interval": 5
+    }
+}

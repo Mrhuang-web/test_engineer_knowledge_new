@@ -1,0 +1,10 @@
+{
+    "device_list": [
+        {
+            "vendor": "亚奥",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./jiangsuyao.json"
+        }
+    ]
+}

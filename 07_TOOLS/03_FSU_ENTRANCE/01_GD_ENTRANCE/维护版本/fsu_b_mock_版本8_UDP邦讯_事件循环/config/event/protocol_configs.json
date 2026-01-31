@@ -1,0 +1,20 @@
+{
+    "protocol_configs": {
+        "bangsun_old_108D": {
+            "command_key": "108D",
+            "enabled": true
+        },
+        "liwei_4AF2E2": {
+            "command_key": "4AF2E2",
+            "enabled": true
+        },
+        "liwei_4AF2E3": {
+            "command_key": "4AF2E3",
+            "enabled": false
+        },
+        "liwei_4AF2E4": {
+            "command_key": "4AF2E4",
+            "enabled": false
+        }
+    }
+}

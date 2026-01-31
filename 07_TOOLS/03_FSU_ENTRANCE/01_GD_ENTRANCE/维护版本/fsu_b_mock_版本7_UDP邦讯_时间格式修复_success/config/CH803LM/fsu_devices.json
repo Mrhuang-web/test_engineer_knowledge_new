@@ -1,0 +1,11 @@
+{
+    "device_list": [
+        {
+            "vendor": "CH803LM",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./CH803LM.json",
+            "rule_file": "./rules/default.json"
+        }
+    ]
+}

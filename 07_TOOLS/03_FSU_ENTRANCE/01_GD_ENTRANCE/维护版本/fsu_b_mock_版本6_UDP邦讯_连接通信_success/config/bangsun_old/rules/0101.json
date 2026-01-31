@@ -1,0 +1,43 @@
+{
+    "108B": {
+        "delay_ms": 100,
+        "timeout": true,
+        "data": {
+            "year": "26",
+            "month": "01",
+            "day": "12",
+            "week": "01",
+            "hour": "14",
+            "minute": "30",
+            "second": "30"
+        }
+    },
+    "109D": {
+        "delay_ms": 100,
+        "data": {
+            "first": "00"
+        }
+    },
+    "1081": {
+        "delay_ms": 100,
+        "timeout": true,
+        "data": {
+            "year": "26",
+            "month": "01",
+            "day": "12",
+            "week": "01",
+            "hour": "14",
+            "minute": "30",
+            "second": "30",
+            "record_count": "000000",
+            "permission_count": "0000",
+            "record_value": "00000000",
+            "relay_status": "00",
+            "magnetic_button_status": "00",
+            "reserve1": "00",
+            "obstacle_number": "00",
+            "reserve2": "00",
+            "reserve3": "00"
+        }
+    }
+}

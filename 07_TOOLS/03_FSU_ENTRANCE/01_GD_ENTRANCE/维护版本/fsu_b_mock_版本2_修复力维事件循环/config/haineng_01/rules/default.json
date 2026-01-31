@@ -1,0 +1,171 @@
+{
+    "81": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "81",
+            "group_type": "020406FFFF"
+        }
+    },
+    "82": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "82",
+            "board_id": "02",
+            "data": "00000000000000000000000000000000"
+        }
+    },
+    "83": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "83",
+            "group_no": "02",
+            "channel_no": "01",
+            "action": "01"
+        }
+    },
+    "89": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "89",
+            "year": "${year(yyyy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$"
+        }
+    },
+    "90": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "90",
+            "year": "${year(yyyy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$"
+        }
+    },
+    "91": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "91",
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "92": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "92",
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "93": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "93",
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "94": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "94",
+            "result": "01",
+            "card_no": "00000000"
+        }
+    },
+    "95": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "95",
+            "result": "01",
+            "reserved": "00000000"
+        }
+    },
+    "96": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "96",
+            "result": "01"
+        }
+    },
+    "97": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "97",
+            "result": "01"
+        }
+    },
+    "98": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "98",
+            "result": "01"
+        }
+    },
+    "A1": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "A1",
+            "latest_record": "0000",
+            "valid_record": "0000",
+            "unread_record": "0000",
+            "long_card": "0000",
+            "short_card": "0000"
+        }
+    },
+    "A2": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "A2",
+            "result": "02",
+            "card_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000"
+        }
+    },
+    "A3": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "A3",
+            "result": "02",
+            "card_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "validity": "3238012132381231"
+        }
+    },
+    "A6": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "A6",
+            "result": "02",
+            "record_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "record_reason": "01",
+            "time": "32380121203916",
+            "door_index": "00",
+            "reserved": "000000"
+        }
+    },
+    "A7": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "A7",
+            "result": "01",
+            "record_index": "0000",
+            "new_index": "0001",
+            "card_no": "00000000",
+            "record_reason": "01",
+            "time": "32380121203916",
+            "door_index": "00",
+            "reserved": "00"
+        }
+    }
+}

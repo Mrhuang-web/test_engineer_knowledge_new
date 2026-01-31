@@ -1,0 +1,148 @@
+{
+    "49F1E0": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E0",
+            "checksum": "7498"
+        }
+    },
+    "49F1E1": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E1",
+            "checksum": "7599"
+        }
+    },
+    "49F1E3": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E3",
+            "checksum": "779B"
+        }
+    },
+    "49F1E4": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E4",
+            "checksum": "789C"
+        }
+    },
+    "49F1E5": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E5",
+            "checksum": "799D"
+        }
+    },
+    "49F1E6": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E6",
+            "checksum": "7A9E"
+        }
+    },
+    "49F1E7": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "F1E7",
+            "checksum": "7B9F"
+        }
+    },
+    "49F1ED": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00"
+
+        }
+    },
+    "4AF2E0": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "year": "${year(yyyy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "week": "${week()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$"
+        }
+    },
+    "4AF2E1": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0012",
+            "data_info": "000000000000000000000000",
+            "checksum": "C5D6"
+        }
+    },
+    "4AF2E2": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "001C",
+            "data_info": "0100011A01161430450000000000000000000000",
+            "checksum": "F7A8"
+        }
+    },
+    "4AF2E5": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0002",
+            "data_info": "0000",
+            "checksum": "D0E1"
+        }
+    },
+    "4AF2E6": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0010",
+            "data_info": "00000000000000000000000000000000",
+            "checksum": "E2F3"
+        }
+    },
+    "4AF2E7": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0004",
+            "data_info": "00000000",
+            "checksum": "F4A5"
+        }
+    },
+    "4AF2E8": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "000A",
+            "data_info": "00000000000000000000",
+            "checksum": "A6B7"
+        }
+    },
+    "4AF2EF": {
+        "delay_ms": 100,
+        "data": {
+            "rtn": "00",
+            "length": "0014",
+            "data_info": "43483830334C4D2056312E30302020202020",
+            "checksum": "B8C9"
+        }
+    }
+}

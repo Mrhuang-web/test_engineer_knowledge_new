@@ -1,0 +1,16 @@
+{
+    "108D": {
+        "delay_ms": 100,
+        "data": {
+            "card_id": "7152",
+            "vendor_id": "B3",
+            "status": "02",
+            "year": "${year(yy)}$",
+            "month": "${month()}$",
+            "day": "${day()}$",
+            "hour": "${hour()}$",
+            "minute": "${minute()}$",
+            "second": "${second()}$"
+        }
+    }
+}

@@ -1,0 +1,598 @@
+{
+    "vendor": "盈佳",
+    "sub_dev_type": "01",
+    "sub_dev_addr": "00",
+    "rule_file_list": [
+        "./rules/default.json"
+    ],
+    "protocol": {
+        "total_length": 0,
+        "dynamic_length": true,
+        "checksum_config": {
+            "algorithm": "crc16",
+            "start": 6,
+            "end": -8
+        },
+        "pdu_left": [
+            {
+                "name": "start",
+                "length": 6,
+                "type": "hex",
+                "value": "FA55FA55FA55"
+            },
+            {
+                "name": "ver",
+                "length": 1,
+                "type": "hex",
+                "value": "10"
+            },
+            {
+                "name": "adr",
+                "length": 1,
+                "type": "hex",
+                "value": "FD"
+            },
+            {
+                "name": "cid1",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "cid2",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "length",
+                "length": 2,
+                "type": "hex",
+                "value": ""
+            }
+        ],
+        "pdu_tailer": [
+            {
+                "name": "checksum",
+                "length": 2,
+                "type": "hex",
+                "value": "",
+                "endian": "big"
+            },
+            {
+                "name": "end",
+                "length": 6,
+                "type": "hex",
+                "value": "FD0222FD0222"
+            }
+        ],
+        "data_frame_type_flag": [
+            "cid2",
+            "group",
+            "type"
+        ],
+        "data_frame": [
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E0"
+                ],
+                "description": "获取权限（密码校验）",
+                "data_frame_length": 7,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    },
+                    {
+                        "name": "password",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E1"
+                ],
+                "description": "取消权限",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E2"
+                ],
+                "description": "修改密码",
+                "data_frame_length": 8,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    },
+                    {
+                        "name": "new_password",
+                        "length": 5,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "password_check",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "48",
+                    "F0",
+                    "E3"
+                ],
+                "description": "修改门禁地址",
+                "data_frame_length": 3,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E3"
+                    },
+                    {
+                        "name": "new_addr",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F0"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E3"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E0"
+                ],
+                "description": "设置系统参数",
+                "data_frame_length": 27,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    },
+                    {
+                        "name": "sys_params",
+                        "length": 25,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E1"
+                ],
+                "description": "校准SM日期、时间",
+                "data_frame_length": 9,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    },
+                    {
+                        "name": "datetime",
+                        "length": 7,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E2"
+                ],
+                "description": "授权单用户",
+                "data_frame_length": 13,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    },
+                    {
+                        "name": "user_info",
+                        "length": 11,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E0"
+                ],
+                "description": "读取系统参数",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E0"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E1"
+                ],
+                "description": "读取SM日期、时间",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E1"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "4A",
+                    "F2",
+                    "E2"
+                ],
+                "description": "读取单用户信息",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    },
+                    {
+                        "name": "user_id",
+                        "length": 4,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F2"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E2"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": [
+                    "49",
+                    "F1",
+                    "E6"
+                ],
+                "description": "遥控开门",
+                "data_frame_length": 2,
+                "req_data_list": [
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E6"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "{pdu_left}.{cid2}",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "group",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "F1"
+                    },
+                    {
+                        "name": "type",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "E6"
+                    }
+                ]
+            }
+        ]
+    }
+}

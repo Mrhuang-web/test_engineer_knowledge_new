@@ -1,0 +1,11 @@
+{
+    "device_list": [
+        {
+            "vendor": "高新兴",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./gaoxx.json",
+            "rule_file": "./rules/default.json"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "device_list": [
+        {
+            "vendor": "盈佳",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "01",
+            "protocol_template": "./yingjia.json",
+            "rule_file": "./rules/default.json"
+        }
+    ]
+}

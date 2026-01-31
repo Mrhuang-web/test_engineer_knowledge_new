@@ -55,3 +55,888 @@ KeyboardInterrupt
 2026-01-31 03:08:30,533 root INFO main.py:102 系统CPU核心数: 16
 2026-01-31 03:08:39,508 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
 2026-01-31 03:08:39,511 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 03:18:23,775 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:18:28,004 root INFO main.py:141 服务已停止
+2026-01-31 03:20:21,828 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:20:40,429 root INFO main.py:141 服务已停止
+2026-01-31 03:20:40,532 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 03:20:41,048 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:20:48,516 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:21:25,603 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 80, in process_main
+    asyncio.run(run_fsu_services(fsu_list, fsu_config, log_config, performance_mode))
+  File "D:\software_code\Python 3.9.13\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 601, in run_forever
+    self._run_once()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 1905, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 130, in _handle_through_data
+    rule_response = self._generate_response(protocol_config, parsed_data)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\base_protocol.py", line 232, in _generate_response
+    frame_rule = self.device_config.match_rule_by_data_frame_type(rules_obj, actual_type)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\base_protocol.py", line 232, in _generate_response
+    frame_rule = self.device_config.match_rule_by_data_frame_type(rules_obj, actual_type)
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1187, in _pydevd_bundle.pydevd_cython_win32_39_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1185, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1200, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+2026-01-31 03:21:25,665 root INFO main.py:141 服务已停止
+2026-01-31 03:21:25,670 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 03:21:26,195 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:21:41,527 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:21:48,707 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:22:28,676 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 80, in process_main
+    asyncio.run(run_fsu_services(fsu_list, fsu_config, log_config, performance_mode))
+  File "D:\software_code\Python 3.9.13\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 601, in run_forever
+    self._run_once()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 1905, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 130, in _handle_through_data
+    rule_response = self._generate_response(protocol_config, parsed_data)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\base_protocol.py", line 232, in _generate_response
+    frame_rule = self.device_config.match_rule_by_data_frame_type(rules_obj, actual_type)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\base_protocol.py", line 232, in _generate_response
+    frame_rule = self.device_config.match_rule_by_data_frame_type(rules_obj, actual_type)
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1187, in _pydevd_bundle.pydevd_cython_win32_39_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1185, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1200, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+2026-01-31 03:22:28,899 root INFO main.py:141 服务已停止
+2026-01-31 03:22:28,930 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 03:22:29,422 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:22:36,628 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:22:54,734 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 03:24:05,014 root INFO main.py:141 服务已停止
+2026-01-31 03:24:05,046 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 80, in process_main
+    asyncio.run(run_fsu_services(fsu_list, fsu_config, log_config, performance_mode))
+  File "D:\software_code\Python 3.9.13\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 601, in run_forever
+    self._run_once()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 1905, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 194, in _handle_through_data
+    resp_through_pdu = parsed_data.get("through_pdu", {})
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 194, in _handle_through_data
+    resp_through_pdu = parsed_data.get("through_pdu", {})
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1187, in _pydevd_bundle.pydevd_cython_win32_39_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1103, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1065, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1185, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1200, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+2026-01-31 03:24:05,069 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 03:24:05,627 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 03:24:12,446 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 03:24:32,078 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E7的规则
+2026-01-31 12:06:48,784 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 12:07:02,771 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 12:07:02,776 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 12:09:11,756 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 12:10:25,501 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 12:12:19,796 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 13:48:42,068 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 13:48:46,954 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 13:48:46,960 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:03:59,191 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 14:04:01,056 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 14:04:01,059 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:28:40,126 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 14:28:49,980 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 14:28:49,984 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:28:53,003 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:28:55,122 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:28:59,603 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:29:00,579 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:29:01,570 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:29:02,370 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:29:03,029 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:34:59,795 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 14:35:02,904 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 14:35:02,912 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:04,547 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:05,915 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:07,049 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:08,221 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:09,563 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:10,673 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:11,568 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:13,965 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 14:35:14,715 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 14:35:15,380 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 14:35:15,925 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:16,634 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:35:17,212 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:58:32,486 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 14:58:46,657 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 14:58:46,663 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 14:58:46,780 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=AttributeError("'EventManager' object has no attribute 'event_commands'")>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 219, in _handle_through_data
+    if self.event_manager.is_event_command(full_command, protocol_config):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 636, in is_event_command
+    for event_cmd in self.event_commands:
+AttributeError: 'EventManager' object has no attribute 'event_commands'
+2026-01-31 15:00:11,868 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:00:21,328 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:00:21,334 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:23,403 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:24,874 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:25,944 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:26,980 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:28,009 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:28,794 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:29,674 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:30,610 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:31,475 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:43,486 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 15:00:44,768 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 15:00:46,289 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:00:46,768 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:01:29,411 root INFO main.py:141 服务已停止
+2026-01-31 15:05:29,663 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:05:32,297 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:05:32,301 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:05:33,283 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:07:41,246 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:09:38,999 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:09:41,383 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:09:41,394 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:42,186 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:43,202 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:44,033 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:44,794 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:45,608 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:09:46,245 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:04,291 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:17:06,103 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:17:06,107 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:06,987 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:08,089 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:08,947 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:09,892 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:10,828 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:17:11,745 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:19:13,621 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:19:17,383 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:19:17,386 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:19:18,611 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:20:05,210 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:20:07,934 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:20:07,937 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:20:08,785 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:28:15,051 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:29:25,025 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:29:28,151 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:29:28,155 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:29,063 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:30,163 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:31,062 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:31,903 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:32,753 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:29:33,476 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:31:42,718 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:32:25,847 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:32:29,805 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:32:29,809 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:32:31,232 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:40,265 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:37:42,253 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:37:42,257 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:43,126 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:44,185 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:45,042 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:45,840 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:47,076 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 15:37:47,898 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:37:48,659 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 15:37:49,175 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:42:08,384 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:42:11,038 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:42:11,042 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:42:12,186 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:42:13,892 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:42:14,936 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:46:29,684 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:46:31,284 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:46:31,289 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:46:37,864 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:48:46,281 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:48:47,941 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:48:47,945 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:48:48,078 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=AttributeError("'EventManager' object has no attribute 'event_rules_config'")>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 307, in _handle_through_data
+    await self.event_manager.handle_event_polling(addr, protocol_config, card_id)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 345, in handle_event_polling
+    await self._handle_single_event(addr, protocol_config, protocol_key)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 432, in _handle_single_event
+    await self.send_event(event_type, addr)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 488, in send_event
+    event_rules = self.event_rules_config.get(vendor, {})
+AttributeError: 'EventManager' object has no attribute 'event_rules_config'
+2026-01-31 15:52:03,662 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:52:06,796 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:52:06,800 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:52:08,366 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:53:38,815 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:53:40,996 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:53:41,000 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:53:57,703 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 15:54:01,125 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 15:54:01,128 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:54:21,102 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 15:54:40,929 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:01:43,361 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:01:46,006 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:01:46,011 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:01:54,102 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:02:46,742 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:05:11,276 root INFO main.py:141 服务已停止
+2026-01-31 16:08:31,932 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:08:47,579 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:09:19,025 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:09:27,478 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:09:33,597 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:09:42,516 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:10:05,373 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:10:07,703 root INFO main.py:141 服务已停止
+2026-01-31 16:10:09,720 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:10:16,983 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:10:19,379 root INFO main.py:141 服务已停止
+2026-01-31 16:10:24,683 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:10:37,477 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:14:08,765 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:15:06,417 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:27:03,764 root INFO main.py:141 服务已停止
+2026-01-31 16:27:48,405 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:27:54,768 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:27:57,434 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:27:57,437 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:27:57,551 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyError('card_id')>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 302, in _handle_through_data
+    card_id = through_sdu["card_id"]
+KeyError: 'card_id'
+2026-01-31 16:28:23,317 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:28:27,354 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:28:27,357 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:28:27,473 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=UnboundLocalError("local variable 'protocol_key' referenced before assignment")>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 307, in _handle_through_data
+    await self.event_manager.handle_event_polling(addr, protocol_config, card_id)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 345, in handle_event_polling
+    await self._handle_single_event(addr, protocol_config, protocol_key)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 429, in _handle_single_event
+    await self.send_event(event_type, addr)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 611, in send_event
+    event_sources_config = self.protocol_event_sources.get(protocol_key, {})
+UnboundLocalError: local variable 'protocol_key' referenced before assignment
+2026-01-31 16:30:10,096 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:30:11,908 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:30:11,913 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=UnboundLocalError("local variable 'protocol_key' referenced before assignment")>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 219, in _handle_through_data
+    await self.event_manager.handle_event_polling(addr, protocol_config, card_id)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 345, in handle_event_polling
+    await self._handle_single_event(addr, protocol_config, protocol_key)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 429, in _handle_single_event
+    await self.send_event(event_type, addr)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 611, in send_event
+    event_sources_config = self.protocol_event_sources.get(protocol_key, {})
+UnboundLocalError: local variable 'protocol_key' referenced before assignment
+2026-01-31 16:31:11,068 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:31:12,990 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:31:13,010 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=UnboundLocalError("local variable 'protocol_key' referenced before assignment")>
+Traceback (most recent call last):
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 219, in _handle_through_data
+    await self.event_manager.handle_event_polling(addr, protocol_config, card_id)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 345, in handle_event_polling
+    await self._handle_single_event(addr, protocol_config, protocol_key)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 429, in _handle_single_event
+    await self.send_event(event_type, addr)
+  File "e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\event\event_manager.py", line 611, in send_event
+    event_sources_config = self.protocol_event_sources.get(protocol_key, {})
+UnboundLocalError: local variable 'protocol_key' referenced before assignment
+2026-01-31 16:32:14,916 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:32:17,322 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:33:30,311 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 16:34:21,434 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:34:23,178 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:35:46,537 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:35:48,338 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:36:20,458 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:36:22,988 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:37:37,058 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:37:44,257 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:37:59,207 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:38:03,137 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:41:44,739 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:41:57,522 root INFO main.py:141 服务已停止
+2026-01-31 16:42:02,778 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:42:05,483 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:42:05,491 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:42:09,929 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:42:59,743 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:47:17,380 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:47:33,097 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:48:01,458 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:48:01,460 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:48:25,224 root INFO main.py:141 服务已停止
+2026-01-31 16:48:25,282 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 16:48:59,694 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:49:16,044 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:49:16,047 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:49:35,987 root INFO main.py:141 服务已停止
+2026-01-31 16:49:35,992 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 16:49:36,512 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:49:55,737 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:50:32,452 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:50:32,455 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:50:50,804 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:51:15,026 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:51:30,843 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:51:56,051 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 16:51:57,677 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:52:02,043 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:52:14,584 root INFO main.py:141 服务已停止
+2026-01-31 16:52:14,797 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 16:52:18,290 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:52:29,027 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:52:29,030 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:52:37,102 root INFO main.py:141 服务已停止
+2026-01-31 16:52:46,976 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:52:50,256 root INFO main.py:141 服务已停止
+2026-01-31 16:52:50,544 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 128, in main
+    p.start()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\context.py", line 327, in _Popen
+    return Popen(process_obj)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 95, in __init__
+    set_spawning_popen(None)
+KeyboardInterrupt
+2026-01-31 16:52:58,417 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 16:52:58,420 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:53:23,440 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:53:29,555 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:53:49,188 root INFO main.py:141 服务已停止
+2026-01-31 16:53:49,194 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 16:55:27,843 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 16:55:41,250 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:55:46,019 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 16:55:46,363 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 16:55:48,322 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:01:07,611 root INFO main.py:141 服务已停止
+2026-01-31 17:01:07,617 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 17:01:11,856 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:01:26,076 root INFO main.py:141 服务已停止
+2026-01-31 17:01:30,448 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:02:08,871 root INFO main.py:141 服务已停止
+2026-01-31 17:03:12,833 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:03:17,188 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:03:37,744 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:04:13,459 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:05:42,921 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:05:46,528 root INFO main.py:141 服务已停止
+2026-01-31 17:05:54,230 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:05:58,615 root INFO main.py:141 服务已停止
+2026-01-31 17:06:05,768 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:06:16,628 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:06:16,634 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:06:46,379 root INFO main.py:141 服务已停止
+2026-01-31 17:06:46,507 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 80, in process_main
+    asyncio.run(run_fsu_services(fsu_list, fsu_config, log_config, performance_mode))
+  File "D:\software_code\Python 3.9.13\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 601, in run_forever
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 173, in _handle_through_data
+    self.transport.sendto(resp_packet, addr)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 173, in _handle_through_data
+    self.transport.sendto(resp_packet, addr)
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1597, in _pydevd_bundle.pydevd_cython_win32_39_64.ThreadTracer.__call__
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 937, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 928, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1185, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1200, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+2026-01-31 17:06:46,523 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 17:06:57,208 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:07:00,835 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:07:00,838 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:07:10,143 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:08:16,912 root INFO main.py:141 服务已停止
+2026-01-31 17:08:21,422 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:08:24,139 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:08:24,142 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:08:27,993 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:08:49,891 root INFO main.py:141 服务已停止
+2026-01-31 17:08:51,940 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:08:54,531 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:08:54,533 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:08:57,532 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:10:12,712 root INFO main.py:141 服务已停止
+2026-01-31 17:10:17,593 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:10:22,744 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:10:22,747 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:10:46,567 root INFO main.py:141 服务已停止
+2026-01-31 17:10:46,733 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:10:50,938 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:10:50,941 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:11:19,166 root INFO main.py:141 服务已停止
+2026-01-31 17:11:19,332 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:11:23,408 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:11:23,410 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:12:22,713 root INFO main.py:141 服务已停止
+2026-01-31 17:12:23,240 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:12:47,336 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:13:13,898 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:13:13,904 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:23:03,733 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<UDPProtocol._handle_through_data() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py:94> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 315, in _bootstrap
+    self.run()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 80, in process_main
+    asyncio.run(run_fsu_services(fsu_list, fsu_config, log_config, performance_mode))
+  File "D:\software_code\Python 3.9.13\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 601, in run_forever
+    self._run_once()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\base_events.py", line 1905, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 281, in _handle_through_data
+    )
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\server\udp_protocol.py", line 281, in _handle_through_data
+    )
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1187, in _pydevd_bundle.pydevd_cython_win32_39_64.SafeCallWrapper.__call__
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 627, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1103, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 1065, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.trace_dispatch
+  File "_pydevd_bundle\\pydevd_cython_win32_39_64.pyx", line 585, in _pydevd_bundle.pydevd_cython_win32_39_64.PyDBFrame.do_wait_suspend
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1185, in do_wait_suspend
+    self._do_wait_suspend(thread, frame, event, arg, suspend_type, from_this_thread)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers\pydev\pydevd.py", line 1200, in _do_wait_suspend
+    time.sleep(0.01)
+KeyboardInterrupt
+2026-01-31 17:23:04,047 root INFO main.py:141 服务已停止
+2026-01-31 17:23:04,138 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 17:23:13,408 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:23:19,339 root INFO main.py:141 服务已停止
+2026-01-31 17:23:19,496 asyncio ERROR base_events.py:1753 Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py:82> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 139, in <module>
+    asyncio.run(main())
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 135, in run
+    return loop.run_until_complete(task)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 229, in run_until_complete
+    self._run_once()
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 281, in _run_once
+    handle._run()
+  File "D:\software_code\Python 3.9.13\lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "D:\software_code\PyCharm 2024.1.3\02storage\PyCharm 2024.1\plugins\python\helpers-pro\pydevd_asyncio\pydevd_nest_asyncio.py", line 390, in step
+    step_orig(task, exc)
+  File "D:\software_code\Python 3.9.13\lib\asyncio\tasks.py", line 256, in __step
+    result = coro.send(None)
+  File "E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\main.py", line 134, in main
+    p.join()
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\process.py", line 149, in join
+    res = self._popen.wait(timeout)
+  File "D:\software_code\Python 3.9.13\lib\multiprocessing\popen_spawn_win32.py", line 108, in wait
+    res = _winapi.WaitForSingleObject(int(self._handle), msecs)
+KeyboardInterrupt
+2026-01-31 17:23:36,283 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:24:36,469 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:24:57,994 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:24:58,001 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:28:31,437 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:30:43,017 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:31:42,020 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:34:04,614 root INFO main.py:141 服务已停止
+2026-01-31 17:34:11,405 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 17:34:22,255 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 17:34:22,258 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:35:39,196 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:41:37,028 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 17:45:37,802 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 4AF2E2的规则
+2026-01-31 18:12:28,103 root INFO main.py:141 服务已停止
+2026-01-31 18:13:19,921 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 18:13:33,913 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 18:13:39,809 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 18:15:08,225 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 18:17:06,576 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 18:17:10,438 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 18:18:00,936 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 18:18:01,902 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 18:31:26,193 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 18:31:29,744 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 19:27:47,476 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 19:27:51,794 root INFO config_manager.py:228 设备配置已更新: ./config/liwei
+2026-01-31 19:30:49,467 root INFO config_manager.py:351 从default_rule中匹配到data_frame_type: 48F0E0的规则
+2026-01-31 20:18:02,457 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 20:18:17,855 root INFO main.py:102 系统CPU核心数: 16
+2026-01-31 20:18:22,473 root INFO config_manager.py:228 设备配置已更新: ./config/liwei

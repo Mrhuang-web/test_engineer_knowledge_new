@@ -1,0 +1,172 @@
+{
+    "1081": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1081",
+            "current_time": "07080305140822",
+            "record_count": "0000",
+            "extend": "00",
+            "permission_count": "0000",
+            "record_data": "FFFFFFFFFFFFFF",
+            "relay_state": "00",
+            "door_magnetic_state": "00",
+            "fault_no": "00",
+            "reserved": "00",
+            "record_last_byte": "FF"
+        }
+    },
+    "109D": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "109D",
+            "result": "00"
+        }
+    },
+    "108B": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "108B",
+            "year": "07",
+            "month": "08",
+            "day": "03",
+            "week": "05",
+            "hour": "14",
+            "minute": "20",
+            "second": "43"
+        }
+    },
+    "108F": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "108F",
+            "door_no": "01",
+            "control_mode": "03",
+            "door_delay": "1E00"
+        }
+    },
+    "1093": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1093",
+            "result": "01"
+        }
+    },
+    "1095": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1095",
+            "permission_index": "0100",
+            "card_no": "9C444801",
+            "reserved1": "0000",
+            "expire_date": "9FC7",
+            "door_no": "01",
+            "password": "40E201",
+            "time_index": "01000000"
+        }
+    },
+    "108D": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "108D",
+            "card_id": "0652",
+            "vendor_no": "71",
+            "card_status": "01",
+            "card_date": "B302",
+            "card_time": "0D5D"
+        }
+    },
+    "108E": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "108E",
+            "result": "00"
+        }
+    },
+    "10F4": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "10F4",
+            "value": "03"
+        }
+    },
+    "10F1": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "10F1",
+            "value": "03"
+        }
+    },
+    "1107": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1107",
+            "result": "01"
+        }
+    },
+    "10FF": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "10FF"
+        }
+    },
+    "109B": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "109B",
+            "result": "01"
+        }
+    },
+    "1108": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1108",
+            "result": "01"
+        }
+    },
+    "1096": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1096",
+            "time_index": "0100",
+            "week_control": "7F",
+            "link_time": "00",
+            "reserved": "0000"
+        }
+    },
+    "1097": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1097",
+            "time_index": "0100",
+            "week_control": "7F",
+            "link_time": "00"
+        }
+    },
+    "10F5": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "10F5"
+        }
+    },
+    "1082": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1082",
+            "production_date": "070731",
+            "driver_version": "1A",
+            "device_model": "62"
+        }
+    },
+    "1101": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "1101"
+        }
+    },
+    "11F2": {
+        "delay_ms": 100,
+        "data": {
+            "data_frame_type": "11F2"
+        }
+    }
+}

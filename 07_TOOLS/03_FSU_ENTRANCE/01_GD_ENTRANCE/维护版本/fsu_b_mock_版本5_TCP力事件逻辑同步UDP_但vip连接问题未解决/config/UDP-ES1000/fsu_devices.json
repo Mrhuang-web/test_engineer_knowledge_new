@@ -1,0 +1,11 @@
+{
+    "device_list": [
+        {
+            "vendor": "ES1000",
+            "sub_dev_type": "01",
+            "sub_dev_addr": "00",
+            "protocol_template": "./UDP-ES1000.json",
+            "rule_file": "./rules/.default.json"
+        }
+    ]
+}

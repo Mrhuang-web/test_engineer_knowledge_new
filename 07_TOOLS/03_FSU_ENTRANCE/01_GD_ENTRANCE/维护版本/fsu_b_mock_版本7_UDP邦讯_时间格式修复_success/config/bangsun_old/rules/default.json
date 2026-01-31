@@ -1,0 +1,133 @@
+{
+  "108B": {
+    "delay_ms": 100,
+    "data": {
+      "datetime": "#{datetime}#"
+    }
+  },
+  "109D": {
+    "delay_ms": 100,
+    "data": {
+      "first": "00"
+    }
+  },
+  "10F4": {
+    "delay_ms": 100,
+    "data": {
+      "value": "01"
+    }
+  },
+  "10F1": {
+    "delay_ms": 100,
+    "data": {
+      "value": "00"
+    }
+  },
+  "1093": {
+    "delay_ms": 100,
+    "data": {
+      "result": "01"
+    }
+  },
+  "1095": {
+    "delay_ms": 100,
+    "data": {
+      "permission_data": "FFFFFFFFFFFFFFFF"
+    }
+  },
+  "109B": {
+    "delay_ms": 100,
+    "data": {
+      "result": "01"
+    }
+  },
+  "108D": {
+    "delay_ms": 100,
+    "data": {
+      "card_id": "7152",
+      "vendor_id": "B3",
+      "status": "02",
+      "timestamp": ""
+    }
+  },
+  "108E": {
+    "delay_ms": 100,
+    "data": {
+      "result": "00"
+    }
+  },
+  "10F5": {
+    "delay_ms": 100,
+    "data": {
+      "result": "01"
+    }
+  },
+  "1101": {
+    "delay_ms": 100,
+    "data": {
+      "mac": "00574701A410",
+      "ip": "C0A8A864"
+    }
+  },
+  "1081": {
+    "delay_ms": 100,
+    "data": {
+      "year": "${year(yy)}$",
+      "month": "${month()}$",
+      "day": "${day()}$",
+      "week": "${week()}$",
+      "hour": "${hour()}$",
+      "minute": "${minute()}$",
+      "second": "${second()}$",
+      "record_count": "000000",
+      "permission_count": "0000",
+      "record_value": "00000000",
+      "relay_status": "00",
+      "magnetic_button_status": "00",
+      "reserve1": "00",
+      "obstacle_number": "00",
+      "reserve2": "00",
+      "reserve3": "00"
+    }
+    },
+    "108F": {
+      "delay_ms": 100,
+      "data": {
+        "door_number": "00",
+        "control_mode": "01",
+        "delay": "0014"
+      }
+    },
+    "1107": {
+      "delay_ms": 100,
+      "data": {
+        "result": "01"
+      }
+    },
+    "1108": {
+      "delay_ms": 100,
+      "data": {
+        "result": "01"
+      }
+    },
+    "1082": {
+      "delay_ms": 100,
+      "data": {
+        "production_date": "070731",
+        "driver_version": "1A",
+        "device_model": "62"
+      }
+    },
+    "1096": {
+      "delay_ms": 100,
+      "data": {
+        "period_data": "FFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+      }
+    },
+    "1097": {
+      "delay_ms": 100,
+      "data": {
+        "period_data": "FFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+      }
+    }
+  }

@@ -8,3 +8,215 @@
 2026-01-31 02:54:32,741 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
 2026-01-31 03:02:05,594 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
 2026-01-31 03:08:30,848 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:18:24,061 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:20:23,442 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:20:42,896 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:21:27,956 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:21:43,136 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:22:31,185 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 03:24:07,665 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 12:06:49,033 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 13:48:42,314 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 14:03:59,440 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 14:28:40,390 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 14:35:00,044 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 14:58:32,764 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 14:58:32,764 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 14:58:32,767 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:00:12,129 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:00:12,129 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:00:12,132 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:05:29,921 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:05:29,921 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:05:29,924 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:07:41,517 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:07:41,517 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:09:39,252 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:09:39,253 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:09:39,255 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:17:04,557 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:17:04,557 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:17:04,560 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:19:13,890 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:19:13,891 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:19:13,893 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:20:05,468 event_manager.py:192 从配置文件加载了协议事件配置: config/protocol_event_config.json
+2026-01-31 15:20:05,469 event_manager.py:193 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:20:05,471 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:28:15,316 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:28:15,316 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:29:25,274 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:29:25,275 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:29:25,278 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:31:42,980 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:31:42,981 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:32:26,097 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:32:26,098 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:32:26,100 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:37:40,526 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:37:40,526 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:37:40,529 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:42:08,632 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:42:08,632 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:42:08,634 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:46:29,942 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:46:29,942 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:46:29,945 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:48:46,541 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:48:46,541 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:48:46,543 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:52:03,914 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:52:03,914 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:52:03,917 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:53:39,068 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:53:39,069 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:53:39,072 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 15:53:57,969 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 15:53:57,970 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 15:53:57,974 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:01:43,622 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:01:43,623 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:01:43,626 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:09:44,130 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:09:44,130 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:09:44,132 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:10:05,719 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:10:05,719 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:10:05,721 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:10:17,263 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:10:17,263 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:10:17,265 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:10:39,203 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:10:39,204 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:10:39,206 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:27:48,669 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:27:48,669 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:27:48,671 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:27:55,036 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:27:55,037 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:27:55,039 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:28:23,593 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:28:23,594 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:28:23,596 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:30:10,352 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:30:10,352 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:30:10,355 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:31:11,339 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:31:11,339 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:31:11,342 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:32:15,180 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:32:15,180 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:32:15,182 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:34:21,697 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:34:21,697 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:34:21,699 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:35:46,784 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:35:46,784 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:35:46,787 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:36:20,696 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:36:20,697 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:36:20,699 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:37:37,301 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:37:37,301 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:37:37,304 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:37:44,569 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:37:44,569 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:37:59,479 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:37:59,479 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:37:59,481 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:41:44,984 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:41:44,984 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:42:03,038 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:42:03,038 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:42:03,041 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:47:34,666 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:47:34,666 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:47:34,668 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:49:01,303 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:49:01,303 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:49:01,305 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:49:57,290 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:49:57,290 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:49:57,292 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:52:18,555 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:52:18,555 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:52:18,557 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:52:48,608 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:52:48,608 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:52:48,611 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:53:25,095 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:53:25,096 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:53:25,098 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 16:55:29,511 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 16:55:29,511 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 16:55:29,513 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:01:12,112 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:01:12,112 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:01:12,114 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:01:30,707 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:01:30,708 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:01:30,709 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:03:13,090 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:03:13,090 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:03:13,093 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:03:37,999 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:03:37,999 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:03:38,002 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:04:13,761 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:04:13,762 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:04:13,764 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:05:43,211 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:05:43,211 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:05:54,503 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:05:54,503 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:05:54,505 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:06:07,369 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:06:07,369 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:06:07,372 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:06:57,474 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:06:57,474 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:06:57,475 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:08:21,702 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:08:21,702 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:08:21,704 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:08:52,235 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:08:52,235 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:08:52,237 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:10:17,882 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:10:17,882 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:10:17,884 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:10:47,020 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:10:47,020 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:10:47,021 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:11:19,619 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:11:19,619 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:11:19,621 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:12:49,029 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:12:49,029 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:12:49,034 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:23:15,083 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:23:15,083 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:23:15,085 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:24:38,135 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:24:38,136 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:24:38,138 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 17:34:13,016 event_manager.py:194 从配置文件加载了协议事件配置: E:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 17:34:13,016 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 17:34:13,018 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 18:13:34,165 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 18:13:34,166 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 18:13:34,168 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 18:17:06,807 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 18:17:06,807 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 18:17:06,810 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 18:31:26,431 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 18:31:26,431 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 18:31:26,435 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 19:27:47,715 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 19:27:47,715 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 19:27:47,720 udp_protocol.py:61 UDP服务已启动，监听端口: 10117
+2026-01-31 20:18:02,703 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 20:18:02,703 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 20:18:18,096 event_manager.py:194 从配置文件加载了协议事件配置: e:\SOFTWARE_TEST_ENGINEER\6、练习题\卓望-联合永道bak\07_TOOLS\03_FSU_ENTRANCE\01_GD_ENTRANCE\fsu_b_mock\config\protocol_event_config.json
+2026-01-31 20:18:18,097 event_manager.py:195 支持的协议: ['liwei', 'haineng', 'zhongyi', 'jiangsu', 'default']
+2026-01-31 20:18:18,099 udp_protocol.py:61 UDP服务已启动，监听端口: 10117

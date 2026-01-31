@@ -1,0 +1,58 @@
+[
+  {
+    "vendor": "盈佳",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "力维",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "大华",
+    "protocol": "HTTP"
+  },
+  {
+    "vendor": "亚奥",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "海能",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "邦讯-新版",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "高新兴",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "大华",
+    "protocol": "SDK"
+  },
+  {
+    "vendor": "中达",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "力维",
+    "protocol": "TCP"
+  },
+  {
+    "vendor": "CH803LM",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "ES1000",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "邦讯-旧版",
+    "protocol": "UDP"
+  },
+  {
+    "vendor": "邦讯-旧版",
+    "protocol": "TCP"
+  }
+]

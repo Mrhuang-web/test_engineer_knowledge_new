@@ -126,6 +126,121 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
         parsed_data = parsed_result.get("parsed", {})
         self.logger.debug(f"parsed_data: {parsed_data}")
         
+        # 只有当收到事件查询指令时才触发事件轮询
+        # 构建完整的指令类型（如 F0EE）
+        # 首先从透传数据PDU中获取group和type
+        group = parsed_data.get("through_pdu", {}).get("group", "")
+        current_type = parsed_data.get("through_pdu", {}).get("type", "")
+        
+        # 如果没有获取到，再从透传数据帧中获取（兼容力维协议）
+        if not group or not current_type:
+            through_sdu = parsed_data.get("through_sdu", {})
+            group = through_sdu.get("group", "")
+            current_type = through_sdu.get("type", "")
+        
+        full_command = f"{group}{current_type}" if group else current_type
+        
+        # 打印调试信息
+        self.logger.info(f"[EVENT DEBUG] 提取的指令信息 - group: {group}, type: {current_type}, full_command: {full_command}")
+        
+        # 检查是否是力维协议的事件查询指令（4AF2E2或F2E2）
+        # 力维协议的指令格式可能不同，需要特殊处理
+        is_liwei_event_command = False
+        
+        # 检查透传数据中的指令
+        through_pdu = parsed_data.get("through_pdu", {})
+        through_sdu = parsed_data.get("through_sdu", {})
+        
+        # 打印透传数据结构
+        self.logger.info(f"[EVENT DEBUG] 透传数据PDU: {through_pdu}")
+        self.logger.info(f"[EVENT DEBUG] 透传数据SDU: {through_sdu}")
+        
+        # 尝试从透传数据中提取力维协议的指令
+        liwei_command = ""
+        
+        # 检查透传数据PDU中的数据部分
+        if "data" in through_pdu:
+            data_part = through_pdu["data"]
+            # 力维协议的指令通常在数据部分的开头
+            if isinstance(data_part, str) and len(data_part) >= 6:
+                # 检查是否包含4AF2E2或F2E2指令
+                if "4AF2E2" in data_part:
+                    liwei_command = "4AF2E2"
+                    is_liwei_event_command = True
+                    self.logger.info(f"[EVENT DEBUG] 从透传数据PDU中识别到力维协议事件查询指令: {liwei_command}")
+                elif "F2E2" in data_part:
+                    liwei_command = "F2E2"
+                    is_liwei_event_command = True
+                    self.logger.info(f"[EVENT DEBUG] 从透传数据PDU中识别到力维协议事件查询指令: {liwei_command}")
+        
+        # 检查透传数据帧中的指令
+        if not is_liwei_event_command and "data" in through_sdu:
+            data_part = through_sdu["data"]
+            if isinstance(data_part, str) and len(data_part) >= 6:
+                if "4AF2E2" in data_part:
+                    liwei_command = "4AF2E2"
+                    is_liwei_event_command = True
+                    self.logger.info(f"[EVENT DEBUG] 从透传数据SDU中识别到力维协议事件查询指令: {liwei_command}")
+                elif "F2E2" in data_part:
+                    liwei_command = "F2E2"
+                    is_liwei_event_command = True
+                    self.logger.info(f"[EVENT DEBUG] 从透传数据SDU中识别到力维协议事件查询指令: {liwei_command}")
+        
+        # 直接检查透传数据中是否包含4AF2E2或F2E2
+        if not is_liwei_event_command:
+            # 检查整个parsed_data中是否包含4AF2E2或F2E2
+            import json
+            parsed_data_str = json.dumps(parsed_data)
+            try:
+                result = (
+                        parsed_data.get("through_pdu", {}).get("cid2", "") +
+                        parsed_data.get("through_sdu", {}).get("group", "") +
+                        parsed_data.get("through_sdu", {}).get("type", "")
+                )
+                if "4AF2E2" in result:
+                    is_liwei_event_command = True
+                    liwei_command = "4AF2E2"
+                    self.logger.info(f"[EVENT DEBUG] 从解析数据中识别到力维协议事件查询指令: {liwei_command}")
+                elif "F2E2" in parsed_data_str:
+                    is_liwei_event_command = True
+                    liwei_command = "F2E2"
+                    self.logger.info(f"[EVENT DEBUG] 从解析数据中识别到力维协议事件查询指令: {liwei_command}")
+            except Exception as e:
+                self.logger.debug(f"[EVENT DEBUG] 解析数据时出错: {e}")
+        
+        # 直接检查full_command是否为F2E2
+        if not is_liwei_event_command and full_command == "F2E2":
+            is_liwei_event_command = True
+            liwei_command = "F2E2"
+            self.logger.info(f"[EVENT DEBUG] 从full_command中识别到力维协议事件查询指令: {liwei_command}")
+        
+        # 检查是否是事件查询指令
+        is_event_command = self.event_manager.is_event_command(full_command, protocol_config)
+        self.logger.info(f"[EVENT DEBUG] 事件查询指令检查结果 - is_event_command: {is_event_command}, is_liwei_event_command: {is_liwei_event_command}")
+        
+        if is_event_command or is_liwei_event_command:
+            # 特殊处理4AF2E2命令
+            if liwei_command == "4AF2E2":
+                # 发送固定的响应
+                fixed_response = b'\x7E\x31\x30\x30\x30\x38\x30\x30\x30\x30\x37\x31\x38\x30\x30\x46\x43\x33\x42\x30\x44\x30\x30\x30\x31\x33\x31\x31\x39\x33\x39\x35\x39\x30\x31\x30\x30\x46\x38\x32\x42\x0D'
+                self.transport.sendto(fixed_response, addr)
+                self.logger.info(f"[SEND] 发送4AF2E2固定响应: {fixed_response.hex().upper()}")
+                return
+            
+            # 提取请求中的卡号信息（如果有）
+            card_id = ""
+            through_sdu = parsed_data.get("through_sdu", {})
+            # 尝试从透传数据中获取卡号信息
+            if "user_id" in through_sdu:
+                card_id = through_sdu["user_id"]
+            elif "event_source" in through_sdu:
+                card_id = through_sdu["event_source"]
+            
+            # 使用事件管理器处理事件轮询，传递卡号信息
+            await self.event_manager.handle_event_polling(addr, protocol_config, card_id)
+            # 处理完事件轮询后直接返回，避免发送默认响应
+            return
+        
         # 生成响应
         rule_response = self._generate_response(protocol_config, parsed_data)
         if not rule_response:
@@ -208,17 +323,6 @@ class UDPProtocol(BaseProtocol, asyncio.DatagramProtocol):
             }
         }
         self.logger.info(through_codec.to_str(resp_through_result))
-        
-        # 只有当收到事件查询指令时才触发事件轮询
-        # 构建完整的指令类型（如 F0EE）
-        group = parsed_data.get("through_pdu", {}).get("group", "")
-        current_type = parsed_data.get("through_pdu", {}).get("type", "")
-        full_command = f"{group}{current_type}" if group else current_type
-        
-        # 检查是否是事件查询指令（只检查完整命令）
-        if self.event_manager.is_event_command(full_command):
-            # 使用事件管理器处理事件轮询
-            await self.event_manager.handle_event_polling(addr, protocol_config)
     
 
     

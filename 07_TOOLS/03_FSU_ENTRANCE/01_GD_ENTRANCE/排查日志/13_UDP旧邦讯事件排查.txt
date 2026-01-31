@@ -1,0 +1,63 @@
+普通指令1081 -- 有错误
+
+
+	<==Row: 8739, 24537e2c-d925-47a7-bcb3-5d232002c455, 1, 0, 01-01-17-02-05-01, bcacf10f-3976-4040-8f06-9e50e91d514e, UDP-??-??1auto?, 2, 16, 01, 01, 10.12.5.142, 10101, 17511, 7E, 0D, UDP-??-??1, UDP-??-??1auto?, 2026-01-12, 0021, a5008, 10.1.4.113
+	2026-02-01 00:01:31.092 ERROR 7 --- [code-Message-14] c.a.m.e.s.l.DecodeMessageListener        : 解析编码模组消息失败:begin 52, end 54, length 28
+	java.lang.StringIndexOutOfBoundsException: begin 52, end 54, length 28
+		at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4606)
+		at java.base/java.lang.String.substring(String.java:2709)
+		at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.isDoorSensor1Open(BxTcpOldStrategy.java:460)
+		at com.aspire.mirror.entrance.server.strategy.impl.BxTcpOldStrategy.handleStatus(BxTcpOldStrategy.java:359)
+		at com.aspire.mirror.entrance.server.handler.ResponseHandler.handle(ResponseHandler.java:206)
+		at com.aspire.mirror.entrance.server.listener.DecodeMessageListener.lambda$listen$0(DecodeMessageListener.java:100)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:840)
+	
+
+	\"24537e2c-d925-47a7-bcb3-5d232002c455\",\n  \"protocolType\": \"bxOldUdp\",\n  \"ip\": \"10.12.5.142\",\n  \"requestType\": null,\n  \"port\": \"10101\",\n  \"comPort\": 1,\n  \"fsuId\": \"124123131241\",\n  \"commands\": {\n    \"executeCmd\": {\n      \"cid1\": null,\n      \"cid2\": null,\n      \"comd_group\": \"81\",\n      \"comd_type\": \"10\",\n      \"dataf\": \"0000000000000000000000000000000000000000000000000000\"\n    }\n  },\n  \"protocolCommon\": {\n    \"commAdr\": \"01\",\n    \"ver\": \"17511\",\n    \"soi\": \"7E\",\n    \"eoi\": \"0D\"\n  },\n  \"username\": null,\n  \"operateType\": null,\n  \"partition\": \"10.1.4.113\",\n  \"type\": null,\n  \"taskId\": \"8010b92f-4202-4e51-9e6f-196681007f46\",\n  \"cardNo\": null\n}","response":"device get response overtime","taskId":"8010b92f-4202-4e51-9e6f-196681007f46","deviceId":"24537e2c-d925-47a7-bcb3-5d232002c455","status":"500","connectType":null,"requestType":null,"requestBody":null,"sdkType":null,"cardNo":null}到业务模块
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+接收到下发给设备10.12.5.142：10101的指令
+FF3132343132333133313234310000000000000000000000000000000001012700EE010022007E67448D10002100000000000000000000000000000000000000000000000069010D6DFE
+[FF 31 32 34 31 32 33 31 33 31 32 34 31 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 01 01 27 00 EE 01 00 22 00 7E 67 44 8D 10 00 21 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 69 01 0D 6D FE]
+
+接收到10.12.5.142:10101的数据
+FF000000000000000031323431323331333132343100000000000000000101270000010022007E00008D107152B380260201000011580000000000000000000000000000009F000D0AFE
+
+
+
+
+7E00008D107152B380260201000011580000000000000000000000000000009F000D
+7E00008D107152B38026020100004428000000000000000000000000000000BA000D
+7E00008D107152B380713C7E69000000000000000000000000000000000000A9000D
+
+
+
+
+
+
+FF3132343132333133313234310000000000000000000000000000000001012700EE01002200
+
+FF00000000000000003132343132333133313234310000000000000000010127000001002200
+
+
+
+
+7E00008D107152B380 3E417E69 0000000000000000000000000000000000009B000D0A
+7E00008D107152B380 260201000011580000000000000000000000000000009F000D0A

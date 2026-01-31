@@ -1,0 +1,49 @@
+docker logs --tail 4000 -f iot-center2 | awk '
+    # 模式1：10125 指令下发
+    /下发给设备10.12.5.142：10125/ { 
+        thread=$6; 
+        print "\n【10125指令下发】", $0; 
+        next 
+    }
+    $6==thread && /message=/ && thread!="" { 
+        print "【10125指令报文】", $0; 
+        thread=""; 
+        next 
+    }
+
+    # 模式2：10116 响应处理
+    /接收到10.12.5.142:10125的数据/ { 
+        thread2=$6; 
+        print "\n【10125收到数据】", $0; 
+        next 
+    }
+    $6==thread2 && /发送设备10.12.5.142:10125响应消息/ { 
+        print "【10125发送响应】", $0; 
+        thread2=""; 
+        next 
+    }
+    '
+	
+
+
+
+
+
+
+docker logs --tail 4000 -f iot-center2 | awk '
+    /下发给设备10.12.5.142：10125/ { 
+        thread=$6; 
+        print "\n【指令】", $0; 
+        next 
+    }
+    $6==thread && /message=/ { 
+        print "【报文】", $0; 
+        thread="" 
+    }
+    '
+	
+
+
+
+TCP使用vip有问题
+	设备10.12.5.142:10125重连失败，剩余重试次数：2

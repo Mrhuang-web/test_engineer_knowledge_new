@@ -1,0 +1,194 @@
+{
+  "48F0E0": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F0E0"
+    }
+  },
+  "48F0E1": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F0E1"
+    }
+  },
+  "48F0E2": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F0E2"
+    }
+  },
+  "49F1E0": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1E0"
+    }
+  },
+  "49F1E1": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1E1"
+    }
+  },
+  "49F1E2": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1E2"
+    }
+  },
+  "49F1E3": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1E3"
+    }
+  },
+  "49F1E4": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1E4"
+    }
+  },
+  "4AF2E0": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "year": "${year(yyyy)}$",
+      "month": "${month()}$",
+      "day": "${day()}$",
+      "week": "${week()}$",
+      "hour": "${hour()}$",
+      "minute": "${minute()}$",
+      "second": "${second()}$"
+    }
+  },
+  "4AF2E1": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "000000000000000000000000"
+    }
+  },
+  "4AF2E2": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "year": "${year(yyyy)}$",
+      "month": "${month()}$",
+      "day": "${day()}$",
+      "week": "${week()}$",
+      "hour": "${hour()}$",
+      "minute": "${minute()}$",
+      "second": "${second()}$",
+      "event_source": "0000000000",
+      "status": "00",
+      "remark": "00"
+    }
+  },
+  "4AF2E3": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "0000000000000000000000000000000000000000"
+    }
+  },
+  "4AF2E4": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "0000000000000000"
+    }
+  },
+  "4AF2E5": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "0000"
+    }
+  },
+  "4AF2E6": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "00000000000000000000000000000000"
+    }
+  },
+  "4AF2E7": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "0000000000000000000000000000"
+    }
+  },
+  "4AF2E8": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "00000000000000000000"
+    }
+  },
+  "4AF2E9": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "07FF"
+    }
+  },
+  "49F1EA": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1EA"
+    }
+  },
+  "49F1EB": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1EB"
+    }
+  },
+  "49F1EC": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1EC"
+    }
+  },
+  "49F1ED": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F1ED"
+    }
+  },
+  "4AF2EE": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "year": "${year(yyyy)}$",
+      "month": "${month()}$",
+      "day": "${day()}$",
+      "week": "${week()}$",
+      "hour": "${hour()}$",
+      "minute": "${minute()}$",
+      "second": "${second()}$",
+      "event_source": "0000000000",
+      "status": "00",
+      "remark": "00"
+    }
+  },
+  "48F0EE": {
+    "delay_ms": 100,
+    "data": {
+      "cid2": "00",
+      "data_info": "F0EE"
+    }
+  }
+}

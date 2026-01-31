@@ -1,0 +1,724 @@
+{
+    "vendor": "亚奥",
+    "sub_dev_type": "01",
+    "sub_dev_addr": "00",
+    "rule_file_list": [
+        "./rules/3230323530313237.json"
+    ],
+    "protocol": {
+        "total_length": 0,
+        "dynamic_length": true,
+        "checksum_config": {
+            "algorithm": "sum",
+            "start": 1,
+            "end": -2
+        },
+        "pdu_left": [
+            {
+                "name": "start",
+                "length": 1,
+                "type": "hex",
+                "value": "55"
+            },
+            {
+                "name": "address",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "length",
+                "length": 1,
+                "type": "hex",
+                "value": "{{data_frame_length}}"
+            },
+            {
+                "name": "data_frame_type",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            }
+        ],
+        "pdu_tailer": [
+            {
+                "name": "data",
+                "length": 0,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "checksum",
+                "length": 1,
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "end",
+                "length": 1,
+                "type": "hex",
+                "value": "AA"
+            }
+        ],
+        "data_frame_type_flag": "data_frame_type",
+        "data_frame": [
+            {
+                "data_frame_type": "01",
+                "description": "亚奥设备分组类型查询命令",
+                "data_frame_length": 10,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "group_type",
+                        "type": "hex",
+                        "length": 8,
+                        "value": "020406FFFF"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "02",
+                "description": "亚奥设备信息查询命令",
+                "data_frame_length": 18,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "board_id",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "data",
+                        "type": "hex",
+                        "length": 16,
+                        "value": "00000000000000000000000000000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "03",
+                "description": "亚奥设备控制命令",
+                "data_frame_length": 4,
+                "req_data_list": [
+                    {
+                        "name": "group_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "channel_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "action",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "group_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "channel_no",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "action",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "09",
+                "description": "亚奥设备时间获取命令",
+                "data_frame_length": 8,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "10",
+                "description": "亚奥设备时间设置命令",
+                "data_frame_length": 8,
+                "req_data_list": [
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": []
+            },
+            {
+                "data_frame_type": "11",
+                "description": "亚奥设备读取单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "12",
+                "description": "亚奥设备写入单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "13",
+                "description": "亚奥设备写入带有效期的卡权限命令",
+                "data_frame_length": 14,
+                "req_data_list": [
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    },
+                    {
+                        "name": "validity",
+                        "type": "hex",
+                        "length": 8,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "14",
+                "description": "亚奥设备删除单张卡权限命令",
+                "data_frame_length": 6,
+                "req_data_list": [
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "15",
+                "description": "亚奥设备清除所有卡权限命令",
+                "data_frame_length": 2,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "16",
+                "description": "亚奥设备恢复出厂设置命令",
+                "data_frame_length": 2,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "17",
+                "description": "亚奥设备重启命令",
+                "data_frame_length": 2,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "18",
+                "description": "亚奥设备自检命令",
+                "data_frame_length": 2,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "21",
+                "description": "亚奥设备记录统计查询命令",
+                "data_frame_length": 12,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "latest_record",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "valid_record",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "unread_record",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "long_card",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "short_card",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "22",
+                "description": "亚奥设备读取单条刷卡记录命令",
+                "data_frame_length": 12,
+                "req_data_list": [
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "card_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "23",
+                "description": "亚奥设备读取单条权限记录命令",
+                "data_frame_length": 18,
+                "req_data_list": [
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "card_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "validity",
+                        "type": "hex",
+                        "length": 8,
+                        "value": "3238012132381231"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "26",
+                "description": "亚奥设备读取单条事件记录命令",
+                "data_frame_length": 22,
+                "req_data_list": [
+                    {
+                        "name": "index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "02"
+                    },
+                    {
+                        "name": "record_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "record_reason",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "door_index",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "reserved",
+                        "type": "hex",
+                        "length": 3,
+                        "value": "000000"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "27",
+                "description": "亚奥设备实时上传记录命令",
+                "data_frame_length": 21,
+                "req_data_list": [],
+                "resp_data_list": [
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "record_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "new_index",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": "0001"
+                    },
+                    {
+                        "name": "card_no",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "00000000"
+                    },
+                    {
+                        "name": "record_reason",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "door_index",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    },
+                    {
+                        "name": "reserved",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ]
+            }
+        ]
+    }
+}

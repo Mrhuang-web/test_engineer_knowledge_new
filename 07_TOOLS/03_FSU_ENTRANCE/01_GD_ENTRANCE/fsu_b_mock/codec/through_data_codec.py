@@ -330,8 +330,8 @@ class ThroughDataCodec:
                     # 构建力维协议INFO部分数据
                     info_data = b""
 
-                    # 按照力维协议格式顺序添加字段
-                    field_order = ["year", "month", "day", "week", "hour", "minute", "second", "event_source", "status", "remark"]
+                    # 按照力维协议格式顺序添加字段：事件来源(5) + 日期时间(7) + 状态(1) + 备注(1)
+                    field_order = ["event_source", "year", "month", "day", "hour", "minute", "second", "status", "remark"]
 
                     for field_name in field_order:
                         if field_name in response_data:
@@ -343,6 +343,10 @@ class ThroughDataCodec:
                                 if len(year_str) == 4:
                                     # 转换为BCD格式
                                     bcd_year = ((int(year_str[0]) << 12) | (int(year_str[1]) << 8) | (int(year_str[2]) << 4) | int(year_str[3]))
+                                    info_data += bcd_year.to_bytes(2, byteorder='big')
+                                elif len(year_str) == 2:
+                                    # 处理2位年份，假设是20xx年
+                                    bcd_year = ((2 << 12) | (0 << 8) | (int(year_str[0]) << 4) | int(year_str[1]))
                                     info_data += bcd_year.to_bytes(2, byteorder='big')
                             elif field_name == "month" or field_name == "day" or field_name == "week" or field_name == "hour" or field_name == "minute" or field_name == "second":
                                 # 月、日、周、时、分、秒：1字节BCD格式
@@ -365,13 +369,9 @@ class ThroughDataCodec:
                     # 保存INFO数据，供后续校验和计算使用
                     self._liwei_info_data = info_data
 
-                    # 处理resp_fields中的字段（主要是cid2）
-                    for field in resp_fields:
-                        field_data = self._encode_field(field, parsed_data, response_data)
-                        data_frame_data += field_data
-
-                    # 添加INFO数据
-                    data_frame_data += info_data
+                    # 力维协议事件数据：直接使用INFO数据
+                    # 避免重复添加数据，确保数据格式正确
+                    data_frame_data = info_data
             else:
                 # 否则按照配置文件构建响应
                 for field in resp_fields:
@@ -564,7 +564,10 @@ class ThroughDataCodec:
             # 优先从响应数据中获取值
             if field_name in response_data:
                 value = response_data[field_name]
-            # 其次从解析数据中获取值（透传字段）
+            # 其次从解析数据的through_pdu中获取值（PDU字段）
+            elif field_name in parsed_data.get("through_pdu", {}):
+                value = parsed_data["through_pdu"][field_name]
+            # 然后从解析数据的through_sdu中获取值（透传字段）
             elif field_name in parsed_data.get("through_sdu", {}):
                 value = parsed_data["through_sdu"][field_name]
             # 最后使用默认值

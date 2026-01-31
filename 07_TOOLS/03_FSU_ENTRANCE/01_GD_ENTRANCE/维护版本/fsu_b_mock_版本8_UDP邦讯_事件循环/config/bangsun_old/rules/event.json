@@ -1,0 +1,11 @@
+{
+    "108D": {
+        "delay_ms": 100,
+        "data": {
+            "card_id": "7152",
+            "vendor_id": "B3",
+            "status": "02",
+            "timestamp": ""
+        }
+    }
+}

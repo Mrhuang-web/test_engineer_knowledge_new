@@ -1,0 +1,726 @@
+{
+    "vendor": "邦讯-旧版",
+    "rule_file_list": [
+        "./rules/0101.json",
+        "./rules/313234313233313331323431.json",
+        "./rules/default.json"
+    ],
+    "protocol": {
+        "dynamic_length": false,
+        "total_length": 34,
+        "dynamic_time_enabled": true,
+        "checksum_config": {
+            "algorithm": "sum",
+            "start": 1,
+            "end": 31
+        },
+        "pdu_left": [
+            {
+                "name": "start",
+                "length": 1,
+                "type": "hex",
+                "value": "7E"
+            },
+            {
+                "name": "address",
+                "length": 2,
+                "endian": "little",
+                "type": "hex",
+                "value": ""
+            }
+        ],
+        "pdu_tailer": [
+            {
+                "name": "checksum",
+                "length": 2,
+                "endian": "little",
+                "type": "hex",
+                "value": ""
+            },
+            {
+                "name": "end",
+                "length": 1,
+                "type": "hex",
+                "value": "0D"
+            }
+        ],
+        "data_frame_type_flag": "data_frame_type",
+        "data_frame": [
+            {
+                "data_frame_type": "109D",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "109D"
+                    },
+                    {
+                        "name": "number",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "109D"
+                    },
+                    {
+                        "name": "first",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "108B",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108B"
+                    },
+                    {
+                        "name": "datetime",
+                        "type": "hex",
+                        "length": 7,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108B"
+                    },
+                    {
+                        "name": "datetime",
+                        "type": "hex",
+                        "length": 7,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1081",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1081"
+                    },
+                    {
+                        "name": "first",
+                        "type": "hex",
+                        "length": 4,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1081"
+                    },
+                    {
+                        "name": "year",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "week",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "record_count",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 3,
+                        "value": ""
+                    },
+                    {
+                        "name": "permission_count",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 2,
+                        "value": ""
+                    },
+                    {
+                        "name": "record_value",
+                        "type": "hex",
+                        "endian": "little",
+                        "length": 8,
+                        "value": ""
+                    },
+                    {
+                        "name": "relay_status",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "magnetic_button_status",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "reserve1",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "obstacle_number",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "reserve2",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "reserve3",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "108F",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108F"
+                    },
+                    {
+                        "name": "door_number",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "control_mode",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "delay",
+                        "type": "hex",
+                        "length": 2,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108F"
+                    },
+                    {
+                        "name": "door_number",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "control_mode",
+                        "type": "hex",
+                        "length": 1,
+                        "value": ""
+                    },
+                    {
+                        "name": "delay",
+                        "type": "hex",
+                        "length": 2,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1107",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1107"
+                    },
+                    {
+                        "name": "padding",
+                        "type": "hex",
+                        "length": 2,
+                        "value": "0000"
+                    },
+                    {
+                        "name": "permission_data",
+                        "type": "hex",
+                        "length": 14,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1107"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1108",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1108"
+                    },
+                    {
+                        "name": "card_number",
+                        "type": "hex",
+                        "length": 4,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1108"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1096",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1096"
+                    },
+                    {
+                        "name": "period_index",
+                        "type": "hex",
+                        "length": 2,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1096"
+                    },
+                    {
+                        "name": "period_data",
+                        "type": "hex",
+                        "length": 24,
+                        "value": "FFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1097",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1097"
+                    },
+                    {
+                        "name": "period_data",
+                        "type": "hex",
+                        "length": 24,
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1097"
+                    },
+                    {
+                        "name": "period_data",
+                        "type": "hex",
+                        "length": 24,
+                        "value": "FFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "108D",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108D"
+                    },
+                    {
+                        "name": "record_index",
+                        "type": "hex",
+                        "length": 4,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108D"
+                    },
+                    {
+                        "name": "card_id",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "5271"
+                    },
+                    {
+                        "name": "vendor_id",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "B3"
+                    },
+                    {
+                        "name": "status",
+                        "length": 1,
+                        "type": "hex",
+                        "value": "80"
+                    },
+                    {
+                        "name": "year",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "month",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "day",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "week",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "hour",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "minute",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    },
+                    {
+                        "name": "second",
+                        "length": 1,
+                        "type": "hex",
+                        "value": ""
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "108E",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108E"
+                    },
+                    {
+                        "name": "record_count",
+                        "type": "hex",
+                        "length": 4,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "108E"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "00"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1093",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1093"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1093"
+                    },
+                    {
+                        "name": "result",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "01"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1095",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1095"
+                    },
+                    {
+                        "name": "permission_index",
+                        "type": "hex",
+                        "length": 2,
+                        "endian": "little",
+                        "value": ""
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1095"
+                    },
+                    {
+                        "name": "permission_data",
+                        "type": "hex",
+                        "length": 16,
+                        "value": "FFFFFFFFFFFFFFFF"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1101",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1101"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1101"
+                    },
+                    {
+                        "name": "mac",
+                        "type": "hex",
+                        "length": 6,
+                        "value": "00574701A410"
+                    },
+                    {
+                        "name": "ip",
+                        "type": "hex",
+                        "length": 4,
+                        "value": "C0A8A864"
+                    }
+                ]
+            },
+            {
+                "data_frame_type": "1082",
+                "align": "left",
+                "padding": "00",
+                "req_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1082"
+                    }
+                ],
+                "resp_data_list": [
+                    {
+                        "name": "data_frame_type",
+                        "length": 2,
+                        "endian": "little",
+                        "type": "hex",
+                        "value": "1082"
+                    },
+                    {
+                        "name": "production_date",
+                        "type": "hex",
+                        "length": 3,
+                        "value": "070731"
+                    },
+                    {
+                        "name": "driver_version",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "1A"
+                    },
+                    {
+                        "name": "device_model",
+                        "type": "hex",
+                        "length": 1,
+                        "value": "62"
+                    }
+                ]
+            }
+        ]
+    }
+}    

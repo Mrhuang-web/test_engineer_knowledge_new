@@ -1,0 +1,592 @@
+{
+  "vendor": "高新兴V2",
+  "vendor_type": "liwei",
+  "rule_file_list": [
+    "./rules/default.json",
+    "./rules/313234313233313331323431.json"
+  ],
+  "protocol": {
+    "total_length": 0,
+    "dynamic_length": true,
+    "checksum_config": {
+      "algorithm": "crc16",
+      "start": 1,
+      "end": -3
+    },
+    "pdu_left": [
+      {
+        "name": "start",
+        "length": 1,
+        "type": "hex",
+        "value": "7E"
+      },
+      {
+        "name": "ver",
+        "length": 1,
+        "type": "hex",
+        "value": "22"
+      },
+      {
+        "name": "adr",
+        "length": 1,
+        "type": "hex",
+        "value": "01"
+      },
+      {
+        "name": "cid1",
+        "length": 1,
+        "type": "hex",
+        "value": "81"
+      },
+      {
+        "name": "cid2",
+        "length": 1,
+        "type": "hex",
+        "value": "01"
+      },
+      {
+        "name": "length",
+        "length": 2,
+        "type": "hex",
+        "value": ""
+      }
+    ],
+    "pdu_tailer": [
+      {
+        "name": "checksum",
+        "length": 2,
+        "type": "hex",
+        "value": ""
+      },
+      {
+        "name": "end",
+        "length": 1,
+        "type": "hex",
+        "value": "0D"
+      }
+    ],
+    "data_frame_type_flag": [
+      "cid2",
+      "cmd",
+      "subcmd"
+    ],
+    "data_frame": [
+      {
+        "data_frame_type": [
+          "01",
+          "0100",
+          "00"
+        ],
+        "description": "设置日期时间",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "0100"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "year",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "month",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "day",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "hour",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "minute",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "second",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "0100"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "0200",
+          "00"
+        ],
+        "description": "读取日期时间",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "0200"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "0200"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "year",
+            "length": 1,
+            "type": "hex",
+            "value": "24"
+          },
+          {
+            "name": "month",
+            "length": 1,
+            "type": "hex",
+            "value": "01"
+          },
+          {
+            "name": "day",
+            "length": 1,
+            "type": "hex",
+            "value": "19"
+          },
+          {
+            "name": "hour",
+            "length": 1,
+            "type": "hex",
+            "value": "11"
+          },
+          {
+            "name": "minute",
+            "length": 1,
+            "type": "hex",
+            "value": "47"
+          },
+          {
+            "name": "second",
+            "length": 1,
+            "type": "hex",
+            "value": "59"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "1500",
+          "00"
+        ],
+        "description": "增加/修改用户",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "1500"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "user_count",
+            "length": 1,
+            "type": "hex",
+            "value": "01"
+          },
+          {
+            "name": "card_type_len",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "card_no",
+            "length": 10,
+            "type": "hex",
+            "value": "00000000000000000000"
+          },
+          {
+            "name": "finger_type_len",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "finger_no",
+            "length": 10,
+            "type": "hex",
+            "value": "00000000000000000000"
+          },
+          {
+            "name": "valid_from",
+            "length": 2,
+            "type": "hex",
+            "value": "0000"
+          },
+          {
+            "name": "valid_to",
+            "length": 2,
+            "type": "hex",
+            "value": "FFFF"
+          },
+          {
+            "name": "use_count",
+            "length": 2,
+            "type": "hex",
+            "value": "FFFF"
+          },
+          {
+            "name": "door_mask",
+            "length": 1,
+            "type": "hex",
+            "value": "01"
+          },
+          {
+            "name": "permission_time",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "reserved",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "1500"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "actual_count",
+            "length": 1,
+            "type": "hex",
+            "value": "01"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "2000",
+          "00"
+        ],
+        "description": "远程开门",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "2000"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "door_mask",
+            "length": 1,
+            "type": "hex",
+            "value": "01"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "2000"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "3C00",
+          "00"
+        ],
+        "description": "删除所有用户",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "3C00"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "3C00"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "4200",
+          "00"
+        ],
+        "description": "读取最新事件记录",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "4200"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "4200"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "record_count",
+            "length": 4,
+            "type": "hex",
+            "value": "00000001"
+          },
+          {
+            "name": "start_index",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "end_index",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "event_detail",
+            "length": 9,
+            "type": "hex",
+            "value": "2401191147590101"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "01",
+          "2A00",
+          "00"
+        ],
+        "description": "获取时间",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "2A00"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "method",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "reserved",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          },
+          {
+            "name": "start_seq",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "end_seq",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "count",
+            "length": 4,
+            "type": "hex",
+            "value": "00000001"
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "2A00"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": "00"
+          },
+          {
+            "name": "record_count",
+            "length": 4,
+            "type": "hex",
+            "value": "00000001"
+          },
+          {
+            "name": "start_seq",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "end_seq",
+            "length": 4,
+            "type": "hex",
+            "value": "00000000"
+          },
+          {
+            "name": "event_detail",
+            "length": 9,
+            "type": "hex",
+            "value": "2401191147590101"
+          }
+        ]
+      },
+      {
+        "data_frame_type": [
+          "48",
+          "F0E0",
+          ""
+        ],
+        "description": "48F0E0接口",
+        "req_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "F0E0"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          }
+        ],
+        "resp_data_list": [
+          {
+            "name": "cmd",
+            "length": 2,
+            "type": "hex",
+            "value": "F0E0"
+          },
+          {
+            "name": "subcmd",
+            "length": 1,
+            "type": "hex",
+            "value": ""
+          }
+        ]
+      }
+    ]
+  }
+}

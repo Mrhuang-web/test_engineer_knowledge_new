@@ -1,0 +1,34 @@
+{
+    "events": [
+        {
+            "remark": "01",
+            "status": "01",
+            "event_source": "0000000000",
+            "description": "ID+密码开门"
+        },
+        {
+            "remark": "02",
+            "status": "02",
+            "event_source": "0000000000",
+            "description": "远程开门"
+        },
+        {
+            "remark": "03",
+            "status": "03",
+            "event_source": "0000000000",
+            "description": "手动开门"
+        },
+        {
+            "remark": "04",
+            "status": "04",
+            "event_source": "0000000000",
+            "description": "联动开门"
+        },
+        {
+            "remark": "05",
+            "status": "05",
+            "event_source": "0000000000",
+            "description": "报警（红外/门磁等）"
+        }
+    ]
+}
